@@ -1,0 +1,9 @@
+10 DEFINT a-z
+20 ON ERROR GOTO 900
+30 x=5:y=0
+40 PRINT "div";x/y
+50 PRINT "idiv";x\y
+60 PRINT "mod";x MOD y
+70 PRINT "end"
+80 END
+900 PRINT "ERR";ERR;"ERL";ERL:RESUME NEXT

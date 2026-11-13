@@ -1,0 +1,15 @@
+0040: .core.CPC_INIT_BANKS
+006E: .core.__BK_SETCFG
+007F: .core.__BK_SELECT
+0087: .core.__BK_SELECT_OFF
+008B: .core.CBK_PRESENT
+008C: .core.CBK_CFG
+008D: .core.CBK_LBUF
+008F: .core.CBK_LLEN
+0090: .core.CBK_LPREV
+0091: .core.CBK_LRES
+0092: .core.__BK_INWIN
+00A5: .core.__BK_NO
+00A7: .core.__BK_OUTWIN
+00AF: .core.__BK_OUT_LOW
+00B7: .core.__BK_COPY

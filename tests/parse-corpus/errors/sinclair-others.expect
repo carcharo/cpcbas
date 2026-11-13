@@ -1,0 +1,7 @@
+2:1 E900 OVER is dropped: use GRAPHICS PEN n, 1
+3:1 E900 FLASH is dropped: use INK n, c1, c2
+4:1 E900 BRIGHT is dropped
+5:1 E900 BOLD is not available on the CPC
+6:1 E900 ITALIC is not available on the CPC
+7:6 E961 SCREEN$ is dropped: use LOCATE then COPYCHR$(#0)
+8:5 E961 USR is dropped: use CALL

@@ -1,0 +1,80 @@
+Program mainFile=0
+  includes:
+  body:
+    LineLabel number=10 name=- key=-
+    Let explicitLet=false
+      target: Name text="a" base="a" suffix=-
+      value: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="b" base="b" suffix=-
+      value: NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+    LineLabel number=20 name=- key=-
+    If form="line" elseBody=-
+      branches:
+        Branch
+          cond: Binary op="<>"
+            left: Name text="a" base="a" suffix=-
+            right: Name text="b" base="b" suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: BuiltinCall keyword="MIN" parens=true typeArg=- stream=-
+                    args:
+                      Name text="a" base="a" suffix=-
+                PrintSep sep=";"
+                PrintExpr
+                  expr: BuiltinCall keyword="MAX" parens=true typeArg=- stream=-
+                    args:
+                      Name text="b" base="b" suffix=-
+    LineLabel number=30 name=- key=-
+    Builtin keyword="PEN" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Builtin keyword="PEN" stream=- typeArg=-
+      args:
+        -
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+    Builtin keyword="PEN" typeArg=-
+      stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      args:
+        NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    LineLabel number=40 name=- key=-
+    Builtin keyword="WIDTH" stream=- typeArg=-
+      args:
+        NumberLit value=80 text="80" radix=10 isReal=false suffix=-
+    Builtin keyword="SPEED WRITE" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    LineLabel number=50 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: BuiltinCall keyword="DERR" parens=false typeArg=- stream=-
+            args:
+        PrintSep sep=";"
+        PrintExpr
+          expr: BuiltinCall keyword="ERR" parens=false typeArg=- stream=-
+            args:
+    LineLabel number=60 name=- key=-
+    Builtin keyword="SAVE" stream=- typeArg=-
+      args:
+        StringLit value="prog"
+        Name text="A" base="a" suffix=-
+    LineLabel number=70 name=- key=-
+    Builtin keyword="SAVE" stream=- typeArg=-
+      args:
+        StringLit value="prot"
+        Name text="P" base="p" suffix=-
+    LineLabel number=80 name=- key=-
+    Builtin keyword="SAVE" stream=- typeArg=-
+      args:
+        StringLit value="code"
+        Name text="B" base="b" suffix=-
+        NumberLit value=16384 text="&4000" radix=16 isReal=false suffix=-
+        NumberLit value=100 text="100" radix=10 isReal=false suffix=-
+        NumberLit value=16384 text="&4000" radix=16 isReal=false suffix=-
+    LineLabel number=90 name=- key=-
+    OnError target=-

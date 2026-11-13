@@ -1,0 +1,13 @@
+0040: .core.__CPC_KSCAN_ROWS
+0084: .core.__CPC_KEYS
+008E: .core.__CPC_KB_LOCKS
+008F: .core.__CPC_KEYCHAR
+00CB: .core.__CPC_KBSCAN
+00F0: .core.__CPC_KEYHELD
+013B: .core.__CPC_KR_LAST
+013C: .core.__CPC_KR_DUE
+013E: .core.__CPC_KEY_NEXT
+0175: .core.__CPC_KEY_FLUSH
+018F: .core.__CPC_KBT_NORMAL
+01DF: .core.__CPC_KBT_SHIFT
+022F: .core.__CPC_KBT_CTRL

@@ -1,0 +1,31 @@
+;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; © Copyright 2008-2024 José Manuel Rodríguez de la Rosa and contributors.
+;; See the file CONTRIBUTORS.md of zxbasic (https://github.com/boriel-basic/zxbasic) for copyright details.
+;; Ported from zxbasic src/arch/z80/peephole/opts/022_insr_a_or_a.opt at e33cf0cd (cpcbas L5-PEEP; changes: IF rewritten: or a / and a after and, or, xor only; sub, inc a, dec a go to 500; cp never (the fork dropped or a after cp X and sub, which tests Z of a different value)).
+
+;; Replace sequence:
+;; and X|or X|xor X
+;; or a|and a
+;;
+;; With:
+;; and X|or X|xor X
+;;
+;; These set S, Z and P from the result and clear C, as or a would. (The fork also dropped or a
+;; after cp X, which tests A against 0 where cp tests it against X, and after sub, inc a and dec a,
+;; whose carry differs; 500 keeps the safe part of those.)
+
+OLEVEL: 1
+OFLAG: 22
+
+REPLACE {{
+  $1 $2
+  $3 a
+}}
+
+IF {{
+  (($3 == or) || ($3 == and)) && (($1 == or) || ($1 == and) || ($1 == xor))
+}}
+
+WITH {{
+  $1 $2
+}}

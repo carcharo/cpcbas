@@ -1,0 +1,6 @@
+0040: .core.__FW_CALL
+005A: .core.__FW_CALL_TARGET
+006B: .core.__FW_CALL_IX
+0087: .core.__FW_CALL_IX_TARGET
+009A: .core.__LOAD_S_POSN
+00BC: .core.__SAVE_S_POSN

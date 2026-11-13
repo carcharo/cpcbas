@@ -1,0 +1,27 @@
+;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; © Copyright 2008-2024 José Manuel Rodríguez de la Rosa and contributors.
+;; See the file CONTRIBUTORS.md of zxbasic (https://github.com/boriel-basic/zxbasic) for copyright details.
+;; Ported from zxbasic src/arch/z80/peephole/opts/102_o3_ld_r_n_ld_r_n2.opt at e33cf0cd (cpcbas L5-PEEP; changes: IF added: the second load must not read the register the first one loads (upstream missed it: ld h, (ix+5) / ld h, (hl) lost the first load); OLEVEL 3, kept as data for L5-FLOW and never run by the peephole pass).
+
+;; Removes useless LD's
+;; Replaces;
+;; LD r, XXX
+;; LD r, YYY
+;; With:
+;; LD r, YYY
+
+OLEVEL: 3
+OFLAG: 102
+
+REPLACE {{
+  ld $1, $2
+  ld $1, $3
+}}
+
+IF {{
+  !NEEDS("push " + $3, $1)
+}}
+
+WITH {{
+  ld $1, $3
+}}

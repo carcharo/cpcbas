@@ -1,0 +1,16 @@
+10 FOR i=1 TO 0:PRINT "in1";i:NEXT
+20 PRINT "after1";i
+30 FOR j=0 TO 1 STEP -1:PRINT "in2";j:NEXT
+40 PRINT "after2";j
+50 FOR k=1 TO 0
+60 PRINT "in3";k
+70 NEXT k
+80 PRINT "after3";k
+90 n=0:FOR m=1 TO n
+100 PRINT "in4";m
+110 NEXT
+120 PRINT "after4";m
+130 FOR q=5 TO 5
+140 PRINT "in5";q
+150 NEXT
+160 PRINT "after5";q

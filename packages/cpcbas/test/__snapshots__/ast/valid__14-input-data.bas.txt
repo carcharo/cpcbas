@@ -1,0 +1,123 @@
+Program mainFile=0
+  includes:
+  body:
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="scores" base="scores" suffix=-
+          bounds:
+            NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+          type: TypeRef name="INTEGER" text="INTEGER"
+    Input line=false stream=- prompt=- promptSep=- keepCursor=false
+      targets:
+        Name text="n" base="n" suffix=-
+    Input line=false stream=- prompt=- promptSep=- keepCursor=false
+      targets:
+        Name text="a" base="a" suffix=-
+        Name text="b" base="b" suffix=-
+    Input line=false stream=- promptSep=";" keepCursor=false
+      prompt: StringLit value="Name"
+      targets:
+        Name text="name" base="name" suffix="$"
+    Input line=false stream=- promptSep="," keepCursor=false
+      prompt: StringLit value="Age"
+      targets:
+        Name text="age" base="age" suffix=-
+    Input line=false stream=- promptSep=";" keepCursor=false
+      prompt: StringLit value="Two numbers"
+      targets:
+        Name text="p" base="p" suffix=-
+        Name text="q" base="q" suffix=-
+    Input line=false prompt=- promptSep=- keepCursor=false
+      stream: NumberLit value=9 text="9" radix=10 isReal=false suffix=-
+      targets:
+        Name text="c" base="c" suffix=-
+        Name text="d" base="d" suffix="$"
+    Input line=false stream=- prompt=- promptSep=- keepCursor=false
+      targets:
+        CallOrIndex
+          callee: Name text="scores" base="scores" suffix=-
+          args:
+            NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+    Input line=true stream=- prompt=- promptSep=- keepCursor=false
+      targets:
+        Name text="a" base="a" suffix="$"
+    Input line=true stream=- promptSep=";" keepCursor=false
+      prompt: StringLit value="Text: "
+      targets:
+        Name text="t" base="t" suffix="$"
+    Input line=true stream=- promptSep="," keepCursor=false
+      prompt: StringLit value="Text: "
+      targets:
+        Name text="t" base="t" suffix="$"
+    Input line=true prompt=- promptSep=- keepCursor=false
+      stream: NumberLit value=9 text="9" radix=10 isReal=false suffix=-
+      targets:
+        Name text="row" base="row" suffix="$"
+    Restore target=-
+    For step=- nextName=-
+      variable: Name text="i" base="i" suffix=-
+      from: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+      to: NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+      body:
+        Read
+          targets:
+            CallOrIndex
+              callee: Name text="scores" base="scores" suffix=-
+              args:
+                Name text="i" base="i" suffix=-
+    Read
+      targets:
+        Name text="w" base="w" suffix="$"
+        Name text="v" base="v" suffix=-
+        Name text="u" base="u" suffix="!"
+    Restore
+      target: LabelTarget name="Names" key="names"
+    Read
+      targets:
+        Name text="first" base="first" suffix="$"
+        Name text="second" base="second" suffix="$"
+    Restore
+      target: LineTarget number=900
+    Read
+      targets:
+        Name text="k" base="k" suffix=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Name text="k" base="k" suffix=-
+    LineLabel number=- name="Table" key="table"
+    Data
+      values:
+        DataValue raw="120" quoted=false
+        DataValue raw="90" quoted=false
+        DataValue raw="75" quoted=false
+        DataValue raw="40" quoted=false
+        DataValue raw="10" quoted=false
+    Data
+      values:
+        DataValue raw="quoted, with comma" quoted=true
+        DataValue raw="plain text" quoted=false
+        DataValue raw="&HFF" quoted=false
+        DataValue raw="1.5" quoted=false
+    LineLabel number=- name="Names" key="names"
+    Data
+      values:
+        DataValue raw="ANN" quoted=false
+        DataValue raw="BOB" quoted=false
+    LineLabel number=900 name=- key=-
+    Data
+      values:
+        DataValue raw="42" quoted=false
+    Let explicitLet=false
+      target: Name text="m" base="m" suffix="$"
+      value: StringLit value="ABCDEFGH"
+    MidAssign
+      target: Name text="m" base="m" suffix="$"
+      start: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+      length: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+      value: StringLit value="xyz"
+    MidAssign length=-
+      target: Name text="m" base="m" suffix="$"
+      start: NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+      value: StringLit value="q"

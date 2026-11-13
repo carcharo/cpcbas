@@ -1,0 +1,54 @@
+Program mainFile=0
+  includes:
+  body:
+    LineLabel number=10 name=- key=-
+    Let explicitLet=false
+      target: Name text="a" base="a" suffix=-
+      value: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="b" base="b" suffix=-
+      value: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="t" base="t" suffix="$"
+      value: StringLit value="txt"
+    LineLabel number=20 name=- key=-
+    If form="line" elseBody=-
+      branches:
+        Branch
+          cond: Binary op="<"
+            left: Name text="a" base="a" suffix=-
+            right: Name text="b" base="b" suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: Name text="a" base="a" suffix=-
+                PrintExpr
+                  expr: StringLit value="is less than"
+                PrintExpr
+                  expr: Name text="b" base="b" suffix=-
+    LineLabel number=30 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Name text="a" base="a" suffix=-
+        PrintExpr
+          expr: Name text="b" base="b" suffix=-
+        PrintExpr
+          expr: Name text="t" base="t" suffix="$"
+    LineLabel number=40 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="x"
+        PrintExpr
+          expr: Name text="a" base="a" suffix=-
+        PrintExpr
+          expr: StringLit value="y"
+    LineLabel number=50 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Name text="t" base="t" suffix="$"
+        PrintExpr
+          expr: Name text="t" base="t" suffix="$"

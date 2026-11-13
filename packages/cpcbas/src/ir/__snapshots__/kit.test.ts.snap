@@ -1,0 +1,130 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`printIr > prints a program using every quad kind 1`] = `
+"main
+  ; line 10
+  ; stmt
+  ; every quad kind
+  load.i16 t0, #5
+  store.i16 _score, t0
+  load.i16 t1, _score
+  load.i16 t2, [ix-2]
+  add.i16 t3, t1, t2
+  store.i16 _score, t3
+  load.i16 t4, #7
+  sub.i16 t5, t4, #2
+  store.i16 _score, t5
+  mod.i16 t6, #9, #4
+  div.i16 t7, #9, t6
+  mul.i16 t8, #3, t7
+  store.i16 _score, t8
+  load.f t9, #1.5
+  load.f t10, #2
+  pow.f t11, t9, t10
+  store.f _r, t11
+  load.i16 t12, #1
+  xor.i16 t13, #3, #4
+  or.i16 t14, #2, t13
+  and.i16 t15, t12, t14
+  store.i16 _score, t15
+  load.u16 t16, #1
+  load.u8 t17, #3
+  shl.u16 t18, t16, t17
+  store.u16 _u, t18
+  load.u16 t19, #8
+  load.u8 t20, #1
+  shr.u16 t21, t19, t20
+  store.u16 _u, t21
+  load.str t22, s0
+  load.str t23, _s__s
+  concat.str t24, t22, t23
+  store.str _s__s, t24
+  load.i16 t25, #1
+  ne.i16 t26, #1, #2
+  eq.i16 t27, t25, t26
+  store.i16 _score, t27
+  load.i16 t28, #1
+  le.i16 t29, #1, #2
+  lt.i16 t30, t28, t29
+  store.i16 _score, t30
+  load.i16 t31, #1
+  ge.i16 t32, #1, #2
+  gt.i16 t33, t31, t32
+  store.i16 _score, t33
+  abs.i16 t34, #-3
+  not.i16 t35, t34
+  neg.i16 t36, t35
+  store.i16 _score, t36
+  load.u8 t37, #200
+  cast.i16<-u8 t38, t37
+  store.i16 _score, t38
+  peek.u8 t39, #32768
+  store.u8 _b, t39
+  load.u8 t40, #1
+  poke.u8 #32768, t40
+  in.u8 t41, #48128
+  store.u8 _b, t41
+  load.u8 t42, #2
+  out.u8 #48128, t42
+  load.u16 t43, #1
+  aaddr.i16 t44, @_a__a, 1
+  aload.i16 t45, t44
+  store.i16 _score, t45
+  load.u16 t46, #2
+  aaddr.i16 t47, [ix-6], 1
+  astore.i16 t47, #9
+.T.0:
+  jz.i16 _score, .T.1
+  jnz.i16 _score, .T.0
+  jump .T.1
+.T.1:
+  jtable #1, [.T.0, .T.1]
+  jtable.gosub #1, [.T.2]
+  gosub .T.2
+  param.i16 #1
+  param.u8 _b
+  call _Add, 4
+  call _Twice, 2 -> i16 t48
+  store.i16 _score, t48
+  fparam.str s0
+  rtcall .core.__PRINTSTR
+  rtcall .core.__RND -> i16 t49
+  store.i16 _score, t49
+  store.i16 [[ix+4]], @[ix-2]
+  asm "ld a, 1"
+  asm "nop"
+  jump .T.3
+.T.2:
+  retsub
+.T.3:
+  end #0
+
+proc _Twice stdcall (i16 [ix+4], u8 [[ix+6]]) -> i16
+_Twice:
+  enter 2
+  load.i16 t0, [ix+4]
+  store.i16 [ix-2], t0
+  ret.i16 [ix-2], _Twice__leave
+_Twice__leave:
+  leave 2 stdcall
+
+proc _Add fastcall ()
+_Add:
+  enter 0
+_Add__leave:
+  leave 4 fastcall
+
+global _score i16 size=2
+global _a__a i16 size=12 dims=[5] init=0100ff
+global _scr u8 size=0 at=49152
+
+string s0 .S.0 "Hi\\"\\\\\\x0a"
+
+data .D.100 i16 -5
+data - str "A"
+
+require "print.asm"
+
+init .core.__MY_INIT
+"
+`;

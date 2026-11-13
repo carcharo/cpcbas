@@ -1,0 +1,198 @@
+Program mainFile=0
+  includes:
+  body:
+    LineLabel number=10 name=- key=-
+    Builtin keyword="KEY" stream=- typeArg=-
+      args:
+        NumberLit value=140 text="140" radix=10 isReal=false suffix=-
+        Binary op="+"
+          left: StringLit value="RUN"
+          right: BuiltinCall keyword="CHR$" parens=true typeArg=- stream=-
+            args:
+              NumberLit value=13 text="13" radix=10 isReal=false suffix=-
+    LineLabel number=20 name=- key=-
+    Builtin keyword="KEY" stream=- typeArg=-
+      args:
+        NumberLit value=129 text="129" radix=10 isReal=false suffix=-
+        StringLit value="hello"
+    LineLabel number=30 name=- key=-
+    Builtin keyword="KEY DEF" stream=- typeArg=-
+      args:
+        NumberLit value=46 text="46" radix=10 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        NumberLit value=63 text="63" radix=10 isReal=false suffix=-
+    LineLabel number=40 name=- key=-
+    Builtin keyword="KEY DEF" stream=- typeArg=-
+      args:
+        NumberLit value=47 text="47" radix=10 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        NumberLit value=64 text="64" radix=10 isReal=false suffix=-
+        NumberLit value=65 text="65" radix=10 isReal=false suffix=-
+        NumberLit value=66 text="66" radix=10 isReal=false suffix=-
+    LineLabel number=50 name=- key=-
+    Builtin keyword="SPEED KEY" stream=- typeArg=-
+      args:
+        NumberLit value=20 text="20" radix=10 isReal=false suffix=-
+        NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+    LineLabel number=60 name=- key=-
+    Builtin keyword="CLEAR INPUT" stream=- typeArg=-
+      args:
+    LineLabel number=70 name=- key=-
+    Input line=false stream=- prompt=- promptSep=- keepCursor=false
+      targets:
+        Name text="a" base="a" suffix=-
+    LineLabel number=80 name=- key=-
+    Input line=false stream=- prompt=- promptSep=- keepCursor=false
+      targets:
+        Name text="a" base="a" suffix=-
+        Name text="b" base="b" suffix="$"
+    LineLabel number=90 name=- key=-
+    Input line=false stream=- promptSep=";" keepCursor=false
+      prompt: StringLit value="Name"
+      targets:
+        Name text="n" base="n" suffix="$"
+    LineLabel number=100 name=- key=-
+    Input line=false stream=- promptSep="," keepCursor=false
+      prompt: StringLit value="Age"
+      targets:
+        Name text="age" base="age" suffix=-
+    LineLabel number=110 name=- key=-
+    Input line=false stream=- promptSep=";" keepCursor=false
+      prompt: StringLit value="Pair: "
+      targets:
+        Name text="p" base="p" suffix=-
+        Name text="q" base="q" suffix=-
+    LineLabel number=130 name=- key=-
+    Input line=true stream=- prompt=- promptSep=- keepCursor=false
+      targets:
+        Name text="l" base="l" suffix="$"
+    LineLabel number=140 name=- key=-
+    Input line=true stream=- promptSep=";" keepCursor=false
+      prompt: StringLit value="Line"
+      targets:
+        Name text="m" base="m" suffix="$"
+    LineLabel number=160 name=- key=-
+    Input line=false prompt=- promptSep=- keepCursor=false
+      stream: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+      targets:
+        Name text="e" base="e" suffix=-
+    LineLabel number=170 name=- key=-
+    Input line=true prompt=- promptSep=- keepCursor=false
+      stream: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+      targets:
+        Name text="g" base="g" suffix="$"
+    LineLabel number=180 name=- key=-
+    Let explicitLet=false
+      target: Name text="k" base="k" suffix="$"
+      value: BuiltinCall keyword="INKEY$" parens=false typeArg=- stream=-
+        args:
+    LineLabel number=190 name=- key=-
+    If form="line" elseBody=-
+      branches:
+        Branch
+          cond: Binary op="="
+            left: Name text="k" base="k" suffix="$"
+            right: StringLit value=""
+          body:
+            Goto implicit=true
+              target: LineTarget number=180
+    LineLabel number=200 name=- key=-
+    If form="line" elseBody=-
+      branches:
+        Branch
+          cond: Binary op="="
+            left: BuiltinCall keyword="INKEY" parens=true typeArg=- stream=-
+              args:
+                NumberLit value=47 text="47" radix=10 isReal=false suffix=-
+            right: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="space"
+    LineLabel number=210 name=- key=-
+    If form="line" elseBody=-
+      branches:
+        Branch
+          cond: Binary op="OR"
+            left: Binary op="="
+              left: BuiltinCall keyword="INKEY" parens=true typeArg=- stream=-
+                args:
+                  NumberLit value=21 text="21" radix=10 isReal=false suffix=-
+              right: NumberLit value=32 text="32" radix=10 isReal=false suffix=-
+            right: Binary op="="
+              left: BuiltinCall keyword="INKEY" parens=true typeArg=- stream=-
+                args:
+                  NumberLit value=21 text="21" radix=10 isReal=false suffix=-
+              right: NumberLit value=128 text="128" radix=10 isReal=false suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="modified"
+    LineLabel number=220 name=- key=-
+    Let explicitLet=false
+      target: Name text="j" base="j" suffix=-
+      value: BuiltinCall keyword="JOY" parens=true typeArg=- stream=-
+        args:
+          NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="j1" base="j1" suffix=-
+      value: BuiltinCall keyword="JOY" parens=true typeArg=- stream=-
+        args:
+          NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    LineLabel number=230 name=- key=-
+    If form="line" elseBody=-
+      branches:
+        Branch
+          cond: Binary op="AND"
+            left: BuiltinCall keyword="JOY" parens=true typeArg=- stream=-
+              args:
+                NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+            right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="up"
+    LineLabel number=240 name=- key=-
+    If form="line" elseBody=-
+      branches:
+        Branch
+          cond: Binary op="="
+            left: Binary op="AND"
+              left: Name text="j" base="j" suffix=-
+              right: NumberLit value=8 text="8" radix=10 isReal=false suffix=-
+            right: NumberLit value=8 text="8" radix=10 isReal=false suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="right"
+    LineLabel number=250 name=- key=-
+    If form="line" elseBody=-
+      branches:
+        Branch
+          cond: Binary op="AND"
+            left: Name text="j" base="j" suffix=-
+            right: NumberLit value=16 text="16" radix=10 isReal=false suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="fire"
+    LineLabel number=260 name=- key=-
+    Let explicitLet=false
+      target: Name text="a" base="a" suffix="$"
+      value: BuiltinCall keyword="UPPER$" parens=true typeArg=- stream=-
+        args:
+          BuiltinCall keyword="INKEY$" parens=false typeArg=- stream=-
+            args:
+    LineLabel number=270 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Name text="a" base="a" suffix="$"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="j1" base="j1" suffix=-

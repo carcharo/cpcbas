@@ -1,0 +1,8 @@
+0040: .core.__CPC_FH_RUN
+0080: .core.__CPC_GM_ISR
+009D: .core.__FW_CALL
+00B7: .core.__FW_CALL_TARGET
+00C8: .core.__FW_CALL_IX
+00E4: .core.__FW_CALL_IX_TARGET
+00F7: .core.CPC_INIT_FRAMEHOOK
+0106: .core.__CPC_FH_EVENT

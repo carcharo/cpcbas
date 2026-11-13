@@ -1,0 +1,5 @@
+10 PRINT "A"
+20 PRINT "B";
+30 PRINT "C"
+40 PRINT
+50 PRINT CHR$(7);"x";CHR$(12);"y"

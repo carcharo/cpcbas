@@ -1,0 +1,17 @@
+0040: .core.__FW_CALL
+005A: .core.__FW_CALL_TARGET
+006B: .core.__FW_CALL_IX
+0087: .core.__FW_CALL_IX_TARGET
+009A: .core.__CPC_ISR_INSTALL
+00AC: .core.__CPC_ISR
+00EE: .core.__CPC_ISR_GAME
+00F4: .core.__CPC_ISR_DIRECT
+00F5: .core.__CPC_ISR_ORIG
+00F8: .core.__CPC_SND_QUEUE
+0105: .core.__SND_PER_OK
+0125: .core.__SND_VOL_464
+0126: .core.__SND_VOL_OK
+0141: .core.__CPC_SND_CHECK
+0147: .core.__CPC_SND_BUSY
+0159: .core.__CPC_SND_ENV
+017A: .core.__CPC_SND_RESET

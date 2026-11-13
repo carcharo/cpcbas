@@ -1,0 +1,177 @@
+Program mainFile=0
+  includes:
+  body:
+    LineLabel number=10 name=- key=-
+    Builtin keyword="MODE" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    DefType type="INTEGER"
+      ranges:
+        Range from="a" to="z"
+    Builtin keyword="SYMBOL AFTER" stream=- typeArg=-
+      args:
+        NumberLit value=240 text="240" radix=10 isReal=false suffix=-
+    LineLabel number=20 name=- key=-
+    Builtin keyword="SYMBOL" stream=- typeArg=-
+      args:
+        NumberLit value=240 text="240" radix=10 isReal=false suffix=-
+        NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+        NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+        NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+        NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+        NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+        NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+        NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+        NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+    LineLabel number=30 name=- key=-
+    Dim
+      decls:
+        DimDecl type=- init=- at=-
+          name: Name text="v" base="v" suffix=-
+          bounds:
+            NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+        DimDecl type=- init=- at=-
+          name: Name text="n" base="n" suffix="$"
+          bounds:
+            NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+    LineLabel number=40 name=- key=-
+    For step=- nextName=-
+      variable: Name text="i" base="i" suffix=-
+      from: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+      to: NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+      body:
+        Read
+          targets:
+            CallOrIndex
+              callee: Name text="n" base="n" suffix="$"
+              args:
+                Name text="i" base="i" suffix=-
+            CallOrIndex
+              callee: Name text="v" base="v" suffix=-
+              args:
+                Name text="i" base="i" suffix=-
+    LineLabel number=50 name=- key=-
+    Builtin keyword="WINDOW" typeArg=-
+      stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      args:
+        NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+        NumberLit value=39 text="39" radix=10 isReal=false suffix=-
+        NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+        NumberLit value=20 text="20" radix=10 isReal=false suffix=-
+    Builtin keyword="PAPER" typeArg=-
+      stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Builtin keyword="PEN" typeArg=-
+      stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      args:
+        NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+    Builtin keyword="CLS" typeArg=-
+      stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      args:
+    LineLabel number=60 name=- key=-
+    For step=-
+      variable: Name text="i" base="i" suffix=-
+      from: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+      to: NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+      body:
+        LineLabel number=70 name=- key=-
+        Builtin keyword="LOCATE" typeArg=-
+          stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+          args:
+            NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+            Binary op="+"
+              left: Binary op="*"
+                left: Name text="i" base="i" suffix=-
+                right: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+              right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        LineLabel number=80 name=- key=-
+        Print
+          stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+          items:
+            PrintExpr
+              expr: CallOrIndex
+                callee: Name text="n" base="n" suffix="$"
+                args:
+                  Name text="i" base="i" suffix=-
+            PrintSep sep=";"
+            PrintTab
+              column: NumberLit value=8 text="8" radix=10 isReal=false suffix=-
+            PrintSep sep=";"
+        LineLabel number=90 name=- key=-
+        Print
+          stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+          items:
+            PrintExpr
+              expr: BuiltinCall keyword="STRING$" parens=true typeArg=- stream=-
+                args:
+                  Binary op="/"
+                    left: CallOrIndex
+                      callee: Name text="v" base="v" suffix=-
+                      args:
+                        Name text="i" base="i" suffix=-
+                    right: NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+                  NumberLit value=240 text="240" radix=10 isReal=false suffix=-
+            PrintSep sep=";"
+        LineLabel number=100 name=- key=-
+        Print
+          stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+          items:
+            PrintUsing
+              format: StringLit value=" ###"
+            PrintSep sep=";"
+            PrintExpr
+              expr: CallOrIndex
+                callee: Name text="v" base="v" suffix=-
+                args:
+                  Name text="i" base="i" suffix=-
+        LineLabel number=110 name=- key=-
+      nextName: Name text="i" base="i" suffix=-
+    LineLabel number=120 name=- key=-
+    Let explicitLet=false
+      target: Name text="m" base="m" suffix=-
+      value: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+    For step=- nextName=-
+      variable: Name text="i" base="i" suffix=-
+      from: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+      to: NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+      body:
+        If form="line" elseBody=-
+          branches:
+            Branch
+              cond: Binary op=">"
+                left: CallOrIndex
+                  callee: Name text="v" base="v" suffix=-
+                  args:
+                    Name text="i" base="i" suffix=-
+                right: Name text="m" base="m" suffix=-
+              body:
+                Let explicitLet=false
+                  target: Name text="m" base="m" suffix=-
+                  value: CallOrIndex
+                    callee: Name text="v" base="v" suffix=-
+                    args:
+                      Name text="i" base="i" suffix=-
+        LineLabel number=130 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="max"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="m" base="m" suffix=-
+    LineLabel number=140 name=- key=-
+    Data
+      values:
+        DataValue raw="north" quoted=false
+        DataValue raw="80" quoted=false
+        DataValue raw="south" quoted=false
+        DataValue raw="45" quoted=false
+        DataValue raw="east" quoted=false
+        DataValue raw="120" quoted=false
+        DataValue raw="west" quoted=false
+        DataValue raw="60" quoted=false
+        DataValue raw="up" quoted=false
+        DataValue raw="30" quoted=false
+        DataValue raw="down" quoted=false
+        DataValue raw="100" quoted=false

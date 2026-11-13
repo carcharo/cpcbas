@@ -1,0 +1,33 @@
+;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; © Copyright 2008-2024 José Manuel Rodríguez de la Rosa and contributors.
+;; See the file CONTRIBUTORS.md of zxbasic (https://github.com/boriel-basic/zxbasic) for copyright details.
+;; Ported from zxbasic src/arch/z80/peephole/opts/006_o1_push_af_pop_XX.opt at e33cf0cd (cpcbas L5-PEEP; changes: IF added: every register is dead after the window ($0), since the low byte (F or L) is not copied).
+
+;; Replaces sequence:
+;;  push af
+;;  pop XY
+;; with
+;;  ld X, a
+;; (also reverse order allowed)
+;; The low byte (F, or L, E, C) is not copied, so the window must end where registers are dead ($0).
+
+OLEVEL: 1
+OFLAG: 7
+
+REPLACE {{
+ push $1
+ pop $2
+}}
+
+IF {{
+  $0 && ($1 <> $2) && (($1 == af) || ($2 == af))
+}}
+
+DEFINE {{
+  $3 = HIREG($1)
+  $4 = HIREG($2)
+}}
+
+WITH {{
+ ld $4, $3
+}}

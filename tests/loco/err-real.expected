@@ -1,0 +1,40 @@
+addOverflow
+ 1.70141E+38 
+subOverflow
+-1.70141E+38 
+mulOverflow
+ 1.70141E+38 
+divOverflow
+ 1.70141E+38 
+div0Division by zero
+ 1.70141E+38 
+negdiv0Division by zero
+-1.70141E+38 
+div00Division by zero
+ 1.70141E+38 
+log0Overflow
+ 0 
+lognegOverflow
+-1 
+log100Overflow
+ 0 
+exp88 1.65164E+38 
+exp89Overflow
+ 1.70141E+38 
+expneg 0 
+pow0negDivision by zero
+ 1.70141E+38 
+pow00 1 
+powbigOverflow
+ 1.70141E+38 
+powsmall 0 
+Division by zero
+ 1.70141E+38 
+tan90Division by zero
+ 1.70141E+38 
+sin1e5 3.57533E-02 
+int 1E+10 
+atn 1.57079633 
+Division by zero
+after 1.70141E+38 
+end

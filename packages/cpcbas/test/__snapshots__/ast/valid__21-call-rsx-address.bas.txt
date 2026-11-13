@@ -1,0 +1,178 @@
+Program mainFile=0
+  includes:
+  body:
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="buf" base="buf" suffix=-
+          bounds:
+            NumberLit value=15 text="15" radix=10 isReal=false suffix=-
+          type: TypeRef name="UBYTE" text="UBYTE"
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="w" base="w" suffix=-
+          bounds:
+          type: TypeRef name="UINTEGER" text="UINTEGER"
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="addr" base="addr" suffix=-
+          bounds:
+          type: TypeRef name="UINTEGER" text="UINTEGER"
+    Let explicitLet=false
+      target: Name text="addr" base="addr" suffix=-
+      value: NumberLit value=32768 text="&8000" radix=16 isReal=false suffix=-
+    Call
+      address: NumberLit value=47896 text="&BB18" radix=16 isReal=false suffix=-
+      args:
+    Call
+      address: NumberLit value=48130 text="&BC02" radix=16 isReal=false suffix=-
+      args:
+    Call
+      address: Name text="KM_WAIT_KEY" base="km_wait_key" suffix=-
+      args:
+    Call
+      address: Name text="addr" base="addr" suffix=-
+      args:
+    Call
+      address: Name text="addr" base="addr" suffix=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Call
+      address: NumberLit value=32768 text="&8000" radix=16 isReal=false suffix=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+        AddressOf
+          target: Name text="buf" base="buf" suffix=-
+        StringLit value="text"
+    Call
+      address: AddressOf
+        target: Name text="Handler" base="handler" suffix=-
+      args:
+    Rsx name="DISC"
+      args:
+    Rsx name="TAPE"
+      args:
+    Rsx name="A"
+      args:
+    Rsx name="B"
+      args:
+    Rsx name="DIR"
+      args:
+    Rsx name="ERA"
+      args:
+        StringLit value="old.bas"
+    Rsx name="REN"
+      args:
+        StringLit value="new.bas"
+        StringLit value="old.bas"
+    Rsx name="USER"
+      args:
+        NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+    Rsx name="DRIVE"
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Rsx name="CPM"
+      args:
+    Rsx name="MYCMD"
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+        NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="after the bar commands"
+    Rsx name="DIR"
+      args:
+    Let explicitLet=false
+      target: Name text="w" base="w" suffix=-
+      value: AddressOf
+        target: Name text="buf" base="buf" suffix=-
+    Let explicitLet=false
+      target: Name text="w" base="w" suffix=-
+      value: Binary op="+"
+        left: AddressOf
+          target: Name text="Handler" base="handler" suffix=-
+        right: AddressOf
+          target: Name text="Start" base="start" suffix=-
+    Let explicitLet=false
+      target: Name text="b" base="b" suffix=-
+      value: BuiltinCall keyword="CAST" parens=true stream=-
+        typeArg: TypeRef name="UBYTE" text="UBYTE"
+        args:
+          Name text="w" base="w" suffix=-
+    Let explicitLet=false
+      target: Name text="l" base="l" suffix=-
+      value: Binary op="*"
+        left: BuiltinCall keyword="CAST" parens=true stream=-
+          typeArg: TypeRef name="LONG" text="LONG"
+          args:
+            Name text="b" base="b" suffix=-
+        right: NumberLit value=1000 text="1000" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="r" base="r" suffix=-
+      value: Binary op="/"
+        left: BuiltinCall keyword="CAST" parens=true stream=-
+          typeArg: TypeRef name="REAL" text="REAL"
+          args:
+            Name text="w" base="w" suffix=-
+        right: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="x" base="x" suffix=-
+      value: BuiltinCall keyword="PEEK" parens=true typeArg=- stream=-
+        args:
+          Name text="addr" base="addr" suffix=-
+    Let explicitLet=false
+      target: Name text="y" base="y" suffix=-
+      value: BuiltinCall keyword="PEEK" parens=true stream=-
+        typeArg: TypeRef name="UINTEGER" text="UINTEGER"
+        args:
+          Name text="addr" base="addr" suffix=-
+    Builtin keyword="POKE" stream=- typeArg=-
+      args:
+        Name text="addr" base="addr" suffix=-
+        NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+    Builtin keyword="POKE" stream=-
+      typeArg: TypeRef name="UINTEGER" text="UINTEGER"
+      args:
+        Name text="addr" base="addr" suffix=-
+        NumberLit value=1234 text="1234" radix=10 isReal=false suffix=-
+    Builtin keyword="POKE" stream=- typeArg=-
+      args:
+        Binary op="+"
+          left: Name text="addr" base="addr" suffix=-
+          right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        Binary op="+"
+          left: BuiltinCall keyword="PEEK" parens=true typeArg=- stream=-
+            args:
+              Name text="addr" base="addr" suffix=-
+          right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="s" base="s" suffix=-
+      value: Binary op="+"
+        left: Binary op="+"
+          left: Binary op="+"
+            left: BuiltinCall keyword="SIZEOF" parens=true stream=-
+              typeArg: TypeRef name="UBYTE" text="UBYTE"
+              args:
+            right: BuiltinCall keyword="SIZEOF" parens=true stream=-
+              typeArg: TypeRef name="UINTEGER" text="UINTEGER"
+              args:
+          right: BuiltinCall keyword="SIZEOF" parens=true typeArg=- stream=-
+            args:
+              Name text="buf" base="buf" suffix=-
+        right: BuiltinCall keyword="SIZEOF" parens=true typeArg=- stream=-
+          args:
+            Name text="w" base="w" suffix=-
+    LineLabel number=- name="Start" key="start"
+    Procedure procKind="SUB" convention=- returnType=-
+      name: Name text="Handler" base="handler" suffix=-
+      params:
+      body:
+        Print stream=-
+          items:
+            PrintExpr
+              expr: StringLit value="called from machine code"

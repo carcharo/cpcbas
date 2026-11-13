@@ -1,0 +1,3 @@
+2:4 E981 RUN with no argument is not in 1.0
+3:4 E981 RUN with a line number is not in 1.0
+4:4 E981 RUN with a string variable is not in 1.0

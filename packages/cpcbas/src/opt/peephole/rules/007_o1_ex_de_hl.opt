@@ -1,0 +1,21 @@
+;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; © Copyright 2008-2024 José Manuel Rodríguez de la Rosa and contributors.
+;; See the file CONTRIBUTORS.md of zxbasic (https://github.com/boriel-basic/zxbasic) for copyright details.
+;; Ported from zxbasic src/arch/z80/peephole/opts/007_o1_ex_de_hl.opt at e33cf0cd (cpcbas L5-PEEP; changes: none).
+
+;; Remove sequence:
+;; ex de, hl
+;; ex de, hl
+;;
+;; Also works with ex af, af' and exx
+
+OLEVEL: 1
+OFLAG: 8
+
+REPLACE {{
+ ex$1
+ ex$1
+}}
+
+WITH {{
+}}

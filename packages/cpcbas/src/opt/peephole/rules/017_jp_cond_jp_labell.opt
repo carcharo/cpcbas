@@ -1,0 +1,35 @@
+;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; © Copyright 2008-2024 José Manuel Rodríguez de la Rosa and contributors.
+;; See the file CONTRIBUTORS.md of zxbasic (https://github.com/boriel-basic/zxbasic) for copyright details.
+;; Ported from zxbasic src/arch/z80/peephole/opts/017_jp_cond_jp_labell.opt at e33cf0cd (cpcbas L5-PEEP; changes: none).
+
+;; Replace sequence:
+;;  jp <condition>, __LABEL
+;;  jp OTHER
+;; __LABEL:
+;;
+;; With:
+;;  jp !<condition>, OTHER
+
+OLEVEL: 1
+OFLAG: 17
+
+REPLACE {{
+  $1 $2, $3
+  $4 $5
+$3:
+}}
+
+;; Defines $4 as the negated condition
+DEFINE {{
+  $6 = (($2 == nc) && c) || (($2 == c) && nc) || (($2 == nz) && z) || (($2 == z) && nz)
+}}
+
+IF {{
+  $6 && (LEN($5) == 1) && (($1 == jp) || ($1 == jr)) && (($4 == jp) || ($4 == jr))
+}}
+
+WITH {{
+ $4 $6, $5
+$3:
+}}

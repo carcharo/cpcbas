@@ -1,0 +1,33 @@
+;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; cpcbas L5-PEEP: our own rule (docs/ir.md "The rule files").
+
+;; ld de, 1
+;; ld hl, X
+;; add hl, de
+;;
+;; With:
+;; ld hl, X
+;; inc hl
+;;
+;; The generated form of `variable + constant` (263 times in the size set at RC3): the constant is
+;; loaded into DE first, the variable second. DE and the flags are dead after the quad's add ($00:
+;; add:u16 and add:i16 pop b into DE, add hl, de, and push or hand over HL). X is a label or an
+;; immediate, never DE.
+
+OLEVEL: 1
+OFLAG: 504
+
+REPLACE {{
+  ld de, 1
+  ld hl, $1
+  add hl, de
+}}
+
+IF {{
+  !IS_REG16($1) && ($00 IN ("add:u16", "add:i16"))
+}}
+
+WITH {{
+  ld hl, $1
+  inc hl
+}}

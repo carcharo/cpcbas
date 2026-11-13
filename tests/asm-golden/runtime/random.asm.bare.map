@@ -1,0 +1,3 @@
+0040: .core.RANDOMIZE
+005B: .core.RAND
+0079: .core.RND

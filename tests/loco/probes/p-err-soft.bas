@@ -1,0 +1,13 @@
+10 DEFREAL a-z
+20 y=0:z=-1:w=5
+30 PRINT "p/0";w/y
+40 PRINT "n/0";z/y
+50 PRINT "p/-0";w/(-y)
+60 PRINT "0/0";y/y
+70 PRINT "x*1e38";1E38*10
+80 PRINT "-x*1e38";-1E38*10
+90 PRINT "tan90";TAN(90)
+100 DEG
+110 PRINT "tan90d";TAN(90)
+120 PRINT "0^-1";y^z
+130 PRINT "end"

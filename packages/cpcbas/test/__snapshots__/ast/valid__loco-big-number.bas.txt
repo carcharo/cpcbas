@@ -1,0 +1,16 @@
+Program mainFile=0
+  includes:
+  body:
+    LineLabel number=10 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: NumberLit value=123456789012 text="123456789012" radix=10 isReal=true suffix=-
+    LineLabel number=20 name=- key=-
+    Let explicitLet=false
+      target: Name text="a" base="a" suffix=-
+      value: NumberLit value=4294967296 text="4294967296" radix=10 isReal=true suffix=-
+    LineLabel number=30 name=- key=-
+    Let explicitLet=false
+      target: Name text="b" base="b" suffix=-
+      value: NumberLit value=99999999999 text="99999999999" radix=10 isReal=true suffix=-

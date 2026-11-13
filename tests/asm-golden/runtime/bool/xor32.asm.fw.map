@@ -1,0 +1,3 @@
+0040: .core.__XOR16
+0045: .core.__XOR8
+004F: .core.__XOR32

@@ -1,0 +1,3 @@
+0040: .core.__MUL16
+0043: .core.__MUL16_FAST
+0055: .core.__FMUL16

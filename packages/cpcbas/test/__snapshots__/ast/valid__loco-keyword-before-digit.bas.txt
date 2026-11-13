@@ -1,0 +1,40 @@
+Program mainFile=0
+  includes:
+  body:
+    LineLabel number=10 name=- key=-
+    For step=- nextName=-
+      variable: Name text="i" base="i" suffix=-
+      from: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      to: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+      body:
+    LineLabel number=20 name=- key=-
+    If form="line" elseBody=-
+      branches:
+        Branch
+          cond: Binary op="="
+            left: Name text="i" base="i" suffix=-
+            right: NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+          body:
+            Goto implicit=true
+              target: LineTarget number=10
+    LineLabel number=30 name=- key=-
+    If form="line"
+      branches:
+        Branch
+          cond: Binary op="="
+            left: Name text="i" base="i" suffix=-
+            right: NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+          body:
+            Goto implicit=true
+              target: LineTarget number=20
+      elseBody:
+        Goto implicit=true
+          target: LineTarget number=30
+    LineLabel number=40 name=- key=-
+    For nextName=-
+      variable: Name text="j" base="j" suffix=-
+      from: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+      to: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      step: Unary op="-"
+        operand: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      body:

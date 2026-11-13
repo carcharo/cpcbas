@@ -1,0 +1,13 @@
+0040: .core.CPC_INIT_CB_CORE
+0049: .core.__CB_SYNC
+005D: .core.__CB_ADDR
+0084: .core.__CB_NEXT_LINE
+009B: .core.__CB_INC_X
+00A7: .core.__CB_ROW_WRAPS
+00BF: .core.CB_BASE
+00C0: .core.CB_SHOWN
+00C1: .core.CB_OFFSET
+00C3: .core.CB_DBUF
+00C4: .core.CB_TILESET
+00C6: .core.CB_TILEW
+00C7: .core.__CB_SET_BASE

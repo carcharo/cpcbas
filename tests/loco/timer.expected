@@ -1,0 +1,29 @@
+A: EVERY and AFTER
+ 4 -1  0 
+ 1  0 
+ 0  0 -1 
+ 0  0 
+B: priorities
+t0 start
+t1 start
+t3 start
+t3 end
+t2 start
+t2 end
+t1 end
+t0 end
+main done
+C: DI and EI
+ 0 
+ 2 
+D: DI in a handler, RETURN enables
+d0 start
+d0 end
+t3 start
+t3 end
+d1 start
+d1 end
+E: TIME
+-1 
+~
+end

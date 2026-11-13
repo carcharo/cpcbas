@@ -1,0 +1,20 @@
+;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; © Copyright 2008-2024 José Manuel Rodríguez de la Rosa and contributors.
+;; See the file CONTRIBUTORS.md of zxbasic (https://github.com/boriel-basic/zxbasic) for copyright details.
+;; Ported from zxbasic src/arch/z80/peephole/opts/103_o3_xor_a.opt at e33cf0cd (cpcbas L5-PEEP; changes: none; OLEVEL 3/4, kept as data for L5-FLOW and never run by the peephole pass).
+
+;; Removes useless XOR a
+
+OLEVEL: 3
+OFLAG: 103
+
+REPLACE {{
+  xor a
+}}
+
+IF {{
+  (GVAL(a) == 0) && ((FLAGVAL(c) == 0 && FLAGVAL(z) == 1) || !IS_REQUIRED(f))
+}}
+
+WITH {{
+}}

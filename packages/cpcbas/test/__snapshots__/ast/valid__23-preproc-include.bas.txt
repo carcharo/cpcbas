@@ -1,0 +1,99 @@
+Program mainFile=0
+  includes:
+    Include requested="\"inc/banner.bas\"" angle=false once=false file=1 skipped=false
+    Include requested="\"inc/helpers.bas\"" angle=false once=true file=2 skipped=false
+    Include requested="\"consts.bas\"" angle=false once=true file=3 skipped=false
+    Include requested="<lib.bas>" angle=true once=true file=4 skipped=false
+    Include requested="\"inc/helpers.bas\"" angle=false once=true file=2 skipped=true
+  body:
+    Dim
+      decls:
+        DimDecl at=-
+          name: Name text="bannerText" base="bannertext" suffix=-
+          bounds:
+          type: TypeRef name="STRING" text="STRING"
+          init: StringLit value="WELCOME"
+    Const type=-
+      name: Name text="ScreenW" base="screenw" suffix=-
+      value: NumberLit value=80 text="80" radix=10 isReal=false suffix=-
+    Const type=-
+      name: Name text="ScreenH" base="screenh" suffix=-
+      value: NumberLit value=25 text="25" radix=10 isReal=false suffix=-
+    Const type=-
+      name: Name text="ColourBlack" base="colourblack" suffix=-
+      value: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+    Const type=-
+      name: Name text="ColourWhite" base="colourwhite" suffix=-
+      value: NumberLit value=26 text="26" radix=10 isReal=false suffix=-
+    Procedure procKind="SUB" convention=- returnType=-
+      name: Name text="CentreText" base="centretext" suffix=-
+      params:
+        Param passing=- isArray=false default=-
+          name: Name text="row" base="row" suffix=-
+          type: TypeRef name="UBYTE" text="UBYTE"
+        Param passing=- isArray=false default=-
+          name: Name text="text" base="text" suffix=-
+          type: TypeRef name="STRING" text="STRING"
+      body:
+        Builtin keyword="LOCATE" stream=- typeArg=-
+          args:
+            Binary op="+"
+              left: Binary op="\\"
+                left: Binary op="-"
+                  left: Name text="ScreenW" base="screenw" suffix=-
+                  right: BuiltinCall keyword="LEN" parens=true typeArg=- stream=-
+                    args:
+                      Name text="text" base="text" suffix=-
+                right: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+              right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+            Name text="row" base="row" suffix=-
+        Print stream=-
+          items:
+            PrintExpr
+              expr: Name text="text" base="text" suffix=-
+            PrintSep sep=";"
+    Procedure procKind="FUNCTION" convention=-
+      name: Name text="Clamp8" base="clamp8" suffix=-
+      params:
+        Param passing=- isArray=false default=-
+          name: Name text="v" base="v" suffix=-
+          type: TypeRef name="INTEGER" text="INTEGER"
+      returnType: TypeRef name="UBYTE" text="UBYTE"
+      body:
+        If form="line" elseBody=-
+          branches:
+            Branch
+              cond: Binary op="<"
+                left: Name text="v" base="v" suffix=-
+                right: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+              body:
+                Return
+                  value: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+        If form="line" elseBody=-
+          branches:
+            Branch
+              cond: Binary op=">"
+                left: Name text="v" base="v" suffix=-
+                right: NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+              body:
+                Return
+                  value: NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+        Return
+          value: Name text="v" base="v" suffix=-
+    Builtin keyword="MODE" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    SubCall parens=true
+      name: Name text="CentreText" base="centretext" suffix=-
+      args:
+        Binary op="\\"
+          left: Name text="ScreenH" base="screenh" suffix=-
+          right: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+        StringLit value="INCLUDED"
+    Print stream=-
+      items:
+        PrintExpr
+          expr: CallOrIndex
+            callee: Name text="Clamp8" base="clamp8" suffix=-
+            args:
+              NumberLit value=300 text="300" radix=10 isReal=false suffix=-

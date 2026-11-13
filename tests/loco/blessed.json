@@ -1,0 +1,647 @@
+{
+  "bare-text": {
+    "program": "bare-text.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "all": "bare-text.expected"
+    },
+    "sha256": {
+      "464": "033376b3a810775cbaf409c9ad3b12394b926340e1af2a59abe6815c2591749e",
+      "6128": "033376b3a810775cbaf409c9ad3b12394b926340e1af2a59abe6815c2591749e"
+    }
+  },
+  "data": {
+    "program": "data.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "all": "data.expected"
+    },
+    "sha256": {
+      "464": "4e0b7397b7873ea357d2d77ea7879f46ee50534f43873b776363537cc25d6af4",
+      "6128": "4e0b7397b7873ea357d2d77ea7879f46ee50534f43873b776363537cc25d6af4"
+    }
+  },
+  "data-empty": {
+    "program": "data-empty.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "all": "data-empty.expected"
+    },
+    "sha256": {
+      "464": "30d9c801e73abd9d402aabc25a0ac017b13c35f33395cfa65f29fb67085cec79",
+      "6128": "30d9c801e73abd9d402aabc25a0ac017b13c35f33395cfa65f29fb67085cec79"
+    }
+  },
+  "data-spelling": {
+    "program": "data-spelling.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "all": "data-spelling.expected"
+    },
+    "sha256": {
+      "464": "eb689477c922ce3c7ae52e6b06a26420e4fa324ded14663f25af6a89e3c136e9",
+      "6128": "eb689477c922ce3c7ae52e6b06a26420e4fa324ded14663f25af6a89e3c136e9"
+    }
+  },
+  "deffn": {
+    "program": "deffn.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "all": "deffn.expected"
+    },
+    "sha256": {
+      "464": "ca0d4b4e6bdbbb83ce0e46218f6e214798c1eda3051df938aa0019cb89190590",
+      "6128": "ca0d4b4e6bdbbb83ce0e46218f6e214798c1eda3051df938aa0019cb89190590"
+    }
+  },
+  "err-asc": {
+    "program": "err-asc.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "err-asc.expected"
+    },
+    "sha256": {
+      "464": "df00edff45187237c9ab12b666b77a0054e9a0d106802e1ba45c554f8f775fa5",
+      "6128": "df00edff45187237c9ab12b666b77a0054e9a0d106802e1ba45c554f8f775fa5"
+    }
+  },
+  "err-codes": {
+    "program": "err-codes.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "err-codes.expected"
+    },
+    "sha256": {
+      "464": "fa43c73210e716051307eac6341e49377be951fadd6021771ec36cb85a7db6c5",
+      "6128": "fa43c73210e716051307eac6341e49377be951fadd6021771ec36cb85a7db6c5"
+    }
+  },
+  "err-event": {
+    "program": "err-event.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "err-event.expected"
+    },
+    "sha256": {
+      "464": "2ef61bc055675fd9411cc052c6142b497534fa6ef5513546aceb4c684865a64f",
+      "6128": "2ef61bc055675fd9411cc052c6142b497534fa6ef5513546aceb4c684865a64f"
+    }
+  },
+  "err-locate0": {
+    "program": "err-locate0.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "err-locate0.expected"
+    },
+    "sha256": {
+      "464": "c9b481f007469c0c4401e4d0b6b7bd57e8fec5b58ab7c85c2e203c0b80cb7a69",
+      "6128": "c9b481f007469c0c4401e4d0b6b7bd57e8fec5b58ab7c85c2e203c0b80cb7a69"
+    }
+  },
+  "err-loop": {
+    "program": "err-loop.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "err-loop.expected"
+    },
+    "sha256": {
+      "464": "64752073e4206a8e6b2561aba0fe3025f86c32cf4237f2334a21022a50b05130",
+      "6128": "64752073e4206a8e6b2561aba0fe3025f86c32cf4237f2334a21022a50b05130"
+    }
+  },
+  "err-on": {
+    "program": "err-on.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "err-on.expected"
+    },
+    "sha256": {
+      "464": "11a3045f6eb7a6a69d3cb9975c2d8518bac4d35b2c05e87da904aa50071e6017",
+      "6128": "11a3045f6eb7a6a69d3cb9975c2d8518bac4d35b2c05e87da904aa50071e6017"
+    }
+  },
+  "err-real": {
+    "program": "err-real.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "err-real.expected"
+    },
+    "sha256": {
+      "464": "9a2fd43d8deebe3b558836b12375a74aa86326413585e36d79c1b319f40dff8f",
+      "6128": "9a2fd43d8deebe3b558836b12375a74aa86326413585e36d79c1b319f40dff8f"
+    }
+  },
+  "err-real-trap": {
+    "program": "err-real-trap.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "err-real-trap.expected"
+    },
+    "sha256": {
+      "464": "45f3140ddd3e90a617c131b2e3661c52ae57649c7a3fb9ae86d1d9593427ea4c",
+      "6128": "45f3140ddd3e90a617c131b2e3661c52ae57649c7a3fb9ae86d1d9593427ea4c"
+    }
+  },
+  "err-trap": {
+    "program": "err-trap.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "err-trap.expected"
+    },
+    "sha256": {
+      "464": "2cd3e4aa60de5afab7e795de4e7a8d2acc8759345fe61266626efd083797b77a",
+      "6128": "2cd3e4aa60de5afab7e795de4e7a8d2acc8759345fe61266626efd083797b77a"
+    }
+  },
+  "files": {
+    "program": "files.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "all": "files.expected"
+    },
+    "sha256": {
+      "464": "e5894637433b56d062fa48090f9b94f7cbd7a689d01fda4e4b582a1476195d65",
+      "6128": "e5894637433b56d062fa48090f9b94f7cbd7a689d01fda4e4b582a1476195d65"
+    }
+  },
+  "files-abandon": {
+    "program": "files-abandon.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "6128": "files-abandon.6128.expected"
+    },
+    "sha256": {
+      "6128": "d07b97a1169145321e81bc0046eaa2e1e7b47a07a3a69bc03fd07e82e250b30b"
+    }
+  },
+  "files-cross": {
+    "program": "files-cross.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "files-cross.expected"
+    },
+    "sha256": {
+      "464": "7af6976dae3b86146b366a5b8f212d121d57fcd0d9332dae8e7bdde05134fe67",
+      "6128": "7af6976dae3b86146b366a5b8f212d121d57fcd0d9332dae8e7bdde05134fe67"
+    }
+  },
+  "gfx-ink": {
+    "program": "gfx-ink.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "464": "gfx-ink.464.expected",
+      "6128": "gfx-ink.6128.expected"
+    },
+    "sha256": {
+      "464": "3598f07a6ad1a9b8af93eb5bdb31bc070743f788e63b89ee0172ec80cbb9b47b",
+      "6128": "0c50eb9406b508e08715666b95cfa8b1881184b0c59dc52b70bbd28b20499f47"
+    }
+  },
+  "gfx-origin": {
+    "program": "gfx-origin.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "gfx-origin.expected"
+    },
+    "sha256": {
+      "464": "1faffaa4f2e73eff14b259707e404cbe293cc57f0375284101eafa8756578be3",
+      "6128": "1faffaa4f2e73eff14b259707e404cbe293cc57f0375284101eafa8756578be3"
+    },
+    "shot": {
+      "464": "1ff832bb96ace3d3b274c5289b74f5d55f806dc021b6fbaa421c2f1bd5abdcc5",
+      "6128": "a71cbb3b4ce558aeddcae681534a1582c5ea168d165e072ae882ad75bff8db83"
+    }
+  },
+  "gfx-plot": {
+    "program": "gfx-plot.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "gfx-plot.expected"
+    },
+    "sha256": {
+      "464": "2c4851e4f8b285a811b81af12616be09e7b8ea70aa0772fc789cdc4004013a5c",
+      "6128": "2c4851e4f8b285a811b81af12616be09e7b8ea70aa0772fc789cdc4004013a5c"
+    },
+    "shot": {
+      "464": "7d25d285f6fb0974f4946bed40097ca00612649a0a2cf31a040a93efd3a8fe39",
+      "6128": "a5be588a38ec33791d0468500458ecbf280a1dec5cfc9aa193e35dd2843c6667"
+    }
+  },
+  "hello": {
+    "program": "hello.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "all": "hello.expected"
+    },
+    "sha256": {
+      "464": "0cc8c304351c694e4c49986906823e2eb44b86e18312296a508a3744e61032f2",
+      "6128": "0cc8c304351c694e4c49986906823e2eb44b86e18312296a508a3744e61032f2"
+    }
+  },
+  "ink": {
+    "program": "ink.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "ink.expected"
+    },
+    "sha256": {
+      "464": "14fe7013aa34a8ebca93f7f60cf7dc16887c7c93ace3d92122d7129a6077a5b4",
+      "6128": "14fe7013aa34a8ebca93f7f60cf7dc16887c7c93ace3d92122d7129a6077a5b4"
+    }
+  },
+  "instr-empty": {
+    "program": "instr-empty.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "all": "instr-empty.expected"
+    },
+    "sha256": {
+      "464": "d8012454b4a1efe91b437fc0fb7687b507759ba508b031de3cf7143641d41d8b",
+      "6128": "d8012454b4a1efe91b437fc0fb7687b507759ba508b031de3cf7143641d41d8b"
+    }
+  },
+  "int-arith": {
+    "program": "int-arith.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "all": "int-arith.expected"
+    },
+    "sha256": {
+      "464": "bc23280c4f03443f764ba6a0249e2a8c2b536f58bfc582482917d985c1ee427d",
+      "6128": "bc23280c4f03443f764ba6a0249e2a8c2b536f58bfc582482917d985c1ee427d"
+    }
+  },
+  "int-compare": {
+    "program": "int-compare.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "all": "int-compare.expected"
+    },
+    "sha256": {
+      "464": "1cbfb96656c5a607ec021d6e2c2a5bd5af45dfdba7762dc813ac00942b8080c5",
+      "6128": "1cbfb96656c5a607ec021d6e2c2a5bd5af45dfdba7762dc813ac00942b8080c5"
+    }
+  },
+  "int-compare-rev": {
+    "program": "int-compare-rev.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "6128": "int-compare-rev.6128.expected"
+    },
+    "sha256": {
+      "6128": "6bb0898af9b9554250689f6e8d4bf975826cc5dca4b5fd66b926b77b27c66b4a"
+    }
+  },
+  "int-flow": {
+    "program": "int-flow.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "all": "int-flow.expected"
+    },
+    "sha256": {
+      "464": "5f614d90af0976b22820a40022a20784f34859f5c935d8200c3b0bc19a8814c7",
+      "6128": "5f614d90af0976b22820a40022a20784f34859f5c935d8200c3b0bc19a8814c7"
+    }
+  },
+  "int-memory": {
+    "program": "int-memory.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "all": "int-memory.expected"
+    },
+    "sha256": {
+      "464": "6011326cb4f1bd3ddbaa701aece94957d37aa81505cfe5edcba4b7097307da4a",
+      "6128": "6011326cb4f1bd3ddbaa701aece94957d37aa81505cfe5edcba4b7097307da4a"
+    }
+  },
+  "int-print": {
+    "program": "int-print.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "all": "int-print.expected"
+    },
+    "sha256": {
+      "464": "1571094a4e9b5a1df85f7b744a740720d6d0706b4f3b86181ce124e4b0f60f4d",
+      "6128": "1571094a4e9b5a1df85f7b744a740720d6d0706b4f3b86181ce124e4b0f60f4d"
+    }
+  },
+  "keys-def": {
+    "program": "keys-def.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "all": "keys-def.expected"
+    },
+    "sha256": {
+      "464": "82db5668116834604e26b7870c4227b4dc86ec6b7e9aceb2ca909eaebd45f9e4",
+      "6128": "82db5668116834604e26b7870c4227b4dc86ec6b7e9aceb2ca909eaebd45f9e4"
+    }
+  },
+  "keys-inkey": {
+    "program": "keys-inkey.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "6128": "keys-inkey.6128.expected"
+    },
+    "sha256": {
+      "6128": "29460e5c83e9ef59215b8e8712be4f218f8b6f3873b1bc6af550a0cdb15e58da"
+    }
+  },
+  "keys-input": {
+    "program": "keys-input.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "all": "keys-input.expected"
+    },
+    "sha256": {
+      "464": "84415436617dbae07351ba30280f6a8acfc2b77be767d9932c4cb11bf156e96f",
+      "6128": "84415436617dbae07351ba30280f6a8acfc2b77be767d9932c4cb11bf156e96f"
+    }
+  },
+  "locate-past": {
+    "program": "locate-past.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "locate-past.expected"
+    },
+    "sha256": {
+      "464": "764e193da9c966095098e0fb0cd525d183ffad077acf32b41f2b521f69aa588b",
+      "6128": "764e193da9c966095098e0fb0cd525d183ffad077acf32b41f2b521f69aa588b"
+    },
+    "shot": {
+      "464": "7a797f456c8c8d88af66c37fc103adcec331618bcebd84acbea1e723918a1e95",
+      "6128": "7a797f456c8c8d88af66c37fc103adcec331618bcebd84acbea1e723918a1e95"
+    }
+  },
+  "locate-range": {
+    "program": "locate-range.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "all": "locate-range.expected"
+    },
+    "sha256": {
+      "464": "14b3f80c278e47fe47690941cadc3b890ee826f18f65ecd9a2704a03d9ebe17b",
+      "6128": "14b3f80c278e47fe47690941cadc3b890ee826f18f65ecd9a2704a03d9ebe17b"
+    }
+  },
+  "machine": {
+    "program": "machine.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "machine.expected"
+    },
+    "sha256": {
+      "464": "1dc2371ca7f0f076076f04bef917d3fc0252443aeab52bb624af905e8521a6b3",
+      "6128": "1dc2371ca7f0f076076f04bef917d3fc0252443aeab52bb624af905e8521a6b3"
+    }
+  },
+  "machine-frame": {
+    "program": "machine-frame.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "6128": "machine-frame.6128.expected"
+    },
+    "sha256": {
+      "6128": "93c7d602c40b4d70d970824bab4bb3262b9b69d15dfea432c67f33ea2a56aeb1"
+    }
+  },
+  "on-range": {
+    "program": "on-range.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "all": "on-range.expected"
+    },
+    "sha256": {
+      "464": "7ecdd610e29ff30e62099babc8bd949c159af87d466bcb3ba448ba5cf5dc1073",
+      "6128": "7ecdd610e29ff30e62099babc8bd949c159af87d466bcb3ba448ba5cf5dc1073"
+    }
+  },
+  "real-arith": {
+    "program": "real-arith.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "real-arith.expected"
+    },
+    "sha256": {
+      "464": "4132f84c6a96d46594e526d5cd1c77b73611d08f882d1cbb924c6ede8807c03c",
+      "6128": "4132f84c6a96d46594e526d5cd1c77b73611d08f882d1cbb924c6ede8807c03c"
+    }
+  },
+  "real-basic": {
+    "program": "real-basic.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "all": "real-basic.expected"
+    },
+    "sha256": {
+      "464": "c5845e92562e617cc59a4452e65bb36bb7baed6a5ef051376dc2cd0f17d0ddb6",
+      "6128": "c5845e92562e617cc59a4452e65bb36bb7baed6a5ef051376dc2cd0f17d0ddb6"
+    }
+  },
+  "real-bytes": {
+    "program": "real-bytes.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "real-bytes.expected"
+    },
+    "sha256": {
+      "464": "4670646b888b8f5efbb044d2ac5966f3f7e517851348ec5e72498df6da0dfc17",
+      "6128": "4670646b888b8f5efbb044d2ac5966f3f7e517851348ec5e72498df6da0dfc17"
+    }
+  },
+  "real-fn": {
+    "program": "real-fn.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "real-fn.expected"
+    },
+    "sha256": {
+      "464": "8e182f71acdaa3ecf103fecc153b6065318ba253df36ab37a2fd9e3e6a7537f9",
+      "6128": "8e182f71acdaa3ecf103fecc153b6065318ba253df36ab37a2fd9e3e6a7537f9"
+    }
+  },
+  "real-rnd": {
+    "program": "real-rnd.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "real-rnd.expected"
+    },
+    "sha256": {
+      "464": "ecbd4c129df67ce5bf102af7ba24b7ec73a711d96f010c07d09527c17aab9396",
+      "6128": "ecbd4c129df67ce5bf102af7ba24b7ec73a711d96f010c07d09527c17aab9396"
+    }
+  },
+  "real-round": {
+    "program": "real-round.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "real-round.expected"
+    },
+    "sha256": {
+      "464": "e840f6a993d01465a44d1847417c170eb17b3f6c50989f8006fd510e6a271791",
+      "6128": "e840f6a993d01465a44d1847417c170eb17b3f6c50989f8006fd510e6a271791"
+    }
+  },
+  "real-text": {
+    "program": "real-text.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "real-text.expected"
+    },
+    "sha256": {
+      "464": "218508eda143063173899769408d6a730a254f43317130bb514a5d6f3bda3b86",
+      "6128": "218508eda143063173899769408d6a730a254f43317130bb514a5d6f3bda3b86"
+    }
+  },
+  "real-val": {
+    "program": "real-val.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "real-val.expected"
+    },
+    "sha256": {
+      "464": "bcd22d2cf8218e0c1807e13f004ba97c88ea9b83b49bf61eca46d52935e0330e",
+      "6128": "bcd22d2cf8218e0c1807e13f004ba97c88ea9b83b49bf61eca46d52935e0330e"
+    }
+  },
+  "shot-plot": {
+    "program": "shot-plot.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "shot-plot.expected"
+    },
+    "sha256": {
+      "464": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "6128": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "shot": {
+      "464": "fddc1873b7156edebe83413f239bec7fca60e578b738f523a75cc78065c165d3",
+      "6128": "fddc1873b7156edebe83413f239bec7fca60e578b738f523a75cc78065c165d3"
+    }
+  },
+  "sound": {
+    "program": "sound.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "sound.expected"
+    },
+    "sha256": {
+      "464": "ed731e95585f9055540cca5a680aec9ee77a3706280b12db6c442fd318b95733",
+      "6128": "ed731e95585f9055540cca5a680aec9ee77a3706280b12db6c442fd318b95733"
+    }
+  },
+  "str-basic": {
+    "program": "str-basic.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "all": "str-basic.expected"
+    },
+    "sha256": {
+      "464": "d0eb7bfcdac1937f12141f84207cb142a947406df67610d837311cbef428482d",
+      "6128": "d0eb7bfcdac1937f12141f84207cb142a947406df67610d837311cbef428482d"
+    }
+  },
+  "str-dec": {
+    "program": "str-dec.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "6128": "str-dec.6128.expected"
+    },
+    "sha256": {
+      "6128": "1f1de88474d7bb3630397aacbd581c28693ec1f45cc08965310f10c4e2aef52b"
+    }
+  },
+  "str-more": {
+    "program": "str-more.bas",
+    "emulator": "Caprice32",
+    "files": {
+      "all": "str-more.expected"
+    },
+    "sha256": {
+      "464": "b088760523c8a528ab589800671971c664e32bf30f418ea910358e126cb21701",
+      "6128": "b088760523c8a528ab589800671971c664e32bf30f418ea910358e126cb21701"
+    }
+  },
+  "text-copychr": {
+    "program": "text-copychr.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "6128": "text-copychr.6128.expected"
+    },
+    "sha256": {
+      "6128": "3f3e8cdddcc6af7516abcd3c35bdedf703f9379f158d7c2190d53e84aa344dc8"
+    }
+  },
+  "text-printer": {
+    "program": "text-printer.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "text-printer.expected"
+    },
+    "sha256": {
+      "464": "74c0f78b08928b6ce2e734086b08e3402d8087b06c45e19b0c94e6ee0c8be032",
+      "6128": "74c0f78b08928b6ce2e734086b08e3402d8087b06c45e19b0c94e6ee0c8be032"
+    }
+  },
+  "text-symbol": {
+    "program": "text-symbol.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "text-symbol.expected"
+    },
+    "sha256": {
+      "464": "4ce33bd27783905161ac962433b8ea6526251815bc2e6f0ba893d2db074a6b90",
+      "6128": "4ce33bd27783905161ac962433b8ea6526251815bc2e6f0ba893d2db074a6b90"
+    },
+    "shot": {
+      "464": "9f4d9a032204a7a6107f534da351c44a81ef8b3b2b04a2156b1f2c31945a9092",
+      "6128": "9f4d9a032204a7a6107f534da351c44a81ef8b3b2b04a2156b1f2c31945a9092"
+    }
+  },
+  "text-using": {
+    "program": "text-using.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "text-using.expected"
+    },
+    "sha256": {
+      "464": "ad040b4f96b247dab6c700191563ccc8aa781b75aa6ae81361b5e9033921bb4e",
+      "6128": "ad040b4f96b247dab6c700191563ccc8aa781b75aa6ae81361b5e9033921bb4e"
+    }
+  },
+  "text-using11": {
+    "program": "text-using11.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "6128": "text-using11.6128.expected"
+    },
+    "sha256": {
+      "6128": "207637b6cd3194bb1c329351a6ae546236b6664a6da1221a6504ef9e35ec94cf"
+    }
+  },
+  "text-window": {
+    "program": "text-window.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "text-window.expected"
+    },
+    "sha256": {
+      "464": "c9292d9ab7361a3b51668d60bbb9400eba76e16003d309ef4908eadc8915ec9b",
+      "6128": "c9292d9ab7361a3b51668d60bbb9400eba76e16003d309ef4908eadc8915ec9b"
+    },
+    "shot": {
+      "464": "ff5a38668ed22198d013af9ca320a8b5ccd0bafdfdbbbe3f4568a34c6b8282cd",
+      "6128": "ff5a38668ed22198d013af9ca320a8b5ccd0bafdfdbbbe3f4568a34c6b8282cd"
+    }
+  },
+  "timer": {
+    "program": "timer.bas",
+    "emulator": "CPCEC",
+    "files": {
+      "all": "timer.expected"
+    },
+    "sha256": {
+      "464": "bf587278c81b55b2391bf1aee4981f06619dd5f0ec90e89eb5d4d07b30248295",
+      "6128": "bf587278c81b55b2391bf1aee4981f06619dd5f0ec90e89eb5d4d07b30248295"
+    }
+  }
+}

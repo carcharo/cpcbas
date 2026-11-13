@@ -1,0 +1,22 @@
+;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; cpcbas L5-PEEP: our own rule (docs/ir.md "The rule files").
+
+;; ld (X), a
+;; ld a, (X)        ;; A already holds the value just stored
+;; The same as 501 for A.
+
+OLEVEL: 1
+OFLAG: 502
+
+REPLACE {{
+  ld ($1), a
+  ld a, ($1)
+}}
+
+IF {{
+  !IS_REG16($1) && !IS_INDIR("(" + $1 + ")")
+}}
+
+WITH {{
+  ld ($1), a
+}}

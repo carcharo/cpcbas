@@ -1,0 +1,182 @@
+Program mainFile=0
+  includes:
+  body:
+    LineLabel number=10 name=- key=-
+    Let explicitLet=false
+      target: Name text="n" base="n" suffix=-
+      value: NumberLit value=4567.896 text="4567.896" radix=10 isReal=true suffix=-
+    Let explicitLet=false
+      target: Name text="m" base="m" suffix=-
+      value: Unary op="-"
+        operand: NumberLit value=12.5 text="12.5" radix=10 isReal=true suffix=-
+    Let explicitLet=false
+      target: Name text="s" base="s" suffix="$"
+      value: StringLit value="ocean"
+    LineLabel number=20 name=- key=-
+    Print stream=-
+      items:
+        PrintUsing
+          format: StringLit value="####"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="n" base="n" suffix=-
+    LineLabel number=30 name=- key=-
+    Print stream=-
+      items:
+        PrintUsing
+          format: StringLit value="###.##"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="n" base="n" suffix=-
+    LineLabel number=40 name=- key=-
+    Print stream=-
+      items:
+        PrintUsing
+          format: StringLit value="#,###.#"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="n" base="n" suffix=-
+    LineLabel number=50 name=- key=-
+    Print stream=-
+      items:
+        PrintUsing
+          format: StringLit value="+###.#"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="n" base="n" suffix=-
+    LineLabel number=60 name=- key=-
+    Print stream=-
+      items:
+        PrintUsing
+          format: StringLit value="###.#-"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="m" base="m" suffix=-
+    LineLabel number=70 name=- key=-
+    Print stream=-
+      items:
+        PrintUsing
+          format: StringLit value="**###.#"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="n" base="n" suffix=-
+    LineLabel number=80 name=- key=-
+    Print stream=-
+      items:
+        PrintUsing
+          format: StringLit value="$$####.##"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="n" base="n" suffix=-
+    LineLabel number=90 name=- key=-
+    Print stream=-
+      items:
+        PrintUsing
+          format: StringLit value="\\    \\"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="s" base="s" suffix="$"
+    LineLabel number=100 name=- key=-
+    Print stream=-
+      items:
+        PrintUsing
+          format: StringLit value="!"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="s" base="s" suffix="$"
+    LineLabel number=110 name=- key=-
+    Print stream=-
+      items:
+        PrintUsing
+          format: StringLit value="&"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="s" base="s" suffix="$"
+    LineLabel number=120 name=- key=-
+    Print stream=-
+      items:
+        PrintUsing
+          format: StringLit value="###.##^^^^"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="n" base="n" suffix=-
+    LineLabel number=130 name=- key=-
+    Print stream=-
+      items:
+        PrintUsing
+          format: StringLit value="###.##"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="n" base="n" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="m" base="m" suffix=-
+    LineLabel number=140 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: NumberLit value=123.456 text="123.456" radix=10 isReal=true suffix=-
+        PrintSep sep=","
+        PrintUsing
+          format: StringLit value="###.##"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="n" base="n" suffix=-
+    LineLabel number=150 name=- key=-
+    Print stream=-
+      items:
+        PrintUsing
+          format: StringLit value="[##]"
+        PrintSep sep=";"
+        PrintExpr
+          expr: NumberLit value=7 text="7" radix=10 isReal=false suffix=-
+        PrintSep sep=";"
+    Print stream=-
+      items:
+        PrintUsing
+          format: StringLit value="[##]"
+        PrintSep sep=";"
+        PrintExpr
+          expr: NumberLit value=8 text="8" radix=10 isReal=false suffix=-
+    LineLabel number=160 name=- key=-
+    Print
+      stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      items:
+        PrintUsing
+          format: StringLit value="##.#"
+        PrintSep sep=";"
+        PrintExpr
+          expr: NumberLit value=3.14159 text="3.14159" radix=10 isReal=true suffix=-
+    LineLabel number=170 name=- key=-
+    Print stream=-
+      items:
+        PrintUsing
+          format: StringLit value="Total: ###"
+        PrintSep sep=";"
+        PrintExpr
+          expr: NumberLit value=12 text="12" radix=10 isReal=false suffix=-
+        PrintSep sep=";"
+    Print stream=-
+      items:
+    LineLabel number=180 name=- key=-
+    Let explicitLet=false
+      target: Name text="f" base="f" suffix="$"
+      value: StringLit value="###.##"
+    Print stream=-
+      items:
+        PrintUsing
+          format: Name text="f" base="f" suffix="$"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="n" base="n" suffix=-
+    LineLabel number=190 name=- key=-
+    Print stream=-
+      items:
+        PrintUsing
+          format: StringLit value="\\ \\ ##"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="s" base="s" suffix="$"
+        PrintSep sep=";"
+        PrintExpr
+          expr: NumberLit value=5 text="5" radix=10 isReal=false suffix=-

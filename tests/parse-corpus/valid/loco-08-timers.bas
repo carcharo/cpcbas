@@ -1,0 +1,25 @@
+' Spec sections 6 and 9: Locomotive manual, interrupts and timers: EVERY, AFTER
+' with and without a timer number, REMAIN, DI and EI, ON BREAK STOP and CONT,
+' TIME and FRAME. Own program.
+10 EVERY 50 GOSUB 200
+20 EVERY 25, 1 GOSUB 300
+30 AFTER 500 GOSUB 400
+40 AFTER 1000, 3 GOSUB 400
+50 ON BREAK CONT
+60 t0 = TIME
+70 WHILE TIME < t0 + 600
+80 FRAME
+90 PRINT REMAIN(1); REMAIN(3)
+100 WEND
+110 DI
+120 ticks = 0
+130 EI
+140 r = REMAIN(0)
+150 PRINT r
+160 ON BREAK STOP
+170 d = INT(TIME / 300)
+180 PRINT d; TIME
+190 END
+200 ticks = ticks + 1 : RETURN
+300 PRINT "tick" : RETURN
+400 PRINT "late" : RETURN

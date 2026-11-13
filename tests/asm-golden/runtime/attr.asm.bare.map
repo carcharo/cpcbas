@@ -1,0 +1,5 @@
+0040: .core.__CPC_NOT_IMPLEMENTED
+0042: .core.__ATTR_ADDR
+0045: .core.SET_ATTR
+0048: .core.__SET_ATTR
+004B: .core.__SET_ATTR2

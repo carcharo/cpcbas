@@ -1,0 +1,35 @@
+before 0  0 
+case 1: retry
+handler 5  60 
+x= 65 
+after 1 0  60 
+case 2: next
+handler 5  90 
+same line
+after 2 0  90 
+case 3: line
+handler 5  120 
+after 3 0  120 
+case 4: ERROR n
+handler 17  160 
+handler 255  170 
+handler 5  180 
+handler 5  190 
+handler 5  200 
+case 5: RESUME outside a handler
+handler 20  220 
+case 6: error in a GOSUB
+in sub
+handler 5  510 
+sub continues
+back 0  510 
+case 7: errors in a loop
+i= 1 
+handler 5  280 
+i= 2 
+i= 3 
+handler 5  280 
+i= 4 
+case 8: ON ERROR GOTO again
+second handler 40  330 
+end

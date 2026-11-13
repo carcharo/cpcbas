@@ -1,0 +1,85 @@
+Program mainFile=0
+  includes:
+  body:
+    LineLabel number=- name="Start" key="start"
+    Gosub
+      target: LineTarget number=1000
+    Gosub
+      target: LabelTarget name="ShowTitle" key="showtitle"
+    Input line=false stream=- promptSep=";" keepCursor=false
+      prompt: StringLit value="Level"
+      targets:
+        Name text="level" base="level" suffix=-
+    OnGoto gosub=false
+      selector: Name text="level" base="level" suffix=-
+      targets:
+        LineTarget number=100
+        LineTarget number=200
+        LabelTarget name="Hard" key="hard"
+    OnGoto gosub=true
+      selector: Name text="level" base="level" suffix=-
+      targets:
+        LineTarget number=1000
+        LabelTarget name="ShowTitle" key="showtitle"
+        LineTarget number=1000
+    Goto implicit=false
+      target: LabelTarget name="Finish" key="finish"
+    LineLabel number=100 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="easy"
+    Goto implicit=false
+      target: LabelTarget name="Finish" key="finish"
+    LineLabel number=200 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="normal"
+    Goto implicit=false
+      target: LabelTarget name="Finish" key="finish"
+    LineLabel number=- name="Hard" key="hard"
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="hard"
+    Gosub
+      target: LineTarget number=1000
+    Goto implicit=false
+      target: LabelTarget name="Finish" key="finish"
+    LineLabel number=- name="Finish" key="finish"
+    Restore target=-
+    Restore
+      target: LineTarget number=3000
+    Restore
+      target: LabelTarget name="Scores" key="scores"
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="bye"
+    End
+    LineLabel number=- name="ShowTitle" key="showtitle"
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="TITLE"
+    Return value=-
+    LineLabel number=1000 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="subroutine"
+    LineLabel number=1010 name=- key=-
+    Return value=-
+    LineLabel number=3000 name=- key=-
+    Data
+      values:
+        DataValue raw="1" quoted=false
+        DataValue raw="2" quoted=false
+        DataValue raw="3" quoted=false
+    LineLabel number=- name="Scores" key="scores"
+    Data
+      values:
+        DataValue raw="10" quoted=false
+        DataValue raw="20" quoted=false
+        DataValue raw="30" quoted=false

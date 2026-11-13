@@ -1,0 +1,5 @@
+0040: .core.__CPC_ISR_INSTALL
+0052: .core.__CPC_ISR
+0094: .core.__CPC_ISR_GAME
+009A: .core.__CPC_ISR_DIRECT
+009B: .core.__CPC_ISR_ORIG

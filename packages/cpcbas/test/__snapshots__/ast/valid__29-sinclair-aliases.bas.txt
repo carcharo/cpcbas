@@ -1,0 +1,74 @@
+Program mainFile=0
+  includes:
+  body:
+    Builtin keyword="PAPER" stream=- typeArg=-
+      args:
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+    Builtin keyword="BORDER" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Builtin keyword="CLS" stream=- typeArg=-
+      args:
+    Print stream=-
+      items:
+        PrintAt
+          row: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+          col: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: StringLit value="top left"
+    Print stream=-
+      items:
+        PrintAt
+          row: NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+          col: NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: StringLit value="row 10, column 5"
+    Builtin keyword="BEEP" stream=- typeArg=-
+      args:
+        NumberLit value=0.5 text="0.5" radix=10 isReal=true suffix=-
+        NumberLit value=12 text="12" radix=10 isReal=false suffix=-
+    Builtin keyword="BEEP" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        Unary op="-"
+          operand: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+    Builtin keyword="PAUSE" stream=- typeArg=-
+      args:
+        NumberLit value=50 text="50" radix=10 isReal=false suffix=-
+    Builtin keyword="CIRCLE" stream=- typeArg=-
+      args:
+        NumberLit value=100 text="100" radix=10 isReal=false suffix=-
+        NumberLit value=100 text="100" radix=10 isReal=false suffix=-
+        NumberLit value=30 text="30" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="c" base="c" suffix=-
+      value: BuiltinCall keyword="POINT" parens=true typeArg=- stream=-
+        args:
+          NumberLit value=100 text="100" radix=10 isReal=false suffix=-
+          NumberLit value=130 text="130" radix=10 isReal=false suffix=-
+    If form="line" elseBody=-
+      branches:
+        Branch
+          cond: Binary op="="
+            left: BuiltinCall keyword="POINT" parens=true typeArg=- stream=-
+              args:
+                NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+                NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+            right: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+          body:
+            Builtin keyword="PLOT" stream=- typeArg=-
+              args:
+                NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+                NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+    Goto implicit=false
+      target: LineTarget number=100
+    LineLabel number=100 name=- key=-
+    Gosub
+      target: LineTarget number=200
+    End
+    LineLabel number=200 name=- key=-
+    Builtin keyword="RANDOMIZE" stream=- typeArg=-
+      args:
+    Return value=-

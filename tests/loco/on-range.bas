@@ -1,0 +1,6 @@
+10 FOR n=0 TO 3
+20 ON n GOTO 100,200
+30 PRINT n;"fell through":GOTO 300
+100 PRINT n;"went to 100":GOTO 300
+200 PRINT n;"went to 200"
+300 NEXT

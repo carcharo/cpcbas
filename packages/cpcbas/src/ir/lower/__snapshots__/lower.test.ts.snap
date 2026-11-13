@@ -1,0 +1,775 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`IR snapshots, one program per statement kind > asm 1`] = `
+"main
+  ; stmt
+  asm " nop"
+  end #0
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > call 1`] = `
+"main
+  ; stmt
+  asm "\\x09ld hl, 0"
+  asm "\\x09add hl, sp"
+  asm "\\x09push ix"
+  asm "\\x09push hl"
+  asm "\\x09pop ix"
+  asm "\\x09ld a, 0"
+  asm "\\x09call .core.__FW_CALL"
+  asm "\\x09defw 48409"
+  asm "\\x09pop ix"
+  ; stmt
+  param.u16 #1
+  param.u16 @_x
+  asm "\\x09ld hl, 0"
+  asm "\\x09add hl, sp"
+  asm "\\x09push ix"
+  asm "\\x09push hl"
+  asm "\\x09pop ix"
+  asm "\\x09ld a, 2"
+  asm "\\x09call 51152"
+  asm "\\x09pop ix"
+  asm "\\x09ld hl, 4"
+  asm "\\x09add hl, sp"
+  asm "\\x09ld sp, hl"
+  end #0
+
+global _x i16 size=2
+
+require "fwcall.asm"
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > dim 1`] = `
+"main
+  ; stmt
+  add.u8 t0, _b, #1
+  store.u8 _b, t0
+  end #0
+
+global _b u8 size=1 init=07
+global _p u16 size=2 at=49152
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > do-loop 1`] = `
+"main
+  ; stmt
+  store.i16 _n, #0
+  ; stmt
+.T.0:
+  ; stmt
+  add.i16 t0, _n, #1
+  store.i16 _n, t0
+  ; stmt
+  gt.i16 t1, _n, #2
+  jz.i16 t1, .T.4
+  ; stmt
+  jump .T.2
+.T.4:
+.T.3:
+.T.1:
+  gt.i16 t2, _n, #9
+  jz.i16 t2, .T.0
+.T.2:
+  end #0
+
+global _n i16 size=2
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > end 1`] = `
+"main
+  ; stmt
+  fparam.i16 #1
+  rtcall .core.__LOCO_PRINTI16
+  rtcall .core.__LOCO_NL
+  ; stmt
+  end #0
+  ; stmt
+  fparam.i16 #2
+  rtcall .core.__LOCO_PRINTI16
+  rtcall .core.__LOCO_NL
+  end #0
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > for-const-step 1`] = `
+"main
+  ; stmt
+  store.i16 _i, #1
+  jump .T.2
+.T.0:
+  ; stmt
+  fparam.i16 _i
+  rtcall .core.__LOCO_PRINTI16
+.T.1:
+  add.i16 t0, _i, #2
+  store.i16 _i, t0
+.T.2:
+  le.i16 t1, _i, #10
+  jnz.i16 t1, .T.0
+.T.3:
+  end #0
+
+global _i i16 size=2
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > for-var-limit 1`] = `
+"main
+  ; stmt
+  store.i16 _n, #5
+  ; stmt
+  store.i16 .V.0, _n
+  store.i16 _i, #1
+  jump .T.2
+.T.0:
+.T.1:
+  ge.i16 t0, _i, .V.0
+  add.i16 t1, _i, #1
+  store.i16 _i, t1
+  jnz.i16 t0, .T.3
+  jump .T.0
+.T.2:
+  le.i16 t2, _i, .V.0
+  jnz.i16 t2, .T.0
+.T.3:
+  ; stmt
+  store.u8 _b, #0
+  jump .T.6
+.T.4:
+.T.5:
+  ge.u8 t3, _b, #255
+  add.u8 t4, _b, #1
+  store.u8 _b, t4
+  jnz.i16 t3, .T.7
+  jump .T.4
+.T.6:
+  le.u8 t5, _b, #255
+  jnz.i16 t5, .T.4
+.T.7:
+  end #0
+
+global _b u8 size=1
+global _n i16 size=2
+global _i i16 size=2
+global .V.0 i16 size=2
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > for-var-step 1`] = `
+"main
+  ; stmt
+  store.i16 _s, #-1
+  ; stmt
+  store.i16 .V.0, _s
+  store.i16 _i, #9
+  jump .T.2
+.T.0:
+.T.1:
+  cast.i32<-i16 t0, _i
+  cast.i32<-i16 t1, .V.0
+  add.i32 t2, t0, t1
+  store.i32 .V.1, t2
+  cast.i16<-i32 t3, .V.1
+  store.i16 _i, t3
+  lt.i16 t4, .V.0, #0
+  jz.i16 t4, .T.4
+  ge.i32 t5, .V.1, #1
+  jnz.i16 t5, .T.0
+  jump .T.3
+.T.4:
+  le.i32 t6, .V.1, #1
+  jnz.i16 t6, .T.0
+  jump .T.3
+.T.2:
+  lt.i16 t7, .V.0, #0
+  jz.i16 t7, .T.5
+  ge.i16 t8, _i, #1
+  jnz.i16 t8, .T.0
+  jump .T.3
+.T.5:
+  le.i16 t9, _i, #1
+  jnz.i16 t9, .T.0
+.T.3:
+  end #0
+
+global _s i16 size=2
+global _i i16 size=2
+global .V.0 i16 size=2
+global .V.1 i32 size=4
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > functions 1`] = `
+"main
+  ; stmt
+  store.i16 _a, #-3
+  ; stmt
+  abs.i16 t0, _a
+  fparam.i16 t0
+  rtcall .core.__LOCO_PRINTI16
+  lt.i16 t1, _a, #0
+  gt.i16 t2, _a, #0
+  sub.i16 t3, t1, t2
+  fparam.i16 t3
+  rtcall .core.__LOCO_PRINTI16
+  lt.i16 t4, _a, #2
+  and.i16 t5, _a, t4
+  ge.i16 t6, _a, #2
+  and.i16 t7, #2, t6
+  or.i16 t8, t5, t7
+  fparam.i16 t8
+  rtcall .core.__LOCO_PRINTI16
+  gt.i16 t9, _a, #2
+  and.i16 t10, _a, t9
+  le.i16 t11, _a, #2
+  and.i16 t12, #2, t11
+  or.i16 t13, t10, t12
+  fparam.i16 t13
+  rtcall .core.__LOCO_PRINTI16
+  fparam.i16 _a
+  rtcall .core.__LOCO_PRINTI16
+  cast.u8<-i16 t14, _a
+  cast.u16<-u8 t15, t14
+  fparam.u16 t15
+  rtcall .core.__LOCO_PRINTU16
+  rtcall .core.__LOCO_NL
+  end #0
+
+global _a i16 size=2
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > gosub 1`] = `
+"main
+.L.10:
+  ; line 10
+  gosub .L.100
+.L.20:
+  ; line 20
+  end #0
+.L.100:
+  ; line 100
+  fparam.str s0
+  rtcall .core.__LOCO_PRINTSTR
+  rtcall .core.__LOCO_NL
+  ; line 100
+  rtcall .core.__LOCO_RETCHK
+  retsub
+  end #0
+
+string s0 .S.0 "sub"
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > goto 1`] = `
+"main
+.L.10:
+  ; line 10
+  jump .L.30
+.L.20:
+  ; line 20
+  fparam.str s0
+  rtcall .core.__LOCO_PRINTSTR
+  rtcall .core.__LOCO_NL
+.L.30:
+  ; line 30
+  fparam.str s1
+  rtcall .core.__LOCO_PRINTSTR
+  rtcall .core.__LOCO_NL
+  end #0
+
+string s0 .S.0 "skipped"
+string s1 .S.1 "here"
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > hello 1`] = `
+"main
+.L.10:
+  ; line 10
+  fparam.u8 #1
+  rtcall .core.__LOCO_MODE
+.L.20:
+  ; line 20
+  fparam.str s0
+  rtcall .core.__LOCO_PRINTSTR
+  fparam.i16 #1
+  rtcall .core.__LOCO_PRINTI16
+  rtcall .core.__LOCO_NL
+.L.30:
+  ; line 30
+  end #0
+
+string s0 .S.0 "Hello CPC"
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > if-block 1`] = `
+"main
+  ; stmt
+  store.i16 _a, #1
+  ; stmt
+  eq.i16 t0, _a, #1
+  jz.i16 t0, .T.1
+  ; stmt
+  fparam.i16 #1
+  rtcall .core.__LOCO_PRINTI16
+  rtcall .core.__LOCO_NL
+  jump .T.0
+.T.1:
+  eq.i16 t1, _a, #2
+  jz.i16 t1, .T.2
+  ; stmt
+  fparam.i16 #2
+  rtcall .core.__LOCO_PRINTI16
+  rtcall .core.__LOCO_NL
+  jump .T.0
+.T.2:
+  ; stmt
+  fparam.i16 #3
+  rtcall .core.__LOCO_PRINTI16
+  rtcall .core.__LOCO_NL
+.T.0:
+  end #0
+
+global _a i16 size=2
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > if-else 1`] = `
+"main
+  ; stmt
+  store.i16 _a, #1
+  ; stmt
+  eq.i16 t0, _a, #1
+  jz.i16 t0, .T.1
+  ; stmt
+  fparam.str s0
+  rtcall .core.__LOCO_PRINTSTR
+  rtcall .core.__LOCO_NL
+  jump .T.0
+.T.1:
+  ; stmt
+  fparam.str s1
+  rtcall .core.__LOCO_PRINTSTR
+  rtcall .core.__LOCO_NL
+.T.0:
+  end #0
+
+global _a i16 size=2
+
+string s0 .S.0 "y"
+string s1 .S.1 "n"
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > let 1`] = `
+"main
+  ; stmt
+  store.i16 _a__i, #3
+  ; stmt
+  mul.i16 t0, _a__i, #2
+  add.i16 t1, t0, #1
+  store.i16 _b__i, t1
+  ; stmt
+  fparam.i16 _b__i
+  rtcall .core.__LOCO_PRINTI16
+  rtcall .core.__LOCO_NL
+  end #0
+
+global _a__i i16 size=2
+global _b__i i16 size=2
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > on-gosub 1`] = `
+"main
+.L.10:
+  ; line 10
+  store.i16 _n, #1
+.L.20:
+  ; line 20
+  cast.u16<-i16 t0, _n
+  fparam.u16 t0
+  rtcall .core.__LOCO_ARG255 -> u16 t1
+  jtable.gosub t1, [.L.100]
+.L.30:
+  ; line 30
+  end #0
+.L.100:
+  ; line 100
+  rtcall .core.__LOCO_RETCHK
+  retsub
+  end #0
+
+global _n i16 size=2
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > on-goto 1`] = `
+"main
+.L.10:
+  ; line 10
+  store.i16 _n, #2
+.L.20:
+  ; line 20
+  cast.u16<-i16 t0, _n
+  fparam.u16 t0
+  rtcall .core.__LOCO_ARG255 -> u16 t1
+  jtable t1, [.L.100, .L.200]
+.L.30:
+  ; line 30
+  end #0
+.L.100:
+  ; line 100
+  end #0
+.L.200:
+  ; line 200
+  end #0
+
+global _n i16 size=2
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > peek 1`] = `
+"main
+  ; stmt
+  peek.u8 t0, #49152
+  cast.u16<-u8 t1, t0
+  fparam.u16 t1
+  rtcall .core.__LOCO_PRINTU16
+  peek.u16 t2, #49154
+  fparam.u16 t2
+  rtcall .core.__LOCO_PRINTU16
+  rtcall .core.__LOCO_NL
+  end #0
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > poke 1`] = `
+"main
+  ; stmt
+  poke.u8 #49152, #7
+  ; stmt
+  poke.u16 #49154, #1000
+  end #0
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > pos-vpos 1`] = `
+"main
+  ; stmt
+  rtcall .core.__LOCO_POS -> u16 t0
+  cast.u8<-u16 t1, t0
+  cast.u16<-u8 t2, t1
+  fparam.u16 t2
+  rtcall .core.__LOCO_PRINTU16
+  rtcall .core.__LOCO_VPOS -> u16 t3
+  cast.u8<-u16 t4, t3
+  cast.u16<-u8 t5, t4
+  fparam.u16 t5
+  rtcall .core.__LOCO_PRINTU16
+  rtcall .core.__LOCO_NL
+  end #0
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > print 1`] = `
+"main
+  ; stmt
+  store.i16 _a, #5
+  ; stmt
+  fparam.str s0
+  rtcall .core.__LOCO_PRINTSTR
+  fparam.i16 _a
+  rtcall .core.__LOCO_PRINTI16
+  rtcall .core.__LOCO_COMMA
+  add.i16 t0, _a, #1
+  fparam.i16 t0
+  rtcall .core.__LOCO_PRINTI16
+  ; stmt
+  fparam.u8 #5
+  rtcall .core.__LOCO_TAB
+  cast.u8<-i16 t1, _a
+  fparam.u8 t1
+  rtcall .core.__LOCO_SPC
+  fparam.str s1
+  rtcall .core.__LOCO_PRINTSTR
+  rtcall .core.__LOCO_NL
+  end #0
+
+global _a i16 size=2
+
+string s0 .S.0 "x"
+string s1 .S.1 "y"
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > screen 1`] = `
+"main
+  ; stmt
+  fparam.u8 #1
+  rtcall .core.__LOCO_MODE
+  ; stmt
+  fparam.u8 #2
+  rtcall .core.__LOCO_PEN
+  ; stmt
+  fparam.u8 #0
+  rtcall .core.__LOCO_PAPER
+  ; stmt
+  asm "\\x09ld b, 3"
+  asm "\\x09ld c, b"
+  rtcall .core.__LOCO_BORDER
+  ; stmt
+  rtcall .core.__LOCO_CLS
+  ; stmt
+  fparam.u16 #1286
+  rtcall .core.__LOCO_LOCATE
+  asm "\\x09jr nc, .T.0"
+  asm "\\x09ld a, 5"
+  asm "\\x09jp .core.__ERROR"
+.T.0:
+  ; stmt
+  store.i16 _c, #4
+  ; stmt
+  cast.u8<-i16 t0, _c
+  store.u8 .V.0, t0
+  asm "\\x09ld a, (.V.0)"
+  asm "\\x09ld b, a"
+  asm "\\x09ld c, 5"
+  rtcall .core.__LOCO_BORDER
+  end #0
+
+global _c i16 size=2
+global .V.0 u8 size=1
+
+require "error.asm"
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > select 1`] = `
+"main
+  ; stmt
+  store.i16 _n, #2
+  ; stmt
+  store.i16 .V.0, _n
+  ge.i16 t0, .V.0, #1
+  le.i16 t1, .V.0, #2
+  and.i16 t2, t0, t1
+  jnz.i16 t2, .T.1
+  jump .T.2
+.T.1:
+  ; stmt
+  fparam.str s0
+  rtcall .core.__LOCO_PRINTSTR
+  rtcall .core.__LOCO_NL
+  jump .T.0
+.T.2:
+  ; stmt
+  fparam.str s1
+  rtcall .core.__LOCO_PRINTSTR
+  rtcall .core.__LOCO_NL
+.T.0:
+  end #0
+
+global _n i16 size=2
+global .V.0 i16 size=2
+
+string s0 .S.0 "lo"
+string s1 .S.1 "hi"
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > shifts 1`] = `
+"main
+  ; stmt
+  store.i16 _a, #1
+  ; stmt
+  shl.i16 t0, _a, #3
+  fparam.i16 t0
+  rtcall .core.__LOCO_PRINTI16
+  shr.i16 t1, _a, #1
+  fparam.i16 t1
+  rtcall .core.__LOCO_PRINTI16
+  rtcall .core.__LOCO_NL
+  end #0
+
+global _a i16 size=2
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > string-assign 1`] = `
+"main
+  ; stmt
+  store.str _a__s, s0
+  ; stmt
+  concat.str t0, _a__s, s1
+  concat.str t1, t0, _a__s
+  store.str _b__s, t1
+  ; stmt
+  store.str _a__s, _b__s
+  ; stmt
+  fparam.str _a__s
+  rtcall .core.__LOCO_PRINTSTR
+  fparam.str _b__s
+  rtcall .core.__LOCO_PRINTSTR
+  rtcall .core.__LOCO_NL
+  end #0
+
+global _a__s str size=2
+global _b__s str size=2
+
+string s0 .S.0 "Hello"
+string s1 .S.1 " "
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > string-builtins 1`] = `
+"main
+  ; stmt
+  store.str _a__s, s0
+  ; stmt
+  store.i16 _n, #2
+  ; stmt
+  fparam.str _a__s
+  rtcall .core.__LOCO_LEN -> u16 t0
+  fparam.u16 t0
+  rtcall .core.__LOCO_PRINTU16
+  fparam.str _a__s
+  rtcall .core.__LOCO_ASC -> u8 t1
+  cast.u16<-u8 t2, t1
+  fparam.u16 t2
+  rtcall .core.__LOCO_PRINTU16
+  load.str t3, _a__s
+  load.i16 t4, _n
+  param.i16 t4
+  param.str t3
+  rtcall .core.__LOCO_LEFT -> str t5
+  fparam.str t5
+  rtcall .core.__LOCO_PRINTSTR
+  concat.str t6, _a__s, s1
+  load.i16 t7, _n
+  param.i16 t7
+  param.str t6
+  rtcall .core.__LOCO_RIGHT -> str t8
+  fparam.str t8
+  rtcall .core.__LOCO_PRINTSTR
+  load.str t9, _a__s
+  load.i16 t10, #2
+  param.i16 t10
+  param.str t9
+  rtcall .core.__LOCO_MID2 -> str t11
+  fparam.str t11
+  rtcall .core.__LOCO_PRINTSTR
+  load.str t15, _a__s
+  load.i16 t16, _n
+  fparam.str _a__s
+  rtcall .core.__LOCO_LEN -> u16 t12
+  sub.u16 t13, t12, #1
+  cast.i16<-u16 t14, t13
+  param.i16 t14
+  param.i16 t16
+  param.str t15
+  rtcall .core.__LOCO_MID -> str t17
+  fparam.str t17
+  rtcall .core.__LOCO_PRINTSTR
+  rtcall .core.__LOCO_NL
+  ; stmt
+  fparam.str s2
+  rtcall .core.__LOCO_PRINTSTR
+  fparam.i16 _n
+  rtcall .core.__LOCO_SPACE -> str t18
+  fparam.str t18
+  rtcall .core.__LOCO_PRINTSTR
+  load.i16 t19, _n
+  load.i16 t20, #42
+  param.i16 t20
+  param.i16 t19
+  rtcall .core.__LOCO_STRING -> str t21
+  fparam.str t21
+  rtcall .core.__LOCO_PRINTSTR
+  load.i16 t23, #3
+  add.i16 t22, _n, #60
+  param.i16 t22
+  param.i16 t23
+  rtcall .core.__LOCO_STRING -> str t24
+  fparam.str t24
+  rtcall .core.__LOCO_PRINTSTR
+  cast.str<-i16 t25, _n
+  fparam.str t25
+  rtcall .core.__LOCO_PRINTSTR
+  fparam.str s3
+  rtcall .core.__LOCO_PRINTSTR
+  rtcall .core.__LOCO_NL
+  end #0
+
+global _a__s str size=2
+global _n i16 size=2
+
+string s0 .S.0 "Hello"
+string s1 .S.1 "!"
+string s2 .S.2 "A"
+string s3 .S.3 "-1"
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > string-compare 1`] = `
+"main
+  ; stmt
+  store.str _a__s, s0
+  ; stmt
+  ne.str t0, _a__s, s1
+  ge.str t1, _a__s, s2
+  and.i16 t2, t0, t1
+  jz.i16 t2, .T.1
+  ; stmt
+  fparam.str s3
+  rtcall .core.__LOCO_PRINTSTR
+  rtcall .core.__LOCO_NL
+.T.1:
+.T.0:
+  ; stmt
+  rtcall .core.__LOCO_INKEY -> str t3
+  eq.str t4, t3, #0
+  jz.i16 t4, .T.3
+  ; stmt
+  fparam.str s4
+  rtcall .core.__LOCO_PRINTSTR
+  rtcall .core.__LOCO_NL
+.T.3:
+.T.2:
+  end #0
+
+global _a__s str size=2
+
+string s0 .S.0 "x"
+string s1 .S.1 "y"
+string s2 .S.2 "a"
+string s3 .S.3 "ne"
+string s4 .S.4 "none"
+"
+`;
+
+exports[`IR snapshots, one program per statement kind > while 1`] = `
+"main
+  ; stmt
+  store.i16 _n, #3
+  ; stmt
+.T.0:
+  gt.i16 t0, _n, #0
+  jz.i16 t0, .T.1
+  ; stmt
+  sub.i16 t1, _n, #1
+  store.i16 _n, t1
+  jump .T.0
+.T.1:
+  end #0
+
+global _n i16 size=2
+"
+`;

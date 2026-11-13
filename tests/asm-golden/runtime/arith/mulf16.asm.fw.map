@@ -1,0 +1,9 @@
+0040: .core.__ABS32
+0043: .core.__NEG32
+0055: .core.__MUL32_64START
+005F: .core.__LMUL
+006C: .core.__LMULLOOP
+0073: .core.__LMULNOADD
+007D: .core.__LMULSTART
+0089: .core.__MULF16
+009C: .core.__ROUND_FIX

@@ -1,0 +1,61 @@
+Program mainFile=0
+  includes:
+  body:
+    Option name="REAL"
+    DefType type="INTEGER"
+      ranges:
+        Range from="i" to="n"
+    DefType type="REAL"
+      ranges:
+        Range from="a" to="h"
+        Range from="x" to="x"
+    DefType type="STRING"
+      ranges:
+        Range from="s" to="s"
+        Range from="t" to="v"
+    DefType type="INTEGER"
+      ranges:
+        Range from="q" to="q"
+    Const type=-
+      name: Name text="ScreenWidth" base="screenwidth" suffix=-
+      value: NumberLit value=80 text="80" radix=10 isReal=false suffix=-
+    Const
+      name: Name text="MaxLives" base="maxlives" suffix=-
+      type: TypeRef name="UBYTE" text="UBYTE"
+      value: NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+    Const type=-
+      name: Name text="ScreenBase" base="screenbase" suffix=-
+      value: NumberLit value=49152 text="&C000" radix=16 isReal=false suffix=-
+    Const type=-
+      name: Name text="HalfWidth" base="halfwidth" suffix=-
+      value: Binary op="/"
+        left: Name text="ScreenWidth" base="screenwidth" suffix=-
+        right: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+    Const
+      name: Name text="BitMask" base="bitmask" suffix=-
+      type: TypeRef name="UBYTE" text="UBYTE"
+      value: Binary op="OR"
+        left: NumberLit value=15 text="&H0F" radix=16 isReal=false suffix=-
+        right: NumberLit value=48 text="&H30" radix=16 isReal=false suffix=-
+    Const
+      name: Name text="Greeting" base="greeting" suffix=-
+      type: TypeRef name="STRING" text="STRING"
+      value: StringLit value="HELLO"
+    Const
+      name: Name text="Tau" base="tau" suffix=-
+      type: TypeRef name="REAL" text="REAL"
+      value: NumberLit value=6.28318 text="6.28318" radix=10 isReal=true suffix=-
+    Let explicitLet=false
+      target: Name text="i" base="i" suffix=-
+      value: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="n" base="n" suffix=-
+      value: Binary op="*"
+        left: Name text="i" base="i" suffix=-
+        right: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="a" base="a" suffix=-
+      value: NumberLit value=1.5 text="1.5" radix=10 isReal=true suffix=-
+    Let explicitLet=false
+      target: Name text="s" base="s" suffix=-
+      value: StringLit value="text"

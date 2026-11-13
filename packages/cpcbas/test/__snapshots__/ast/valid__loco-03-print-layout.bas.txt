@@ -1,0 +1,244 @@
+Program mainFile=0
+  includes:
+  body:
+    LineLabel number=10 name=- key=-
+    Let explicitLet=false
+      target: Name text="a" base="a" suffix=-
+      value: NumberLit value=12 text="12" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="b" base="b" suffix=-
+      value: NumberLit value=34 text="34" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="t" base="t" suffix="$"
+      value: StringLit value="txt"
+    LineLabel number=20 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Name text="a" base="a" suffix=-
+        PrintSep sep=","
+        PrintExpr
+          expr: Name text="b" base="b" suffix=-
+        PrintSep sep=","
+        PrintExpr
+          expr: Binary op="+"
+            left: Name text="a" base="a" suffix=-
+            right: Name text="b" base="b" suffix=-
+    LineLabel number=30 name=- key=-
+    Builtin keyword="ZONE" stream=- typeArg=-
+      args:
+        NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+    LineLabel number=40 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Name text="a" base="a" suffix=-
+        PrintSep sep=","
+        PrintExpr
+          expr: Name text="b" base="b" suffix=-
+        PrintSep sep=","
+        PrintExpr
+          expr: Binary op="+"
+            left: Name text="a" base="a" suffix=-
+            right: Name text="b" base="b" suffix=-
+    LineLabel number=50 name=- key=-
+    Builtin keyword="ZONE" stream=- typeArg=-
+      args:
+        NumberLit value=13 text="13" radix=10 isReal=false suffix=-
+    LineLabel number=60 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Name text="a" base="a" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="b" base="b" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="t" base="t" suffix="$"
+    LineLabel number=90 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Name text="a" base="a" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="b" base="b" suffix=-
+    LineLabel number=100 name=- key=-
+    Print stream=-
+      items:
+        PrintTab
+          column: NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: StringLit value="five"
+        PrintSep sep=";"
+        PrintTab
+          column: NumberLit value=12 text="12" radix=10 isReal=false suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: StringLit value="twelve"
+    LineLabel number=110 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="ab"
+        PrintSep sep=";"
+        PrintSpc
+          count: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: StringLit value="cd"
+    LineLabel number=120 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Name text="t" base="t" suffix="$"
+        PrintSep sep=";"
+    LineLabel number=130 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Binary op="+"
+            left: Name text="t" base="t" suffix="$"
+            right: Name text="t" base="t" suffix="$"
+        PrintSep sep=","
+    LineLabel number=140 name=- key=-
+    Print stream=-
+      items:
+    LineLabel number=150 name=- key=-
+    Print
+      stream: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+      items:
+        PrintExpr
+          expr: StringLit value="window"
+    LineLabel number=160 name=- key=-
+    Print
+      stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      items:
+        PrintExpr
+          expr: StringLit value="other window"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="a" base="a" suffix=-
+    LineLabel number=170 name=- key=-
+    Print
+      stream: NumberLit value=8 text="8" radix=10 isReal=false suffix=-
+      items:
+        PrintExpr
+          expr: StringLit value="printer"
+    LineLabel number=180 name=- key=-
+    Print
+      stream: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+      items:
+        PrintExpr
+          expr: Name text="a" base="a" suffix=-
+        PrintSep sep=","
+        PrintExpr
+          expr: Name text="b" base="b" suffix=-
+    LineLabel number=190 name=- key=-
+    Print
+      stream: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+      items:
+    LineLabel number=200 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Unary op="-"
+            operand: Name text="a" base="a" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Unary op="-"
+            operand: Name text="b" base="b" suffix=-
+    LineLabel number=210 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: NumberLit value=1500 text="1.5E3" radix=10 isReal=true suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: NumberLit value=0.25 text=".25" radix=10 isReal=true suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: NumberLit value=31 text="&H1F" radix=16 isReal=false suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: NumberLit value=5 text="&X101" radix=2 isReal=false suffix=-
+    LineLabel number=220 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Binary op="/"
+            left: NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+            right: NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Binary op="\\"
+            left: NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+            right: NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Binary op="MOD"
+            left: NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+            right: NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Binary op="^"
+            left: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+            right: NumberLit value=8 text="8" radix=10 isReal=false suffix=-
+    LineLabel number=230 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Binary op=">"
+            left: Name text="a" base="a" suffix=-
+            right: Name text="b" base="b" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Binary op="<"
+            left: Name text="a" base="a" suffix=-
+            right: Name text="b" base="b" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Binary op="="
+            left: Name text="a" base="a" suffix=-
+            right: Name text="b" base="b" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Binary op="<>"
+            left: Name text="a" base="a" suffix=-
+            right: Name text="b" base="b" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Binary op=">="
+            left: Name text="a" base="a" suffix=-
+            right: Name text="b" base="b" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Binary op="<="
+            left: Name text="a" base="a" suffix=-
+            right: Name text="b" base="b" suffix=-
+    LineLabel number=240 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="quote \"inside\" string"
+    LineLabel number=250 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: BuiltinCall keyword="LEN" parens=true typeArg=- stream=-
+            args:
+              Name text="t" base="t" suffix="$"
+        PrintSep sep=";"
+        PrintExpr
+          expr: BuiltinCall keyword="LEFT$" parens=true typeArg=- stream=-
+            args:
+              Name text="t" base="t" suffix="$"
+              NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        PrintSep sep=";"
+    LineLabel number=260 name=- key=-
+    Print stream=-
+      items:
+    Print stream=-
+      items:

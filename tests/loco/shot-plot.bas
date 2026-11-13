@@ -1,0 +1,2 @@
+10 REM LOCO: shot
+20 MODE 1: PLOT 100,100

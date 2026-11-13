@@ -1,0 +1,5 @@
+0040: .core.JUMP_HL_PLUS_2A
+0041: .core.JUMP_HL_PLUS_A
+0044: .core.JUMP_HL_PLUS_DE
+0049: .core.CALL_HL
+004A: .core.USR

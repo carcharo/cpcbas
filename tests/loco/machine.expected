@@ -1,0 +1,8 @@
+-1           -1           -1 
+-1           -1 
+ 255 
+ 30 
+wait 1
+wait 2
+before stop
+Break in 180

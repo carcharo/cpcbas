@@ -1,0 +1,22 @@
+;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; © Copyright 2008-2024 José Manuel Rodríguez de la Rosa and contributors.
+;; See the file CONTRIBUTORS.md of zxbasic (https://github.com/boriel-basic/zxbasic) for copyright details.
+;; Ported from zxbasic src/arch/z80/peephole/opts/109_o4_ld_mem_op_ld_mem.opt at e33cf0cd (cpcbas L5-PEEP; changes: none; OLEVEL 3/4, kept as data for L5-FLOW and never run by the peephole pass).
+
+;; Removes useless operation
+;; Tries to guess if the result of the operation LD, OR, AND, XOR, ADC, ADD, SBC is later used
+
+OLEVEL: 4
+OFLAG: 109
+
+REPLACE {{
+  $1 $2, $3
+}}
+
+IF {{
+($2 <> sp) && ($2 <> ix) && !IS_REQUIRED($2) &&
+ ($1 == ld || (!IS_REQUIRED(f) && ($1 == add || $1 == adc || $1 == sbc)))
+}}
+
+WITH {{
+}}

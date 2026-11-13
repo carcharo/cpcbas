@@ -1,0 +1,31 @@
+Program mainFile=0
+  includes:
+  body:
+    Procedure procKind="FUNCTION" convention=-
+      name: Name text="Clamp8" base="clamp8" suffix=-
+      params:
+        Param passing=- isArray=false default=-
+          name: Name text="v" base="v" suffix=-
+          type: TypeRef name="INTEGER" text="INTEGER"
+      returnType: TypeRef name="UBYTE" text="UBYTE"
+      body:
+        If form="line" elseBody=-
+          branches:
+            Branch
+              cond: Binary op="<"
+                left: Name text="v" base="v" suffix=-
+                right: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+              body:
+                Return
+                  value: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+        If form="line" elseBody=-
+          branches:
+            Branch
+              cond: Binary op=">"
+                left: Name text="v" base="v" suffix=-
+                right: NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+              body:
+                Return
+                  value: NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+        Return
+          value: Name text="v" base="v" suffix=-

@@ -1,0 +1,186 @@
+Program mainFile=0
+  includes:
+  body:
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="a" base="a" suffix=-
+          bounds:
+            NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+            NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+          type: TypeRef name="INTEGER" text="INTEGER"
+    Let explicitLet=false
+      target: Name text="a" base="a" suffix="$"
+      value: StringLit value="HELLO WORLD"
+    Let explicitLet=false
+      target: Name text="n" base="n" suffix=-
+      value: BuiltinCall keyword="LEN" parens=true typeArg=- stream=-
+        args:
+          Name text="a" base="a" suffix="$"
+    Let explicitLet=false
+      target: Name text="l" base="l" suffix="$"
+      value: Binary op="+"
+        left: BuiltinCall keyword="LEFT$" parens=true typeArg=- stream=-
+          args:
+            Name text="a" base="a" suffix="$"
+            NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+        right: BuiltinCall keyword="RIGHT$" parens=true typeArg=- stream=-
+          args:
+            Name text="a" base="a" suffix="$"
+            NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="m" base="m" suffix="$"
+      value: Binary op="+"
+        left: BuiltinCall keyword="MID$" parens=true typeArg=- stream=-
+          args:
+            Name text="a" base="a" suffix="$"
+            NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+        right: BuiltinCall keyword="MID$" parens=true typeArg=- stream=-
+          args:
+            Name text="a" base="a" suffix="$"
+            NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+            NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="p" base="p" suffix=-
+      value: Binary op="+"
+        left: BuiltinCall keyword="INSTR" parens=true typeArg=- stream=-
+          args:
+            Name text="a" base="a" suffix="$"
+            StringLit value="O"
+        right: BuiltinCall keyword="INSTR" parens=true typeArg=- stream=-
+          args:
+            NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+            Name text="a" base="a" suffix="$"
+            StringLit value="O"
+    Let explicitLet=false
+      target: Name text="s" base="s" suffix="$"
+      value: Binary op="+"
+        left: BuiltinCall keyword="STRING$" parens=true typeArg=- stream=-
+          args:
+            NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+            NumberLit value=45 text="45" radix=10 isReal=false suffix=-
+        right: BuiltinCall keyword="STRING$" parens=true typeArg=- stream=-
+          args:
+            NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+            StringLit value="*"
+    Let explicitLet=false
+      target: Name text="b" base="b" suffix="$"
+      value: Binary op="+"
+        left: Binary op="+"
+          left: BuiltinCall keyword="SPACE$" parens=true typeArg=- stream=-
+            args:
+              NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+          right: BuiltinCall keyword="UPPER$" parens=true typeArg=- stream=-
+            args:
+              Name text="a" base="a" suffix="$"
+        right: BuiltinCall keyword="LOWER$" parens=true typeArg=- stream=-
+          args:
+            Name text="a" base="a" suffix="$"
+    Let explicitLet=false
+      target: Name text="c" base="c" suffix="$"
+      value: BuiltinCall keyword="CHR$" parens=true typeArg=- stream=-
+        args:
+          NumberLit value=65 text="65" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="v" base="v" suffix=-
+      value: Binary op="+"
+        left: BuiltinCall keyword="ASC" parens=true typeArg=- stream=-
+          args:
+            Name text="a" base="a" suffix="$"
+        right: BuiltinCall keyword="VAL" parens=true typeArg=- stream=-
+          args:
+            StringLit value="12.5"
+    Let explicitLet=false
+      target: Name text="t" base="t" suffix="$"
+      value: BuiltinCall keyword="STR$" parens=true typeArg=- stream=-
+        args:
+          NumberLit value=42 text="42" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="h" base="h" suffix="$"
+      value: Binary op="+"
+        left: BuiltinCall keyword="HEX$" parens=true typeArg=- stream=-
+          args:
+            NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+        right: BuiltinCall keyword="HEX$" parens=true typeArg=- stream=-
+          args:
+            NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+            NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="q" base="q" suffix="$"
+      value: Binary op="+"
+        left: BuiltinCall keyword="BIN$" parens=true typeArg=- stream=-
+          args:
+            NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+        right: BuiltinCall keyword="BIN$" parens=true typeArg=- stream=-
+          args:
+            NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+            NumberLit value=8 text="8" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="d" base="d" suffix="$"
+      value: BuiltinCall keyword="DEC$" parens=true typeArg=- stream=-
+        args:
+          NumberLit value=3.14159 text="3.14159" radix=10 isReal=true suffix=-
+          StringLit value="##.##"
+    Let explicitLet=false
+      target: Name text="lo" base="lo" suffix=-
+      value: Binary op="+"
+        left: BuiltinCall keyword="LBOUND" parens=true typeArg=- stream=-
+          args:
+            Name text="a" base="a" suffix=-
+        right: BuiltinCall keyword="LBOUND" parens=true typeArg=- stream=-
+          args:
+            Name text="a" base="a" suffix=-
+            NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="hi" base="hi" suffix=-
+      value: Binary op="+"
+        left: BuiltinCall keyword="UBOUND" parens=true typeArg=- stream=-
+          args:
+            Name text="a" base="a" suffix=-
+        right: BuiltinCall keyword="UBOUND" parens=true typeArg=- stream=-
+          args:
+            Name text="a" base="a" suffix=-
+            NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Name text="n" base="n" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="l" base="l" suffix="$"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="m" base="m" suffix="$"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="p" base="p" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="s" base="s" suffix="$"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="b" base="b" suffix="$"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="c" base="c" suffix="$"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="v" base="v" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="t" base="t" suffix="$"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="h" base="h" suffix="$"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="q" base="q" suffix="$"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="d" base="d" suffix="$"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="lo" base="lo" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="hi" base="hi" suffix=-

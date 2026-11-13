@@ -1,0 +1,25 @@
+;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; © Copyright 2008-2024 José Manuel Rodríguez de la Rosa and contributors.
+;; See the file CONTRIBUTORS.md of zxbasic (https://github.com/boriel-basic/zxbasic) for copyright details.
+;; Ported from zxbasic src/arch/z80/peephole/opts/100_o3_ld_rr_N_ld_ss_N.opt at e33cf0cd (cpcbas L5-PEEP; changes: none; OLEVEL 3/4, kept as data for L5-FLOW and never run by the peephole pass).
+
+;; Removes useless LD's
+;; Tries to guess the value of the 1st and 2nd operands.
+;; If they're the same, this LD is useless
+
+OLEVEL: 3
+OFLAG: 100
+
+REPLACE {{
+  ld $1, $2
+}}
+
+IF {{
+  (GVAL($1) == GVAL($2)) ||
+  ((IS_REG8($1) || IS_REG8($2)) &&
+   (LOVAL(GVAL($1)) == LOVAL(GVAL($2)))
+   )
+}}
+
+WITH {{
+}}

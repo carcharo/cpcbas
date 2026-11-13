@@ -1,0 +1,28 @@
+;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; © Copyright 2008-2024 José Manuel Rodríguez de la Rosa and contributors.
+;; See the file CONTRIBUTORS.md of zxbasic (https://github.com/boriel-basic/zxbasic) for copyright details.
+;; Ported from zxbasic src/arch/z80/peephole/opts/001_o1_ld_XXYY_ldYYXX.opt at e33cf0cd (cpcbas L5-PEEP; changes: IF added: both operands are registers, so a store to memory is never dropped (POKE a, PEEK(a) writes the RAM under a ROM)).
+
+;; Replaces sequence:
+;; ld XX, YY
+;; ld YY, XX  ;; This is useless
+;; With:
+;; ld XX, YY
+;; Only between registers (cpcbas): `ld a, (hl) / ld (hl), a` is POKE a, PEEK(a), which writes
+;; the RAM under an enabled ROM and must stay.
+
+OLEVEL: 1
+OFLAG: 2
+
+REPLACE {{
+ ld $1, $2
+ ld $2, $1
+}}
+
+IF {{
+ (IS_REG8($1) || IS_REG16($1)) && (IS_REG8($2) || IS_REG16($2))
+}}
+
+WITH {{
+ ld $1, $2
+}}

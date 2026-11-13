@@ -1,0 +1,128 @@
+Program mainFile=0
+  includes:
+  body:
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="i" base="i" suffix=-
+          bounds:
+          type: TypeRef name="INTEGER" text="INTEGER"
+        DimDecl init=- at=-
+          name: Name text="j" base="j" suffix=-
+          bounds:
+          type: TypeRef name="INTEGER" text="INTEGER"
+    For step=-
+      variable: Name text="i" base="i" suffix=-
+      from: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      to: NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+      body:
+        Print stream=-
+          items:
+            PrintExpr
+              expr: Name text="i" base="i" suffix=-
+      nextName: Name text="i" base="i" suffix=-
+    For nextName=-
+      variable: Name text="i" base="i" suffix=-
+      from: NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+      to: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      step: Unary op="-"
+        operand: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      body:
+        Print stream=-
+          items:
+            PrintExpr
+              expr: Name text="i" base="i" suffix=-
+            PrintSep sep=";"
+    For
+      variable: Name text="i" base="i" suffix=-
+      from: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+      to: NumberLit value=254 text="254" radix=10 isReal=false suffix=-
+      step: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+      body:
+        For step=-
+          variable: Name text="j" base="j" suffix=-
+          from: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+          to: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+          body:
+            Builtin keyword="PLOT" stream=- typeArg=-
+              args:
+                Name text="i" base="i" suffix=-
+                Name text="j" base="j" suffix=-
+          nextName: Name text="j" base="j" suffix=-
+      nextName: Name text="i" base="i" suffix=-
+    For step=-
+      variable: Name text="i" base="i" suffix=-
+      from: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+      to: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+      body:
+        For step=-
+          variable: Name text="j" base="j" suffix=-
+          from: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+          to: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+          body:
+            Builtin keyword="PLOT" stream=- typeArg=-
+              args:
+                Name text="i" base="i" suffix=-
+                Name text="j" base="j" suffix=-
+          nextName: Name text="j" base="j" suffix=-
+      nextName: Name text="i" base="i" suffix=-
+    For step=- nextName=-
+      variable: Name text="i" base="i" suffix=-
+      from: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+      to: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+      body:
+        For step=- nextName=-
+          variable: Name text="j" base="j" suffix=-
+          from: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+          to: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+          body:
+            Builtin keyword="PLOT" stream=- typeArg=-
+              args:
+                Name text="j" base="j" suffix=-
+                Name text="i" base="i" suffix=-
+    For
+      variable: Name text="x" base="x" suffix="!"
+      from: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+      to: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      step: NumberLit value=0.25 text="0.25" radix=10 isReal=true suffix=-
+      body:
+        Print stream=-
+          items:
+            PrintExpr
+              expr: Name text="x" base="x" suffix="!"
+      nextName: Name text="x" base="x" suffix="!"
+    For step=- nextName=-
+      variable: Name text="i" base="i" suffix=-
+      from: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      to: NumberLit value=100 text="100" radix=10 isReal=false suffix=-
+      body:
+        If form="line" elseBody=-
+          branches:
+            Branch
+              cond: Binary op="="
+                left: Binary op="MOD"
+                  left: Name text="i" base="i" suffix=-
+                  right: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+                right: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+              body:
+                Continue target="FOR"
+        If form="line" elseBody=-
+          branches:
+            Branch
+              cond: Binary op=">"
+                left: Name text="i" base="i" suffix=-
+                right: NumberLit value=50 text="50" radix=10 isReal=false suffix=-
+              body:
+                Exit target="FOR"
+        Print stream=-
+          items:
+            PrintExpr
+              expr: Name text="i" base="i" suffix=-
+    For nextName=-
+      variable: Name text="i" base="i" suffix=-
+      from: Name text="first" base="first" suffix=-
+      to: Binary op="+"
+        left: Name text="last" base="last" suffix=-
+        right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      step: Name text="stride" base="stride" suffix=-
+      body:

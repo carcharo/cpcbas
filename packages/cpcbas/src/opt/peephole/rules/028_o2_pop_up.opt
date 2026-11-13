@@ -1,0 +1,34 @@
+;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; © Copyright 2008-2024 José Manuel Rodríguez de la Rosa and contributors.
+;; See the file CONTRIBUTORS.md of zxbasic (https://github.com/boriel-basic/zxbasic) for copyright details.
+;; Ported from zxbasic src/arch/z80/peephole/opts/028_o2_pop_up.opt at e33cf0cd (cpcbas L5-PEEP; changes: NEEDS means reads or writes (the fork reads only, so it moved pop hl over ld hl, 5); control instructions and any that are not modelled keep their place).
+
+;; Replace sequence:
+;; <instruction>
+;; pop rr
+;;
+;; With:
+;; pop rr
+;; <instruction>
+;;
+;; This frees the stack ASAP and hopefully clash against a PUSH.
+;; NEEDS($2, (sp, $1)) is true when $2 reads or writes SP or a register of $1 (z80regs.ts); an
+;; instruction the table does not model counts as touching everything.
+
+OLEVEL: 2
+OFLAG: 28
+
+REPLACE {{
+  $2
+  pop $1
+}}
+
+IF {{
+  !(INSTR($2) IN (jp, jr, ret, call, djnz, rst)) && !NEEDS($2, (sp, $1)) && !IS_LABEL($2) &&
+  OP1($2) <> "sp" && OP2($2) <> "sp"
+}}
+
+WITH {{
+  pop $1
+  $2
+}}

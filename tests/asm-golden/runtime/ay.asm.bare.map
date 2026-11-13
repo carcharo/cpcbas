@@ -1,0 +1,5 @@
+0040: .core.__CPC_AY_WRITE
+0065: .core.__CPC_AY_WRITE_DI
+006B: .core.__CPC_AY_READ
+00A0: .core.__CPC_AY_READ_DI
+00A6: .core.__CPC_AY_SILENCE

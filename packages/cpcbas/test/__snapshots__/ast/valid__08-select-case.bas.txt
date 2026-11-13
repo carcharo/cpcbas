@@ -1,0 +1,172 @@
+Program mainFile=0
+  includes:
+  body:
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="k" base="k" suffix=-
+          bounds:
+          type: TypeRef name="UBYTE" text="UBYTE"
+    Let explicitLet=false
+      target: Name text="k" base="k" suffix=-
+      value: BuiltinCall keyword="ASC" parens=true typeArg=- stream=-
+        args:
+          BuiltinCall keyword="INKEY$" parens=false typeArg=- stream=-
+            args:
+    SelectCase
+      subject: Name text="k" base="k" suffix=-
+      cases:
+        CaseClause
+          tests:
+            CaseValue
+              value: NumberLit value=49 text="49" radix=10 isReal=false suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="one"
+        CaseClause
+          tests:
+            CaseValue
+              value: NumberLit value=50 text="50" radix=10 isReal=false suffix=-
+            CaseValue
+              value: NumberLit value=51 text="51" radix=10 isReal=false suffix=-
+            CaseValue
+              value: NumberLit value=53 text="53" radix=10 isReal=false suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="two, three or five"
+        CaseClause
+          tests:
+            CaseRange
+              from: NumberLit value=65 text="65" radix=10 isReal=false suffix=-
+              to: NumberLit value=90 text="90" radix=10 isReal=false suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="upper case"
+        CaseClause
+          tests:
+            CaseIs op=">"
+              value: NumberLit value=200 text="200" radix=10 isReal=false suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="high"
+        CaseClause
+          tests:
+            CaseIs op="<="
+              value: NumberLit value=8 text="8" radix=10 isReal=false suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="control"
+      elseBody:
+        Print stream=-
+          items:
+            PrintExpr
+              expr: StringLit value="other"
+    Let explicitLet=false
+      target: Name text="a" base="a" suffix="$"
+      value: BuiltinCall keyword="INKEY$" parens=false typeArg=- stream=-
+        args:
+    SelectCase elseBody=-
+      subject: Name text="a" base="a" suffix="$"
+      cases:
+        CaseClause
+          tests:
+            CaseValue
+              value: StringLit value="Y"
+            CaseValue
+              value: StringLit value="y"
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="yes"
+        CaseClause
+          tests:
+            CaseValue
+              value: StringLit value="N"
+            CaseValue
+              value: StringLit value="n"
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="no"
+    SelectCase elseBody=-
+      subject: Name text="k" base="k" suffix=-
+      cases:
+        CaseClause
+          tests:
+            CaseIs op="="
+              value: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+          body:
+            SelectCase elseBody=-
+              subject: Name text="a" base="a" suffix="$"
+              cases:
+                CaseClause
+                  tests:
+                    CaseRange
+                      from: StringLit value="A"
+                      to: StringLit value="Z"
+                  body:
+                    Print stream=-
+                      items:
+                        PrintExpr
+                          expr: StringLit value="letter"
+                CaseClause
+                  tests:
+                    CaseIs op="<>"
+                      value: StringLit value=""
+                  body:
+                    Print stream=-
+                      items:
+                        PrintExpr
+                          expr: StringLit value="something"
+        CaseClause
+          tests:
+            CaseIs op=">="
+              value: NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="never mind"
+    SelectCase
+      subject: Name text="k" base="k" suffix=-
+      cases:
+        CaseClause
+          tests:
+            CaseValue
+              value: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+            CaseRange
+              from: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+              to: NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+            CaseIs op=">"
+              value: NumberLit value=9 text="9" radix=10 isReal=false suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="mixed"
+        CaseClause
+          tests:
+            CaseValue
+              value: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="two"
+      elseBody:
+        Print stream=-
+          items:
+            PrintExpr
+              expr: StringLit value="rest"

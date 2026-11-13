@@ -1,0 +1,14 @@
+0040: .core.__MEM_INIT
+0046: .core.__MEM_INIT2
+0064: .core.MEM_FREE
+0064: .core.__MEM_FREE
+00B6: .core.__STRLEN
+00BE: .core.__STR_ISNULL
+00C4: .core.__STRCMP
+011A: .core.__STREQ
+0127: .core.__STRNE
+0131: .core.__STRLT
+0140: .core.__STRLE
+014B: .core.__STRGT
+015A: .core.__STRGE
+0162: .core.__FREE_STR

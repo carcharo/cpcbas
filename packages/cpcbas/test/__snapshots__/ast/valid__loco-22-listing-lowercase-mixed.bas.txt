@@ -1,0 +1,83 @@
+Program mainFile=0
+  includes:
+  body:
+    LineLabel number=10 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="Mixed"
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="case"
+    LineLabel number=20 name=- key=-
+    LineLabel number=30 name=- key=-
+    Let explicitLet=false
+      target: Name text="x" base="x" suffix=-
+      value: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    LineLabel number=40 name=- key=-
+    LineLabel number=50 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Name text="x" base="x" suffix=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="two"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="x" base="x" suffix=-
+    LineLabel number=60 name=- key=-
+    For step=- nextName=-
+      variable: Name text="i" base="i" suffix=-
+      from: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      to: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+      body:
+    LineLabel number=70 name=- key=-
+    If form="line" elseBody=-
+      branches:
+        Branch
+          cond: Binary op="="
+            left: Name text="x" base="x" suffix=-
+            right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="one"
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="still in the THEN part"
+    LineLabel number=80 name=- key=-
+    If form="line"
+      branches:
+        Branch
+          cond: Binary op="="
+            left: Name text="x" base="x" suffix=-
+            right: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="two"
+      elseBody:
+        Print stream=-
+          items:
+            PrintExpr
+              expr: StringLit value="not two"
+        Print stream=-
+          items:
+            PrintExpr
+              expr: StringLit value="also in the ELSE part"
+    LineLabel number=90 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="done"
+    LineLabel number=100 name=- key=-
+    LineLabel number=110 name=- key=-
+    LineLabel number=120 name=- key=-
+    LineLabel number=130 name=- key=-
+    End

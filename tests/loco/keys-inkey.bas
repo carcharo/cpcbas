@@ -1,0 +1,15 @@
+10 REM LOCO-TYPE: abc
+20 REM INKEY(n) for every key (none held), JOY, CLEAR INPUT with typed keys
+30 n=0
+40 FOR i=0 TO 79
+50 IF INKEY(i)<>-1 THEN n=n+1
+60 NEXT
+70 PRINT "held";n
+80 PRINT JOY(0);JOY(1)
+90 PRINT INKEY(0);INKEY(47);INKEY(79)
+100 a$=INKEY$
+110 IF a$="" THEN 100
+120 PRINT "first [";a$;"]"
+130 FOR i=1 TO 20000:NEXT
+140 CLEAR INPUT
+150 PRINT "after [";INKEY$;"]"

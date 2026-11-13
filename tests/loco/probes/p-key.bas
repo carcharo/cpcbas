@@ -1,0 +1,8 @@
+10 a$=INKEY$
+20 PRINT LEN(a$);"[";a$;"]"
+30 t=TIME
+40 FOR i=1 TO 1000:NEXT
+50 d=TIME-t
+60 PRINT d>=0
+70 PRINT "~";d
+80 PRINT TIME>0

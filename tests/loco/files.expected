@@ -1,0 +1,35 @@
+DERR 0 EOF-1 
+ 7 
+A: written
+[hello 1 -2  3.5 x]
+[a            b     t   s]
+[  3.14  2.50]
+[ 1 abc]
+["q,r",12,-3.5,"s"]
+["only"]
+[]
+["v",7,"vw",1.75,1E+10,0.5]
+[1,2]
+EOF-1 
+EOF-1 
+[3.14  2.50]
+[1 abc][q,r]
+["only"]
+[] 0  7 [vw]
+[1.75,1E+10,0.5]
+[1] 2 EOF-1 
+[one][two][three  ][five,six][seven][8]
+ 9  10  1000 
+ 255  0.5  7  0 -4 
+EOF-1 
+B: reading done
+same 100 
+same 100 
+same 40  0 
+C: binary done
+closing nothing open
+err 27 
+err 27 
+DERR 0 
+one"w"
+[nine]

@@ -1,0 +1,12 @@
+0040: .core.__CPC_SET_MODE_VARS
+0096: .core.__INK_TO_PEN
+00A4: .core.__BT_PUTC_VEC
+00A6: .core.CPC_INIT_10_TEXT
+00B4: .core.__BT_MODE_VARS
+00E0: .core.__BT_SET_MODE
+0105: .core.__BT_PENMASK
+013D: .core.__BT_PENMASKS
+01B4: .core.__BT_CR
+01B9: .core.__BT_CLEAR
+01DA: .core.__BT_CELLADDR
+01FC: .core.__BT_DRAW

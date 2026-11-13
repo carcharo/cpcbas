@@ -1,0 +1,9 @@
+ERR 5 ERL 30 
+after column 0
+ERR 5 ERL 40 
+after row 0
+ERR 5 ERL 50 
+after column 256
+ERR 5 ERL 60 
+after row -1
+ok

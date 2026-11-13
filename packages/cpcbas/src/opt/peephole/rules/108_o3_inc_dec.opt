@@ -1,0 +1,33 @@
+;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; © Copyright 2008-2024 José Manuel Rodríguez de la Rosa and contributors.
+;; See the file CONTRIBUTORS.md of zxbasic (https://github.com/boriel-basic/zxbasic) for copyright details.
+;; Ported from zxbasic src/arch/z80/peephole/opts/108_o3_inc_dec.opt at e33cf0cd (cpcbas L5-PEEP; changes: none; OLEVEL 3/4, kept as data for L5-FLOW and never run by the peephole pass).
+
+;; Replaces
+;;
+;; ld rr, nn
+;;
+;; With
+;; inc / dec rr
+;;
+;; If the previous known value of rr is nn - / + 1
+
+
+OLEVEL: 3
+OFLAG: 108
+
+REPLACE {{
+   ld $1, $2
+}}
+
+DEFINE {{
+   $3 = ($2 == GVAL($1) .+ 1) && "inc" || ($2 == GVAL($1) .- 1) && "dec"
+}}
+
+IF {{
+    IS_REG16($1) && $3 <> ""
+}}
+
+WITH {{
+  $3 $1
+}}

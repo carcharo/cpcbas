@@ -1,0 +1,123 @@
+Program mainFile=0
+  includes:
+  body:
+    Let explicitLet=false
+      target: Name text="x" base="x" suffix=-
+      value: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Let explicitLet=true
+      target: Name text="z" base="z" suffix=-
+      value: Binary op="+"
+        left: Name text="x" base="x" suffix=-
+        right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Let explicitLet=true
+      target: Name text="Name" base="name" suffix="$"
+      value: StringLit value="assigned with LET"
+    Let explicitLet=false
+      target: Name text="y" base="y" suffix=-
+      value: Binary op="+"
+        left: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+        right: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="Score" base="score" suffix=-
+          bounds:
+          type: TypeRef name="INTEGER" text="INTEGER"
+    Let explicitLet=false
+      target: Name text="score" base="score" suffix=-
+      value: NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="SCORE" base="score" suffix=-
+      value: Binary op="+"
+        left: Name text="score" base="score" suffix=-
+        right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="Score" base="score" suffix=-
+      value: Name text="SCORE" base="score" suffix=-
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="big_value_2" base="big_value_2" suffix=-
+          bounds:
+          type: TypeRef name="LONG" text="LONG"
+    Let explicitLet=false
+      target: Name text="n" base="n" suffix="%"
+      value: NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="r" base="r" suffix="!"
+      value: NumberLit value=2.5 text="2.5" radix=10 isReal=true suffix=-
+    Let explicitLet=false
+      target: Name text="s" base="s" suffix="$"
+      value: StringLit value="text"
+    Let explicitLet=false
+      target: Name text="a" base="a" suffix=-
+      value: NumberLit value=1.5 text="1.5" radix=10 isReal=true suffix=-
+    Let explicitLet=false
+      target: Name text="b" base="b" suffix=-
+      value: NumberLit value=0.5 text=".5" radix=10 isReal=true suffix=-
+    Let explicitLet=false
+      target: Name text="c" base="c" suffix=-
+      value: NumberLit value=1000 text="1E3" radix=10 isReal=true suffix=-
+    Let explicitLet=false
+      target: Name text="d" base="d" suffix=-
+      value: NumberLit value=0.025 text="2.5E-2" radix=10 isReal=true suffix=-
+    Let explicitLet=false
+      target: Name text="e" base="e" suffix=-
+      value: NumberLit value=100 text="1e+2" radix=10 isReal=true suffix=-
+    Let explicitLet=false
+      target: Name text="h1" base="h1" suffix=-
+      value: NumberLit value=255 text="&FF" radix=16 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="h2" base="h2" suffix=-
+      value: NumberLit value=255 text="&HFF" radix=16 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="h3" base="h3" suffix=-
+      value: NumberLit value=255 text="0xFF" radix=16 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="h4" base="h4" suffix=-
+      value: NumberLit value=255 text="&hff" radix=16 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="b1" base="b1" suffix=-
+      value: NumberLit value=10 text="&X1010" radix=2 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="b2" base="b2" suffix=-
+      value: NumberLit value=10 text="0b1010" radix=2 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="l1" base="l1" suffix=-
+      value: NumberLit value=5 text="5%" radix=10 isReal=false suffix="%"
+    Let explicitLet=false
+      target: Name text="l2" base="l2" suffix=-
+      value: NumberLit value=5 text="5!" radix=10 isReal=false suffix="!"
+    Let explicitLet=false
+      target: Name text="q" base="q" suffix="$"
+      value: StringLit value="say \"hi\" twice"
+    Let explicitLet=false
+      target: Name text="e" base="e" suffix="$"
+      value: StringLit value=""
+    Let explicitLet=false
+      target: Name text="total" base="total" suffix=-
+      value: Binary op="+"
+        left: Binary op="+"
+          left: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+          right: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+        right: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="ok"
+    If form="line"
+      branches:
+        Branch
+          cond: Binary op="="
+            left: Name text="x" base="x" suffix=-
+            right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="one"
+      elseBody:
+        Print stream=-
+          items:
+            PrintExpr
+              expr: StringLit value="other"

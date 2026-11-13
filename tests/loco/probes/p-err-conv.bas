@@ -1,0 +1,12 @@
+10 ON ERROR GOTO 900
+20 r=40000.5
+30 i%=r:PRINT "assign";i%
+40 j%=-32769:PRINT "lit";j%
+50 PRINT "mul";r*2;INT(r)
+60 DEFINT k
+70 k=r:PRINT "defint";k
+80 PRINT "and";(40000 AND 255)
+90 PRINT "chr";CHR$(r)
+100 PRINT "peek";PEEK(r)
+110 END
+900 PRINT "ERR";ERR;ERL:RESUME NEXT

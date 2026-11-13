@@ -1,0 +1,3 @@
+0040: .core.BRIGHT
+0043: .core.__SET_BRIGHT
+005A: .core.BRIGHT_TMP

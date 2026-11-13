@@ -1,0 +1,171 @@
+{
+ "one_byte": {
+  "files": [
+   {
+    "name": "A.BIN",
+    "length": 1,
+    "seed": 1,
+    "load": 16384,
+    "entry": 16384
+   }
+  ]
+ },
+ "len_1023": {
+  "files": [
+   {
+    "name": "B1023.BIN",
+    "length": 895,
+    "seed": 1,
+    "load": 16384,
+    "entry": 16384
+   }
+  ]
+ },
+ "len_1024": {
+  "files": [
+   {
+    "name": "B1024.BIN",
+    "length": 896,
+    "seed": 1,
+    "load": 16384,
+    "entry": 16384
+   }
+  ]
+ },
+ "len_1025": {
+  "files": [
+   {
+    "name": "B1025.BIN",
+    "length": 897,
+    "seed": 1,
+    "load": 16384,
+    "entry": 16384
+   }
+  ]
+ },
+ "extent_full": {
+  "files": [
+   {
+    "name": "EXT16.BIN",
+    "length": 16256,
+    "seed": 1,
+    "load": 16384,
+    "entry": 16384
+   }
+  ]
+ },
+ "extent_plus1": {
+  "files": [
+   {
+    "name": "EXT17.BIN",
+    "length": 16257,
+    "seed": 1,
+    "load": 16384,
+    "entry": 16384
+   }
+  ]
+ },
+ "size_64k": {
+  "files": [
+   {
+    "name": "BIG64K.BIN",
+    "length": 65536,
+    "seed": 1,
+    "load": 16384,
+    "entry": 16384
+   }
+  ]
+ },
+ "three_files": {
+  "files": [
+   {
+    "name": "MAIN.BIN",
+    "length": 3000,
+    "seed": 1,
+    "load": 4096,
+    "entry": 4096
+   },
+   {
+    "name": "DATA1.DAT",
+    "length": 700,
+    "seed": 2,
+    "load": 16384,
+    "entry": 0
+   },
+   {
+    "name": "DATA2.DAT",
+    "length": 5000,
+    "seed": 3,
+    "load": 16384,
+    "entry": 0
+   }
+  ]
+ },
+ "long_name": {
+  "files": [
+   {
+    "name": "VERYLONGNAME.BINARY",
+    "length": 300,
+    "seed": 4,
+    "load": 16384,
+    "entry": 16384
+   }
+  ]
+ },
+ "lower_name": {
+  "files": [
+   {
+    "name": "game.bin",
+    "length": 300,
+    "seed": 5,
+    "load": 16384,
+    "entry": 16384
+   }
+  ]
+ },
+ "no_ext": {
+  "files": [
+   {
+    "name": "NOEXT",
+    "length": 300,
+    "seed": 6,
+    "load": 16384,
+    "entry": 16384
+   }
+  ]
+ },
+ "load_ne_entry": {
+  "files": [
+   {
+    "name": "GAME.BIN",
+    "length": 1234,
+    "seed": 7,
+    "load": 368,
+    "entry": 512
+   }
+  ]
+ },
+ "disc_exact": {
+  "files": [
+   {
+    "name": "FULL.BIN",
+    "length": 182144,
+    "seed": 1,
+    "load": 16384,
+    "entry": 16384
+   }
+  ]
+ },
+ "disc_over": {
+  "files": [
+   {
+    "name": "OVER.BIN",
+    "length": 182145,
+    "seed": 1,
+    "load": 16384,
+    "entry": 16384
+   }
+  ],
+  "error": "OVER.BIN: disk full: needs 179 blocks (182273 bytes with header) but only 182272 bytes (178 blocks) remain of 182272 bytes total data capacity"
+ }
+}

@@ -1,0 +1,11 @@
+{
+  // Emits dist/src (library) and dist/bin (CLI). Tests are not built.
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["node"],
+    "rootDir": ".",
+    "outDir": "dist"
+  },
+  "include": ["src/**/*.ts", "bin/**/*.ts"],
+  "exclude": ["src/**/*.test.ts"]
+}

@@ -1,0 +1,19 @@
+;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; © Copyright 2008-2024 José Manuel Rodríguez de la Rosa and contributors.
+;; See the file CONTRIBUTORS.md of zxbasic (https://github.com/boriel-basic/zxbasic) for copyright details.
+;; Ported from zxbasic src/arch/z80/peephole/opts/000_o3_push_pop.opt at e33cf0cd (cpcbas L5-PEEP; changes: none; OLEVEL 3/4, kept as data for L5-FLOW and never run by the peephole pass).
+
+;; Remove sequence:
+;; push xx
+;; pop xx
+
+OLEVEL: 3
+OFLAG: 1
+
+REPLACE {{
+ push $1
+ pop $1
+}}
+
+WITH {{
+}}

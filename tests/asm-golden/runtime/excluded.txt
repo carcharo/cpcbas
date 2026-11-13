@@ -1,0 +1,4 @@
+fwsound.asm	bare	wrapper.asm:55: error: Undefined GLOBAL label '.core.__CPC_ISR_ORIG' | wrapper.asm:75: error: Undefined GLOBAL label '.core.__FW_CALL_IX'
+io/keyboard/kbare.asm	fw	src/lib/arch/cpc/runtime/io/keyboard/kbare.asm:51: error: label '.core.__CPC_KEYCHAR' already defined at line 115 | src/lib/arch/cpc/runtime/io/keyboard/kbare.asm:137: error: label '.core.__CPC_KEYHELD' already defined at line 191
+read_restore.asm	bare	wrapper.asm:71: error: Undefined GLOBAL label '.DATA.__DATA__0'
+read_restore.asm	fw	wrapper.asm:71: error: Undefined GLOBAL label '.DATA.__DATA__0'

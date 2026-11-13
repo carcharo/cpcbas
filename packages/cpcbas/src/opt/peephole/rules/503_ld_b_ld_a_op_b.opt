@@ -1,0 +1,35 @@
+;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; cpcbas L5-PEEP: our own rule (docs/ir.md "The rule files").
+
+;; ld b, X
+;; ld a, Y
+;; op b             ;; op is one of or xor and cp sub add a, sbc a,
+;;
+;; With:
+;; ld a, Y
+;; op X
+;;
+;; The B variant of the fork's 025 and 027 (their shape keeps b in H). B is left unloaded, so the
+;; window must end in a quad whose template reads B only there ($00): the u8 and i8 add, sub, and,
+;; or, xor, eq, ne of int.ts (prep8 loads B, the op line is the last that reads it). X is not A
+;; (the load of A would overwrite it) and Y does not read B.
+
+OLEVEL: 1
+OFLAG: 503
+
+REPLACE {{
+  ld b, $1
+  ld a, $2
+  $3 b
+}}
+
+IF {{
+  ($1 <> a) && ($2 <> b) && ($2 <> "(bc)") &&
+  ($3 IN (or, xor, and, sub, "add a,", "sbc a,")) &&
+  ($00 IN ("add:u8", "add:i8", "sub:u8", "sub:i8", "and:u8", "and:i8", "or:u8", "or:i8", "xor:u8", "xor:i8", "eq:u8", "eq:i8", "ne:u8", "ne:i8"))
+}}
+
+WITH {{
+  ld a, $2
+  $3 $1
+}}

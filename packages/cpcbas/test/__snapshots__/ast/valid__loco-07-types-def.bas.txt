@@ -1,0 +1,238 @@
+Program mainFile=0
+  includes:
+  body:
+    LineLabel number=10 name=- key=-
+    DefType type="INTEGER"
+      ranges:
+        Range from="i" to="n"
+    LineLabel number=20 name=- key=-
+    DefType type="REAL"
+      ranges:
+        Range from="a" to="c"
+        Range from="x" to="x"
+    LineLabel number=30 name=- key=-
+    DefType type="STRING"
+      ranges:
+        Range from="s" to="s"
+        Range from="t" to="u"
+    LineLabel number=40 name=- key=-
+    Let explicitLet=false
+      target: Name text="i" base="i" suffix=-
+      value: NumberLit value=7 text="7" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="count" base="count" suffix=-
+      value: NumberLit value=12 text="12" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="a" base="a" suffix=-
+      value: NumberLit value=1.5 text="1.5" radix=10 isReal=true suffix=-
+    Let explicitLet=false
+      target: Name text="s" base="s" suffix=-
+      value: StringLit value="text"
+    Let explicitLet=false
+      target: Name text="note" base="note" suffix=-
+      value: StringLit value="more"
+    LineLabel number=50 name=- key=-
+    Let explicitLet=false
+      target: Name text="total" base="total" suffix="%"
+      value: Binary op="-"
+        left: NumberLit value=40000 text="40000" radix=10 isReal=false suffix=-
+        right: NumberLit value=40000 text="40000" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="ratio" base="ratio" suffix="!"
+      value: Binary op="/"
+        left: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+        right: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="name" base="name" suffix="$"
+      value: StringLit value="nm"
+    LineLabel number=60 name=- key=-
+    Dim
+      decls:
+        DimDecl type=- init=- at=-
+          name: Name text="table" base="table" suffix=-
+          bounds:
+            NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+        DimDecl type=- init=- at=-
+          name: Name text="word" base="word" suffix="$"
+          bounds:
+            NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+        DimDecl type=- init=- at=-
+          name: Name text="mat" base="mat" suffix="%"
+          bounds:
+            NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+            NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+        DimDecl type=- init=- at=-
+          name: Name text="cube" base="cube" suffix="!"
+          bounds:
+            NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+            NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+            NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    LineLabel number=70 name=- key=-
+    Let explicitLet=false
+      target: CallOrIndex
+        callee: Name text="table" base="table" suffix=-
+        args:
+          NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+      value: Name text="i" base="i" suffix=-
+    Let explicitLet=false
+      target: CallOrIndex
+        callee: Name text="word" base="word" suffix="$"
+        args:
+          NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+      value: Name text="s" base="s" suffix=-
+    Let explicitLet=false
+      target: CallOrIndex
+        callee: Name text="mat" base="mat" suffix="%"
+        args:
+          NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+          NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      value: NumberLit value=9 text="9" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: CallOrIndex
+        callee: Name text="cube" base="cube" suffix="!"
+        args:
+          NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+          NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+          NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+      value: Name text="a" base="a" suffix=-
+    LineLabel number=80 name=- key=-
+    DefFn
+      name: Name text="square" base="square" suffix=-
+      params:
+        Name text="v" base="v" suffix=-
+      body: Binary op="*"
+        left: Name text="v" base="v" suffix=-
+        right: Name text="v" base="v" suffix=-
+    LineLabel number=90 name=- key=-
+    DefFn
+      name: Name text="half" base="half" suffix=-
+      params:
+        Name text="v" base="v" suffix=-
+      body: Binary op="/"
+        left: Name text="v" base="v" suffix=-
+        right: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+    LineLabel number=100 name=- key=-
+    DefFn
+      name: Name text="join" base="join" suffix="$"
+      params:
+        Name text="p" base="p" suffix="$"
+        Name text="q" base="q" suffix="$"
+      body: Binary op="+"
+        left: Binary op="+"
+          left: Name text="p" base="p" suffix="$"
+          right: StringLit value="-"
+        right: Name text="q" base="q" suffix="$"
+    LineLabel number=110 name=- key=-
+    DefFn
+      name: Name text="mix" base="mix" suffix=-
+      params:
+        Name text="v" base="v" suffix=-
+        Name text="w" base="w" suffix=-
+      body: Binary op="+"
+        left: FnCall
+          name: Name text="square" base="square" suffix=-
+          args:
+            Name text="v" base="v" suffix=-
+        right: FnCall
+          name: Name text="half" base="half" suffix=-
+          args:
+            Name text="w" base="w" suffix=-
+    LineLabel number=120 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: FnCall
+            name: Name text="square" base="square" suffix=-
+            args:
+              NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: FnCall
+            name: Name text="half" base="half" suffix=-
+            args:
+              NumberLit value=9 text="9" radix=10 isReal=false suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: FnCall
+            name: Name text="join" base="join" suffix="$"
+            args:
+              StringLit value="a"
+              StringLit value="b"
+        PrintSep sep=";"
+        PrintExpr
+          expr: FnCall
+            name: Name text="mix" base="mix" suffix=-
+            args:
+              NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+              NumberLit value=6 text="6" radix=10 isReal=false suffix=-
+    LineLabel number=130 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Binary op="+"
+            left: FnCall
+              name: Name text="square" base="square" suffix=-
+              args:
+                NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+            right: FnCall
+              name: Name text="square" base="square" suffix=-
+              args:
+                NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+    LineLabel number=140 name=- key=-
+    Let explicitLet=true
+      target: Name text="z" base="z" suffix=-
+      value: FnCall
+        name: Name text="square" base="square" suffix=-
+        args:
+          Name text="i" base="i" suffix=-
+    LineLabel number=150 name=- key=-
+    Let explicitLet=false
+      target: Name text="longvariablename1" base="longvariablename1" suffix=-
+      value: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="longvariablename2" base="longvariablename2" suffix=-
+      value: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+    LineLabel number=160 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Binary op="+"
+            left: Name text="longvariablename1" base="longvariablename1" suffix=-
+            right: Name text="longvariablename2" base="longvariablename2" suffix=-
+    LineLabel number=170 name=- key=-
+    Let explicitLet=false
+      target: Name text="end2" base="end2" suffix=-
+      value: NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Name text="end2" base="end2" suffix=-
+    LineLabel number=180 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: CallOrIndex
+            callee: Name text="table" base="table" suffix=-
+            args:
+              NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: CallOrIndex
+            callee: Name text="word" base="word" suffix="$"
+            args:
+              NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: CallOrIndex
+            callee: Name text="mat" base="mat" suffix="%"
+            args:
+              NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+              NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: CallOrIndex
+            callee: Name text="cube" base="cube" suffix="!"
+            args:
+              NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+              NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+              NumberLit value=0 text="0" radix=10 isReal=false suffix=-

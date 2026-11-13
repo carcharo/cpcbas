@@ -1,0 +1,1513 @@
+[
+ {
+  "src": "#pragma heap_size = 8000\nSUB Work()\n  DIM b(3000) AS INTEGER\n  b(3000) = 3\n  PRINT b(3000)\nEND SUB\nWork()"
+ },
+ {
+  "src": "10 DATA 1\n20 RESTORE 40\n30 READ a:PRINT a\n40 PRINT \"end\""
+ },
+ {
+  "src": "10 DATA 1,2\n20 DATA 3,4\nsecond:\n30 DATA 5\n40 READ a,b,c,d,e\n50 PRINT a;b;c;d;e\n60 RESTORE\n70 READ a:PRINT a\n80 RESTORE 20\n90 READ a:PRINT a\n100 RESTORE 30\n110 READ a:PRINT a"
+ },
+ {
+  "src": "10 DEF FNdouble%(x%)=x%*2\n20 DEF FNadd%(a%,b%)=a%+b%\n30 DEF FNhi$(n$)=\"Hi \"+n$\n40 DEF FNrep$(s$,n%)=STRING$(n%,s$)\n50 DEF FNbig%(a%,b%)=-(a%>b%)*a%-(a%<=b%)*b%\n60 PRINT FNdouble%(21);FNdouble%(-4);FNdouble%(FNdouble%(5))\n70 PRINT FNadd%(3,4);FNadd%(-3,FNadd%(1,1))\n80 PRINT FNhi$(\"there\")\n90 PRINT FNrep$(\"ab\",3);\"|\";LEN(FNrep$(\"z\",5))\n100 PRINT FNbig%(3,9);FNbig%(9,3);FNbig%(-2,-5)\n110 x%=50\n120 PRINT FNdouble%(x%+1);x%\n130 PRINT FNhi$(\"a\"+\"b\")+\"!\"\n"
+ },
+ {
+  "src": "10 DEFREAL a-z\n20 ON ERROR GOTO 900\n30 PRINT EXP(88);EXP(-100);SIN(100000)\n35 PRINT (-2)^3;y^y;INT(1E10);ATN(1E38)\n40 END\n900 PRINT \"ERR\";ERR:RESUME NEXT"
+ },
+ {
+  "src": "10 DEFREAL a-z\n20 ON ERROR GOTO 900\n30 x=1E38:y=0\n40 PRINT x*10\n50 PRINT 1/y\n60 PRINT EXP(89)\n70 END\n900 PRINT \"ERR\";ERR;ERL:RESUME NEXT"
+ },
+ {
+  "src": "10 DEFREAL a-z\n20 ON ERROR GOTO 900\n30 x=1E38:y=0:z=-1\n40 PRINT (-2)^0.5\n50 PRINT \"end\"\n60 END\n900 PRINT \"ERR\";ERR;ERL:RESUME NEXT"
+ },
+ {
+  "src": "10 DEFREAL a-z\n20 ON ERROR GOTO 900\n30 x=1E38:y=0:z=-1\n40 PRINT -x*1.5-x*1.5\n50 PRINT \"end\"\n60 END\n900 PRINT \"ERR\";ERR;ERL:RESUME NEXT"
+ },
+ {
+  "src": "10 DEFREAL a-z\n20 ON ERROR GOTO 900\n30 x=1E38:y=0:z=-1\n40 PRINT 1/y\n50 PRINT \"end\"\n60 END\n900 PRINT \"ERR\";ERR;ERL:RESUME NEXT"
+ },
+ {
+  "src": "10 DEFREAL a-z\n20 ON ERROR GOTO 900\n30 x=1E38:y=0:z=-1\n40 PRINT 10^39\n50 PRINT \"end\"\n60 END\n900 PRINT \"ERR\";ERR;ERL:RESUME NEXT"
+ },
+ {
+  "src": "10 DEFREAL a-z\n20 ON ERROR GOTO 900\n30 x=1E38:y=0:z=-1\n40 PRINT CINT(40000)\n50 PRINT \"end\"\n60 END\n900 PRINT \"ERR\";ERR;ERL:RESUME NEXT"
+ },
+ {
+  "src": "10 DEFREAL a-z\n20 ON ERROR GOTO 900\n30 x=1E38:y=0:z=-1\n40 PRINT COS(1E6)\n50 PRINT \"end\"\n60 END\n900 PRINT \"ERR\";ERR;ERL:RESUME NEXT"
+ },
+ {
+  "src": "10 DEFREAL a-z\n20 ON ERROR GOTO 900\n30 x=1E38:y=0:z=-1\n40 PRINT EXP(89)\n50 PRINT \"end\"\n60 END\n900 PRINT \"ERR\";ERR;ERL:RESUME NEXT"
+ },
+ {
+  "src": "10 DEFREAL a-z\n20 ON ERROR GOTO 900\n30 x=1E38:y=0:z=-1\n40 PRINT LOG(y)\n50 PRINT \"end\"\n60 END\n900 PRINT \"ERR\";ERR;ERL:RESUME NEXT"
+ },
+ {
+  "src": "10 DEFREAL a-z\n20 ON ERROR GOTO 900\n30 x=1E38:y=0:z=-1\n40 PRINT LOG(z)\n50 PRINT \"end\"\n60 END\n900 PRINT \"ERR\";ERR;ERL:RESUME NEXT"
+ },
+ {
+  "src": "10 DEFREAL a-z\n20 ON ERROR GOTO 900\n30 x=1E38:y=0:z=-1\n40 PRINT LOG10(y)\n50 PRINT \"end\"\n60 END\n900 PRINT \"ERR\";ERR;ERL:RESUME NEXT"
+ },
+ {
+  "src": "10 DEFREAL a-z\n20 ON ERROR GOTO 900\n30 x=1E38:y=0:z=-1\n40 PRINT SIN(1E6)\n50 PRINT \"end\"\n60 END\n900 PRINT \"ERR\";ERR;ERL:RESUME NEXT"
+ },
+ {
+  "src": "10 DEFREAL a-z\n20 ON ERROR GOTO 900\n30 x=1E38:y=0:z=-1\n40 PRINT SQR(z)\n50 PRINT \"end\"\n60 END\n900 PRINT \"ERR\";ERR;ERL:RESUME NEXT"
+ },
+ {
+  "src": "10 DEFREAL a-z\n20 ON ERROR GOTO 900\n30 x=1E38:y=0:z=-1\n40 PRINT TAN(1E6)\n50 PRINT \"end\"\n60 END\n900 PRINT \"ERR\";ERR;ERL:RESUME NEXT"
+ },
+ {
+  "src": "10 DEFREAL a-z\n20 ON ERROR GOTO 900\n30 x=1E38:y=0:z=-1\n40 PRINT x*1.5+x*1.5\n50 PRINT \"end\"\n60 END\n900 PRINT \"ERR\";ERR;ERL:RESUME NEXT"
+ },
+ {
+  "src": "10 DEFREAL a-z\n20 ON ERROR GOTO 900\n30 x=1E38:y=0:z=-1\n40 PRINT x*10\n50 PRINT \"end\"\n60 END\n900 PRINT \"ERR\";ERR;ERL:RESUME NEXT"
+ },
+ {
+  "src": "10 DEFREAL a-z\n20 ON ERROR GOTO 900\n30 x=1E38:y=0:z=-1\n40 PRINT x/0.001\n50 PRINT \"end\"\n60 END\n900 PRINT \"ERR\";ERR;ERL:RESUME NEXT"
+ },
+ {
+  "src": "10 DEFREAL a-z\n20 ON ERROR GOTO 900\n30 x=1E38:y=0:z=-1\n40 PRINT y/y\n50 PRINT \"end\"\n60 END\n900 PRINT \"ERR\";ERR;ERL:RESUME NEXT"
+ },
+ {
+  "src": "10 DEFREAL a-z\n20 ON ERROR GOTO 900\n30 x=1E38:y=0:z=-1\n40 PRINT y^z\n50 PRINT \"end\"\n60 END\n900 PRINT \"ERR\";ERR;ERL:RESUME NEXT"
+ },
+ {
+  "src": "10 DEFREAL a-z\n20 ON ERROR GOTO 900\n30 y=0\n40 x=ASC(\"\")\n50 END\n900 PRINT 1/y:RESUME NEXT"
+ },
+ {
+  "src": "10 DEFREAL a-z\n20 a=1.5:b=2.25\n30 PRINT a+b;a-b;a*b;a/b\n40 PRINT -a;ABS(-b);SGN(-a);SGN(0);SGN(b)\n50 p=1:q=3:r=7:PRINT p/q;2*p/q;p/r;22*p/r\n60 PRINT 100*p/q;1E5*p/q;2.5E-3\n70 PRINT 0.1;0.5;.03;-0.0001\n80 PRINT 12345678;123456789;1E9;1E10;1.23457E12;1.5E-10\n90 PRINT SQR(2);SQR(16);SQR(0.25)\n100 DEG:PRINT SIN(30);COS(60);TAN(45):RAD\n110 PRINT SIN(1);COS(1);ATN(1);EXP(1);LOG(10)\n120 PRINT INT(2.5);INT(-2.5);FIX(-2.5);FIX(2.9);CINT(2.5);CINT(-2.5);CINT(-3.5);CINT(2.4999)\n130 PRINT STR$(0.1);\"|\";STR$(-2.5);\"|\";STR$(1E10)\n140 PRINT VAL(\"1.5\");VAL(\"-2.5E3\");VAL(\"abc\")\n150 PRINT 2^0.5;2^10;5^2;(-8)^3\n160 PRINT a>b;a<b;a=a;a<>b\n170 x=0.1:y=0.2:PRINT x+y;x*3;y/x\n180 FOR i=1 TO 4:PRINT i/4;:NEXT:PRINT\n190 PRINT MIN(a,b);MAX(a,b);MIN(3,a,b);MAX(1.5,2.5,0.5)\n200 n=7:PRINT n/2;n\\2;n MOD 2;INT(n/2)\n"
+ },
+ {
+  "src": "10 ERROR 41"
+ },
+ {
+  "src": "10 F\n20 END\n30 SUB F\n40 STOP\n50 END SUB"
+ },
+ {
+  "src": "10 FOR k=1 TO 3\n20 ON k GOSUB 100,200\n30 NEXT\n40 END\n100 PRINT \"one\";:RETURN\n200 PRINT \"two\";:RETURN"
+ },
+ {
+  "src": "10 GOSUB 100\n20 PRINT \"end\"\n30 END\n100 PRINT \"one\":GOSUB 200:PRINT \"one again\":RETURN\n200 PRINT \"two\":RETURN"
+ },
+ {
+  "src": "10 GOSUB 100\n20 RETURN\n30 END\n100 RETURN"
+ },
+ {
+  "src": "10 GOTO 60000\n60000 STOP"
+ },
+ {
+  "src": "10 MODE 1\n20 PEN 1\n30 PRINT \"Hello CPC\"\n40 FOR i=1 TO 5\n50 PRINT i\n60 NEXT i\n70 LOCATE 5,3\n80 PRINT POS(#0);VPOS(#0)\n90 END\n"
+ },
+ {
+  "src": "10 MODE 1\n20 PRINT \"a\";\"b\";1;2;-3\n30 PRINT \"a\",\"b\",\"c\"\n40 PRINT 1,2,3\n50 PRINT \"x\";\n60 PRINT \"y\"\n70 PRINT\n80 PRINT \"end\";\n90 PRINT\n100 PRINT -5;-5;5\n110 PRINT \"[\";SPC(3);\"]\";\"[\";SPC(0);\"]\"\n120 PRINT \"[\";TAB(10);\"]\";\"[\";TAB(3);\"]\"\n130 PRINT \"ab\";TAB(8);\"cd\";TAB(2);\"ef\"\n140 PRINT \"1234567890123456789012345678901234567890\"\n150 PRINT \"123456789012345678901234567890123456\";\"abcdef\"\n160 PRINT \"12345678901234567890123456789012345678\";12\n170 PRINT \"x\",\"y\",\"z\",\"w\"\n180 PRINT \"123456789012345678901234567890\";\"1234567890\";\"1\"\n190 LOCATE 30,20:PRINT \"abc\",\"def\"\n200 PRINT 12345;-12345;12345\n210 PRINT \"a\";\" \";\"b\"\n220 PRINT 1;\"x\";2;\"y\"\n230 PRINT \"a\",,\"b\"\n240 PRINT ,\"a\"\n250 PRINT \"abc\";:PRINT \"def\"\n260 PRINT SPC(38);\"ab\"\n270 PRINT TAB(40);\"c\"\n280 PRINT TAB(45);\"d\"\n290 PRINT \"z\"\n"
+ },
+ {
+  "src": "10 ON ERROR GOTO 0\n20 RESUME"
+ },
+ {
+  "src": "10 ON ERROR GOTO 900\n20 ERROR 33\n30 ERROR 255\n40 ERROR 17\n50 ERROR 0\n60 ERROR 256\n70 ERROR -1\n80 END\n900 PRINT ERR;ERL:RESUME NEXT"
+ },
+ {
+  "src": "10 ON ERROR GOTO 900\n20 FOR i=1 TO ASC(\"\"):PRINT \"body\";i:NEXT:PRINT \"after for\"\n30 WHILE ASC(\"\")=0:PRINT \"w\":WEND:PRINT \"after wend\"\n40 END\n900 RESUME NEXT"
+ },
+ {
+  "src": "10 ON ERROR GOTO 900\n20 GOSUB 100\n30 PRINT \"back\"\n40 END\n100 PRINT \"sub\":x=ASC(\"\"):PRINT \"not\"\n110 RETURN\n900 PRINT \"h\":RETURN"
+ },
+ {
+  "src": "10 ON ERROR GOTO 900\n20 GOSUB 100\n30 PRINT \"back\"\n40 END\n100 PRINT \"sub\":x=ASC(\"\"):PRINT \"sub2\"\n110 RETURN\n900 RESUME NEXT"
+ },
+ {
+  "src": "10 ON ERROR GOTO 900\n20 IF 1=1 THEN a=ASC(\"\"):PRINT \"t1\":PRINT \"t2\"\n30 PRINT \"d\"\n40 END\n900 RESUME NEXT"
+ },
+ {
+  "src": "10 ON ERROR GOTO 900\n20 ON ERROR GOTO 0\n30 x=ASC(\"\")\n40 END\n900 PRINT \"no\""
+ },
+ {
+  "src": "10 ON ERROR GOTO 900\n20 PRINT \"a\":a=ASC(\"\"):PRINT \"b\"\n30 a$=\"\":x=ASC(a$):PRINT \"x=\";x\n40 z=ASC(\"\"):PRINT \"skipped\"\n50 PRINT \"c\"\n60 PRINT \"end\"\n70 END\n900 PRINT \"ERR\";ERR;\"ERL\";ERL\n910 IF ERL=30 THEN a$=\"A\":RESUME\n920 IF ERL=20 THEN RESUME NEXT\n930 RESUME 50"
+ },
+ {
+  "src": "10 ON ERROR GOTO 900\n20 RESUME\n30 PRINT \"after\"\n40 END\n900 PRINT \"ERR\";ERR:RESUME NEXT"
+ },
+ {
+  "src": "10 ON ERROR GOTO 900\n20 RETURN\n30 PRINT \"after\"\n40 END\n900 PRINT ERR;ERL:RESUME NEXT"
+ },
+ {
+  "src": "10 ON ERROR GOTO 900\n20 a = ASC(\"\")\nhere: b = ASC(\"\")\n30 c = ASC(\"\")\n: d = ASC(\"\")\ne = ASC(\"\"): f = ASC(\"\")\n40 END\n900 PRINT ERL;:RESUME NEXT"
+ },
+ {
+  "src": "10 ON ERROR GOTO 900\n20 x = ASC(\"\")\ny = ASC(\"\")\nIF 1 THEN\n  z = ASC(\"\")\nEND IF\n30 w = ASC(\"\")\n40 END\n900 PRINT ERL;:RESUME NEXT"
+ },
+ {
+  "src": "10 ON ERROR GOTO 900\n20 x=ASC(\"\")\n30 y=ASC(\"\")\n40 END\n900 PRINT \"first\":ON ERROR GOTO 950:RESUME NEXT\n950 PRINT \"second\":RESUME NEXT"
+ },
+ {
+  "src": "10 ON ERROR GOTO 910\n20 x=ASC(\"\")\n30 PRINT \"after20\"\n40 END\n910 PRINT \"h910\":ON ERROR GOTO 0:RESUME NEXT"
+ },
+ {
+  "src": "10 ON ERROR GOTO 920\n20 y=ASC(\"\")\n30 PRINT \"not reached\"\n40 END\n920 PRINT \"h920\":q=ASC(\"\")\n930 PRINT \"unreached\""
+ },
+ {
+  "src": "10 PRINT \"a\"\n20 RETURN"
+ },
+ {
+  "src": "10 PRINT \"abc\";\n20 STOP\n30 PRINT \"not reached\""
+ },
+ {
+  "src": "10 PRINT \"x\"\n20 STOP"
+ },
+ {
+  "src": "10 PRINT ERR;ERL\n20 ON ERROR GOTO 900\n30 x=ASC(\"\")\n40 PRINT ERR;ERL\n50 END\n900 PRINT ERR;ERL:RESUME NEXT"
+ },
+ {
+  "src": "10 READ a,b$,c\n20 PRINT a;\nPRINT b$;\n25 PRINT c\n30 DATA 5,\"x y\"\n40 READ d\n50 PRINT d\n60 DATA 9,100\n70 DATA 7"
+ },
+ {
+  "src": "10 REM DATA and READ\n20 DATA 10,20,-30\n30 DATA hello, \"quoted, with comma\",  spaced out ,\"x\"\n40 DATA 7,\"seven\"\n50 READ a,b,c\n60 PRINT a;b;c\n70 READ a$,b$,c$,d$\n80 PRINT \"[\";a$;\"][\";b$;\"][\";c$;\"][\";d$;\"]\"\n90 READ n,s$\n100 PRINT n;s$\n110 RESTORE\n120 READ x:PRINT x\n130 RESTORE 40\n140 READ y:PRINT y\n150 READ z$:PRINT z$\n160 RESTORE 30\n170 READ w$:PRINT w$\n180 RESTORE 20\n190 FOR i=1 TO 3:READ v:PRINT v;:NEXT:PRINT\n200 END\n"
+ },
+ {
+  "src": "10 REM POKE/PEEK in the unused bytes of screen memory, CALL with parameters\n20 MEMORY &8FFF\n30 FOR i=0 TO 9:POKE &C7D0+i,i*3+1:NEXT\n40 FOR i=0 TO 9:PRINT PEEK(&C7D0+i);:NEXT:PRINT\n50 POKE &C7E0,255:PRINT PEEK(&C7E0);:POKE &C7E0,7:PRINT PEEK(&C7E0)\n60 REM routine at &C7D0 (sum of two parameters, A stored too): ld l,(ix+2) ... ret\n70 FOR i=0 TO 21:READ b:POKE &C7D0+i,b:NEXT\n80 POKE &C7F0,0:POKE &C7F1,0:POKE &C7F2,0\n90 CALL &C7D0,1000,234\n100 PRINT PEEK(&C7F0)+256*PEEK(&C7F1);PEEK(&C7F2)\n110 CALL &C7D0,-5,3,0\n120 PRINT PEEK(&C7F0)+256*PEEK(&C7F1);PEEK(&C7F2)\n130 CALL &BD19\n140 PRINT \"flyback done\"\n150 PRINT PEEK(&C7D0);PEEK(&C7D0+21)\n160 DATA &DD,&6E,&02,&DD,&66,&03,&DD,&5E,&00,&DD,&56,&01,&19,&22,&F0,&C7\n170 DATA &32,&F2,&C7,&C9,0,0\n"
+ },
+ {
+  "src": "10 REM POKE/PEEK in the unused bytes of screen memory, CALL with parameters\n20 MEMORY &8FFF\n30 FOR i=0 TO 9:POKE &C7D0+i,i*3+1:NEXT\n40 FOR i=0 TO 9:PRINT PEEK(&C7D0+i);:NEXT:PRINT\n50 POKE &C7E0,255:PRINT PEEK(&C7E0);:POKE &C7E0,7:PRINT PEEK(&C7E0)\n60 REM routine at &C7D0 (sum of two parameters, A stored too): ld l,(ix+2) ... ret\n70 POKE &C7D0+0,221:POKE &C7D0+1,110:POKE &C7D0+2,2:POKE &C7D0+3,221:POKE &C7D0+4,102:POKE &C7D0+5,3:POKE &C7D0+6,221:POKE &C7D0+7,94:POKE &C7D0+8,0:POKE &C7D0+9,221:POKE &C7D0+10,86:POKE &C7D0+11,1:POKE &C7D0+12,25:POKE &C7D0+13,34:POKE &C7D0+14,240:POKE &C7D0+15,199:POKE &C7D0+16,50:POKE &C7D0+17,242:POKE &C7D0+18,199:POKE &C7D0+19,201:POKE &C7D0+20,0:POKE &C7D0+21,0\n80 POKE &C7F0,0:POKE &C7F1,0:POKE &C7F2,0\n90 CALL &C7D0,1000,234\n100 PRINT PEEK(&C7F0)+256*PEEK(&C7F1);PEEK(&C7F2)\n110 CALL &C7D0,-5,3,0\n120 PRINT PEEK(&C7F0)+256*PEEK(&C7F1);PEEK(&C7F2)\n130 CALL &BD19\n140 PRINT \"flyback done\"\n150 PRINT PEEK(&C7D0);PEEK(&C7D0+21)\n"
+ },
+ {
+  "src": "10 REM comparisons print -1 or 0; AND OR XOR NOT work bitwise on 16-bit integers\n20 a%=5:b%=9\n30 PRINT a%=b%;a%<>b%;a%<b%;a%>b%;a%<=b%;a%>=b%\n40 PRINT a%=5;a%<>5;a%<5;a%>5;a%<=5;a%>=5\n50 PRINT -3<2;-3>2;-3<-4;-3>-4;0=-0\n60 PRINT a%<b% AND b%<20;a%<b% AND b%>20;a%>b% OR b%>5;a%>b% OR b%>20\n70 PRINT a%<b% XOR b%<20;a%<b% XOR b%>20\n80 PRINT NOT (a%<b%);NOT (a%>b%);NOT 0;NOT -1;NOT 5;NOT -6\n90 PRINT 10 AND 6;10 OR 6;10 XOR 6;12 AND 10;12 OR 10;12 XOR 10\n100 PRINT -1 AND 255;-1 OR 0;-256 AND 4660;255 XOR -1\n110 PRINT 1 AND 2 OR 4;1 OR 2 AND 4;NOT 1 AND 3\n120 PRINT 3+4=7;3+4=8;(3<4)+(4<3);(3<4)*7\n130 IF a%<b% AND NOT a%=b% THEN PRINT \"yes\" ELSE PRINT \"no\"\n140 IF a%>b% OR a%=b% THEN PRINT \"yes\" ELSE PRINT \"no\"\n150 PRINT 32767>-32768;-32768<32767;32767=32767;-32768=-32768\n"
+ },
+ {
+  "src": "10 REM control flow\n20 FOR i=1 TO 3\n30 IF i=2 THEN PRINT \"two\" ELSE PRINT \"not two\";i\n40 NEXT\n50 FOR i=1 TO 3:IF i<3 THEN 70\n60 PRINT \"i is\";i\n70 NEXT\n80 n=0\n90 WHILE n<4\n100 n=n+1:IF n=2 THEN 120\n110 PRINT \"n\";n\n120 WEND\n130 GOSUB 500\n140 PRINT \"back\"\n150 FOR k=0 TO 4\n160 ON k GOTO 200,210,220\n170 PRINT \"fell\";k\n180 GOTO 230\n200 PRINT \"one\":GOTO 230\n210 PRINT \"two\":GOTO 230\n220 PRINT \"three\"\n230 NEXT k\n240 FOR k=0 TO 4\n250 ON k GOSUB 600,610\n260 NEXT\n270 FOR i=10 TO 1 STEP -4:PRINT i;:NEXT:PRINT\n280 FOR i=1 TO 10 STEP 3:PRINT i;:NEXT:PRINT\n290 FOR i=1 TO 2:FOR j=1 TO 3:PRINT i*10+j;:NEXT j,i:PRINT\n300 FOR i=3 TO 1 STEP -1:PRINT i;:NEXT:PRINT\n310 GOTO 700\n500 PRINT \"sub\":RETURN\n600 PRINT \"gosub one\":RETURN\n610 PRINT \"gosub two\":RETURN\n700 x=5\n710 IF x>3 THEN IF x>4 THEN PRINT \"big\" ELSE PRINT \"mid\" ELSE PRINT \"small\"\n720 IF x<3 THEN PRINT \"small\" ELSE IF x<6 THEN PRINT \"five-ish\" ELSE PRINT \"large\"\n730 n=3\n740 WHILE n>0:m=n:WHILE m>0:PRINT m;:m=m-1:WEND:PRINT:n=n-1:WEND\n750 END\n"
+ },
+ {
+  "src": "10 REM integer arithmetic: results stay inside -32768..32767\n20 a=7:b=3:c=-4\n30 a%=7:b%=3:c%=-4\n40 PRINT a%+b%;a%-b%;a%*b%;a%\\b%;a% MOD b%\n50 PRINT c%+b%;c%-b%;c%*b%;c%\\b%;c% MOD b%\n60 PRINT a%+c%;a%-c%;a%*c%;a%\\c%;a% MOD c%\n70 PRINT c%\\b%;(-c%)\\b%;-c%\\b%;-17 MOD 5;17 MOD -5;-17 MOD -5;-17\\5\n80 PRINT 2+3*4;(2+3)*4;2*3+4;20-3-2;20-(3-2)\n90 PRINT 100\\7\\2;100\\(7\\2);100 MOD 7 MOD 3\n100 PRINT -a%;- -a%;-(a%+b%);3*-2;3- -2\n110 PRINT 2+3 MOD 2*5;10-6\\4*2;-2*-2\n120 PRINT 32767;-32768;32000+767;-32000-768\n130 PRINT 181*181;-181*181;100*327;1000\\3\n140 PRINT 1+2+3+4+5;10*10*10*10;9-8-7-6\n150 x%=100:y%=-25\n160 PRINT x%*y%;x%\\y%;x% MOD y%;y%\\7;y% MOD 7\n170 PRINT x%+y%*2-x%\\8\n"
+ },
+ {
+  "src": "10 REM strings\n20 a$=\"Hello\":b$=\"World\"\n30 PRINT a$+\" \"+b$\n40 PRINT LEN(a$);LEN(b$);LEN(\"\");LEN(a$+b$)\n50 PRINT LEFT$(a$,2);\"|\";RIGHT$(a$,2);\"|\";MID$(a$,2,3);\"|\";MID$(a$,4);\"|\";LEFT$(a$,0);\"|\";LEFT$(a$,9)\n60 PRINT CHR$(65);CHR$(97);ASC(\"A\");ASC(\"abc\");ASC(a$)\n70 PRINT STR$(5);\"|\";STR$(-5);\"|\";STR$(0);\"|\";STR$(100);\"|\";STR$(-32768)\n80 PRINT LEN(STR$(12345));LEN(STR$(-1))\n90 PRINT \"[\";SPACE$(3);\"]\";\"[\";SPACE$(0);\"]\";STRING$(4,\"x\");STRING$(3,65)\n100 PRINT a$=\"Hello\";a$=\"hello\";a$<>b$;a$<b$;a$>b$;a$<=\"Hello\";\"abc\"<\"abd\";\"ab\"<\"abc\";\"\"<\"a\"\n110 PRINT \"Z\"<\"a\";\"10\"<\"9\";\"A\">\"a\"\n120 c$=a$:c$=c$+\"!\"\n130 PRINT c$;LEN(c$);a$\n140 d$=\"\"\n150 FOR i=1 TO 3:d$=d$+CHR$(48+i):NEXT\n160 PRINT d$;LEN(d$)\n170 k$=INKEY$\n180 PRINT LEN(k$);LEN(INKEY$);k$=\"\"\n200 PRINT MID$(a$,2,1)+MID$(b$,1,1)\n220 e$=STRING$(3,\"ab\")\n230 PRINT e$\n"
+ },
+ {
+  "src": "10 REM the reversed spellings =< and => (a Syntax error on the 464, so blessed for the 6128 only)\n20 a%=5:b%=9\n30 PRINT a%=<b%;a%=>b%;a%=<5;a%=>5;b%=<a%;b%=>a%\n"
+ },
+ {
+  "src": "10 RESUME NEXT"
+ },
+ {
+  "src": "10 n=-1\n20 ON n GOSUB 100\n30 PRINT \"fell\"\n40 END\n100 RETURN"
+ },
+ {
+  "src": "10 n=-1\n20 ON n GOTO 100,200\n30 PRINT \"fell\"\n40 END\n100 PRINT \"a\"\n200 PRINT \"b\""
+ },
+ {
+  "src": "10 n=-32768\n20 ON n GOTO 100,200\n30 PRINT \"fell\"\n40 END\n100 PRINT \"a\"\n200 PRINT \"b\""
+ },
+ {
+  "src": "10 n=0\n20 ON n GOTO 100,200\n30 PRINT \"f\"\n40 END\n100 PRINT \"a\"\n110 END\n200 PRINT \"b\""
+ },
+ {
+  "src": "10 n=1\n20 ON n GOTO 100,200\n30 PRINT \"f\"\n40 END\n100 PRINT \"a\"\n110 END\n200 PRINT \"b\""
+ },
+ {
+  "src": "10 n=1000\n20 ON n GOTO 100,200\n30 PRINT \"fell\"\n40 END\n100 PRINT \"a\"\n200 PRINT \"b\""
+ },
+ {
+  "src": "10 n=2\n20 ON n GOTO 100,200\n30 PRINT \"f\"\n40 END\n100 PRINT \"a\"\n110 END\n200 PRINT \"b\""
+ },
+ {
+  "src": "10 n=255\n20 ON n GOTO 100,200\n30 PRINT \"f\"\n40 END\n100 PRINT \"a\"\n110 END\n200 PRINT \"b\""
+ },
+ {
+  "src": "10 n=256\n20 ON n GOTO 100,200\n30 PRINT \"fell\"\n40 END\n100 PRINT \"a\"\n200 PRINT \"b\""
+ },
+ {
+  "src": "10 n=3\n20 ON n GOTO 100,200\n30 PRINT \"f\"\n40 END\n100 PRINT \"a\"\n110 END\n200 PRINT \"b\""
+ },
+ {
+  "src": "10 x=ASC(\"\")"
+ },
+ {
+  "src": "9 STOP"
+ },
+ {
+  "src": "ASM\n ld a, 65\n call .core.__LOCO_PUTC\nEND ASM\nPRINT"
+ },
+ {
+  "src": "CONST k = ABS(-3)\nCONST n = LEN(\"abc\")\nCONST s$ = CHR$(65) + MID$(\"hello\", 2, 3) + STR$(7)\nDIM t(k + n) AS INTEGER\nPRINT k; n; UBOUND(t, 1)\nPRINT s$"
+ },
+ {
+  "src": "CONST n AS INTEGER = 2^8\nDIM t(2^8) AS UBYTE\nPRINT n; UBOUND(t, 1)"
+ },
+ {
+  "src": "DATA 1\nlater:\nDATA 2\nRESTORE later\nREAD a\nPRINT a"
+ },
+ {
+  "src": "DATA 1.5\nREAD a%\nPRINT a%"
+ },
+ {
+  "src": "DATA 1.5, 2, -3.25E2, 70000, 0.1\nREAD a!, b!, c!, d!, e!\nPRINT a!; b!; c!; d!; e!\nRESTORE\nREAD x!\nPRINT x!"
+ },
+ {
+  "src": "DEF FNadd%(a%,b%)=a%+b%*2\nDEF FNdouble%(x%)=x%*2\nPRINT FNadd%(3,4);FNadd%(FNdouble%(5),-1)\nx%=50\nPRINT FNdouble%(x%+1);x%"
+ },
+ {
+  "src": "DEF FNhi$(n$)=\"Hi \"+n$\nDEF FNsame$(n$)=n$\na$ = \"there\"\nFOR i = 1 TO 2\n  b$ = FNhi$(a$)\n  c$ = FNsame$(FNsame$(b$))\nNEXT\nPRINT b$; \"|\"; c$; \"|\"; FNhi$(\"a\" + \"b\") + \"!\""
+ },
+ {
+  "src": "DEF FNhi$(n$)=\"Hi \"+n$\nDEF FNsame$(n$)=n$\na$ = \"there\"\nFOR i = 1 TO 3\n  b$ = FNhi$(a$)\n  c$ = FNsame$(FNsame$(b$))\nNEXT\nPRINT b$; \"|\"; c$; \"|\"; FNhi$(\"a\" + \"b\") + \"!\""
+ },
+ {
+  "src": "DEF FNhi$(n$)=\"Hi \"+n$\nDEF FNsame$(n$)=n$\na$ = \"there\"\nFOR i = 1 TO 500\n  b$ = FNhi$(a$)\n  c$ = FNsame$(FNsame$(b$))\nNEXT\nPRINT b$; \"|\"; c$; \"|\"; FNhi$(\"a\" + \"b\") + \"!\""
+ },
+ {
+  "src": "DEF FNoff%(x%)=x%+base%\nbase%=100\nPRINT FNoff%(5)\nbase%=7\nPRINT FNoff%(5)"
+ },
+ {
+  "src": "DIM a AS FIXED\nDIM b AS FIXED\na = 1.5\nb = 2.25\nPRINT STR$(a + b); STR$(a - b); STR$(a * 2)\nIF a < b THEN PRINT \"lt\""
+ },
+ {
+  "src": "DIM a AS FIXED = 1\nDIM b AS FIXED = 4\nPRINT a / b; b / a; a / 8; 2 / b"
+ },
+ {
+  "src": "DIM a AS FIXED = 1.5\nDIM b AS FIXED = -2.25\nDIM m AS FIXED\nm = MIN(a, b)\nPRINT m; MAX(a, b); MIN(a, b, 0.5); MAX(b, 3)"
+ },
+ {
+  "src": "DIM a AS INTEGER = 42\nPRINT a\nDIM p AS UBYTE AT &C7E0\np = 9\nPRINT PEEK(&C7E0)"
+ },
+ {
+  "src": "DIM a AS UINTEGER\na = 4660\nPRINT (a + 1) AND &FFFE\na = 65000\nPRINT (a + 1) AND &FFFE"
+ },
+ {
+  "src": "DIM a$ = \"hello\", b$ = \"\"\nCONST k$ = \"K\"\nDIM c$ = k$\nPRINT a$; LEN(b$); c$\na$ = a$ + \"!\"\nPRINT a$\nSUB S()\n  DIM t$ = \"t\"\n  PRINT t$;\n  t$ = t$ + \"u\"\nEND SUB\nS\nS\nPRINT"
+ },
+ {
+  "src": "DIM a(10)\nPRINT a(5)\na(3) = 7\ni = 3\na(i + 1) = a(i) * 2\nPRINT a(3); a(4)"
+ },
+ {
+  "src": "DIM a(3)\nDIM b$(1)\nREAD a(1), b$(0)\ni = 2\nREAD a(i)\nPRINT a(1); a(2); b$(0)\nPRINT PEEK(@a(1)); PEEK(@a) \nDATA 5, \"x\", 7"
+ },
+ {
+  "src": "DIM a(3)\nREAD a(1), a(2)\ni = 3\nREAD a(i)\nPRINT a(1); a(2); a(3)\nDATA 1.5, 2.4, -1.5"
+ },
+ {
+  "src": "DIM a(3) AS INTEGER\nDIM b(3) AS INTEGER\nDIM c(3) AS INTEGER\nRANDOMIZE 7\nFOR i = 0 TO 3: a(i) = RANDOM(60000): NEXT\nRANDOMIZE 7\nFOR i = 0 TO 3: b(i) = RANDOM(60000): NEXT\nRANDOMIZE 100\nFOR i = 0 TO 3: c(i) = RANDOM(60000): NEXT\nsame = -1: other = 0\nFOR i = 0 TO 3\n IF a(i) <> b(i) THEN same = 0\n IF a(i) <> c(i) THEN other = -1\nNEXT\nPRINT same; other"
+ },
+ {
+  "src": "DIM b AS BYTE, ub AS UBYTE, i AS INTEGER, ui AS UINTEGER, l AS LONG, ul AS ULONG\nREAD b, ub, i, ui, l, ul\nPRINT b; ub; i; ui\nPRINT l; ul\nDATA -5, 200, -1234, 60000, -100000, 3000000000"
+ },
+ {
+  "src": "DIM b AS UBYTE\nFOR b = 9 TO 0 STEP -3\nPRINT b;\nNEXT\nPRINT b"
+ },
+ {
+  "src": "DIM b AS UBYTE\nREAD b, x, y\nPRINT b; x; y\nDATA 300, &FF, &X101"
+ },
+ {
+  "src": "DIM b AS UBYTE\nn = 0\nFOR b = 0 TO 255 STEP 5\nn = n + 1\nNEXT\nPRINT n; b"
+ },
+ {
+  "src": "DIM b AS UBYTE\nn = 0\nFOR b = 250 TO 255\nn = n + 1\nNEXT\nPRINT n; b\nFOR b = 3 TO 0 STEP -1\nPRINT b;\nNEXT\nPRINT b\nm% = 32767\nn = 0\nFOR i% = 32765 TO m%\nn = n + 1\nNEXT\nPRINT n; i%\nm% = -32768\nFOR i% = -32766 TO m% STEP -1\nPRINT i%;\nNEXT\nPRINT"
+ },
+ {
+  "src": "DIM b AS UBYTE\nn = 250\nFOR b = 200 TO n STEP 20\nPRINT b;\nNEXT\nPRINT b"
+ },
+ {
+  "src": "DIM b AS UBYTE = 250\nb = b + 10\nPRINT b\nDIM c AS BYTE = -5\nPRINT c; c*2\nDIM l AS LONG = 100000\nPRINT l*3; -l\nDIM u AS UINTEGER = 60000\nPRINT u+1"
+ },
+ {
+  "src": "DIM d AS INTEGER\nFOR i = 1 TO 20\n IF RANDOM(60000) <> RANDOM(60000) THEN d = d + 1\nNEXT\nPRINT d > 15"
+ },
+ {
+  "src": "DIM f AS FIXED = 1.5\nDIM g AS FIXED\ng = f * 2.5 + 0.25\nPRINT f; g; -g; ABS(-g); g / 8\nPRINT f < g; f = 1.5; g <> f\nPRINT STR$(g); \"|\"; STR$(-f)"
+ },
+ {
+  "src": "DIM f AS REAL\nDIM i AS INTEGER\nPOKE 0, 1\nPOKE 1, 137\nPOKE 2, 127\nPOKE 3, 237\nPOKE 4, 73\nf = 0.7\nf = ATN(f)\nFOR i = 0 TO 4: PRINT PEEK(i);: NEXT i\nPRINT"
+ },
+ {
+  "src": "DIM f AS REAL\nDIM i AS INTEGER\nPOKE 0, 1\nPOKE 1, 137\nPOKE 2, 127\nPOKE 3, 237\nPOKE 4, 73\nf = 0.7\nf = COS(f)\nFOR i = 0 TO 4: PRINT PEEK(i);: NEXT i\nPRINT"
+ },
+ {
+  "src": "DIM f AS REAL\nDIM i AS INTEGER\nPOKE 0, 1\nPOKE 1, 137\nPOKE 2, 127\nPOKE 3, 237\nPOKE 4, 73\nf = 0.7\nf = EXP(f)\nFOR i = 0 TO 4: PRINT PEEK(i);: NEXT i\nPRINT"
+ },
+ {
+  "src": "DIM f AS REAL\nDIM i AS INTEGER\nPOKE 0, 1\nPOKE 1, 137\nPOKE 2, 127\nPOKE 3, 237\nPOKE 4, 73\nf = 0.7\nf = LOG(f)\nFOR i = 0 TO 4: PRINT PEEK(i);: NEXT i\nPRINT"
+ },
+ {
+  "src": "DIM f AS REAL\nDIM i AS INTEGER\nPOKE 0, 1\nPOKE 1, 137\nPOKE 2, 127\nPOKE 3, 237\nPOKE 4, 73\nf = 0.7\nf = LOG10(f)\nFOR i = 0 TO 4: PRINT PEEK(i);: NEXT i\nPRINT"
+ },
+ {
+  "src": "DIM f AS REAL\nDIM i AS INTEGER\nPOKE 0, 1\nPOKE 1, 137\nPOKE 2, 127\nPOKE 3, 237\nPOKE 4, 73\nf = 0.7\nf = SIN(f)\nFOR i = 0 TO 4: PRINT PEEK(i);: NEXT i\nPRINT"
+ },
+ {
+  "src": "DIM f AS REAL\nDIM i AS INTEGER\nPOKE 0, 1\nPOKE 1, 137\nPOKE 2, 127\nPOKE 3, 237\nPOKE 4, 73\nf = 0.7\nf = SQR(16)\nFOR i = 0 TO 4: PRINT PEEK(i);: NEXT i\nPRINT"
+ },
+ {
+  "src": "DIM f AS REAL\nDIM i AS INTEGER\nPOKE 0, 1\nPOKE 1, 137\nPOKE 2, 127\nPOKE 3, 237\nPOKE 4, 73\nf = 0.7\nf = TAN(f)\nFOR i = 0 TO 4: PRINT PEEK(i);: NEXT i\nPRINT"
+ },
+ {
+  "src": "DIM f AS REAL\nDIM i AS INTEGER\nPOKE 0, 1\nPOKE 1, 137\nPOKE 2, 127\nPOKE 3, 237\nPOKE 4, 73\nf = 0.7\nf = f ^ 2.5\nFOR i = 0 TO 4: PRINT PEEK(i);: NEXT i\nPRINT"
+ },
+ {
+  "src": "DIM g AS FIXED = -2.5\nPRINT INT(g); FIX(g); CINT(g); CINT(2.5)\ni% = g\nr! = g\nPRINT i%; r! * 2\nDIM h AS FIXED\nh = 1.3\nPRINT h"
+ },
+ {
+  "src": "DIM g AS FIXED = 1\nDIM z AS FIXED\nPRINT g / z"
+ },
+ {
+  "src": "DIM l AS LONG, r AS REAL, u AS UINTEGER\ni=1234:u=65535:l=100000:r=2.5:f$=\"#,###.#\"\nPRINT DEC$(i,f$);\"|\";DEC$(u,\"######\");\"|\";DEC$(l,\"#,###,###\");\"|\";DEC$(r*2,\"##.##\")+\"|\"+DEC$(i,LEFT$(f$,5))"
+ },
+ {
+  "src": "DIM m(3, 4) AS UBYTE => {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}\nj = 1\nPRINT m(0, 0); m(1, 0); m(2, j); m(3, 4)\nm(3, j) = 200\nPRINT m(3, 1); UBOUND(m); UBOUND(m, 2)"
+ },
+ {
+  "src": "DIM n AS INTEGER\nn = -3\na! = RND(n)\nn = 0\nb! = RND(n)\nn = 2\nc! = RND(n)\nn = -3\nd! = RND(n)\nn = 0\ne! = RND(n)\nPRINT a! = b!; c! <> b!; d! = a!; e! = d!"
+ },
+ {
+  "src": "DIM n$(5)\nDIM s$(2) => {\"a\", \"\", \"c\"}\nn$(2) = \"hi\"\nn$(2) = n$(2) + \"!\"\ni = 2\nPRINT n$(i); \"[\"; n$(0); \"]\"; s$(0); s$(1); s$(2)"
+ },
+ {
+  "src": "DIM s AS STRING\nDIM i AS INTEGER\nFOR i = 1 TO 50: s = STRING$(200, \"x\"): NEXT i\nPRINT LEN(s)"
+ },
+ {
+  "src": "DIM s AS STRING\nDIM t AS STRING\nDIM i AS INTEGER\nFOR i = 1 TO 100: s = s + STRING$(200, \"x\"): NEXT i\nPRINT \"not reached\""
+ },
+ {
+  "src": "DIM s AS STRING\nDIM t AS STRING\nDIM i AS INTEGER\ns = STRING$(255, \"y\")\nFOR i = 1 TO 100: s = s + s: NEXT i\nPRINT \"not reached\""
+ },
+ {
+  "src": "DIM s AS STRING\nDIM t AS STRING\nDIM i AS INTEGER\nt = STRING$(255, \"q\")\ns = t\nFOR i = 1 TO 100: s = s + LEFT$(t, 200) + MID$(t, 5, 100) + RIGHT$(t, 50): NEXT i\nPRINT \"not reached\""
+ },
+ {
+  "src": "DIM s AS STRING\nDIM t AS STRING\nDIM i AS INTEGER\nt = STRING$(255, \"z\")\nFOR i = 1 TO 100: s = s + CHR$(65) + t: NEXT i\nPRINT \"not reached\""
+ },
+ {
+  "src": "DIM s$(2)\ns$(0) = \"HELLO\"\ns$(1) = \"HELLO\"\nt$ = s$(1)\nMID$(s$(0), 2, 2) = \"XYZ\"\ni = 1\nMID$(s$(i), 4) = \"123456\"\nPRINT s$(0); \" \"; s$(1); \" \"; t$; LEN(s$(1))"
+ },
+ {
+  "src": "DIM s(15) AS UBYTE AT &C000\ns(2) = 9\nPRINT PEEK(&C002); UBOUND(s)"
+ },
+ {
+  "src": "DIM seen(5) AS INTEGER\nbad = 0\nFOR i = 1 TO 300\n r = RANDOM(6)\n IF r < 0 OR r > 5 THEN bad = bad + 1 ELSE seen(r) = 1\n IF RANDOM(1) <> 0 THEN bad = bad + 1\n IF RANDOM(0) <> 0 THEN bad = bad + 1\n IF RANDOM(1000) > 999 THEN bad = bad + 1\n IF RANDOM(65535) > 65534 THEN bad = bad + 1\nNEXT\nPRINT bad; seen(0) + seen(1) + seen(2) + seen(3) + seen(4) + seen(5)"
+ },
+ {
+  "src": "DIM u AS UINTEGER = 60000\nDIM b AS BYTE = -1\ni% = 1000\nPRINT i% + 40000; u - i%; u < i%; b + u\ni% = -1\nPRINT u > i%; i% * u"
+ },
+ {
+  "src": "DIM u8 AS UBYTE = 200\nDIM i8 AS BYTE = -100\nDIM u16 AS UINTEGER = 60000\nDIM i16 AS INTEGER = -12345\nDIM u32 AS ULONG = 4000000000\nDIM i32 AS LONG = -100000\nPRINT STR$(u8);\"|\";STR$(i8);\"|\";STR$(u16);\"|\";STR$(i16);\"|\";STR$(u32)\nPRINT STR$(i32)\nPRINT STR$(0);\"|\";STR$(7);\"|\";STR$(u16+1);\"|\";LEN(STR$(i32*2));\"|\";STR$(3)+STR$(-3)"
+ },
+ {
+  "src": "DIM w(2) AS UINTEGER\nDIM r(2) AS REAL\nw(1) = 60000\nr(2) = 1.5\ni = 1\nPRINT w(1); w(i); r(2); r(i + 1)"
+ },
+ {
+  "src": "DIM x AS REAL\nn=-2:m=&H1234:x=2.5:b=5:w=8:a$=\"abcd\"\nPRINT \"[\";HEX$(0);\"]\"\nPRINT \"[\";HEX$(255);\"]\"\nPRINT \"[\";HEX$(-1);\"]\"\nPRINT \"[\";HEX$(65535);\"]\"\nPRINT \"[\";HEX$(65534);\"]\"\nPRINT \"[\";HEX$(-32768);\"]\"\nPRINT \"[\";HEX$(255,0);\"]\"\nPRINT \"[\";HEX$(255,1);\"]\"\nPRINT \"[\";HEX$(255,4);\"]\"\nPRINT \"[\";HEX$(255,16);\"]\"\nPRINT \"[\";HEX$(2.5);\"]\"\nPRINT \"[\";HEX$(3.5);\"]\"\nPRINT \"[\";HEX$(0,3);\"]\"\nPRINT \"[\";BIN$(5,8);\"]\"\nPRINT \"[\";BIN$(64,8);\"]\"\nPRINT \"[\";BIN$(0);\"]\"\nPRINT \"[\";BIN$(-1);\"]\"\nPRINT \"[\";BIN$(5);\"]\"\nPRINT \"[\";BIN$(255,16);\"]\"\nPRINT \"[\";BIN$(5,0);\"]\"\nPRINT \"[\";BIN$(5,2);\"]\"\nPRINT \"[\";HEX$(n);\"]\"\nPRINT \"[\";HEX$(n+1,w);\"]\"\nPRINT \"[\";HEX$(m,w);\"]\"\nPRINT \"[\";HEX$(x);\"]\"\nPRINT \"[\";HEX$(x,w-4);\"]\"\nPRINT \"[\";BIN$(b,w);\"]\"\nPRINT \"[\";HEX$(LEN(a$+a$),2);\"]\""
+ },
+ {
+  "src": "FOR i=1 TO 2\nbase=&C800+16*i\nPOKE base,&3E:POKE base+1,i:POKE base+2,&32:POKE base+3,i:POKE base+4,&C9:POKE base+5,&C9\nNEXT\nFUNCTION F(n AS UINTEGER) AS UINTEGER\nIF n > 0 THEN CALL &C800 + n * 16, F(n - 1)\nRETURN n\nEND FUNCTION\nx = F(2)\nPRINT PEEK(&C901); PEEK(&C902); x"
+ },
+ {
+  "src": "FOR i=1 TO 3\nFOR j=1 TO 3\nIF j=2 THEN CONTINUE FOR\nIF i=2 THEN EXIT FOR\nPRINT i*10+j;\nNEXT j\nNEXT i\nPRINT"
+ },
+ {
+  "src": "FOR k=1 TO 2\nRESTORE\nREAD a,b\nPRINT a;b\nNEXT\nDATA 3,4"
+ },
+ {
+  "src": "FOR k=1 TO 7\nREAD a\nPRINT a;\nNEXT\nPRINT\nDATA 1,,3\nDATA ,\nDATA 5,"
+ },
+ {
+  "src": "FOR k=1 TO 7\nREAD a$\nPRINT \"[\";a$;\"]\";\nNEXT\nPRINT\nDATA 1,,3\nDATA ,\nDATA 5,"
+ },
+ {
+  "src": "FOR k=1 TO 7\nREAD c,r\nLOCATE c,r\na=POS(#0):b=VPOS(#0)\nLOCATE 1,10\nPRINT a;b\nNEXT\nDATA 40,1, 41,1, 81,1, 1,25, 1,26, 255,1, 1,255"
+ },
+ {
+  "src": "FOR n=0 TO 6\nSELECT CASE n\nCASE 1, 2\nPRINT \"a\";\nCASE 3 TO 4\nPRINT \"b\";\nCASE IS >= 6\nPRINT \"c\";\nCASE ELSE\nPRINT \"e\";\nEND SELECT\nNEXT\nPRINT"
+ },
+ {
+  "src": "FOR x! = 0 TO 1 STEP 0.25\nPRINT x!;\nNEXT\nPRINT\nFOR x! = 1 TO 0 STEP -0.5\nPRINT x!;\nNEXT\nPRINT\nn! = 2.5\nIF n! THEN PRINT \"t\"\nn! = 0\nIF n! THEN PRINT \"t2\" ELSE PRINT \"f2\"\nWHILE n! < 2\nn! = n! + 0.75\nWEND\nPRINT n!"
+ },
+ {
+  "src": "FRAME\nFRAME\nPRINT \"ok\""
+ },
+ {
+  "src": "FUNCTION Add(a AS INTEGER, b AS INTEGER) AS INTEGER\n  RETURN a + b + base\nEND FUNCTION\nbase = 1000\nPRINT Add(Add(1, 2), Add(3, 4))"
+ },
+ {
+  "src": "FUNCTION Big(s AS STRING) AS REAL\nASM\nld a, 0\nld e, 5\nld d, 0\nld c, 0\nld b, 0x98\nEND ASM\nEND FUNCTION\nPRINT Big(\"ab\" + \"c\")"
+ },
+ {
+  "src": "FUNCTION Build(n AS INTEGER) AS STRING\n  DIM w(2) AS STRING\n  w(0) = \"a\" + STR$(n)\n  IF n > 0 THEN w(1) = Build(n - 1)\n  RETURN w(0) + w(1)\nEND FUNCTION\nPRINT Build(3)"
+ },
+ {
+  "src": "FUNCTION Bumped() AS INTEGER\n  g = g + 1\n  RETURN g\nEND FUNCTION\nFUNCTION Sub3(a AS INTEGER, b AS INTEGER, c AS INTEGER) AS INTEGER\n  RETURN a * 100 + b * 10 + c\nEND FUNCTION\ng = 0\nPRINT Sub3(g, Bumped(), g)\nPRINT Sub3(Bumped(), Bumped(), Bumped())"
+ },
+ {
+  "src": "FUNCTION Count(inc AS INTEGER) AS INTEGER\n  DIM total AS INTEGER\n  total = total + inc\n  total = total + inc\n  Count = total\nEND FUNCTION\nPRINT Count(3); Count(3); Count(4)"
+ },
+ {
+  "src": "FUNCTION Elt(m() AS INTEGER, i AS INTEGER, j AS INTEGER) AS INTEGER\n  RETURN m(i, j)\nEND FUNCTION\nDIM g(2, 2) AS INTEGER\ng(1, 2) = 12\ng(2, 0) = 20\nPRINT Elt(g, 1, 2); Elt(g, 2, 0)"
+ },
+ {
+  "src": "FUNCTION F() AS INTEGER\n  F = 4\n  GOSUB Sub1\nSub1:\n  F = F + 3\n  EXIT FUNCTION\nEND FUNCTION\nPRINT F()"
+ },
+ {
+  "src": "FUNCTION F() AS INTEGER\n RETURN 5\nEND FUNCTION\nSUB T()\n DIM i AS INTEGER\n FOR i = 1 TO 3\n  DIM a AS INTEGER = 5\n  a = a + 1\n  PRINT a;\n NEXT\n PRINT\n FOR i = 1 TO 3\n  DIM b AS INTEGER = F()\n  b = b + 1\n  PRINT b;\n NEXT\n PRINT\nEND SUB\nT()"
+ },
+ {
+  "src": "FUNCTION F(k AS INTEGER) AS INTEGER\n  DIM w(3) AS STRING\n  w(1) = \"abc\"\n  F = 5\n  IF k > 0 THEN EXIT FUNCTION\n  F = 9\nEND FUNCTION\nDIM i AS INTEGER, s AS INTEGER\nFOR i = 1 TO 500: s = F(1): NEXT\nPRINT F(1); F(0)"
+ },
+ {
+  "src": "FUNCTION F(n AS INTEGER) AS INTEGER\n  DIM r AS INTEGER\n  r = n\n  GOSUB Twice\n  GOSUB Twice\n  IF r > 100 THEN RETURN 0\n  RETURN r + 1\nTwice:\n  r = r * 2\n  RETURN\nEND FUNCTION\nPRINT F(3); F(30)"
+ },
+ {
+  "src": "FUNCTION F(n AS INTEGER) AS INTEGER\n  F = 5\n  IF n = 0 THEN EXIT FUNCTION\n  F = 6\nEND FUNCTION\nPRINT F(0); F(1)"
+ },
+ {
+  "src": "FUNCTION F(s$) AS INTEGER\n  SELECT CASE s$\n  CASE \"a\"\n    RETURN 1\n  CASE \"b\"\n    EXIT FUNCTION\n  END SELECT\n  RETURN 9\nEND FUNCTION\nPRINT F(\"a\");F(\"b\");F(\"c\")"
+ },
+ {
+  "src": "FUNCTION F(x AS UBYTE) AS UINTEGER\nLOCATE 1, 1\nBORDER 1\nEND FUNCTION\nLOCATE 1, 3\nPRINT F(1)"
+ },
+ {
+  "src": "FUNCTION Fact(n AS LONG) AS LONG\n  IF n <= 1 THEN RETURN 1\n  RETURN n * Fact(n - 1)\nEND FUNCTION\nFUNCTION Fib(n AS INTEGER) AS INTEGER\n  IF n < 2 THEN RETURN n\n  RETURN Fib(n - 1) + Fib(n - 2)\nEND FUNCTION\nPRINT Fact(7); Fib(15)"
+ },
+ {
+  "src": "FUNCTION G() AS INTEGER\n  RETURN 7\nEND FUNCTION\nFUNCTION B2() AS INTEGER\n  DIM m AS INTEGER = G()\n  RETURN m\nEND FUNCTION\nPRINT B2()"
+ },
+ {
+  "src": "FUNCTION GetSp() AS UINTEGER\n  ASM\n  ld hl, 0\n  add hl, sp\n  END ASM\nEND FUNCTION\nSUB W(n AS INTEGER)\n  DIM s AS STRING\n  DIM a(10) AS INTEGER\n  DIM b(3) AS STRING\n  s = \"hello\" + STR$(n)\n  b(2) = s + s\n  a(10) = n\n  GOSUB L\n  PRINT \"never\"\n  EXIT SUB\nL:\n  GOSUB M\n  PRINT \"never\"\n  RETURN\nM:\n  IF n >= 0 THEN EXIT SUB\n  RETURN\nEND SUB\nDIM i AS INTEGER\nPOKE &A000, 0\nFOR i = 1 TO 1000: W(i): NEXT\nDIM sp AS UINTEGER\nsp = GetSp()\nPOKE &A000, sp MOD 256\nPOKE &A001, sp \\ 256\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "FUNCTION GetSp() AS UINTEGER\n  ASM\n  ld hl, 0\n  add hl, sp\n  END ASM\nEND FUNCTION\nSUB W(n AS INTEGER)\n  DIM s AS STRING\n  DIM a(10) AS INTEGER\n  DIM b(3) AS STRING\n  s = \"hello\" + STR$(n)\n  b(2) = s + s\n  a(10) = n\n  GOSUB L\n  PRINT \"never\"\n  EXIT SUB\nL:\n  GOSUB M\n  PRINT \"never\"\n  RETURN\nM:\n  IF n >= 0 THEN EXIT SUB\n  RETURN\nEND SUB\nDIM i AS INTEGER\nPOKE &A000, 0\nFOR i = 1 TO 2: W(i): NEXT\nDIM sp AS UINTEGER\nsp = GetSp()\nPOKE &A000, sp MOD 256\nPOKE &A001, sp \\ 256\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "FUNCTION Greet(n AS STRING) AS STRING\n  DIM s AS STRING = \"Hello, \" + n\n  DIM t AS STRING = s + \"!\"\n  RETURN t\nEND FUNCTION\nDIM i AS INTEGER\nDIM r AS STRING\nFOR i = 1 TO 300\n  r = Greet(\"Ann\")\nNEXT\nPRINT r"
+ },
+ {
+  "src": "FUNCTION Mix(a AS UBYTE, b AS INTEGER, c AS LONG, d AS BYTE) AS LONG\n  RETURN a + b * 10 + c * 1000 + d\nEND FUNCTION\nPRINT Mix(200, -3, 4, -5)"
+ },
+ {
+  "src": "FUNCTION Next1() AS INTEGER\n  DIM n AS INTEGER = 10\n  n = n + 1\n  RETURN n\nEND FUNCTION\nPRINT Next1(); Next1()"
+ },
+ {
+  "src": "FUNCTION Pick(s AS STRING, which AS INTEGER) AS STRING\n  DIM t AS STRING\n  t = s + s\n  IF which = 0 THEN\n    Pick = t\n    EXIT FUNCTION\n  END IF\n  IF which = 1 THEN RETURN t + \"!\"\n  Pick = \"none\"\nEND FUNCTION\na$ = \"ab\"\nFOR i = 1 TO 2\n  r$ = Pick(a$, i MOD 3)\nNEXT\nPRINT r$; Pick(a$, 0); Pick(a$, 1); Pick(\"q\", 2)"
+ },
+ {
+  "src": "FUNCTION Pick(s AS STRING, which AS INTEGER) AS STRING\n  DIM t AS STRING\n  t = s + s\n  IF which = 0 THEN\n    Pick = t\n    EXIT FUNCTION\n  END IF\n  IF which = 1 THEN RETURN t + \"!\"\n  Pick = \"none\"\nEND FUNCTION\na$ = \"ab\"\nFOR i = 1 TO 5\n  r$ = Pick(a$, i MOD 3)\nNEXT\nPRINT r$; Pick(a$, 0); Pick(a$, 1); Pick(\"q\", 2)"
+ },
+ {
+  "src": "FUNCTION Pick(s AS STRING, which AS INTEGER) AS STRING\n  DIM t AS STRING\n  t = s + s\n  IF which = 0 THEN\n    Pick = t\n    EXIT FUNCTION\n  END IF\n  IF which = 1 THEN RETURN t + \"!\"\n  Pick = \"none\"\nEND FUNCTION\na$ = \"ab\"\nFOR i = 1 TO 500\n  r$ = Pick(a$, i MOD 3)\nNEXT\nPRINT r$; Pick(a$, 0); Pick(a$, 1); Pick(\"q\", 2)"
+ },
+ {
+  "src": "FUNCTION S() AS INTEGER\n  RETURN\nZ:\n  RETURN\n  GOSUB Z\nEND FUNCTION\nPRINT S()\nPRINT \"not reached\""
+ },
+ {
+  "src": "FUNCTION Seven(x AS UBYTE) AS UBYTE\nASM\nld a, 7\nEND ASM\nEND FUNCTION\nFUNCTION Wide(x AS UBYTE) AS UINTEGER\nASM\nld hl, 4660\nEND ASM\nEND FUNCTION\nFUNCTION Len2(s AS STRING) AS UBYTE\nASM\nld a, 9\nEND ASM\nEND FUNCTION\nFUNCTION Plain(x AS UBYTE) AS UBYTE\nRETURN x + 1\nEND FUNCTION\nPRINT Len2(\"abc\" + \"d\")"
+ },
+ {
+  "src": "FUNCTION Seven(x AS UBYTE) AS UBYTE\nASM\nld a, 7\nEND ASM\nEND FUNCTION\nFUNCTION Wide(x AS UBYTE) AS UINTEGER\nASM\nld hl, 4660\nEND ASM\nEND FUNCTION\nFUNCTION Len2(s AS STRING) AS UBYTE\nASM\nld a, 9\nEND ASM\nEND FUNCTION\nFUNCTION Plain(x AS UBYTE) AS UBYTE\nRETURN x + 1\nEND FUNCTION\nPRINT Seven(1); Wide(2); Plain(4)"
+ },
+ {
+  "src": "FUNCTION Square(n AS INTEGER) AS INTEGER\n  Square = n * n\nEND FUNCTION\nFUNCTION Pick(n AS INTEGER) AS INTEGER\n  IF n > 0 THEN RETURN 100 + n\n  Pick = -1\nEND FUNCTION\nPRINT Square(7); Square(-3); Pick(5); Pick(-5)"
+ },
+ {
+  "src": "FUNCTION Sum(n AS INTEGER) AS INTEGER\n  DIM t AS INTEGER\n  IF n = 0 THEN RETURN 0\n  GOSUB Dbl\n  RETURN t + Sum(n - 1)\nDbl:\n  t = n * 2\n  RETURN\nEND FUNCTION\nPRINT Sum(4)"
+ },
+ {
+  "src": "FUNCTION Sum(v() AS UBYTE, n AS INTEGER) AS INTEGER\n  DIM i AS INTEGER\n  DIM s AS INTEGER\n  FOR i = 0 TO n - 1: s = s + v(i): NEXT\n  RETURN s\nEND FUNCTION\nDIM g(4) AS UBYTE => {1, 2, 3, 4, 5}\nSUB Local()\n  DIM l(2) AS UBYTE => {10, 20, 30}\n  PRINT Sum(l, 3)\nEND SUB\nPRINT Sum(g, 5)\nLocal()"
+ },
+ {
+  "src": "FUNCTION SumSq(n AS INTEGER) AS INTEGER\n  DIM t(9) AS INTEGER\n  DIM i AS INTEGER\n  DIM s AS INTEGER\n  FOR i = 0 TO n - 1: t(i) = i * i: NEXT\n  FOR i = 0 TO n - 1: s = s + t(i): NEXT\n  RETURN s + t(9)\nEND FUNCTION\nPRINT SumSq(5)"
+ },
+ {
+  "src": "FUNCTION Tick() AS STRING\n  g$ = g$ + \"+\"\n  RETURN g$\nEND FUNCTION\nFUNCTION Join(a AS STRING, b AS STRING, c AS STRING) AS STRING\n  RETURN a + \"/\" + b + \"/\" + c\nEND FUNCTION\ng$ = \"\"\nPRINT Join(g$, Tick(), g$)"
+ },
+ {
+  "src": "FUNCTION Two() AS INTEGER\n  RETURN 2\nEND FUNCTION\nx = 10\nPRINT x * Two() + x - Two()"
+ },
+ {
+  "src": "FUNCTION Wrap(s AS STRING) AS STRING\n  DIM t AS STRING\n  t = \"<\" + s\n  Wrap = t + \">\"\nEND FUNCTION\na$ = \"payload\"\nFOR i = 1 TO 2\n  b$ = Wrap(a$)\n  c$ = Wrap(b$ + a$)\nNEXT\nPRINT b$; c$"
+ },
+ {
+  "src": "FUNCTION Wrap(s AS STRING) AS STRING\n  DIM t AS STRING\n  t = \"<\" + s\n  Wrap = t + \">\"\nEND FUNCTION\na$ = \"payload\"\nFOR i = 1 TO 500\n  b$ = Wrap(a$)\n  c$ = Wrap(b$ + a$)\nNEXT\nPRINT b$; c$"
+ },
+ {
+  "src": "FUNCTION Wrap(s AS STRING) AS STRING\n  RETURN \"[\" + s + \"]\"\nEND FUNCTION\na$ = \"mid\"\nPRINT Wrap(a$) + Wrap(\"x\") + \"!\"\nPRINT a$"
+ },
+ {
+  "src": "FUNCTION f(x AS REAL) AS REAL\n  RETURN x * 2\nEND FUNCTION\nPRINT MAX(1.5, f(2.25), f(0.5))"
+ },
+ {
+  "src": "FUNCTION half(x AS REAL) AS REAL\n  RETURN x / 2\nEND FUNCTION\nSUB show(v AS REAL, BYREF w AS REAL)\n  PRINT v; w\n  w = w * 2\nEND SUB\nDIM q AS REAL = 3\nPRINT half(5)\nshow(1.25, q)\nPRINT q"
+ },
+ {
+  "src": "LOCATE 0,1\nPRINT \"after\""
+ },
+ {
+  "src": "LOCATE 1,256\nPRINT \"never\""
+ },
+ {
+  "src": "LOCATE 256,1\nPRINT \"never\""
+ },
+ {
+  "src": "LOCATE 257,1\nPRINT \"never\""
+ },
+ {
+  "src": "MODE 1\nPEN 3\nPAPER 1\nBORDER 5\nc=9\nBORDER c, 4\nCLS\nPRINT \"x\""
+ },
+ {
+  "src": "ON ERROR GOTO Handler\nx = ASC(\"\")\nEND\nHandler:\nPRINT ERL\nRESUME NEXT"
+ },
+ {
+  "src": "ON ERROR GOTO Handler\nx = ASC(\"\")\nEND\nHandler:\nPRINT ERR; ERL\nRESUME NEXT"
+ },
+ {
+  "src": "PAUSE 10"
+ },
+ {
+  "src": "PAUSE 6\na = RANDOM(60000)\nPRINT a"
+ },
+ {
+  "src": "POKE &C7D0+0,221:POKE &C7D0+1,110:POKE &C7D0+2,0:POKE &C7D0+3,221:POKE &C7D0+4,102:POKE &C7D0+5,1:POKE &C7D0+6,126:POKE &C7D0+7,50:POKE &C7D0+8,240:POKE &C7D0+9,199:POKE &C7D0+10,221:POKE &C7D0+11,110:POKE &C7D0+12,2:POKE &C7D0+13,221:POKE &C7D0+14,102:POKE &C7D0+15,3:POKE &C7D0+16,126:POKE &C7D0+17,50:POKE &C7D0+18,241:POKE &C7D0+19,199:POKE &C7D0+20,201\nb$=\"pq\"\nCALL &C7D0, \"abc\" + b$, b$ + \"z\"\nPRINT PEEK(&C7F1); PEEK(&C7F0)"
+ },
+ {
+  "src": "POKE &C7D0+0,221:POKE &C7D0+1,110:POKE &C7D0+2,0:POKE &C7D0+3,221:POKE &C7D0+4,102:POKE &C7D0+5,1:POKE &C7D0+6,126:POKE &C7D0+7,50:POKE &C7D0+8,240:POKE &C7D0+9,199:POKE &C7D0+10,221:POKE &C7D0+11,110:POKE &C7D0+12,2:POKE &C7D0+13,221:POKE &C7D0+14,102:POKE &C7D0+15,3:POKE &C7D0+16,126:POKE &C7D0+17,50:POKE &C7D0+18,241:POKE &C7D0+19,199:POKE &C7D0+20,201\nb$=\"pq\"\nFOR i=1 TO 2\nCALL &C7D0, \"abc\" + b$, b$ + \"z\"\nNEXT"
+ },
+ {
+  "src": "POKE &C7D0+0,221:POKE &C7D0+1,110:POKE &C7D0+2,0:POKE &C7D0+3,221:POKE &C7D0+4,102:POKE &C7D0+5,1:POKE &C7D0+6,126:POKE &C7D0+7,50:POKE &C7D0+8,240:POKE &C7D0+9,199:POKE &C7D0+10,221:POKE &C7D0+11,110:POKE &C7D0+12,2:POKE &C7D0+13,221:POKE &C7D0+14,102:POKE &C7D0+15,3:POKE &C7D0+16,126:POKE &C7D0+17,50:POKE &C7D0+18,241:POKE &C7D0+19,199:POKE &C7D0+20,201\nb$=\"pq\"\nFOR i=1 TO 200\nCALL &C7D0, \"abc\" + b$, b$ + \"z\"\nNEXT"
+ },
+ {
+  "src": "POKE &C7D0+0,221:POKE &C7D0+1,110:POKE &C7D0+2,0:POKE &C7D0+3,221:POKE &C7D0+4,102:POKE &C7D0+5,1:POKE &C7D0+6,126:POKE &C7D0+7,50:POKE &C7D0+8,240:POKE &C7D0+9,199:POKE &C7D0+10,221:POKE &C7D0+11,110:POKE &C7D0+12,2:POKE &C7D0+13,221:POKE &C7D0+14,102:POKE &C7D0+15,3:POKE &C7D0+16,34:POKE &C7D0+17,242:POKE &C7D0+18,199:POKE &C7D0+19,201\nSUB Go(s AS STRING)\nCALL &C7D0, 77, s + \"!\"\nEND SUB\nGo(\"abc\")\nPRINT PEEK(&C7F0); PEEK(UINTEGER, &C7F2)"
+ },
+ {
+  "src": "POKE &C7D0+0,221:POKE &C7D0+1,110:POKE &C7D0+2,0:POKE &C7D0+3,221:POKE &C7D0+4,102:POKE &C7D0+5,1:POKE &C7D0+6,126:POKE &C7D0+7,50:POKE &C7D0+8,240:POKE &C7D0+9,199:POKE &C7D0+10,35:POKE &C7D0+11,94:POKE &C7D0+12,35:POKE &C7D0+13,86:POKE &C7D0+14,26:POKE &C7D0+15,50:POKE &C7D0+16,241:POKE &C7D0+17,199:POKE &C7D0+18,201\nCALL &C7D0, \"Q\"\nPRINT PEEK(&C7F0); PEEK(&C7F1)\nc$=\"abc\"\nCALL &C7D0, c$\nPRINT PEEK(&C7F0); PEEK(&C7F1)\nd$=\"\"\nCALL &C7D0, d$\nPRINT PEEK(&C7F0)"
+ },
+ {
+  "src": "POKE &C7D0+0,221:POKE &C7D0+1,110:POKE &C7D0+2,0:POKE &C7D0+3,221:POKE &C7D0+4,102:POKE &C7D0+5,1:POKE &C7D0+6,126:POKE &C7D0+7,50:POKE &C7D0+8,240:POKE &C7D0+9,199:POKE &C7D0+10,35:POKE &C7D0+11,94:POKE &C7D0+12,35:POKE &C7D0+13,86:POKE &C7D0+14,26:POKE &C7D0+15,50:POKE &C7D0+16,241:POKE &C7D0+17,199:POKE &C7D0+18,201\na$=\"hello\"\nCALL &C7D0, @a$\nPRINT PEEK(&C7F0); PEEK(&C7F1)"
+ },
+ {
+  "src": "POKE &C7D0+0,221:POKE &C7D0+1,110:POKE &C7D0+2,0:POKE &C7D0+3,221:POKE &C7D0+4,102:POKE &C7D0+5,1:POKE &C7D0+6,126:POKE &C7D0+7,50:POKE &C7D0+8,240:POKE &C7D0+9,199:POKE &C7D0+10,35:POKE &C7D0+11,94:POKE &C7D0+12,35:POKE &C7D0+13,86:POKE &C7D0+14,26:POKE &C7D0+15,50:POKE &C7D0+16,241:POKE &C7D0+17,199:POKE &C7D0+18,201\na$=STRING$(300,\"k\")\nCALL &C7D0, @a$\nPRINT PEEK(&C7F0); PEEK(&C7F1); LEN(a$)"
+ },
+ {
+  "src": "POKE &C7D0+0,221:POKE &C7D0+1,110:POKE &C7D0+2,0:POKE &C7D0+3,221:POKE &C7D0+4,102:POKE &C7D0+5,1:POKE &C7D0+6,126:POKE &C7D0+7,50:POKE &C7D0+8,240:POKE &C7D0+9,199:POKE &C7D0+10,35:POKE &C7D0+11,94:POKE &C7D0+12,35:POKE &C7D0+13,86:POKE &C7D0+14,26:POKE &C7D0+15,50:POKE &C7D0+16,241:POKE &C7D0+17,199:POKE &C7D0+18,201\nb$=\"z\"\nCALL &C7D0, \"xy\" + b$\nPRINT PEEK(&C7F0); PEEK(&C7F1)"
+ },
+ {
+  "src": "POKE &C7D0+0,221:POKE &C7D0+1,110:POKE &C7D0+2,0:POKE &C7D0+3,221:POKE &C7D0+4,102:POKE &C7D0+5,1:POKE &C7D0+6,126:POKE &C7D0+7,50:POKE &C7D0+8,240:POKE &C7D0+9,199:POKE &C7D0+10,35:POKE &C7D0+11,94:POKE &C7D0+12,35:POKE &C7D0+13,86:POKE &C7D0+14,26:POKE &C7D0+15,50:POKE &C7D0+16,241:POKE &C7D0+17,199:POKE &C7D0+18,201\nb$=\"z\"\nFOR i=1 TO 2\nCALL &C7D0, \"xy\" + b$\nNEXT"
+ },
+ {
+  "src": "POKE &C7D0+0,221:POKE &C7D0+1,110:POKE &C7D0+2,0:POKE &C7D0+3,221:POKE &C7D0+4,102:POKE &C7D0+5,1:POKE &C7D0+6,126:POKE &C7D0+7,50:POKE &C7D0+8,240:POKE &C7D0+9,199:POKE &C7D0+10,35:POKE &C7D0+11,94:POKE &C7D0+12,35:POKE &C7D0+13,86:POKE &C7D0+14,26:POKE &C7D0+15,50:POKE &C7D0+16,241:POKE &C7D0+17,199:POKE &C7D0+18,201\nb$=\"z\"\nFOR i=1 TO 200\nCALL &C7D0, \"xy\" + b$\nNEXT"
+ },
+ {
+  "src": "POKE &C7D0+0,221:POKE &C7D0+1,110:POKE &C7D0+2,0:POKE &C7D0+3,221:POKE &C7D0+4,102:POKE &C7D0+5,1:POKE &C7D0+6,35:POKE &C7D0+7,94:POKE &C7D0+8,35:POKE &C7D0+9,86:POKE &C7D0+10,62:POKE &C7D0+11,66:POKE &C7D0+12,18:POKE &C7D0+13,201\na$=\"hello\"\nCALL &C7D0, @a$\nPRINT a$"
+ },
+ {
+  "src": "POKE &C7D0+0,50:POKE &C7D0+1,240:POKE &C7D0+2,199:POKE &C7D0+3,221:POKE &C7D0+4,110:POKE &C7D0+5,0:POKE &C7D0+6,221:POKE &C7D0+7,102:POKE &C7D0+8,1:POKE &C7D0+9,34:POKE &C7D0+10,241:POKE &C7D0+11,199:POKE &C7D0+12,201\na=&C7D0\nCALL a, 11, 300\nPRINT PEEK(&C7F0); PEEK(UINTEGER, &C7F1)\nCALL a\nPRINT PEEK(&C7F0)"
+ },
+ {
+  "src": "PRINT 0.1 + 0.2; 2.0 / 3.0 * 3.0; 1.0 / 3.0 * 3.0; 10.0 / 4.0 - 0.1 * 3.0"
+ },
+ {
+  "src": "PRINT 1\nSTOP\nPRINT 2"
+ },
+ {
+  "src": "PRINT 2^3\nPRINT 2^30\nPRINT 10^9\nPRINT 10^8"
+ },
+ {
+  "src": "PRINT ASC(\"\")\nPRINT \"never\""
+ },
+ {
+  "src": "PRINT AT -1,0;\"x\"\nPRINT \"never\""
+ },
+ {
+  "src": "PRINT AT 0,-1;\"x\"\nPRINT \"never\""
+ },
+ {
+  "src": "PRINT AT 0,255;\"x\"\nPRINT \"never\""
+ },
+ {
+  "src": "PRINT AT 0,40;\"x\"\nPRINT \"after\""
+ },
+ {
+  "src": "PRINT AT 25,0;\"x\"\nPRINT \"after\""
+ },
+ {
+  "src": "PRINT AT 255,0;\"x\"\nPRINT \"never\""
+ },
+ {
+  "src": "PRINT AT 300,300;\"x\"\nPRINT \"never\""
+ },
+ {
+  "src": "PRINT AT 4,9;\nPRINT POS(#0);VPOS(#0)\nPRINT AT 0,0;\nPRINT POS(#0);VPOS(#0)\nPRINT AT 24,39;\na=POS(#0):b=VPOS(#0)\nPRINT AT 0,0;\nPRINT a;b"
+ },
+ {
+  "src": "PRINT CINT(-32768.4)"
+ },
+ {
+  "src": "PRINT CINT(40000)"
+ },
+ {
+  "src": "PRINT ERR; ERL\nON ERROR GOTO 0"
+ },
+ {
+  "src": "PRINT FRE(0); FRE(\"\")"
+ },
+ {
+  "src": "PRINT HIMEM"
+ },
+ {
+  "src": "PRINT INSTR(\"abc\",\"\");INSTR(2,\"abc\",\"\");INSTR(4,\"abc\",\"\");INSTR(5,\"abc\",\"\");INSTR(\"\",\"\")"
+ },
+ {
+  "src": "PRINT LEN(z$);\"[\";z$;\"]\";z$+\"x\""
+ },
+ {
+  "src": "PRINT ROUND(0.123456789,8)\nPRINT ROUND(0.123456789,9)\nPRINT ROUND(0.123456789,10)\nPRINT ROUND(1E-5,3)\nPRINT ROUND(0.0005,3)\nPRINT ROUND(99999.9999,2)\nPRINT ROUND(12345.6789,4)\nPRINT ROUND(12345.6789,5)"
+ },
+ {
+  "src": "PRINT ROUND(1, -200)"
+ },
+ {
+  "src": "PRINT ROUND(1, -40)"
+ },
+ {
+  "src": "PRINT ROUND(1, -45)"
+ },
+ {
+  "src": "PRINT ROUND(1, 200)"
+ },
+ {
+  "src": "PRINT ROUND(1, 40)"
+ },
+ {
+  "src": "PRINT ROUND(1, 41)"
+ },
+ {
+  "src": "PRINT ROUND(1,38)\nPRINT ROUND(1,39)\nPRINT ROUND(1E38,-38)\nPRINT ROUND(1.5E38,-37)\nPRINT ROUND(1.7E38,0)\nPRINT ROUND(1.7E38,2)\nPRINT ROUND(1.7E37,2)\nPRINT ROUND(1E-38,5)\nPRINT ROUND(1E30,-30)\nPRINT ROUND(0,3)\nPRINT ROUND(0,-3)\nPRINT ROUND(1,-38)\nPRINT ROUND(1,-39)"
+ },
+ {
+  "src": "PRINT ROUND(1234.5678,-2)\nPRINT ROUND(1250,-2)\nPRINT ROUND(-1250,-2)\nPRINT ROUND(1234.5678,-1)\nPRINT ROUND(1249,-2)\nPRINT ROUND(5,-1)\nPRINT ROUND(4,-1)\nPRINT ROUND(15,-1)\nPRINT ROUND(25,-1)\nPRINT ROUND(-15,-1)\nPRINT ROUND(7,-1)"
+ },
+ {
+  "src": "PRINT ROUND(123456789.5)\nPRINT ROUND(123456789.4)\nPRINT ROUND(12345678.55,1)\nPRINT ROUND(123456789,-1)\nPRINT ROUND(123456789,-8)\nPRINT ROUND(123456789,-9)\nPRINT ROUND(123456789.123,3)"
+ },
+ {
+  "src": "PRINT ROUND(2.567,1.6)\nPRINT ROUND(2.567,0.4)\nPRINT ROUND(1234.5,-1.6)"
+ },
+ {
+  "src": "PRINT ROUND(2.567,2)\nPRINT ROUND(2.5)\nPRINT ROUND(-2.5)\nPRINT ROUND(2.5,0)\nPRINT ROUND(0.5)\nPRINT ROUND(-0.5)\nPRINT ROUND(0.49)"
+ },
+ {
+  "src": "PRINT ROUND(2.675,2)\nPRINT ROUND(1.005,2)\nPRINT ROUND(0.285,2)\nPRINT ROUND(1.45,1)\nPRINT ROUND(1.55,1)\nPRINT ROUND(-2.675,2)\nPRINT ROUND(0.15,1)\nPRINT ROUND(0.25,1)\nPRINT ROUND(0.35,1)\nPRINT ROUND(8.345,2)\nPRINT ROUND(4.35,1)\nPRINT ROUND(10.075,2)"
+ },
+ {
+  "src": "PRINT ROUND(32767, -1)"
+ },
+ {
+  "src": "PRINT ROUND(32767.5)\nPRINT ROUND(32768.4)\nPRINT ROUND(-32768.5)\nPRINT ROUND(2147483647.5)"
+ },
+ {
+  "src": "PRINT ROUND(ROUND(2.567, 2) * 10, ROUND(0.4)); ROUND(-0.4); ROUND(-0.004, 2); ROUND(1234.5678, ABS(-2))"
+ },
+ {
+  "src": "PRINT SQR(2); SQR(16); EXP(0); LOG(1); 2 ^ 0.5; 5 ^ 2\nPRINT (-8) ^ 3; 2 ^ -2\nDEG\nPRINT SIN(30); COS(60); TAN(45); ATN(1)\nRAD\nPRINT ATN(1); COS(0)"
+ },
+ {
+  "src": "PRINT STRING$(3, \"\")\nPRINT \"never\""
+ },
+ {
+  "src": "PRINT Twice(21)\nShow 7\nFUNCTION Twice(n AS INTEGER) AS INTEGER\n  Twice = n + n\nEND FUNCTION\nSUB Show(n AS INTEGER)\n  PRINT \"n=\"; n\nEND SUB"
+ },
+ {
+  "src": "PRINT VAL(\"1.5\") * 2; VAL(\"-2.5E3\"); VAL(\"abc\"); VAL(\" 12\")\nPRINT STR$(0.1); \"|\"; STR$(-2.5); \"|\"; STR$(1E10); \"|\"; LEN(STR$(1/3.0))"
+ },
+ {
+  "src": "RANDOMIZE\nPRINT \"done\""
+ },
+ {
+  "src": "RANDOMIZE\na = RANDOM(10)\nPRINT a < 10"
+ },
+ {
+  "src": "RANDOMIZE 0\na = RANDOM(60000)\nRANDOMIZE 0\nb = RANDOM(60000)\nPRINT a = b"
+ },
+ {
+  "src": "RANDOMIZE 7\na = RANDOM(60000)\nRANDOMIZE -7\nb = RANDOM(60000)\nPRINT a <> b"
+ },
+ {
+  "src": "RANDOMIZE 7\na = RANDOM(60000)\nx! = RND(-7)\nb = RANDOM(60000)\nRANDOMIZE 7\nc = RANDOM(60000)\nPRINT a = b; a = c"
+ },
+ {
+  "src": "RANDOMIZE 7\na! = RND\nb! = RND\nRANDOMIZE 7\nc! = RND\nd! = RND\nRANDOMIZE 1000\ne! = RND\nPRINT a! = c!; b! = d!; a! <> e!"
+ },
+ {
+  "src": "READ a\nPRINT \"never\""
+ },
+ {
+  "src": "READ a$, b$, c$, d$\nPRINT \"[\";\nPRINT a$;\nPRINT \"]\";\nPRINT \"[\";\nPRINT b$;\nPRINT \"]\";\nPRINT \"[\";\nPRINT c$;\nPRINT \"]\";\nPRINT \"[\";\nPRINT d$;\nPRINT \"]\";\nPRINT\nDATA 7, -30, 70000, 65000"
+ },
+ {
+  "src": "READ a$,b$\nPRINT \"[\";\nPRINT a$;\nPRINT \"]\";\nPRINT \"[\";\nPRINT b$;\nPRINT \"]\";\nPRINT\nDATA   hi there  ,\"  q, r \""
+ },
+ {
+  "src": "READ a$,b$\nPRINT \"[\";\nPRINT a$;\nPRINT \"][\";\nPRINT b$;\nPRINT \"]\"\nDATA \"\",x"
+ },
+ {
+  "src": "READ a$,b$,c$\nPRINT a$;\"|\";b$;\"|\";c$\nDATA 1.5,2.50,1E3"
+ },
+ {
+  "src": "READ a$,b$,c$,d$,e$\nPRINT a$;\"|\";b$;\"|\";c$;\"|\";d$;\"|\";e$\nDATA 007,+5,&FF,&X101,12"
+ },
+ {
+  "src": "READ a$:READ b$\nPRINT a$;\nPRINT b$;\nPRINT\nDATA abc,\"7\""
+ },
+ {
+  "src": "READ a%,b%,c%,d\nPRINT a%;b%;c%;d\nDATA 1.5,2.4,-1.5,7"
+ },
+ {
+  "src": "READ a,b\nPRINT \"a=\";a\nREAD c\nPRINT \"never\"\nDATA 1,2"
+ },
+ {
+  "src": "READ a,b\nPRINT a;b\nRESTORE\nREAD x$,y$,z\nPRINT x$;y$;z\nDATA 007,8,9"
+ },
+ {
+  "src": "READ a,b,c,d,e\nPRINT a;b;c;d;e\nDATA 007,+5,&FF,&X101,12"
+ },
+ {
+  "src": "READ x!,a$\nPRINT x!;a$\nDATA 5000000000,5000000000"
+ },
+ {
+  "src": "SUB B(v AS UINTEGER)\nPOKE UINTEGER, @v, 4660\nPRINT v\nEND SUB\nSUB R(BYREF w AS UBYTE)\nPOKE @w, 9\nEND SUB\nB(1)\nq=1\nDIM z AS UBYTE\nR(z)\nPRINT z"
+ },
+ {
+  "src": "SUB Bang(BYREF s AS STRING)\n  s = s + \"!\"\nEND SUB\nDIM g(1) AS STRING\ng(1) = \"x\"\nBang(g(1))\nPRINT g(1)"
+ },
+ {
+  "src": "SUB Bump(BYREF a AS INTEGER, BYVAL b AS INTEGER, c AS INTEGER = 10)\n  a = a + b + c\n  b = 99\nEND SUB\nx = 1\ny = 5\nBump x, y\nPRINT x; y\nBump x, y, 100\nPRINT x; y"
+ },
+ {
+  "src": "SUB Chn(n AS INTEGER)\n  DIM a AS INTEGER = n + 1\n  DIM b AS INTEGER = a * 2\n  DIM c AS INTEGER = 10\n  DIM d AS INTEGER = b + c\n  PRINT a; b; c; d\nEND SUB\nChn(4)"
+ },
+ {
+  "src": "SUB Count(d AS INTEGER, n AS INTEGER)\n  DIM k AS INTEGER\n  FOR k = 1 TO n\n    SELECT CASE d * 1\n      CASE 0: PRINT \"z\";\n      CASE ELSE: PRINT d; k;\n    END SELECT\n    IF d > 0 THEN Count d - 1, MIN(n - 1 + d * 0, 9)\n  NEXT\nEND SUB\nCount 2, 2\nPRINT"
+ },
+ {
+  "src": "SUB Early(n AS INTEGER)\n  DIM s(3) AS STRING\n  s(1) = \"hello\"\n  IF n = 1 THEN EXIT SUB\n  PRINT s(1)\nEND SUB\nEarly(1)\nEarly(0)"
+ },
+ {
+  "src": "SUB Exch(BYREF a AS INTEGER, BYREF b AS INTEGER)\n  DIM t AS INTEGER\n  t = a: a = b: b = t\nEND SUB\nSUB ExchTwice(BYREF a AS INTEGER, BYREF b AS INTEGER)\n  Exch a, b\n  Exch a, b\n  Exch a, b\nEND SUB\nx = 1: y = 2\nExch x, y\nPRINT x; y\nExchTwice x, y\nPRINT x; y"
+ },
+ {
+  "src": "SUB Exch(BYREF a AS STRING, BYREF b AS STRING)\n  DIM t AS STRING\n  t = a: a = b: b = t\nEND SUB\nx$ = \"one\": y$ = \"two\"\nExch x$, y$\nPRINT x$; y$"
+ },
+ {
+  "src": "SUB F\n STOP\nEND SUB\n10 PRINT \"a\"\n20 F\n30 END"
+ },
+ {
+  "src": "SUB FASTCALL Inc(BYREF a AS INTEGER)\n  a = a + 1\nEND SUB\nx = 4\nInc x\nInc x\nPRINT x"
+ },
+ {
+  "src": "SUB FASTCALL P()\n  GOSUB Go\n  PRINT \"back\"\n  EXIT SUB\nGo:\n  PRINT \"go\";\n  RETURN\nEND SUB\nP()\nP()\nPRINT \"end\""
+ },
+ {
+  "src": "SUB FASTCALL Poke1(v AS UBYTE)\n  POKE &C7F0, v\nEND SUB\nPoke1 200\nPRINT PEEK(&C7F0)\nx = 77\nPoke1 x\nPRINT PEEK(&C7F0)"
+ },
+ {
+  "src": "SUB FASTCALL Say(s AS STRING)\n  PRINT s;\nEND SUB\nSUB FASTCALL Ignore(s AS STRING)\n  PRINT \"-\";\nEND SUB\na$ = \"hi\"\nFOR i = 1 TO 1\n  Ignore a$\n  Ignore a$ + \"x\"\nNEXT\nSay a$\nSay a$ + \"!\"\nPRINT"
+ },
+ {
+  "src": "SUB FASTCALL Say(s AS STRING)\n  PRINT s;\nEND SUB\nSUB FASTCALL Ignore(s AS STRING)\n  PRINT \"-\";\nEND SUB\na$ = \"hi\"\nFOR i = 1 TO 2\n  Ignore a$\n  Ignore a$ + \"x\"\nNEXT\nSay a$\nSay a$ + \"!\"\nPRINT"
+ },
+ {
+  "src": "SUB FASTCALL Say(s AS STRING)\n  PRINT s;\nEND SUB\nSUB FASTCALL Ignore(s AS STRING)\n  PRINT \"-\";\nEND SUB\na$ = \"hi\"\nFOR i = 1 TO 500\n  Ignore a$\n  Ignore a$ + \"x\"\nNEXT\nSay a$\nSay a$ + \"!\"\nPRINT"
+ },
+ {
+  "src": "SUB FASTCALL Twice(v AS INTEGER)\n  DIM w AS INTEGER\n  w = v + v\n  PRINT w;\nEND SUB\nFUNCTION FASTCALL Inc(v AS INTEGER) AS INTEGER\n  RETURN v + 1\nEND FUNCTION\nFUNCTION FASTCALL Mul(a AS INTEGER, b AS INTEGER) AS INTEGER\n  RETURN a * b\nEND FUNCTION\nTwice 21\nTwice Inc(4)\nPRINT Inc(Inc(1)); Mul(6, -7)"
+ },
+ {
+  "src": "SUB Filler(a() AS INTEGER)\n  DIM i AS INTEGER\n  FOR i = LBOUND(a, 1) TO UBOUND(a, 1): a(i) = i * 10: NEXT\nEND SUB\nSUB Outer(a() AS INTEGER)\n  Filler(a)\n  PRINT UBOUND(a, 1); UBOUND(a, 0); UBOUND(a)\nEND SUB\nDIM g(3) AS INTEGER\nDIM m(2, 5) AS INTEGER\nOuter(g)\nPRINT g(0); g(3)\nSUB Two(a() AS INTEGER)\n  PRINT UBOUND(a, 1); UBOUND(a, 2); UBOUND(a, 0)\nEND SUB\nTwo(m)"
+ },
+ {
+  "src": "SUB Go()\n  DIM m(2, 3) AS REAL\n  m(2, 3) = 1.5\n  m(1, 1) = m(2, 3) * 2\n  PRINT m(1, 1); m(0, 0); UBOUND(m, 1); UBOUND(m, 2)\nEND SUB\nGo()"
+ },
+ {
+  "src": "SUB Grow(BYREF s AS STRING)\n  s = s + \"x\"\n  s = \"k\"\nEND SUB\na$ = \"start\"\nFOR i = 1 TO 2\n  Grow a$\nNEXT\nPRINT a$"
+ },
+ {
+  "src": "SUB Grow(BYREF s AS STRING)\n  s = s + \"x\"\n  s = \"k\"\nEND SUB\na$ = \"start\"\nFOR i = 1 TO 3\n  Grow a$\nNEXT\nPRINT a$"
+ },
+ {
+  "src": "SUB Grow(BYREF s AS STRING)\n  s = s + \"x\"\n  s = \"k\"\nEND SUB\na$ = \"start\"\nFOR i = 1 TO 500\n  Grow a$\nNEXT\nPRINT a$"
+ },
+ {
+  "src": "SUB Hello(who AS STRING = \"world\")\n  PRINT \"hello \"; who\nEND SUB\nHello\nHello \"cpc\""
+ },
+ {
+  "src": "SUB Hi()\nPRINT \"hi\"\nEND SUB\nCALL @Hi\nPRINT \"after\""
+ },
+ {
+  "src": "SUB Hi()\nPRINT \"hi\"\nEND SUB\na=@Hi\nCALL a\nPRINT a=@Hi"
+ },
+ {
+  "src": "SUB Inc(BYREF x AS INTEGER)\n  x = x + 1\nEND SUB\nSUB Via(a() AS INTEGER)\n  Inc(a(2))\nEND SUB\nSUB Loc()\n  DIM l(3) AS INTEGER\n  DIM i AS INTEGER\n  i = 1\n  Inc(l(i))\n  Inc(l(i))\n  PRINT l(1)\nEND SUB\nDIM g(3) AS INTEGER\nInc(g(0))\nVia(g)\nVia(g)\nPRINT g(0); g(2)\nLoc()"
+ },
+ {
+  "src": "SUB Inner(k AS INTEGER)\n  PRINT \"inner\"; k\n  IF k = 2 THEN x = ASC(\"\")\n  PRINT \"inner done\"; k\nEND SUB\nSUB Outer(k AS INTEGER)\n  DIM local AS INTEGER\n  local = k * 10\n  Inner(k)\n  PRINT \"outer done\"; local\nEND SUB\nFUNCTION Twice(k AS INTEGER) AS INTEGER\n  IF k = 7 THEN x = ASC(\"\")\n  RETURN k * 2\nEND FUNCTION\n10 ON ERROR GOTO 900\n20 FOR i = 1 TO 3\n30 Outer(i)\n40 NEXT\n50 END\n900 RESUME NEXT"
+ },
+ {
+  "src": "SUB Inner(k AS INTEGER)\n  PRINT \"inner\"; k\n  IF k = 2 THEN x = ASC(\"\")\n  PRINT \"inner done\"; k\nEND SUB\nSUB Outer(k AS INTEGER)\n  DIM local AS INTEGER\n  local = k * 10\n  Inner(k)\n  PRINT \"outer done\"; local\nEND SUB\nFUNCTION Twice(k AS INTEGER) AS INTEGER\n  IF k = 7 THEN x = ASC(\"\")\n  RETURN k * 2\nEND FUNCTION\n10 ON ERROR GOTO 900\n20 FOR i = 1 TO 3\n30 Outer(i)\n40 NEXT\n50 PRINT \"twice\"; Twice(5); Twice(7); Twice(6)\n60 PRINT \"end\"; ERR; ERL\n70 END\n900 PRINT \"ERR\"; ERR; \"ERL\"; ERL\n910 RESUME NEXT"
+ },
+ {
+  "src": "SUB Inner(k AS INTEGER)\n  PRINT \"inner\"; k\n  IF k = 2 THEN x = ASC(\"A\")\n  PRINT \"inner done\"; k\nEND SUB\nSUB Outer(k AS INTEGER)\n  DIM local AS INTEGER\n  local = k * 10\n  Inner(k)\n  PRINT \"outer done\"; local\nEND SUB\nFUNCTION Twice(k AS INTEGER) AS INTEGER\n  IF k = 7 THEN x = ASC(\"A\")\n  RETURN k * 2\nEND FUNCTION\nFOR i = 1 TO 3\nOuter(i)\nNEXT"
+ },
+ {
+  "src": "SUB Loop3(n AS INTEGER)\n  DIM i AS INTEGER\n  FOR i = 1 TO 3\n    DIM k AS INTEGER = n * i\n    PRINT k;\n  NEXT\n  PRINT\nEND SUB\nSUB Early(n AS INTEGER)\n  IF n = 0 THEN EXIT SUB\n  DIM s AS STRING = STR$(n)\n  PRINT s\nEND SUB\nLoop3(2)\nEarly(0)\nEarly(9)"
+ },
+ {
+  "src": "SUB P(a() AS UBYTE)\n  POKE @a, 77\nEND SUB\nSUB Q()\n  DIM l(1) AS UBYTE\n  POKE @l, 5\n  PRINT l(0); PEEK(@l)\nEND SUB\nDIM g(1) AS UBYTE\nP(g)\nPRINT g(0)\nQ()"
+ },
+ {
+  "src": "SUB P(n AS UBYTE, channel AS UBYTE, invvol AS UBYTE)\n  IF n = 0 OR channel > 2 THEN EXIT SUB\n  IF invvol > 16 THEN invvol = 16\n  ASM\n  ld a, (ix+5)\n  END ASM\n  PRINT \"in\"; n; invvol\nEND SUB\nP(1, 0, 20)\nP(0, 1, 0)\nP(1, 3, 0)\nP(2, 2, 3)\nPRINT \"end\""
+ },
+ {
+  "src": "SUB R(n AS INTEGER)\n  DIM x AS REAL = n * 1.5\n  PRINT x\nEND SUB\nR(3)"
+ },
+ {
+  "src": "SUB R(n AS INTEGER)\n  GOSUB L\n  PRINT n;\n  EXIT SUB\nL:\n  IF n > 0 THEN R(n - 1)\n  RETURN\nEND SUB\nR(3)\nPRINT"
+ },
+ {
+  "src": "SUB Rd()\n  DIM a(2) AS INTEGER\n  READ a(0), a(1), a(2)\n  PRINT a(2) + a(0)\nEND SUB\nRd()\nDATA 4, 5, 6"
+ },
+ {
+  "src": "SUB Report()\n  PRINT \"err\"; ERR\n  RESUME NEXT\nEND SUB\nSUB Arm()\n  ON ERROR GOTO 900\nEND SUB\n10 Arm()\n20 x = ASC(\"\")\n30 PRINT \"after\"\n40 END\n900 Report()"
+ },
+ {
+  "src": "SUB S()\n  DIM i AS INTEGER\n  GOSUB Z\n  EXIT SUB\nZ:\n  FOR i = 1 TO 3\n    SELECT CASE i\n    CASE 2\n      PRINT \"two\";\n      RETURN\n    END SELECT\n  NEXT\n  RETURN\nEND SUB\nS()\nPRINT \"ok\""
+ },
+ {
+  "src": "SUB S()\n  DIM k AS INTEGER\n  PRINT \"in\";\n  IF k = 1 THEN GOSUB Z\n  RETURN\nZ:\n  RETURN\nEND SUB\nS()\nPRINT \"not reached\""
+ },
+ {
+  "src": "SUB S()\n  GOSUB Z\n  PRINT \"after\";\n  RETURN\nZ:\n  RETURN\nEND SUB\nS()\nPRINT \"not reached\""
+ },
+ {
+  "src": "SUB S()\nDIM t$ AS STRING\nt$=\"ab\"\np=PEEK(UINTEGER,@t$)\nPRINT PEEK(UINTEGER,p)\nEND SUB\nS()"
+ },
+ {
+  "src": "SUB S()\nDIM x AS UBYTE\nPOKE @x, 7\nPRINT x\nEND SUB\nS()"
+ },
+ {
+  "src": "SUB S(d AS INTEGER)\n  IF d = 0 THEN RETURN\n  GOSUB Z\n  EXIT SUB\nZ:\n  S(d - 1)\n  PRINT \"unwound\";\n  RETURN\nEND SUB\nS(2)\nPRINT \"not reached\""
+ },
+ {
+  "src": "SUB S(n AS INTEGER)\n  DIM m AS INTEGER = n + 1\n  PRINT m\nEND SUB\nS(4)"
+ },
+ {
+  "src": "SUB S(n AS INTEGER)\n IF n = 2 THEN STOP\n PRINT n;\nEND SUB\nFOR i = 1 TO 3\n S(i)\nNEXT"
+ },
+ {
+  "src": "SUB Set(BYREF a AS UBYTE, BYREF b AS LONG)\n  a = 250\n  b = 100000\nEND SUB\nDIM p AS UBYTE\nDIM q AS LONG\nSet p, q\nPRINT p; q"
+ },
+ {
+  "src": "SUB Set(s() AS STRING)\n  s(1) = \"hi\"\nEND SUB\nDIM g(2) AS STRING\nSet(g)\nPRINT g(1)"
+ },
+ {
+  "src": "SUB Show()\n  DIM n(2) AS STRING => {\"x\", \"\", \"zz\"}\n  PRINT n(0); n(1); n(2)\n  n(0) = n(0) + \"!\"\nEND SUB\nShow()\nShow()"
+ },
+ {
+  "src": "SUB Show()\n  DIM v(3) AS UBYTE => {5, 6, 7}\n  PRINT v(0); v(1); v(2); v(3)\n  v(0) = 99\nEND SUB\nShow()\nShow()"
+ },
+ {
+  "src": "SUB T()\n  DIM n AS INTEGER\n  GOSUB A\n  PRINT n\n  EXIT SUB\nA:\n  n = n + 1\n  GOSUB B\n  n = n + 100\n  RETURN\nB:\n  n = n + 10\n  GOSUB C\n  RETURN\nC:\n  n = n + 1000\n  RETURN\nEND SUB\nT()"
+ },
+ {
+  "src": "SUB T()\n DIM n AS INTEGER\n n = 0\n10 DIM a AS INTEGER = 5\n a = a + 1\n PRINT a;\n n = n + 1\n IF n < 3 THEN GOTO 10\n PRINT\nEND SUB\nT()"
+ },
+ {
+  "src": "SUB T(s$)\n  SELECT CASE s$\n  CASE \"apple\"\n    PRINT \"A\";\n  CASE \"b\" TO \"m\"\n    PRINT \"R\";\n  CASE IS > \"x\"\n    PRINT \"G\";\n  CASE \"p\", \"q\"\n    PRINT \"L\";\n  CASE \"\"\n    PRINT \"E\";\n  CASE ELSE\n    PRINT \"-\";\n  END SELECT\nEND SUB\nT \"apple\"\nT \"c\"\nT \"b\"\nT \"m\"\nT \"mm\"\nT \"y\"\nT \"xa\"\nT \"x\"\nT \"p\"\nT \"q\"\nT \"\"\nT \"a\"\nT \"apples\"\nT \"B\"\nPRINT"
+ },
+ {
+  "src": "SUB T(sel AS INTEGER)\n  DIM n AS INTEGER\n  ON sel GOSUB One, Two\n  PRINT n\n  EXIT SUB\nOne:\n  n = n + 1\n  RETURN\nTwo:\n  n = n + 20\n  RETURN\nEND SUB\nT(1): T(2): T(0): T(3)"
+ },
+ {
+  "src": "SUB Upto(limit AS INTEGER)\n  FOR i = 1 TO 100\n    IF i > limit THEN EXIT SUB\n    PRINT i;\n  NEXT\n  PRINT \"never\";\nEND SUB\nUpto 4\nPRINT \"done\""
+ },
+ {
+  "src": "SUB W(n AS INTEGER)\n  DIM s AS STRING\n  s = \"x\" + STR$(n)\n  GOSUB L\n  GOSUB L\n  EXIT SUB\nL:\n  s = s + \"y\"\n  RETURN\nEND SUB\nDIM i AS INTEGER\nFOR i = 1 TO 1000: W(i): NEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "SUB W(n AS INTEGER)\n  DIM s AS STRING\n  s = \"x\" + STR$(n)\n  GOSUB L\n  GOSUB L\n  EXIT SUB\nL:\n  s = s + \"y\"\n  RETURN\nEND SUB\nDIM i AS INTEGER\nFOR i = 1 TO 2: W(i): NEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "SUB Work()\n  DIM b(100) AS INTEGER\n  b(100) = 7\n  b(0) = b(100) + 1\nEND SUB\nSUB WorkStr()\n  DIM s(20) AS STRING\n  s(20) = \"abcdefghijklmnopqrstuvwxyz\"\n  s(3) = s(20) + s(20)\nEND SUB\nDIM i AS INTEGER\nFOR i = 1 TO 50: Work(): WorkStr(): NEXT\nPRINT \"ok\""
+ },
+ {
+  "src": "SUB Work()\n  DIM b(3000) AS INTEGER\n  b(3000) = 3\n  PRINT b(3000)\nEND SUB\nWork()"
+ },
+ {
+  "src": "SUB Work()\n  DIM b(3000) AS INTEGER\nEND SUB\nWork()\nPRINT \"not reached\""
+ },
+ {
+  "src": "SUB Work()\n  DIM n AS INTEGER\n  n = 7\n  PRINT \"a\";\n  GOSUB 100\n  PRINT n\n  EXIT SUB\n100 n = n + 1\n  RETURN\nEND SUB\nWork()"
+ },
+ {
+  "src": "SUB Work(k AS INTEGER)\n  DIM x AS INTEGER\n  x = 5\n  GOSUB Bump\n  GOSUB Bump\n  PRINT x; k\n  EXIT SUB\nBump:\n  x = x * 2 + 1 + k\n  k = 0\n  RETURN\nEND SUB\nWork(1)\nPRINT \"end\""
+ },
+ {
+  "src": "SUB Z(BYREF t$)\n  MID$(t$,2,1)=\"#\"\nEND SUB\nSUB L()\n  DIM l$ = \"abcd\"\n  MID$(l$,3)=\"XY\"\n  PRINT l$;\n  Z l$\n  PRINT l$\nEND SUB\na$=\"HELLO\"\nZ a$\nPRINT a$\nL"
+ },
+ {
+  "src": "SUB t()\nDIM b AS UBYTE\nn = 0\nFOR b = 0 TO 255 STEP 5\nn = n + 1\nNEXT\nPRINT n\nEND SUB\nt()"
+ },
+ {
+  "src": "a = FRE(0)\nb$ = STRING$(100, \"x\")\nc = FRE(0)\nb$ = \"\"\nd = FRE(0)\nPRINT a > c; a - c >= 100; d > c; a - d < 8"
+ },
+ {
+  "src": "a = RANDOM(60000)\nPAUSE 6\nb = RANDOM(60000)\nPRINT a; b"
+ },
+ {
+  "src": "a = RANDOM(60000)\nPRINT a"
+ },
+ {
+  "src": "a = RANDOM(60000)\nb = RANDOM(60000)\nPRINT a; b"
+ },
+ {
+  "src": "a! = -1\nPRINT SQR(a!)"
+ },
+ {
+  "src": "a! = -2\nb! = 0.5\nPRINT a! ^ b!"
+ },
+ {
+  "src": "a! = 0\nPRINT -1 / a!"
+ },
+ {
+  "src": "a! = 0\nPRINT 1 / a!"
+ },
+ {
+  "src": "a! = 0\nb! = 1 / a!\nPRINT \"after\"; b!"
+ },
+ {
+  "src": "a! = 0.1\nb! = 0.2\nc! = 2\nd! = 3\ne! = 1\nf! = 10\ng! = 4\nPRINT a! + b!; c! / d! * d!; e! / d! * d!; f! / g! - a! * d!"
+ },
+ {
+  "src": "a! = 1.5\nb! = 2.25\nPRINT a! + b!; a! - b!; a! * b!; a! / b!\nPRINT -a!; ABS(-b!)\nPRINT a! < b!; a! >= b!; a! = 1.5; a! <> 1.5"
+ },
+ {
+  "src": "a! = 1E38\nPRINT a! * 10"
+ },
+ {
+  "src": "a! = 1E6\nPRINT SIN(a!)"
+ },
+ {
+  "src": "a! = 2.5\nb! = -1.5\nPRINT SGN(a!); SGN(b!); SGN(a! - 2.5); MIN(a!, b!); MAX(a!, b!); MIN(3, a!, b!); MAX(1.5, 2.5, 0.5)\nPRINT PI"
+ },
+ {
+  "src": "a! = 32767.5\nPRINT CINT(a!)"
+ },
+ {
+  "src": "a! = RND\nb! = RND(0)\nc! = RND(0)\nd! = RND\nPRINT a! = b!; b! = c!; d! <> a!"
+ },
+ {
+  "src": "a! = RND\nb! = RND(1)\nPRINT a! >= 0 AND a! < 1; b! >= 0 AND b! < 1; a! <> b!"
+ },
+ {
+  "src": "a! = RND(-3)\nb! = RND\nc! = RND\nx! = RND(-3)\ny! = RND\nz! = RND\nw! = RND(-10)\nPRINT a! = x!; b! = y!; c! = z!; a! <> w!; a! <> b!"
+ },
+ {
+  "src": "a$=\"HELLO\"\nMID$(a$,-1)=\"x\"\nPRINT \"never\""
+ },
+ {
+  "src": "a$=\"HELLO\"\nMID$(a$,0)=\"x\"\nPRINT \"never\""
+ },
+ {
+  "src": "a$=\"HELLO\"\nMID$(a$,0,1)=\"x\"\nPRINT \"never\""
+ },
+ {
+  "src": "a$=\"HELLO\"\nMID$(a$,1,300)=\"x\"\nPRINT \"never\""
+ },
+ {
+  "src": "a$=\"HELLO\"\nMID$(a$,2,-1)=\"x\"\nPRINT \"never\""
+ },
+ {
+  "src": "a$=\"HELLO\"\nMID$(a$,2,256)=\"x\"\nPRINT \"never\""
+ },
+ {
+  "src": "a$=\"HELLO\"\nMID$(a$,256)=\"x\"\nPRINT \"never\""
+ },
+ {
+  "src": "a$=\"Hello World\"\nPRINT UPPER$(a$);\"|\";LOWER$(a$);\"|\";UPPER$(\"a\"+\"b1\");\"|\";LOWER$(\"\")\nPRINT INSTR(a$,\"o\");INSTR(a$,\"World\");INSTR(a$,\"x\");INSTR(a$,\"\");INSTR(6,a$,\"o\");INSTR(9,a$,\"o\");INSTR(1,\"abcabc\",\"ca\");INSTR(a$+a$,\"dH\")"
+ },
+ {
+  "src": "a$=\"Hello World\":n=5:e$=\"\"\nPRINT LEN(a$);LEN(e$);LEN(a$+a$);ASC(a$);ASC(\"z\")\nPRINT LEFT$(a$,n);\"|\";RIGHT$(a$,n);\"|\";MID$(a$,7);\"|\";MID$(a$,7,3);\"|\";MID$(a$,n+2,n)\nPRINT LEFT$(a$,0);\"|\";LEFT$(a$,50);\"|\";RIGHT$(a$,0);\"|\";RIGHT$(a$,50);\"|\";MID$(a$,20);\"|\";MID$(a$,11);\"|\";MID$(a$,11,9);\"|\";MID$(e$,1,1);\"|\";LEFT$(e$,3)\nPRINT LEFT$(a$+\"!\",LEN(a$)-6);RIGHT$(a$+\"?\",2);MID$(a$+a$,11,3)"
+ },
+ {
+  "src": "a$=\"ab\":b$=\"cd\"\nPRINT a$;1;b$;LEN(a$+b$);\"|\"\nPRINT a$,b$\nPRINT a$+b$,LEN(a$);\nPRINT TAB(20);b$;SPC(2);a$\nPRINT a$;b$;"
+ },
+ {
+  "src": "a$=\"ab\":b$=\"cd\"\nSELECT CASE a$+b$\nCASE \"abcd\"\n  PRINT \"temp\";\nCASE ELSE\n  PRINT \"no\";\nEND SELECT\nSELECT CASE LEFT$(a$+b$,3)\nCASE a$+\"c\"\n  PRINT \" computed\";\nEND SELECT\nSELECT CASE INKEY$\nCASE \"\"\n  PRINT \" none\";\nCASE ELSE\n  PRINT \" key\";\nEND SELECT\nSELECT CASE b$\nCASE \"x\"\n  PRINT \"x\"\nEND SELECT\nPRINT"
+ },
+ {
+  "src": "a$=\"abc\"\nFUNCTION G(s$) AS INTEGER\n  SELECT CASE s$+\"x\"\n  CASE \"abcx\"\n    RETURN 1\n  CASE ELSE\n    EXIT FUNCTION\n  END SELECT\nEND FUNCTION\nx=0\nFOR i=1 TO 1000\nx=x+G(a$)+G(\"z\")\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\"\nFUNCTION G(s$) AS INTEGER\n  SELECT CASE s$+\"x\"\n  CASE \"abcx\"\n    RETURN 1\n  CASE ELSE\n    EXIT FUNCTION\n  END SELECT\nEND FUNCTION\nx=0\nFOR i=1 TO 2\nx=x+G(a$)+G(\"z\")\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"abd\"\nPRINT a$<b$;a$>b$;a$=b$;a$<>b$;a$<=a$;a$>=b$\nPRINT a$+\"d\"=b$+\"\";LEFT$(b$,2)=LEFT$(a$,2);\"abc\"=a$;a$=\"ab\"\nn=(a$=\"abc\")+(b$=\"x\")+1\nPRINT n\nIF a$<b$ THEN PRINT \"lt\" ELSE PRINT \"ge\"\nIF a$+\"d\"=b$ THEN PRINT \"eq\" ELSE PRINT \"ne\"\nIF NOT (a$=\"x\") THEN PRINT \"not\"\nIF a$=\"abc\" AND b$<>\"\" THEN PRINT \"and\"\nWHILE LEN(a$)<5:a$=a$+\"x\":WEND\nPRINT a$"
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 100\nr$=r$+\"x\"\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 1000\nDO\n  SELECT CASE a$+b$\n  CASE \"abcde\"\n    EXIT DO\n  END SELECT\nLOOP\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 1000\nFOR j=1 TO 3\n  SELECT CASE a$\n  CASE \"abc\"\n    EXIT FOR\n  END SELECT\nNEXT\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 1000\nIF a$+b$=\"abcde\" THEN x=x+1\nIF \"x\"+a$>a$ THEN x=x+1\nIF a$<b$ THEN x=x+1\nIF a$+a$<>a$+b$ THEN x=x+1\nx=(a$=\"abc\")\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 1000\nPRINT a$+b$;a$;LEN(a$+b$);INKEY$;LEFT$(a$,1)\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 1000\nSELECT CASE a$\nCASE \"abc\"\n  GOTO lbl1\nEND SELECT\nx=5\nlbl1:\nx=x+1\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 1000\nSELECT CASE a$\nCASE \"abc\"\n  x=1\nEND SELECT\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 1000\nSELECT CASE a$+\"!\"\nCASE \"q\"\n  x=1\nCASE ELSE\n  x=2\nEND SELECT\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 1000\nSELECT CASE a$+b$\nCASE \"zz\"\n  x=1\nEND SELECT\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 1000\nSELECT CASE b$\nCASE a$+\"x\" TO a$+\"z\"\n  x=1\nCASE IS < a$+b$\n  x=3\nCASE LEFT$(a$+b$,2), RIGHT$(a$+b$,2)\n  x=2\nEND SELECT\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 1000\nSELECT CASE b$+a$\nCASE ELSE\n  GOTO lbl2\nEND SELECT\nx=5\nlbl2:\nx=x+1\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 1000\nk=i MOD 3+1\nr$=STR$(k)+STR$(-3)+STR$(k*2)\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 1000\nr$=\"a constant\"\nr$=\"\"\nr$=a$\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 1000\nr$=CHR$(65)+SPACE$(3)+STRING$(2,\"q\")+STRING$(2,66)+STRING$(2,a$+b$)+SPACE$(0)\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 1000\nr$=LEFT$(a$+b$,3)+RIGHT$(a$,2)+MID$(a$,2)+MID$(b$+a$,2,2)+MID$(a$,9)+LEFT$(\"\",2)\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 1000\nr$=MID$(LEFT$(a$+b$+a$,6),2,3)+RIGHT$(STR$(i MOD 7)+a$,4)\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 1000\nr$=UPPER$(a$+b$)+LOWER$(\"XY\")+UPPER$(a$)\nx=INSTR(a$+b$,\"d\")+INSTR(2,a$,b$)+INSTR(a$,\"b\")+INSTR(1,a$+\"q\",b$+\"\")\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 1000\nr$=a$\nr$=b$\nr$=a$\nr$=r$\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 1000\nr$=a$+\"x\"+b$+a$+\"-\"+b$\nr$=r$+r$\nr$=\"\"\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 1000\nx=LEN(a$+b$)+ASC(a$+\"z\")+LEN(a$)+ASC(b$)\nk$=INKEY$\nIF INKEY$=\"\" THEN x=1\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 2\nDO\n  SELECT CASE a$+b$\n  CASE \"abcde\"\n    EXIT DO\n  END SELECT\nLOOP\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 2\nFOR j=1 TO 3\n  SELECT CASE a$\n  CASE \"abc\"\n    EXIT FOR\n  END SELECT\nNEXT\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 2\nIF a$+b$=\"abcde\" THEN x=x+1\nIF \"x\"+a$>a$ THEN x=x+1\nIF a$<b$ THEN x=x+1\nIF a$+a$<>a$+b$ THEN x=x+1\nx=(a$=\"abc\")\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 2\nPRINT a$+b$;a$;LEN(a$+b$);INKEY$;LEFT$(a$,1)\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 2\nSELECT CASE a$\nCASE \"abc\"\n  GOTO lbl1\nEND SELECT\nx=5\nlbl1:\nx=x+1\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 2\nSELECT CASE a$\nCASE \"abc\"\n  x=1\nEND SELECT\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 2\nSELECT CASE a$+\"!\"\nCASE \"q\"\n  x=1\nCASE ELSE\n  x=2\nEND SELECT\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 2\nSELECT CASE a$+b$\nCASE \"zz\"\n  x=1\nEND SELECT\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 2\nSELECT CASE b$\nCASE a$+\"x\" TO a$+\"z\"\n  x=1\nCASE IS < a$+b$\n  x=3\nCASE LEFT$(a$+b$,2), RIGHT$(a$+b$,2)\n  x=2\nEND SELECT\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 2\nSELECT CASE b$+a$\nCASE ELSE\n  GOTO lbl2\nEND SELECT\nx=5\nlbl2:\nx=x+1\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 2\nk=i MOD 3+1\nr$=STR$(k)+STR$(-3)+STR$(k*2)\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 2\nr$=\"a constant\"\nr$=\"\"\nr$=a$\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 2\nr$=CHR$(65)+SPACE$(3)+STRING$(2,\"q\")+STRING$(2,66)+STRING$(2,a$+b$)+SPACE$(0)\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 2\nr$=LEFT$(a$+b$,3)+RIGHT$(a$,2)+MID$(a$,2)+MID$(b$+a$,2,2)+MID$(a$,9)+LEFT$(\"\",2)\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 2\nr$=MID$(LEFT$(a$+b$+a$,6),2,3)+RIGHT$(STR$(i MOD 7)+a$,4)\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 2\nr$=UPPER$(a$+b$)+LOWER$(\"XY\")+UPPER$(a$)\nx=INSTR(a$+b$,\"d\")+INSTR(2,a$,b$)+INSTR(a$,\"b\")+INSTR(1,a$+\"q\",b$+\"\")\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 2\nr$=a$\nr$=b$\nr$=a$\nr$=r$\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 2\nr$=a$+\"x\"+b$+a$+\"-\"+b$\nr$=r$+r$\nr$=\"\"\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 2\nr$=r$+\"x\"\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abc\":b$=\"de\":x=0\nFOR i=1 TO 2\nx=LEN(a$+b$)+ASC(a$+\"z\")+LEN(a$)+ASC(b$)\nk$=INKEY$\nIF INKEY$=\"\" THEN x=1\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abcdef\":b$=\"XY\"\nFOR i=1 TO 1000\nr$=a$\nMID$(r$,2,2)=b$+\"zz\"\nMID$(r$,1)=b$\nMID$(r$,2)=a$\nMID$(r$,1,1)=STR$(i)\nMID$(r$,9)=\"q\"\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abcdef\":b$=\"XY\"\nFOR i=1 TO 2\nr$=a$\nMID$(r$,2,2)=b$+\"zz\"\nMID$(r$,1)=b$\nMID$(r$,2)=a$\nMID$(r$,1,1)=STR$(i)\nMID$(r$,9)=\"q\"\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "a$=\"abcdef\":b$=\"XY\"\nn=2\nPRINT MID$(a$,n,LEN(b$+b$));LEFT$(a$,LEN(b$));INSTR(n,a$,LEFT$(a$+b$,3))"
+ },
+ {
+  "src": "a$=\"foo\":b$=\"bar\"\nc$=a$+\"-\"+b$\nPRINT c$\nc$=c$+c$\nPRINT c$;LEN(c$)\nb$=a$\na$=\"changed\"\nPRINT a$;\" \";b$\na$=a$\nPRINT a$\na$=a$+a$+a$\nPRINT LEN(a$)\nd$=\"\"\nd$=d$+d$\nPRINT LEN(d$);d$+\"|\""
+ },
+ {
+  "src": "a$=\"hey\"\np=PEEK(UINTEGER,@a$)\nPRINT PEEK(UINTEGER,p); PEEK(p+2)"
+ },
+ {
+  "src": "a=&1234\nPRINT PEEK(@a); PEEK(@a+1)\nPRINT PEEK(UINTEGER, @a)"
+ },
+ {
+  "src": "a=1:b=-16:s=3\nPRINT a<<4; b>>2; a<<s"
+ },
+ {
+  "src": "a=3:b=-7\nPRINT MIN(a,b); MAX(a,b); ABS(b); SGN(b); SGN(a); SGN(a-3)\nPRINT MIN(a*2,b+20,4); MAX(a,b,10)"
+ },
+ {
+  "src": "a=7\nREAD x$\nPRINT x$;\nPRINT\nREAD a\nPRINT \"never\"\nDATA first,second"
+ },
+ {
+  "src": "b! = -2\nPRINT b! ^ 3; b! ^ 2; b! ^ 0; b! ^ -1"
+ },
+ {
+  "src": "b! = -2\ne! = 0.5\nPRINT b! ^ e!"
+ },
+ {
+  "src": "c=256\nPRINT AT 0,c;\"x\"\nPRINT \"never\""
+ },
+ {
+  "src": "c=7\nBORDER c"
+ },
+ {
+  "src": "e$=\"\"\nPRINT ASC(e$)\nPRINT \"never\""
+ },
+ {
+  "src": "e$=\"\"\nPRINT ASC(e$+e$)\nPRINT \"never\""
+ },
+ {
+  "src": "e$=\"\"\nx$=STRING$(2, e$)\nPRINT \"never\""
+ },
+ {
+  "src": "e$=\"\":MID$(e$,1)=\"x\":PRINT \"[\";e$;\"]\"\na$=\"HELLO\":b$=a$:MID$(a$,1,1)=\"J\":PRINT a$;b$"
+ },
+ {
+  "src": "f$=\"+#.##-\"\nFOR i=1 TO 1000\nr$=DEC$(i*37/10,\"##,###.##\")+DEC$(-i,f$)+DEC$(i,\"**$####\")+DEC$(i,\"##.##^^^^\")+DEC$(1E22,\"#\")+DEC$(0,\"#\")\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "f$=\"+#.##-\"\nFOR i=1 TO 2\nr$=DEC$(i*37/10,\"##,###.##\")+DEC$(-i,f$)+DEC$(i,\"**$####\")+DEC$(i,\"##.##^^^^\")+DEC$(1E22,\"#\")+DEC$(0,\"#\")\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "i% = 3\nDIM l AS LONG = 100000\nr! = i% * 2.5\nPRINT r!; i% + 0.5; 10 / 4.0; l / 8.0; l * 1.5"
+ },
+ {
+  "src": "i=0\nDO\ni=i+1\nIF i=2 THEN CONTINUE DO\nIF i>4 THEN EXIT DO\nPRINT i;\nLOOP\nPRINT"
+ },
+ {
+  "src": "k$=INKEY$\nPRINT LEN(k$);k$=\"\";INKEY$=\"\";INKEY$=\"A\";LEN(INKEY$)"
+ },
+ {
+  "src": "k$=INKEY$\nPRINT LEN(k$);k$=\"A\";k$",
+  "keys": "A"
+ },
+ {
+  "src": "m% = -32768\ns% = -100\nn = 0\nFOR i% = -32500 TO m% STEP s%\nn = n + 1\nNEXT\nPRINT n; i%"
+ },
+ {
+  "src": "m% = 32767\nFOR i% = 32000 TO m% STEP 400\nPRINT i%;\nNEXT\nPRINT"
+ },
+ {
+  "src": "m% = 32767\ns% = 100\nn = 0\nFOR i% = 32500 TO m% STEP s%\nn = n + 1\nNEXT\nPRINT n; i%"
+ },
+ {
+  "src": "n = 5\nFOR i = 1 TO n\nNEXT\nPRINT i\nFOR i = 1 TO n\nPRINT i;\nIF i = 2 THEN i = 9\nNEXT\nPRINT i\nFOR i = n TO 1\nPRINT \"never\";\nNEXT\nPRINT i"
+ },
+ {
+  "src": "n=0\nDO\nn=n+1\nLOOP UNTIL n>=3\nPRINT n\nDO WHILE n<6\nn=n+2\nLOOP\nPRINT n\nn=9\nDO UNTIL n>5\nPRINT \"never\"\nLOOP\nDO\nn=n-1\nLOOP WHILE n>7\nPRINT n"
+ },
+ {
+  "src": "n=0\nSELECT CASE n+1\nCASE 0\nPRINT \"zero\"\nCASE 1\nPRINT \"one\"\nEND SELECT"
+ },
+ {
+  "src": "n=0\nWHILE -1\nn=n+1\nIF n=3 THEN EXIT WHILE\nWEND\nPRINT n"
+ },
+ {
+  "src": "n=3\nFOR i=1 TO n\nn=10\nPRINT i;\nNEXT\nPRINT"
+ },
+ {
+  "src": "n=300:w=6\nFOR i=1 TO 1000\nr$=HEX$(n)+BIN$(w,12)+HEX$(n,w)\nx$=HEX$(LEN(r$))\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "n=300:w=6\nFOR i=1 TO 2\nr$=HEX$(n)+BIN$(w,12)+HEX$(n,w)\nx$=HEX$(LEN(r$))\nNEXT\nPRINT \"done\"",
+  "maxTStates": 2000000000
+ },
+ {
+  "src": "n=3:c=66:s$=\"xyz\"\nPRINT CHR$(72)+CHR$(105);CHR$(c+1);\"[\";SPACE$(n);\"][\";SPACE$(0);\"]\"\nPRINT STRING$(n,\"*\");STRING$(2,c);STRING$(n,s$);STRING$(0,\"q\");STRING$(2,LEFT$(s$,1)+\"Q\")\nPRINT LEN(CHR$(0));LEN(SPACE$(200));LEN(STRING$(n*10,\"-\"))"
+ },
+ {
+  "src": "p=2:q=3:b$=\"yx\":\na$=\"HELLO\":MID$(a$,2,2)=\"XYZ\":PRINT \"[\";a$;\"]\";LEN(a$)\na$=\"HELLO\":MID$(a$,2)=\"XYZ\":PRINT \"[\";a$;\"]\";LEN(a$)\na$=\"HELLO\":MID$(a$,4,5)=\"12\":PRINT \"[\";a$;\"]\";LEN(a$)\na$=\"HELLO\":MID$(a$,4)=\"123456\":PRINT \"[\";a$;\"]\";LEN(a$)\na$=\"HELLO\":MID$(a$,5)=\"xy\":PRINT \"[\";a$;\"]\";LEN(a$)\na$=\"HELLO\":MID$(a$,6)=\"x\":PRINT \"[\";a$;\"]\";LEN(a$)\na$=\"HELLO\":MID$(a$,9)=\"x\":PRINT \"[\";a$;\"]\";LEN(a$)\na$=\"HELLO\":MID$(a$,2,0)=\"x\":PRINT \"[\";a$;\"]\";LEN(a$)\na$=\"HELLO\":MID$(a$,2)=\"\":PRINT \"[\";a$;\"]\";LEN(a$)\na$=\"HELLO\":MID$(a$,1,1)=\"xyz\":PRINT \"[\";a$;\"]\";LEN(a$)\na$=\"HELLO\":MID$(a$,2,255)=\"xy\":PRINT \"[\";a$;\"]\";LEN(a$)\na$=\"HELLO\":MID$(a$,255)=\"x\":PRINT \"[\";a$;\"]\";LEN(a$)\na$=\"HELLO\":MID$(a$,2,2)=STR$(7):PRINT \"[\";a$;\"]\";LEN(a$)\na$=\"HELLO\":MID$(a$,2,2)=a$:PRINT \"[\";a$;\"]\";LEN(a$)\na$=\"HELLO\":MID$(a$,p,q)=LEFT$(b$,3):PRINT \"[\";a$;\"]\";LEN(a$)\na$=\"HELLO\":MID$(a$,p+q)=b$+b$:PRINT \"[\";a$;\"]\";LEN(a$)\na$=\"HELLO\":MID$(a$,1,3)=MID$(a$,3):PRINT \"[\";a$;\"]\";LEN(a$)"
+ },
+ {
+  "src": "r! = -0.5\na! = RND(r!)\nr! = 1.5\nb! = RND(r!)\nPRINT a! >= 0 AND a! < 1; b! >= 0 AND b! < 1; a! <> b!"
+ },
+ {
+  "src": "r! = -2.5\ni% = r!\nPRINT i%; CINT(r!); CINT(2.5); CINT(-3.5); INT(r!); FIX(r!); INT(2.9); FIX(-0.5); CINT(0.49999); CINT(32767.4)"
+ },
+ {
+  "src": "r=-1\nPRINT AT r,0;\"x\"\nPRINT \"never\""
+ },
+ {
+  "src": "r=2:c=7\nPRINT AT r+1,c*2;\"x\";:a=POS(#0):b=VPOS(#0)\nPRINT AT 0,0;\nPRINT a;b\nPRINT AT r,c;\"ab\";\"cd\""
+ },
+ {
+  "src": "s$=\"k1\"\nSELECT CASE s$\nCASE \"k1\"\n  s$=\"k2\"\n  SELECT CASE s$\n  CASE \"k2\"\n    PRINT \"inner \";\n  END SELECT\n  PRINT s$\nEND SELECT"
+ },
+ {
+  "src": "s$=DEC$(-5,\"-###\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(1234.5678,\"####.##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"###\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(-5,\"###\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(123,\"##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(-123,\"###\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(0,\"###\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(0,\"#.##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(0.5,\"#.##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(0.5,\".##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(-0.5,\"#.##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(1234567,\"#,###,###\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(1234567,\"##,###,###\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(12,\"#,###\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(1234.5,\"#,###.#\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(1234.5,\"####,.##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(-1234,\"#,###\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(999,\"#,###\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(1000,\"#,###\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(100000,\"#,###\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"+###\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(-5,\"+###\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"###+\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(-5,\"###+\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"###-\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(-5,\"###-\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"**###\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(-5,\"**###\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(0,\"**##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(123,\"**##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"$$###\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(-5,\"$$###\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"$$#\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(123,\"$$#\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"**$###\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"+$$##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(-5,\"+$$##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"$$##+\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"##.##^^^^\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(12345.678,\"#.###^^^^\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(0,\"##^^^^\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(-5,\"##^^^^\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(0.00123,\"#.##^^^^\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(2.5,\"#\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(3.5,\"#\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(0.125,\"#.##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(0.995,\"#.##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(9.995,\"#.##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(99.5,\"##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(-0.001,\"#.##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(-0.5,\"#\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(0.4,\"#\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(1E10,\"#.##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(123456789012,\"############\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(1E15,\"#\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(123456789,\"#########\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(1234567.891,\"#######.###\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(0.000001,\"#.#######\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"#,\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(10000000,CHR$(163)+CHR$(163)+\"########,.##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(-5,CHR$(163)+CHR$(163)+\"##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"**\"+CHR$(163)+\"##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(-0.001,\"+#.##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(-0.001,\"#.##-\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(1E16,\"#\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(1E17,\"#\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(1E19,\"#\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(1E20,\"#\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(1E25,\"#\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(-1E20,\"#\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(123456789012345,\"#\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(0.00001,\"#.##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(0.333333333333,\"#.###########\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(0.666666666667,\"##.##########\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(123.456,\"###.###########\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"##,,#\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(12345.6,\"##,###.#\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"+**##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(-5,\"**##-\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"$$##-\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(0,\"+###\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(0.5,\"$$#.##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(0.5,\"$$.##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(0.5,\"+#.##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(-0.5,\"+.##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(0.5,\"##.##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(-0.5,\"##.##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(-0.5,\"**.##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"**,##\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(1234,\"**,###\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(1234,\"$$,###\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(123,\"##,#\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(1234,\"##,#\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5.5,\"#.#+\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"+.#\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(-5,\"#.#-\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"$$\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"**\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"#\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"**$\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(12.345,\"#####\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(12.345,\"####.\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(0,\"#.##^^^^\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"##^^^^\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"####.##^^^^\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(12345,\"##.##^^^^\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(0.05,\"##.##^^^^\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(-12345,\"+##.##^^^^\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(12345,\"##.##^^^^-\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(99999,\"#.##^^^^\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(12345,\"#.##^^^^\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(1E30,\"##.##^^^^\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(1E-30,\"##.##^^^^\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"**##^^^^\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(5,\"#^^^^\"):PRINT \"[\";s$;\"]\"\ns$=DEC$(1E-38,\"#.#\"):PRINT \"[\";s$;\"]\""
+ },
+ {
+  "src": "s$=DEC$(5,\"\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"# #\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"#\"+CHR$(0))\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"##**\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"##+-\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"##.##.##\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"##.##^^^\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"##.##^^^^,\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"##.##^^^^^\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"##a\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"#$$\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"#**\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"#,#.#,#\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"#.##,\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"#.#.#\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"#^^^\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"#^^^^^\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"$\"+CHR$(163)+\"##\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"$#\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"$$\"+CHR$(163)+\"##\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"$$$\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"$$$##\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"*#\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"***##\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"**+##\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"+\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"+##\"+CHR$(32))\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"+###-\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\",#\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\",##\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"-###\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\".\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"A##\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"^^^^\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"^^^^#\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,\"abc\")\nPRINT \"never\""
+ },
+ {
+  "src": "s$=DEC$(5,CHR$(163)+\"##\")\nPRINT \"never\""
+ },
+ {
+  "src": "s% = 100\nRANDOMIZE s%\na! = RND\nRANDOMIZE s%\nb! = RND\nRANDOMIZE 0\nc! = RND\nRANDOMIZE 0\nd! = RND\nPRINT a! = b!; c! = d!; a! <> c!"
+ },
+ {
+  "src": "s=-1\nFOR i=3 TO 1 STEP s\nPRINT i;\nNEXT\ns=2\nFOR i=1 TO 6 STEP s\nPRINT i;\nNEXT\nPRINT\nFOR i=5 TO 1\nPRINT \"never\";\nNEXT\nPRINT i"
+ },
+ {
+  "src": "w=-3\nx$=BIN$(5,-1)\nPRINT \"never\""
+ },
+ {
+  "src": "w=-3\nx$=BIN$(5,17)\nPRINT \"never\""
+ },
+ {
+  "src": "w=-3\nx$=HEX$(255,-1)\nPRINT \"never\""
+ },
+ {
+  "src": "w=-3\nx$=HEX$(255,17)\nPRINT \"never\""
+ },
+ {
+  "src": "w=-3\nx$=HEX$(5,w)\nPRINT \"never\""
+ },
+ {
+  "src": "x! = 2.567\nn% = 2\nPRINT ROUND(x!, n%); ROUND(7, -1); ROUND(x!)\nDIM f AS FIXED = 1.25\nPRINT ROUND(f, 1)\nr! = ROUND(1234, -2) * 2\nPRINT r!"
+ },
+ {
+  "src": "x=-1\nLOCATE x,1\nPRINT \"never\""
+ },
+ {
+  "src": "x=0\nLOCATE 1,x\nPRINT \"never\""
+ },
+ {
+  "src": "x=0\nLOCATE x,1\nPRINT \"never\""
+ },
+ {
+  "src": "x=256\nLOCATE x,1\nPRINT \"after\""
+ },
+ {
+  "src": "x=256\nLOCATE x,1\nPRINT \"never\""
+ },
+ {
+  "src": "x=257\nLOCATE 1,x\nPRINT \"never\""
+ },
+ {
+  "src": "x=257\nLOCATE x,1\nPRINT \"never\""
+ },
+ {
+  "src": "x=300\nPRINT CAST(UBYTE, x); CAST(BYTE, x-100); CINT(70); UNT(-1)"
+ },
+ {
+  "src": "x=7:y=4\nLOCATE x,y\nPRINT POS(#0); VPOS(#0)"
+ },
+ {
+  "src": "x=@one\ny=@two\nPRINT y>x; y<x; y-x>0\none:\nPRINT 1\ntwo:\nPRINT @one=x"
+ }
+]

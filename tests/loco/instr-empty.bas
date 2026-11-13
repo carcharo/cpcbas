@@ -1,0 +1,5 @@
+10 PRINT "A";INSTR("abc","")
+20 PRINT "B";INSTR(2,"abc","")
+30 PRINT "C";INSTR(4,"abc","")
+40 PRINT "D";INSTR(5,"abc","")
+50 PRINT "E";INSTR("","")

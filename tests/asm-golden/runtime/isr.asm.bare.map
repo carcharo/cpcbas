@@ -1,0 +1,4 @@
+0040: .core.__CPC_FH_RUN
+0080: .core.__CPC_GM_ISR
+009D: .core.__CPC_ISR_INSTALL
+00A9: .core.__CPC_ISR

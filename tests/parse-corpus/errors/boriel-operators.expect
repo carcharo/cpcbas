@@ -1,0 +1,3 @@
+2:7 E960 bOR is not CPC BASIC: use OR
+3:7 E960 bXOR is not CPC BASIC: use XOR
+4:5 E960 bNOT is not CPC BASIC: use NOT

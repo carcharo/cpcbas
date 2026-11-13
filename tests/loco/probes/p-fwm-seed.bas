@@ -1,0 +1,22 @@
+10 REM FWM-0: where RANDOMIZE leaves the RND state and what RND returns next
+20 REM The maths state is at &B100 (664, 6128, Plus) or &B8E4 (464): 4 seed bytes, then 5-byte temps
+30 MODE 2
+40 IF PEEK(&BDC4)=0 THEN sb=&B100 ELSE sb=&B8E4
+50 DIM x(0)
+60 READ n
+70 FOR j=1 TO n
+80 READ a$
+90 y=RND:ar!=VAL(a$):RANDOMIZE ar!
+100 PRINT a$;" ARG ";:FOR k=0 TO 4:PRINT RIGHT$("0"+HEX$(PEEK(@ar!+k)),2);:NEXT:PRINT " S ";:GOSUB 500:PRINT
+110 y=RND:PRINT "  R1 ";:GOSUB 600
+120 y=RND:PRINT " R2 ";:GOSUB 600:PRINT
+130 NEXT
+140 REM the state after boot-independent reseeds: again with a different history
+150 FOR j=1 TO 3:y=RND:NEXT:RANDOMIZE 1.5
+160 PRINT "1.5 after 3 RND S ";:GOSUB 500:PRINT
+170 y=RND:PRINT "  R1 ";:GOSUB 600:PRINT
+180 END
+500 FOR k=0 TO 3:PRINT RIGHT$("0"+HEX$(PEEK(sb+k)),2);:NEXT
+510 PRINT " ";:FOR k=4 TO 18:PRINT RIGHT$("0"+HEX$(PEEK(sb+k)),2);:NEXT:RETURN
+600 FOR k=0 TO 4:PRINT RIGHT$("0"+HEX$(PEEK(@y+k)),2);:NEXT:RETURN
+700 DATA 22,0,1,2,3,10,100,1000,32767,65535,65536,123456,0.5,0.25,1.5,-1,-0.5,1E10,1E-10,3.14159,0.1,0.9999,7

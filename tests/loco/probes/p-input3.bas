@@ -1,0 +1,10 @@
+10 REM LOCO-TYPE:   sp  |abc|def|ghi|jkl|mno|5|6|pqr
+20 LINE INPUT a$: PRINT "[";a$;"]"
+30 LINE INPUT "P1";a$: PRINT "[";a$;"]"
+40 LINE INPUT "P2",a$: PRINT "[";a$;"]"
+50 INPUT "N1";a$: PRINT "[";a$;"]"
+60 INPUT "N2",a$: PRINT "[";a$;"]"
+70 INPUT ;a$: PRINT "[";a$;"]"
+80 INPUT "N3";a: PRINT "[";a;"]"
+90 INPUT "N4",a,b: PRINT "[";a;"]"
+100 PRINT "end"

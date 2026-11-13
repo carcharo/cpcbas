@@ -1,0 +1,5 @@
+0040: .core.__MUL16
+0043: .core.__MUL16_FAST
+0055: .core.__FMUL16
+0067: .core.__ARRAY_PTR
+006B: .core.__ARRAY

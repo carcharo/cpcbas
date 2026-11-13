@@ -1,0 +1,30 @@
+;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; © Copyright 2008-2024 José Manuel Rodríguez de la Rosa and contributors.
+;; See the file CONTRIBUTORS.md of zxbasic (https://github.com/boriel-basic/zxbasic) for copyright details.
+;; Ported from zxbasic src/arch/z80/peephole/opts/031_jpX_Y_jpX.opt at e33cf0cd (cpcbas L5-PEEP; changes: IF added: the line removed is not a call or rst (no rule deletes a call line; docs/ir.md); directives and opaque lines never reach a window).
+
+;; Removes useless (jumped over) instructions
+;; Replace sequence:
+;; jp X | jr X
+;; YYYY
+;;
+;; With:
+;; jp X | jr X
+;;
+;; YYYY must not be a label
+
+OLEVEL: 1
+OFLAG: 31
+
+REPLACE {{
+  $1 $2
+  $3
+}}
+
+IF {{
+  (($1 == jp) || ($1 == jr)) && (!IS_LABEL($3)) && (LEN($2) == 1) && (!IS_ASM($3)) && !(INSTR($3) IN (call, rst))
+}}
+
+WITH {{
+  $1 $2
+}}

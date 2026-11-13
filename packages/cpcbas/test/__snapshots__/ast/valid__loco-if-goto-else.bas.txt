@@ -1,0 +1,40 @@
+Program mainFile=0
+  includes:
+  body:
+    LineLabel number=10 name=- key=-
+    Let explicitLet=false
+      target: Name text="a" base="a" suffix=-
+      value: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="b" base="b" suffix=-
+      value: NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+    LineLabel number=20 name=- key=-
+    If form="line"
+      branches:
+        Branch
+          cond: Binary op=">"
+            left: Name text="a" base="a" suffix=-
+            right: Name text="b" base="b" suffix=-
+          body:
+            Goto implicit=true
+              target: LineTarget number=100
+      elseBody:
+        Goto implicit=true
+          target: LineTarget number=200
+    LineLabel number=30 name=- key=-
+    If form="line" elseBody=-
+      branches:
+        Branch
+          cond: Binary op="<"
+            left: Name text="a" base="a" suffix=-
+            right: Name text="b" base="b" suffix=-
+          body:
+            Goto implicit=true
+              target: LineTarget number=100
+    LineLabel number=100 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="a is bigger"
+    LineLabel number=200 name=- key=-
+    End

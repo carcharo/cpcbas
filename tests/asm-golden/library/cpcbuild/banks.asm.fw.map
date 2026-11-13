@@ -1,0 +1,14 @@
+0040: .core.__FW_CALL
+005A: .core.__FW_CALL_TARGET
+006B: .core.__FW_CALL_IX
+0087: .core.__FW_CALL_IX_TARGET
+009A: .core.CPC_INIT_BANKS
+00C8: .core.__BK_SETCFG
+00D9: .core.__BK_SELECT
+00E1: .core.__BK_SELECT_OFF
+00E5: .core.CBK_PRESENT
+00E6: .core.CBK_CFG
+00E7: .core.CBK_LBUF
+00E9: .core.CBK_LLEN
+00EA: .core.CBK_LPREV
+00EB: .core.CBK_LRES

@@ -1,0 +1,28 @@
+;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; © Copyright 2008-2024 José Manuel Rodríguez de la Rosa and contributors.
+;; See the file CONTRIBUTORS.md of zxbasic (https://github.com/boriel-basic/zxbasic) for copyright details.
+;; Ported from zxbasic src/arch/z80/peephole/opts/106_o3_exdehl.opt at e33cf0cd (cpcbas L5-PEEP; changes: none; OLEVEL 3/4, kept as data for L5-FLOW and never run by the peephole pass).
+
+;; Replaces
+;;
+;; ld de, nn
+;;
+;; With
+;; ex de, hl
+;;
+;; if hl is no longer required, and guessed val of hl is nn
+
+OLEVEL: 3
+OFLAG: 106
+
+REPLACE {{
+  ld de, $1
+}}
+
+IF {{
+    GVAL(hl) == GVAL($1) && !IS_REQUIRED(hl)
+}}
+
+WITH {{
+  ex de, hl
+}}

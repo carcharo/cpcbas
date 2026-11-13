@@ -1,0 +1,76 @@
+Program mainFile=0
+  includes:
+  body:
+    LineLabel number=10 name=- key=-
+    Builtin keyword="MODE" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Builtin keyword="BORDER" stream=- typeArg=-
+      args:
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+    Builtin keyword="INK" stream=- typeArg=-
+      args:
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+    Builtin keyword="INK" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        NumberLit value=24 text="24" radix=10 isReal=false suffix=-
+    LineLabel number=20 name=- key=-
+    Builtin keyword="CLS" stream=- typeArg=-
+      args:
+    LineLabel number=30 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="SCORE:"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="s" base="s" suffix=-
+    LineLabel number=40 name=- key=-
+    For step=-
+      variable: Name text="i" base="i" suffix=-
+      from: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      to: NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+      body:
+        Let explicitLet=false
+          target: Name text="s" base="s" suffix=-
+          value: Binary op="+"
+            left: Name text="s" base="s" suffix=-
+            right: Name text="i" base="i" suffix=-
+      nextName: Name text="i" base="i" suffix=-
+    LineLabel number=50 name=- key=-
+    If form="line" elseBody=-
+      branches:
+        Branch
+          cond: Binary op=">"
+            left: Name text="s" base="s" suffix=-
+            right: NumberLit value=40 text="40" radix=10 isReal=false suffix=-
+          body:
+            Goto implicit=true
+              target: LineTarget number=80
+    LineLabel number=60 name=- key=-
+    Gosub
+      target: LineTarget number=200
+    LineLabel number=70 name=- key=-
+    Goto implicit=false
+      target: LineTarget number=40
+    LineLabel number=80 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="DONE"
+    End
+    LineLabel number=200 name=- key=-
+    Builtin keyword="PLOT" stream=- typeArg=-
+      args:
+        Binary op="*"
+          left: BuiltinCall keyword="RND" parens=false typeArg=- stream=-
+            args:
+          right: NumberLit value=600 text="600" radix=10 isReal=false suffix=-
+        Binary op="*"
+          left: BuiltinCall keyword="RND" parens=false typeArg=- stream=-
+            args:
+          right: NumberLit value=390 text="390" radix=10 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Return value=-

@@ -1,0 +1,17 @@
+Program mainFile=0
+  includes:
+  body:
+    LineLabel number=10 name=- key=-
+    Input line=false stream=- promptSep=";" keepCursor=true
+      prompt: StringLit value="no newline"
+      targets:
+        Name text="w" base="w" suffix="$"
+    LineLabel number=20 name=- key=-
+    Input line=true stream=- promptSep=";" keepCursor=true
+      prompt: StringLit value="keep cursor: "
+      targets:
+        Name text="k" base="k" suffix="$"
+    LineLabel number=30 name=- key=-
+    Input line=false stream=- prompt=- promptSep=- keepCursor=true
+      targets:
+        Name text="a" base="a" suffix=-

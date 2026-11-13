@@ -1,0 +1,6 @@
+10 PRINT POS(#8)
+20 PRINT #8,"a";
+30 PRINT POS(#8)
+40 PRINT #8,"b"
+50 PRINT POS(#8)
+60 PRINT #8,"c";POS(#8)

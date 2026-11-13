@@ -1,0 +1,5 @@
+0040: .core.__MUL32_64START
+004A: .core.__LMUL
+0057: .core.__LMULLOOP
+005E: .core.__LMULNOADD
+0068: .core.__LMULSTART

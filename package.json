@@ -1,0 +1,33 @@
+{
+  "name": "cpcbas-workspace",
+  "private": true,
+  "type": "module",
+  "description": "CPC BASIC compiler for the Amstrad CPC (npm workspace root)",
+  "license": "AGPL-3.0-or-later",
+  "engines": {
+    "node": ">=22"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "bench:sim": "vitest run --config vitest.bench.config.ts",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "eslint .",
+    "opt:corpus": "node tools/opt-corpus.mjs",
+    "fuzz:opt": "node tools/fuzz-opt.mjs",
+    "bundle": "npm run bundle --workspaces --if-present"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/node": "22.20.5",
+    "esbuild": "0.28.2",
+    "eslint": "10.14.0",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.72.1",
+    "vitest": "5.0.5"
+  }
+}

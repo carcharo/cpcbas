@@ -1,0 +1,3 @@
+cpcbuild/spritelist.asm	bare	lib/cpcbuild/spritelist.asm:73: error: Undefined label '.core.__SL_MAX'
+cpcbuild/spritelist.asm	fw	lib/cpcbuild/spritelist.asm:73: error: Undefined label '.core.__SL_MAX'
+cpcplus/plusraster.asm	bare	wrapper.asm:186: error: Undefined GLOBAL label '.core.__CPC_ISR'

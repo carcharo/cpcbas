@@ -1,0 +1,13 @@
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+.DS_Store
+/build/
+/.worktrees/
+__pycache__/
+*.pyc
+bench/_work/
+tests/games/lamplighter/build/
+tests/games/lamplighter/tests/golden/**/*.actual.png
+tests/games/lamplighter/tests/golden/**/*.diff.png

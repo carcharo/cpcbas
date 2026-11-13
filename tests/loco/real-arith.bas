@@ -1,0 +1,27 @@
+10 DEFREAL a-z
+20 REM + - * / on pairs: the text, then the five bytes of each nonzero result (rounding, ties, limits)
+30 READ n:FOR k=1 TO n:READ x,y
+40 PRINT x;y
+50 a=x+y:GOSUB 200
+60 a=x-y:GOSUB 200
+70 a=x*y:GOSUB 200
+80 IF y<>0 THEN a=x/y:GOSUB 200
+90 NEXT
+100 REM constant expressions (folded by the compiler) and the same with variables
+110 PRINT 1.0/3.0;2.0/3.0*3.0;0.1+0.2;0.1*3;1-0.9;10.0/4.0-0.1*3;1E38/3;1E-38/3
+120 x=1:y=3:z=0.1
+130 PRINT x/y;2*x/y*y;z+0.2;z*3;x-0.9;10.0/4.0-z*y;1E38/y;1E-38/y
+140 a=x/y*y:GOSUB 200
+150 a=z+0.2:GOSUB 200
+160 a=-z*y:GOSUB 200
+170 a=ABS(a)-z:GOSUB 200
+180 END
+200 PRINT " ";a;":";
+210 IF PEEK(@a+4)=0 THEN PRINT:RETURN
+220 FOR i=0 TO 4:PRINT HEX$(PEEK(@a+i),2);:NEXT
+230 PRINT:RETURN
+300 DATA 30
+310 DATA 1,3, 2,3, 0.1,0.2, 0.1,0.7, 16777216,1, 16777217,1, 4294967296,1, 4294967297,1
+320 DATA 1.5,2.5, 123456789,987654321, 1E10,3, 1E-10,3, 1E37,0.5, 1E38,1.5, 1E-38,0.5, 2.9E-39,0.5
+330 DATA 1,-1, 1.0000001,1, 0.3,0.1, 7,-0.7, 255,256, 65535,65536, 1E20,1E-10, 33554431,0.5
+340 DATA 0.5,0.25, -2.5,0.4, 3.14159,2.71828, 1E5,1E-5, 99999999,1, 12345.6789,0.00012

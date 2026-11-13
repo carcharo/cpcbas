@@ -1,0 +1,3 @@
+' Spec section 7: a FUNCTION with no END FUNCTION.
+FUNCTION Twice(n AS INTEGER) AS INTEGER
+  RETURN n * 2

@@ -1,0 +1,32 @@
+;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; © Copyright 2008-2024 José Manuel Rodríguez de la Rosa and contributors.
+;; See the file CONTRIBUTORS.md of zxbasic (https://github.com/boriel-basic/zxbasic) for copyright details.
+;; Ported from zxbasic src/arch/z80/peephole/opts/006_o3_push_af_pop_XX.opt at e33cf0cd (cpcbas L5-PEEP; changes: none; OLEVEL 3/4, kept as data for L5-FLOW and never run by the peephole pass).
+
+;; Replaces sequence:
+;;  push af
+;;  pop XY
+;; with
+;;  ld X, a
+;; (also reverse order allowed)
+
+OLEVEL: 3
+OFLAG: 7
+
+REPLACE {{
+ push $1
+ pop $2
+}}
+
+IF {{
+  ($1 <> $2) && (($1 == af) || ($2 == af))
+}}
+
+DEFINE {{
+  $3 = HIREG($1)
+  $4 = HIREG($2)
+}}
+
+WITH {{
+ ld $4, $3
+}}

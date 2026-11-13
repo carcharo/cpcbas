@@ -1,0 +1,43 @@
+Program mainFile=0
+  includes:
+    Include requested="\"consts.bas\"" angle=false once=true file=1 skipped=false
+  body:
+    Const type=-
+      name: Name text="ScreenW" base="screenw" suffix=-
+      value: NumberLit value=80 text="80" radix=10 isReal=false suffix=-
+    Const type=-
+      name: Name text="ScreenH" base="screenh" suffix=-
+      value: NumberLit value=25 text="25" radix=10 isReal=false suffix=-
+    Const type=-
+      name: Name text="ColourBlack" base="colourblack" suffix=-
+      value: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+    Const type=-
+      name: Name text="ColourWhite" base="colourwhite" suffix=-
+      value: NumberLit value=26 text="26" radix=10 isReal=false suffix=-
+    Procedure procKind="SUB" convention=- returnType=-
+      name: Name text="CentreText" base="centretext" suffix=-
+      params:
+        Param passing=- isArray=false default=-
+          name: Name text="row" base="row" suffix=-
+          type: TypeRef name="UBYTE" text="UBYTE"
+        Param passing=- isArray=false default=-
+          name: Name text="text" base="text" suffix=-
+          type: TypeRef name="STRING" text="STRING"
+      body:
+        Builtin keyword="LOCATE" stream=- typeArg=-
+          args:
+            Binary op="+"
+              left: Binary op="\\"
+                left: Binary op="-"
+                  left: Name text="ScreenW" base="screenw" suffix=-
+                  right: BuiltinCall keyword="LEN" parens=true typeArg=- stream=-
+                    args:
+                      Name text="text" base="text" suffix=-
+                right: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+              right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+            Name text="row" base="row" suffix=-
+        Print stream=-
+          items:
+            PrintExpr
+              expr: Name text="text" base="text" suffix=-
+            PrintSep sep=";"

@@ -1,0 +1,30 @@
+;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; © Copyright 2008-2024 José Manuel Rodríguez de la Rosa and contributors.
+;; See the file CONTRIBUTORS.md of zxbasic (https://github.com/boriel-basic/zxbasic) for copyright details.
+;; Ported from zxbasic src/arch/z80/peephole/opts/029_cp_0_or_a.opt at e33cf0cd (cpcbas L5-PEEP; changes: IF added: the next line must not read P/V (jp po/pe), which cp 0 clears and or a sets from parity; the window is two lines).
+
+;; Replace sequence:
+;; sub 0|cp 0
+;; <next instruction>
+;;
+;; With:
+;; or a
+;; <next instruction>
+;; Z, S and C agree; P/V and H differ, so a conditional that reads P/V (po, pe) keeps its cp 0.
+
+OLEVEL: 1
+OFLAG: 29
+
+REPLACE {{
+  $1 0
+  $4
+}}
+
+IF {{
+  (($1 == cp) || ($1 == sub)) && !IS_LABEL($4) && !(CTEST($4) IN (po, pe))
+}}
+
+WITH {{
+  or a
+  $4
+}}

@@ -1,0 +1,8 @@
+0040: .core.__FW_CALL
+005A: .core.__FW_CALL_TARGET
+006B: .core.__FW_CALL_IX
+0087: .core.__FW_CALL_IX_TARGET
+009A: .core.__CPC_KSCAN_ROWS
+00DE: .core.__CPC_KEYCHAR
+0135: .core.__CPC_KEYHELD
+0183: .core.__CPC_KEYS

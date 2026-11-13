@@ -1,0 +1,24 @@
+Program mainFile=0
+  includes:
+  body:
+    Pragma op="set" name="org" value="&4000"
+    Pragma op="set" name="heap_size" value="2048"
+    Pragma op="set" name="heap_address" value="&9000"
+    Pragma op="set" name="case_insensitive" value="true"
+    Pragma op="set" name="explicit" value="true"
+    Pragma op="push" name="explicit" value=-
+    Pragma op="set" name="explicit" value="false"
+    Pragma op="pop" name="explicit" value=-
+    Pragma op="flag" name="explicit" value=-
+    Pragma op="set" name="hidata" value="&A000"
+    Pragma op="set" name="hidata" value="0"
+    Require path="extra.asm"
+    Init label="Startup"
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="pragmas done"
+    Asm
+      lines:
+        AsmLine text="Startup:"
+        AsmLine text="  ret"

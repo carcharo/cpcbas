@@ -1,0 +1,34 @@
+;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; © Copyright 2008-2024 José Manuel Rodríguez de la Rosa and contributors.
+;; See the file CONTRIBUTORS.md of zxbasic (https://github.com/boriel-basic/zxbasic) for copyright details.
+;; Ported from zxbasic src/arch/z80/peephole/opts/104_o3_opt27.opt at e33cf0cd (cpcbas L5-PEEP; changes: none; OLEVEL 3/4, kept as data for L5-FLOW and never run by the peephole pass).
+
+;; Replaces
+;;
+;; ld r, XX
+;; cp r | sub r | and r | or r | xor r
+;;
+;; With
+;; cp XX | sub XX | and XX | or XX | xor XX
+;;
+;; IF r != a, and r is not required later
+;;
+;; Formerly OPT27
+
+OLEVEL: 3
+OFLAG: 104
+
+REPLACE {{
+  ld $1, $2
+  $3 $1
+}}
+
+IF {{
+    ($1 <> a) &&
+    !IS_REQUIRED($1) && !IS_REQUIRED(f) &&
+    ($3 IN (cp, or, and, xor, sub))
+}}
+
+WITH {{
+  $3 $2
+}}

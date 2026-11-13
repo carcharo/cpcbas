@@ -1,0 +1,4 @@
+0040: .core.__MEM_INIT
+0046: .core.__MEM_INIT2
+0064: .core.MEM_FREE
+0064: .core.__MEM_FREE

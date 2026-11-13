@@ -1,0 +1,32 @@
+;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; cpcbas L5-PEEP: our own rule, added by L5-GAP (docs/ir.md "The rule files").
+
+;; ld a, 0
+;; push af
+;;
+;; With:
+;; xor a
+;; push af
+;;
+;; The pushed word of an 8-bit value parameter of a procedure holds the value in its high byte; the low byte (F) is
+;; never read: the callee reads the value at (ix+5) and the like, and `leave` drops the word with the others
+;; (docs/ir.md "Calling conventions"). The flags are dead after a `param` quad: no quad reads the flags of an earlier
+;; one, only a compare and its branch share them, inside one template. A temp pushed by a `load` is not a parameter
+;; and is not matched: the templates that pop it (`pop af`) may read F.
+
+OLEVEL: 2
+OFLAG: 511
+
+REPLACE {{
+  ld a, 0
+  push af
+}}
+
+IF {{
+  $00 IN ("param:u8", "param:i8")
+}}
+
+WITH {{
+  xor a
+  push af
+}}

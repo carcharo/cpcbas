@@ -1,0 +1,10 @@
+{
+  // The library alone, with no Node or DOM types: a use of a Node API in src/ fails here (src/node is the Node-only `./node` entry).
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "types": [],
+    "noEmit": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/**/*.test.ts", "src/node/**"]
+}

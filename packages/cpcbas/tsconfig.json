@@ -1,0 +1,9 @@
+{
+  // Everything (library, CLI, tests) for editors and `npm run typecheck`.
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["node"],
+    "noEmit": true
+  },
+  "include": ["src/**/*.ts", "bin/**/*.ts", "test/**/*.ts"]
+}

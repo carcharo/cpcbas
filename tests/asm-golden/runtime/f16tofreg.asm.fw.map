@@ -1,0 +1,8 @@
+0040: .core.__ABS32
+0043: .core.__NEG32
+0055: .core.__I8TOFREG
+005B: .core.__I32TOFREG
+0069: .core.__U8TOFREG
+006E: .core.__U32TOFREG
+0082: .core.__U32TOFREG_LOOP
+00A4: .core.__F16TOFREG

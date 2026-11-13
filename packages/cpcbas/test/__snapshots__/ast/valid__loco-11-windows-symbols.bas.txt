@@ -1,0 +1,179 @@
+Program mainFile=0
+  includes:
+  body:
+    LineLabel number=10 name=- key=-
+    Builtin keyword="MODE" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    LineLabel number=20 name=- key=-
+    Builtin keyword="SYMBOL AFTER" stream=- typeArg=-
+      args:
+        NumberLit value=240 text="240" radix=10 isReal=false suffix=-
+    LineLabel number=30 name=- key=-
+    Builtin keyword="SYMBOL" stream=- typeArg=-
+      args:
+        NumberLit value=240 text="240" radix=10 isReal=false suffix=-
+        NumberLit value=24 text="&18" radix=16 isReal=false suffix=-
+        NumberLit value=60 text="&3C" radix=16 isReal=false suffix=-
+        NumberLit value=126 text="&7E" radix=16 isReal=false suffix=-
+        NumberLit value=255 text="&FF" radix=16 isReal=false suffix=-
+        NumberLit value=255 text="&FF" radix=16 isReal=false suffix=-
+        NumberLit value=126 text="&7E" radix=16 isReal=false suffix=-
+        NumberLit value=60 text="&3C" radix=16 isReal=false suffix=-
+        NumberLit value=24 text="&18" radix=16 isReal=false suffix=-
+    LineLabel number=40 name=- key=-
+    Builtin keyword="SYMBOL" stream=- typeArg=-
+      args:
+        NumberLit value=241 text="241" radix=10 isReal=false suffix=-
+        NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+    LineLabel number=50 name=- key=-
+    Builtin keyword="SYMBOL" stream=- typeArg=-
+      args:
+        NumberLit value=242 text="242" radix=10 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+        NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+    LineLabel number=60 name=- key=-
+    Builtin keyword="SYMBOL" stream=- typeArg=-
+      args:
+        NumberLit value=243 text="243" radix=10 isReal=false suffix=-
+        NumberLit value=240 text="&X11110000" radix=2 isReal=false suffix=-
+        NumberLit value=15 text="&X00001111" radix=2 isReal=false suffix=-
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+        NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+    LineLabel number=70 name=- key=-
+    Builtin keyword="WINDOW" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        NumberLit value=20 text="20" radix=10 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+    LineLabel number=80 name=- key=-
+    Builtin keyword="WINDOW" typeArg=-
+      stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      args:
+        NumberLit value=22 text="22" radix=10 isReal=false suffix=-
+        NumberLit value=40 text="40" radix=10 isReal=false suffix=-
+        NumberLit value=12 text="12" radix=10 isReal=false suffix=-
+        NumberLit value=24 text="24" radix=10 isReal=false suffix=-
+    LineLabel number=90 name=- key=-
+    Builtin keyword="WINDOW" typeArg=-
+      stream: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+      args:
+        NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+        NumberLit value=15 text="15" radix=10 isReal=false suffix=-
+        NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+        NumberLit value=8 text="8" radix=10 isReal=false suffix=-
+    LineLabel number=100 name=- key=-
+    Builtin keyword="PAPER" typeArg=-
+      stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      args:
+        NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+    Builtin keyword="PEN" typeArg=-
+      stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      args:
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+    Builtin keyword="CLS" typeArg=-
+      stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      args:
+    LineLabel number=110 name=- key=-
+    Print
+      stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      items:
+        PrintExpr
+          expr: BuiltinCall keyword="CHR$" parens=true typeArg=- stream=-
+            args:
+              NumberLit value=240 text="240" radix=10 isReal=false suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: BuiltinCall keyword="CHR$" parens=true typeArg=- stream=-
+            args:
+              NumberLit value=241 text="241" radix=10 isReal=false suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: StringLit value="boxed"
+    LineLabel number=120 name=- key=-
+    Print
+      stream: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+      items:
+        PrintExpr
+          expr: StringLit value="small"
+    LineLabel number=130 name=- key=-
+    Builtin keyword="WINDOW SWAP" stream=- typeArg=-
+      args:
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    LineLabel number=140 name=- key=-
+    Builtin keyword="WINDOW SWAP" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+    LineLabel number=150 name=- key=-
+    Builtin keyword="LOCATE" typeArg=-
+      stream: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+      args:
+        NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+        NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+    LineLabel number=160 name=- key=-
+    Let explicitLet=false
+      target: Name text="c" base="c" suffix="$"
+      value: BuiltinCall keyword="COPYCHR$" parens=true typeArg=-
+        stream: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+        args:
+    LineLabel number=170 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Name text="c" base="c" suffix="$"
+        PrintSep sep=";"
+        PrintExpr
+          expr: BuiltinCall keyword="COPYCHR$" parens=true typeArg=-
+            stream: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+            args:
+    LineLabel number=180 name=- key=-
+    Builtin keyword="MOVE" stream=- typeArg=-
+      args:
+        NumberLit value=100 text="100" radix=10 isReal=false suffix=-
+        NumberLit value=100 text="100" radix=10 isReal=false suffix=-
+    Builtin keyword="TAG" stream=- typeArg=-
+      args:
+    LineLabel number=190 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="graphic text"
+        PrintSep sep=";"
+    LineLabel number=200 name=- key=-
+    Builtin keyword="TAGOFF" stream=- typeArg=-
+      args:
+    LineLabel number=210 name=- key=-
+    Builtin keyword="TAG" typeArg=-
+      stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      args:
+    Print
+      stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      items:
+        PrintExpr
+          expr: StringLit value="x"
+        PrintSep sep=";"
+    Builtin keyword="TAGOFF" typeArg=-
+      stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      args:
+    LineLabel number=220 name=- key=-
+    For step=- nextName=-
+      variable: Name text="s" base="s" suffix=-
+      from: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+      to: NumberLit value=7 text="7" radix=10 isReal=false suffix=-
+      body:
+        Print
+          stream: Name text="s" base="s" suffix=-
+          items:
+            PrintExpr
+              expr: StringLit value="stream"
+            PrintSep sep=";"
+            PrintExpr
+              expr: Name text="s" base="s" suffix=-

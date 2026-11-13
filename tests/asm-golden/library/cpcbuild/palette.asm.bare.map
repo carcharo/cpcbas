@@ -1,0 +1,5 @@
+0040: .core.__CPC_HWCOL
+005B: .core.__CPC_GA_SET
+007E: .core.__CPC_SET_INK
+008A: .core.__CPC_SET_BORDER
+0094: .core.__CB_PAL_UPLOAD

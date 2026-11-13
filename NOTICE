@@ -1,0 +1,15 @@
+cpcbas: the CPC BASIC compiler for the Amstrad CPC.
+
+The compiler (packages/) is licensed under the GNU Affero General Public
+License v3.0 or later (LICENSE). Its design follows Boriel BASIC 1.19
+(https://github.com/boriel-basic/zxbasic, AGPL-3.0, José Manuel Rodríguez de
+la Rosa and contributors); parts of its code generator and peephole rules are
+ported from it.
+
+The runtime library (lib/) is licensed under the MIT License (lib/LICENSE).
+It contains the Z80 runtime of Boriel BASIC (MIT) and the Amstrad CPC
+runtime and libraries written for CPCBuild.
+
+The language is compatible in spirit with Locomotive BASIC 1.1 (Locomotive
+Software / Amstrad). Locomotive and Amstrad are trademarks of their owners;
+this project is not affiliated with them.

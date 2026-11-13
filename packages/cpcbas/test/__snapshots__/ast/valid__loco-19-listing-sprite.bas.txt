@@ -1,0 +1,219 @@
+Program mainFile=0
+  includes:
+  body:
+    LineLabel number=10 name=- key=-
+    Builtin keyword="MODE" stream=- typeArg=-
+      args:
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+    Builtin keyword="CLG" stream=- typeArg=-
+      args:
+    Builtin keyword="BORDER" stream=- typeArg=-
+      args:
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+    LineLabel number=20 name=- key=-
+    Let explicitLet=false
+      target: Name text="x" base="x" suffix=-
+      value: NumberLit value=320 text="320" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="y" base="y" suffix=-
+      value: NumberLit value=200 text="200" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="c" base="c" suffix=-
+      value: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    LineLabel number=30 name=- key=-
+    EveryAfter every=true timer=-
+      interval: NumberLit value=50 text="50" radix=10 isReal=false suffix=-
+      target: LineTarget number=500
+    LineLabel number=40 name=- key=-
+    While
+      cond: Binary op="<>"
+        left: BuiltinCall keyword="INKEY" parens=true typeArg=- stream=-
+          args:
+            NumberLit value=66 text="66" radix=10 isReal=false suffix=-
+        right: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+      body:
+        LineLabel number=50 name=- key=-
+        If form="line" elseBody=-
+          branches:
+            Branch
+              cond: Binary op="OR"
+                left: Binary op="="
+                  left: BuiltinCall keyword="INKEY" parens=true typeArg=- stream=-
+                    args:
+                      NumberLit value=8 text="8" radix=10 isReal=false suffix=-
+                  right: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+                right: Binary op="AND"
+                  left: BuiltinCall keyword="JOY" parens=true typeArg=- stream=-
+                    args:
+                      NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+                  right: NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+              body:
+                Let explicitLet=false
+                  target: Name text="x" base="x" suffix=-
+                  value: Binary op="-"
+                    left: Name text="x" base="x" suffix=-
+                    right: NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+        LineLabel number=60 name=- key=-
+        If form="line" elseBody=-
+          branches:
+            Branch
+              cond: Binary op="OR"
+                left: Binary op="="
+                  left: BuiltinCall keyword="INKEY" parens=true typeArg=- stream=-
+                    args:
+                      NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+                  right: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+                right: Binary op="AND"
+                  left: BuiltinCall keyword="JOY" parens=true typeArg=- stream=-
+                    args:
+                      NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+                  right: NumberLit value=8 text="8" radix=10 isReal=false suffix=-
+              body:
+                Let explicitLet=false
+                  target: Name text="x" base="x" suffix=-
+                  value: Binary op="+"
+                    left: Name text="x" base="x" suffix=-
+                    right: NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+        LineLabel number=70 name=- key=-
+        If form="line" elseBody=-
+          branches:
+            Branch
+              cond: Binary op="OR"
+                left: Binary op="="
+                  left: BuiltinCall keyword="INKEY" parens=true typeArg=- stream=-
+                    args:
+                      NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+                  right: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+                right: Binary op="AND"
+                  left: BuiltinCall keyword="JOY" parens=true typeArg=- stream=-
+                    args:
+                      NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+                  right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+              body:
+                Let explicitLet=false
+                  target: Name text="y" base="y" suffix=-
+                  value: Binary op="+"
+                    left: Name text="y" base="y" suffix=-
+                    right: NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+        LineLabel number=80 name=- key=-
+        If form="line" elseBody=-
+          branches:
+            Branch
+              cond: Binary op="OR"
+                left: Binary op="="
+                  left: BuiltinCall keyword="INKEY" parens=true typeArg=- stream=-
+                    args:
+                      NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+                  right: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+                right: Binary op="AND"
+                  left: BuiltinCall keyword="JOY" parens=true typeArg=- stream=-
+                    args:
+                      NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+                  right: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+              body:
+                Let explicitLet=false
+                  target: Name text="y" base="y" suffix=-
+                  value: Binary op="-"
+                    left: Name text="y" base="y" suffix=-
+                    right: NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+        LineLabel number=90 name=- key=-
+        If form="line"
+          branches:
+            Branch
+              cond: Binary op="<"
+                left: Name text="x" base="x" suffix=-
+                right: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+              body:
+                Let explicitLet=false
+                  target: Name text="x" base="x" suffix=-
+                  value: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+          elseBody:
+            If form="line" elseBody=-
+              branches:
+                Branch
+                  cond: Binary op=">"
+                    left: Name text="x" base="x" suffix=-
+                    right: NumberLit value=636 text="636" radix=10 isReal=false suffix=-
+                  body:
+                    Let explicitLet=false
+                      target: Name text="x" base="x" suffix=-
+                      value: NumberLit value=636 text="636" radix=10 isReal=false suffix=-
+        LineLabel number=100 name=- key=-
+        If form="line"
+          branches:
+            Branch
+              cond: Binary op="<"
+                left: Name text="y" base="y" suffix=-
+                right: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+              body:
+                Let explicitLet=false
+                  target: Name text="y" base="y" suffix=-
+                  value: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+          elseBody:
+            If form="line" elseBody=-
+              branches:
+                Branch
+                  cond: Binary op=">"
+                    left: Name text="y" base="y" suffix=-
+                    right: NumberLit value=396 text="396" radix=10 isReal=false suffix=-
+                  body:
+                    Let explicitLet=false
+                      target: Name text="y" base="y" suffix=-
+                      value: NumberLit value=396 text="396" radix=10 isReal=false suffix=-
+        LineLabel number=110 name=- key=-
+        If form="line" elseBody=-
+          branches:
+            Branch
+              cond: Binary op="OR"
+                left: Binary op="AND"
+                  left: BuiltinCall keyword="JOY" parens=true typeArg=- stream=-
+                    args:
+                      NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+                  right: NumberLit value=16 text="16" radix=10 isReal=false suffix=-
+                right: Binary op="="
+                  left: BuiltinCall keyword="INKEY" parens=true typeArg=- stream=-
+                    args:
+                      NumberLit value=47 text="47" radix=10 isReal=false suffix=-
+                  right: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+              body:
+                Let explicitLet=false
+                  target: Name text="c" base="c" suffix=-
+                  value: Binary op="+"
+                    left: Binary op="MOD"
+                      left: Name text="c" base="c" suffix=-
+                      right: NumberLit value=15 text="15" radix=10 isReal=false suffix=-
+                    right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        LineLabel number=120 name=- key=-
+        Builtin keyword="PLOT" stream=- typeArg=-
+          args:
+            Name text="x" base="x" suffix=-
+            Name text="y" base="y" suffix=-
+            Name text="c" base="c" suffix=-
+        LineLabel number=130 name=- key=-
+        Builtin keyword="FRAME" stream=- typeArg=-
+          args:
+        LineLabel number=140 name=- key=-
+    LineLabel number=150 name=- key=-
+    Call
+      address: NumberLit value=47896 text="&BB18" radix=16 isReal=false suffix=-
+      args:
+    LineLabel number=160 name=- key=-
+    End
+    LineLabel number=500 name=- key=-
+    Let explicitLet=false
+      target: Name text="secs" base="secs" suffix=-
+      value: Binary op="+"
+        left: Name text="secs" base="secs" suffix=-
+        right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    LineLabel number=510 name=- key=-
+    Builtin keyword="LOCATE" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Name text="secs" base="secs" suffix=-
+        PrintSep sep=";"
+    LineLabel number=520 name=- key=-
+    Return value=-

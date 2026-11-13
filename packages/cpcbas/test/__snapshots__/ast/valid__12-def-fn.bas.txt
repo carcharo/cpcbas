@@ -1,0 +1,94 @@
+Program mainFile=0
+  includes:
+  body:
+    DefFn
+      name: Name text="Double" base="double" suffix=-
+      params:
+        Name text="x" base="x" suffix=-
+      body: Binary op="*"
+        left: Name text="x" base="x" suffix=-
+        right: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+    DefFn
+      name: Name text="Dist" base="dist" suffix=-
+      params:
+        Name text="dx" base="dx" suffix=-
+        Name text="dy" base="dy" suffix=-
+      body: BuiltinCall keyword="SQR" parens=true typeArg=- stream=-
+        args:
+          Binary op="+"
+            left: Binary op="*"
+              left: Name text="dx" base="dx" suffix=-
+              right: Name text="dx" base="dx" suffix=-
+            right: Binary op="*"
+              left: Name text="dy" base="dy" suffix=-
+              right: Name text="dy" base="dy" suffix=-
+    DefFn
+      name: Name text="Full" base="full" suffix="$"
+      params:
+        Name text="a" base="a" suffix="$"
+        Name text="b" base="b" suffix="$"
+      body: Binary op="+"
+        left: Binary op="+"
+          left: Name text="a" base="a" suffix="$"
+          right: StringLit value=" "
+        right: Name text="b" base="b" suffix="$"
+    DefFn
+      name: Name text="Pick" base="pick" suffix=-
+      params:
+        Name text="n" base="n" suffix=-
+      body: Binary op="+"
+        left: BuiltinCall keyword="INT" parens=true typeArg=- stream=-
+          args:
+            Binary op="*"
+              left: BuiltinCall keyword="RND" parens=false typeArg=- stream=-
+                args:
+              right: Name text="n" base="n" suffix=-
+        right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: FnCall
+            name: Name text="Double" base="double" suffix=-
+            args:
+              NumberLit value=21 text="21" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="y" base="y" suffix=-
+      value: Binary op="+"
+        left: FnCall
+          name: Name text="Dist" base="dist" suffix=-
+          args:
+            NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+            NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+        right: FnCall
+          name: Name text="Double" base="double" suffix=-
+          args:
+            NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="t" base="t" suffix="$"
+      value: FnCall
+        name: Name text="Full" base="full" suffix="$"
+        args:
+          StringLit value="JOE"
+          StringLit value="BLOGGS"
+    If form="line" elseBody=-
+      branches:
+        Branch
+          cond: Binary op="="
+            left: FnCall
+              name: Name text="Pick" base="pick" suffix=-
+              args:
+                NumberLit value=6 text="6" radix=10 isReal=false suffix=-
+            right: NumberLit value=6 text="6" radix=10 isReal=false suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="a six"
+    For step=- nextName=-
+      variable: Name text="i" base="i" suffix=-
+      from: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      to: FnCall
+        name: Name text="Double" base="double" suffix=-
+        args:
+          NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+      body:

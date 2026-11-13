@@ -1,0 +1,42 @@
+{
+  "real": [],
+  "real-exact": [
+    "real-arith",
+    "real-basic",
+    "real-bytes",
+    "real-fn",
+    "real-rnd",
+    "real-round",
+    "real-val",
+    "err-real",
+    "err-real-trap",
+    "real-text"
+  ],
+  "bare-skip": {
+    "gfx-ink": "GRAPHICS PEN's second argument, the ink modes, MASK and FILL are firmware only: E270 in a bare build, correct",
+    "gfx-origin": "ORIGIN's window part is firmware only: E270 in a bare build, correct (ORIGIN x, y, CLG and MODE's reset are in gfx-plot)",
+    "ink": "SPEED INK is firmware only (E270) and the program reads the inks back through the firmware (CALL &BC35): correct; INK n, c is in gfx-plot, bare",
+    "int-memory": "the program calls the firmware (CALL &BD19): E271 in a bare build, correct",
+    "real-rnd": "bare RND is xorshift, not the firmware's generator: a documented difference (from the first value)",
+    "sound": "SOUND, ENV, ENT, RELEASE and SQ need the firmware's sound manager: E270 in a bare build, correct",
+    "text-copychr": "COPYCHR$ needs the firmware: E270 in a bare build, correct",
+    "text-printer": "#8 and WIDTH need the firmware (no printer port driver in a bare build): E270, correct",
+    "text-window": "WINDOW, WINDOW SWAP, TAG and the streams 1-7 need the firmware: E270 in a bare build, correct",
+    "err-real": "Overflow and Division by zero carry on only in firmware builds; a bare build raises them (fatal without a handler): a documented difference (L4-ERR)",
+    "err-real-trap": "bare differences of the calculator: SIN, COS and TAN of 1E6 compute a value instead of raising error 5, 0^-1 raises 6 not 11 and TAN(90) in DEG 6 not 11 (L4-ERR)",
+    "real-text": "the bare calculator's 10^k, 2^k and decimal-to-binary conversion are not the firmware's bit for bit, so STR$ chooses a different form for exact powers of ten (1.00000E-12 for 1E-12, 1E-11 for 1.00000E-11, ...): a documented difference (follow-up 173); the firmware builds are exact",
+    "keys-def": "KEY, KEY DEF and SPEED KEY need the firmware's key manager: E270 in a bare build, correct",
+    "files": "the files need AMSDOS: every file statement is E270 in a bare build, correct (tests/loco/files.bas runs on Caprice32 only, REM LOCO: cap32)",
+    "files-cross": "reads a file from the disc: INPUT #9, EOF and OPENIN are E270 in a bare build, correct",
+    "files-abandon": "LOAD, SAVE, CAT, CHAIN and the file statements are firmware only (AMSDOS): E270 in a bare build, correct"
+  },
+  "bare-stop": {
+    "real-round": {
+      "rows": 51,
+      "error": "Error 6",
+      "timeout": 30,
+      "reason": "bare ROUND raises Error 6 (Overflow: the calculator's, now with Locomotive's number, L4-ERR) on row 52 (1.7E+38,-38), a documented difference (R11 item 4); the 51 rows before it are compared"
+    }
+  },
+  "compiled-skip": {}
+}

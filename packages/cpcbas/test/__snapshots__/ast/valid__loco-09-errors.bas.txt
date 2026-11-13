@@ -1,0 +1,87 @@
+Program mainFile=0
+  includes:
+  body:
+    LineLabel number=10 name=- key=-
+    OnError
+      target: LineTarget number=900
+    LineLabel number=20 name=- key=-
+    Error
+      code: NumberLit value=7 text="7" radix=10 isReal=false suffix=-
+    LineLabel number=30 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="back"
+    LineLabel number=40 name=- key=-
+    Let explicitLet=false
+      target: Name text="e" base="e" suffix=-
+      value: BuiltinCall keyword="ERR" parens=false typeArg=- stream=-
+        args:
+    Let explicitLet=false
+      target: Name text="l" base="l" suffix=-
+      value: BuiltinCall keyword="ERL" parens=false typeArg=- stream=-
+        args:
+    LineLabel number=50 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Name text="e" base="e" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="l" base="l" suffix=-
+    LineLabel number=60 name=- key=-
+    If form="line" elseBody=-
+      branches:
+        Branch
+          cond: Binary op="="
+            left: BuiltinCall keyword="ERR" parens=false typeArg=- stream=-
+              args:
+            right: NumberLit value=17 text="17" radix=10 isReal=false suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="break"
+    LineLabel number=70 name=- key=-
+    OnError target=-
+    LineLabel number=80 name=- key=-
+    End
+    LineLabel number=900 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="error"
+        PrintSep sep=";"
+        PrintExpr
+          expr: BuiltinCall keyword="ERR" parens=false typeArg=- stream=-
+            args:
+        PrintSep sep=";"
+        PrintExpr
+          expr: StringLit value="in line"
+        PrintSep sep=";"
+        PrintExpr
+          expr: BuiltinCall keyword="ERL" parens=false typeArg=- stream=-
+            args:
+    LineLabel number=910 name=- key=-
+    Goto implicit=false
+      target: LineTarget number=30
+    LineLabel number=920 name=- key=-
+    Resume mode="same" target=-
+    LineLabel number=930 name=- key=-
+    Resume mode="next" target=-
+    LineLabel number=940 name=- key=-
+    Resume mode="target"
+      target: LineTarget number=30
+    LineLabel number=950 name=- key=-
+    If form="line"
+      branches:
+        Branch
+          cond: Binary op="="
+            left: BuiltinCall keyword="ERR" parens=false typeArg=- stream=-
+              args:
+            right: NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+          body:
+            Resume mode="next" target=-
+      elseBody:
+        Resume mode="target"
+          target: LineTarget number=70

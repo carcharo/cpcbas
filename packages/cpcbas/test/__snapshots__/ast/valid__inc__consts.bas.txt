@@ -1,0 +1,15 @@
+Program mainFile=0
+  includes:
+  body:
+    Const type=-
+      name: Name text="ScreenW" base="screenw" suffix=-
+      value: NumberLit value=80 text="80" radix=10 isReal=false suffix=-
+    Const type=-
+      name: Name text="ScreenH" base="screenh" suffix=-
+      value: NumberLit value=25 text="25" radix=10 isReal=false suffix=-
+    Const type=-
+      name: Name text="ColourBlack" base="colourblack" suffix=-
+      value: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+    Const type=-
+      name: Name text="ColourWhite" base="colourwhite" suffix=-
+      value: NumberLit value=26 text="26" radix=10 isReal=false suffix=-

@@ -1,0 +1,5 @@
+0040: .core.__CPC_KSCAN_ROWS
+0084: .core.__CPC_KEYS
+008E: .core.__PAUSE
+00B9: .core.__P_NEWKEY
+00D7: .core.__P_PREV

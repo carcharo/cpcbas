@@ -1,0 +1,17 @@
+0040: .core.__FW_CALL
+005A: .core.__FW_CALL_TARGET
+006B: .core.__FW_CALL_IX
+0087: .core.__FW_CALL_IX_TARGET
+009A: .core.CPC_INIT_CB_CORE
+00A3: .core.__CB_SYNC
+00B9: .core.__CB_ADDR
+00E0: .core.__CB_NEXT_LINE
+00F7: .core.__CB_INC_X
+0103: .core.__CB_ROW_WRAPS
+011B: .core.CB_BASE
+011C: .core.CB_SHOWN
+011D: .core.CB_OFFSET
+011F: .core.CB_DBUF
+0120: .core.CB_TILESET
+0122: .core.CB_TILEW
+0123: .core.__CB_WAIT_RETRACE

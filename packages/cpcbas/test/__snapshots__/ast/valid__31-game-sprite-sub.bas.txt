@@ -1,0 +1,198 @@
+Program mainFile=0
+  includes:
+  body:
+    Dim
+      decls:
+        DimDecl at=-
+          name: Name text="ship" base="ship" suffix=-
+          bounds:
+            NumberLit value=7 text="7" radix=10 isReal=false suffix=-
+          type: TypeRef name="UBYTE" text="UBYTE"
+          init: ArrayInit
+            elements:
+              NumberLit value=24 text="24" radix=10 isReal=false suffix=-
+              NumberLit value=60 text="60" radix=10 isReal=false suffix=-
+              NumberLit value=126 text="126" radix=10 isReal=false suffix=-
+              NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+              NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+              NumberLit value=126 text="126" radix=10 isReal=false suffix=-
+              NumberLit value=60 text="60" radix=10 isReal=false suffix=-
+              NumberLit value=24 text="24" radix=10 isReal=false suffix=-
+    Dim
+      decls:
+        DimDecl at=-
+          name: Name text="shipX" base="shipx" suffix=-
+          bounds:
+          type: TypeRef name="INTEGER" text="INTEGER"
+          init: NumberLit value=300 text="300" radix=10 isReal=false suffix=-
+    Dim
+      decls:
+        DimDecl at=-
+          name: Name text="shipY" base="shipy" suffix=-
+          bounds:
+          type: TypeRef name="INTEGER" text="INTEGER"
+          init: NumberLit value=40 text="40" radix=10 isReal=false suffix=-
+    Procedure procKind="SUB" convention=- returnType=-
+      name: Name text="DrawSprite" base="drawsprite" suffix=-
+      params:
+        Param passing="BYREF" isArray=true default=-
+          name: Name text="rows" base="rows" suffix=-
+          type: TypeRef name="UBYTE" text="UBYTE"
+        Param passing=- isArray=false default=-
+          name: Name text="x" base="x" suffix=-
+          type: TypeRef name="INTEGER" text="INTEGER"
+        Param passing=- isArray=false default=-
+          name: Name text="y" base="y" suffix=-
+          type: TypeRef name="INTEGER" text="INTEGER"
+        Param passing=- isArray=false default=-
+          name: Name text="colour" base="colour" suffix=-
+          type: TypeRef name="UBYTE" text="UBYTE"
+      body:
+        Dim
+          decls:
+            DimDecl init=- at=-
+              name: Name text="r" base="r" suffix=-
+              bounds:
+              type: TypeRef name="UBYTE" text="UBYTE"
+            DimDecl init=- at=-
+              name: Name text="c" base="c" suffix=-
+              bounds:
+              type: TypeRef name="UBYTE" text="UBYTE"
+        Dim
+          decls:
+            DimDecl init=- at=-
+              name: Name text="bits" base="bits" suffix=-
+              bounds:
+              type: TypeRef name="UBYTE" text="UBYTE"
+        For step=-
+          variable: Name text="r" base="r" suffix=-
+          from: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+          to: NumberLit value=7 text="7" radix=10 isReal=false suffix=-
+          body:
+            Let explicitLet=false
+              target: Name text="bits" base="bits" suffix=-
+              value: CallOrIndex
+                callee: Name text="rows" base="rows" suffix=-
+                args:
+                  Name text="r" base="r" suffix=-
+            For step=-
+              variable: Name text="c" base="c" suffix=-
+              from: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+              to: NumberLit value=7 text="7" radix=10 isReal=false suffix=-
+              body:
+                If form="line" elseBody=-
+                  branches:
+                    Branch
+                      cond: Binary op="AND"
+                        left: Name text="bits" base="bits" suffix=-
+                        right: Binary op=">>"
+                          left: NumberLit value=128 text="128" radix=10 isReal=false suffix=-
+                          right: Name text="c" base="c" suffix=-
+                      body:
+                        Builtin keyword="PLOT" stream=- typeArg=-
+                          args:
+                            Binary op="+"
+                              left: Name text="x" base="x" suffix=-
+                              right: Binary op="*"
+                                left: Name text="c" base="c" suffix=-
+                                right: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+                            Binary op="-"
+                              left: Name text="y" base="y" suffix=-
+                              right: Binary op="*"
+                                left: Name text="r" base="r" suffix=-
+                                right: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+                            Name text="colour" base="colour" suffix=-
+              nextName: Name text="c" base="c" suffix=-
+          nextName: Name text="r" base="r" suffix=-
+    Procedure procKind="SUB" convention=- returnType=-
+      name: Name text="EraseSprite" base="erasesprite" suffix=-
+      params:
+        Param passing=- isArray=false default=-
+          name: Name text="x" base="x" suffix=-
+          type: TypeRef name="INTEGER" text="INTEGER"
+        Param passing=- isArray=false default=-
+          name: Name text="y" base="y" suffix=-
+          type: TypeRef name="INTEGER" text="INTEGER"
+      body:
+        Dim
+          decls:
+            DimDecl init=- at=-
+              name: Name text="r" base="r" suffix=-
+              bounds:
+              type: TypeRef name="UBYTE" text="UBYTE"
+        For step=-
+          variable: Name text="r" base="r" suffix=-
+          from: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+          to: NumberLit value=7 text="7" radix=10 isReal=false suffix=-
+          body:
+            Builtin keyword="MOVE" stream=- typeArg=-
+              args:
+                Name text="x" base="x" suffix=-
+                Binary op="-"
+                  left: Name text="y" base="y" suffix=-
+                  right: Binary op="*"
+                    left: Name text="r" base="r" suffix=-
+                    right: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+            Builtin keyword="DRAWR" stream=- typeArg=-
+              args:
+                NumberLit value=16 text="16" radix=10 isReal=false suffix=-
+                NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+                NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+          nextName: Name text="r" base="r" suffix=-
+    Procedure procKind="FUNCTION" convention=-
+      name: Name text="Clip" base="clip" suffix=-
+      params:
+        Param passing=- isArray=false default=-
+          name: Name text="v" base="v" suffix=-
+          type: TypeRef name="INTEGER" text="INTEGER"
+        Param passing=- isArray=false default=-
+          name: Name text="lo" base="lo" suffix=-
+          type: TypeRef name="INTEGER" text="INTEGER"
+        Param passing=- isArray=false default=-
+          name: Name text="hi" base="hi" suffix=-
+          type: TypeRef name="INTEGER" text="INTEGER"
+      returnType: TypeRef name="INTEGER" text="INTEGER"
+      body:
+        Return
+          value: BuiltinCall keyword="MAX" parens=true typeArg=- stream=-
+            args:
+              Name text="lo" base="lo" suffix=-
+              BuiltinCall keyword="MIN" parens=true typeArg=- stream=-
+                args:
+                  Name text="v" base="v" suffix=-
+                  Name text="hi" base="hi" suffix=-
+    Builtin keyword="MODE" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Builtin keyword="GRAPHICS PEN" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    SubCall parens=true
+      name: Name text="DrawSprite" base="drawsprite" suffix=-
+      args:
+        Name text="ship" base="ship" suffix=-
+        Name text="shipX" base="shipx" suffix=-
+        Name text="shipY" base="shipy" suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    SubCall parens=true
+      name: Name text="EraseSprite" base="erasesprite" suffix=-
+      args:
+        Name text="shipX" base="shipx" suffix=-
+        Name text="shipY" base="shipy" suffix=-
+    Let explicitLet=false
+      target: Name text="shipX" base="shipx" suffix=-
+      value: CallOrIndex
+        callee: Name text="Clip" base="clip" suffix=-
+        args:
+          Binary op="+"
+            left: Name text="shipX" base="shipx" suffix=-
+            right: NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+          NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+          NumberLit value=620 text="620" radix=10 isReal=false suffix=-
+    SubCall parens=true
+      name: Name text="DrawSprite" base="drawsprite" suffix=-
+      args:
+        Name text="ship" base="ship" suffix=-
+        Name text="shipX" base="shipx" suffix=-
+        Name text="shipY" base="shipy" suffix=-
+        NumberLit value=2 text="2" radix=10 isReal=false suffix=-

@@ -1,0 +1,12 @@
+0040: .core.__ABS16
+0043: .core.__NEGHL
+004B: .core.__DIVU16
+004B: .core.__DIVU16_FAST
+0052: .core.__DIV16LOOP
+005D: .core.__DIV16NOADD
+0063: .core.__MODU16
+0068: .core.__DIVI16
+0068: .core.__DIVI16_FAST
+0076: .core.__DIVI16A
+007B: .core.__DIVI16B
+0084: .core.__MODI16

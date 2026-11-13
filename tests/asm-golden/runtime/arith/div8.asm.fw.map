@@ -1,0 +1,12 @@
+0040: .core.__DIVU8
+0042: .core.__DIVU8_FAST
+0047: .core.__DIV8LOOP
+004F: .core.__DIV8NOSUB
+0054: .core.__DIVI8
+0056: .core.__DIVI8_FAST
+005E: .core.__DIV8A
+0067: .core.__DIV8B
+0072: .core.__MODU8
+0074: .core.__MODU8_FAST
+0079: .core.__MODI8
+007B: .core.__MODI8_FAST

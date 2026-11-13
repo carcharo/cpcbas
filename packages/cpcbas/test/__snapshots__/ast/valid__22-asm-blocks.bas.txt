@@ -1,0 +1,68 @@
+Program mainFile=0
+  includes:
+  body:
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="total" base="total" suffix=-
+          bounds:
+          type: TypeRef name="UINTEGER" text="UINTEGER"
+    Asm
+      lines:
+        AsmLine text="  ; wait for the frame flyback"
+        AsmLine text="  ld b, &F5"
+        AsmLine text="wait:"
+        AsmLine text="  in a, (c)"
+        AsmLine text="  rra"
+        AsmLine text="  jr nc, wait"
+    Procedure procKind="SUB" convention=- returnType=-
+      name: Name text="ClearScreen" base="clearscreen" suffix=-
+      params:
+      body:
+        Asm
+          lines:
+            AsmLine text="    ld hl, &C000"
+            AsmLine text="    ld de, &C000 + 1"
+            AsmLine text="    ld bc, &3FFF"
+            AsmLine text="    ld (hl), 0"
+            AsmLine text="    ldir"
+    Procedure procKind="SUB" convention=- returnType=-
+      name: Name text="Beep3" base="beep3" suffix=-
+      params:
+      body:
+        Asm
+          lines:
+            AsmLine text="    ld a, 7"
+            AsmLine text="    call &BB5A"
+            AsmLine text="    ld a, 'A'"
+            AsmLine text="    defm \"it's a quote ' and a \"\"double\"\" one\""
+    Procedure procKind="FUNCTION" convention=-
+      name: Name text="GetTotal" base="gettotal" suffix=-
+      params:
+      returnType: TypeRef name="UINTEGER" text="UINTEGER"
+      body:
+        Asm
+          lines:
+            AsmLine text="    ld hl, (_total)"
+    Procedure procKind="SUB" convention=- returnType=-
+      name: Name text="Poke2" base="poke2" suffix=-
+      params:
+        Param passing=- isArray=false default=-
+          name: Name text="n" base="n" suffix=-
+          type: TypeRef name="UBYTE" text="UBYTE"
+      body:
+        Asm
+          lines:
+            AsmLine text="    ld a, (ix+5)"
+            AsmLine text="    ld bc, &7F00"
+            AsmLine text="    out (c), a"
+    SubCall parens=true
+      name: Name text="ClearScreen" base="clearscreen" suffix=-
+      args:
+    SubCall parens=true
+      name: Name text="Poke2" base="poke2" suffix=-
+      args:
+        NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+    Asm
+      lines:
+        AsmLine text="  nop"

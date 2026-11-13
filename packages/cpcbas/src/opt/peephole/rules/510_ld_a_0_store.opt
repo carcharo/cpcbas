@@ -1,0 +1,29 @@
+;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; cpcbas L5-PEEP: our own rule, added by L5-GAP (docs/ir.md "The rule files").
+
+;; ld a, 0
+;; ld (X), a
+;;
+;; With:
+;; xor a
+;; ld (X), a
+;;
+;; One byte and three T-states less. `xor a` sets the flags, so the window must end where they are dead: the last
+;; line of a store, poke or astore quad ($0, docs/ir.md "A dead register"), which is also where A is dead.
+
+OLEVEL: 2
+OFLAG: 510
+
+REPLACE {{
+  ld a, 0
+  ld ($1), a
+}}
+
+IF {{
+  $0
+}}
+
+WITH {{
+  xor a
+  ld ($1), a
+}}

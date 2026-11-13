@@ -1,0 +1,130 @@
+Program mainFile=0
+  includes:
+  body:
+    Builtin keyword="MODE" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Builtin keyword="INK" stream=- typeArg=-
+      args:
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Builtin keyword="INK" stream=- typeArg=-
+      args:
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        NumberLit value=24 text="24" radix=10 isReal=false suffix=-
+    Builtin keyword="BORDER" stream=- typeArg=-
+      args:
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+    Builtin keyword="BORDER" stream=- typeArg=-
+      args:
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+        NumberLit value=26 text="26" radix=10 isReal=false suffix=-
+    Builtin keyword="SPEED INK" stream=- typeArg=-
+      args:
+        NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+        NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+    Builtin keyword="PEN" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Builtin keyword="PEN" typeArg=-
+      stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      args:
+        NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+    Builtin keyword="PAPER" stream=- typeArg=-
+      args:
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+    Builtin keyword="PAPER" typeArg=-
+      stream: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+      args:
+        NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+    Builtin keyword="LOCATE" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Builtin keyword="LOCATE" typeArg=-
+      stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      args:
+        NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+        NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+    Builtin keyword="CLS" stream=- typeArg=-
+      args:
+    Builtin keyword="CLS" typeArg=-
+      stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      args:
+    Builtin keyword="ZONE" stream=- typeArg=-
+      args:
+        NumberLit value=8 text="8" radix=10 isReal=false suffix=-
+    Builtin keyword="WINDOW" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        NumberLit value=40 text="40" radix=10 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        NumberLit value=25 text="25" radix=10 isReal=false suffix=-
+    Builtin keyword="WINDOW" typeArg=-
+      stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      args:
+        NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+        NumberLit value=20 text="20" radix=10 isReal=false suffix=-
+        NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+        NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+    Builtin keyword="WINDOW SWAP" stream=- typeArg=-
+      args:
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+    Builtin keyword="WINDOW SWAP" stream=- typeArg=-
+      args:
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Builtin keyword="TAG" stream=- typeArg=-
+      args:
+    Builtin keyword="TAG" typeArg=-
+      stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      args:
+    Builtin keyword="TAGOFF" stream=- typeArg=-
+      args:
+    Builtin keyword="TAGOFF" typeArg=-
+      stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      args:
+    Builtin keyword="SYMBOL" stream=- typeArg=-
+      args:
+        NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Builtin keyword="SYMBOL" stream=- typeArg=-
+      args:
+        NumberLit value=240 text="240" radix=10 isReal=false suffix=-
+        NumberLit value=24 text="24" radix=10 isReal=false suffix=-
+        NumberLit value=60 text="60" radix=10 isReal=false suffix=-
+        NumberLit value=126 text="126" radix=10 isReal=false suffix=-
+        NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+        NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+        NumberLit value=126 text="126" radix=10 isReal=false suffix=-
+        NumberLit value=60 text="60" radix=10 isReal=false suffix=-
+        NumberLit value=24 text="24" radix=10 isReal=false suffix=-
+    Builtin keyword="SYMBOL AFTER" stream=- typeArg=-
+      args:
+        NumberLit value=240 text="240" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="col" base="col" suffix=-
+      value: BuiltinCall keyword="POS" parens=true typeArg=-
+        stream: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+        args:
+    Let explicitLet=false
+      target: Name text="row" base="row" suffix=-
+      value: BuiltinCall keyword="VPOS" parens=true typeArg=-
+        stream: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        args:
+    Let explicitLet=false
+      target: Name text="ch" base="ch" suffix="$"
+      value: BuiltinCall keyword="COPYCHR$" parens=true typeArg=-
+        stream: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+        args:
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Name text="col" base="col" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="row" base="row" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="ch" base="ch" suffix="$"

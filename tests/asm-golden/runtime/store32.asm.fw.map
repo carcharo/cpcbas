@@ -1,0 +1,3 @@
+0040: .core.__PISTORE32
+0046: .core.__ISTORE32
+004A: .core.__STORE32

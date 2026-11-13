@@ -1,0 +1,153 @@
+Program mainFile=0
+  includes:
+  body:
+    LineLabel number=10 name=- key=-
+    Builtin keyword="MEMORY" stream=- typeArg=-
+      args:
+        NumberLit value=32767 text="&7FFF" radix=16 isReal=false suffix=-
+    LineLabel number=20 name=- key=-
+    Let explicitLet=false
+      target: Name text="top" base="top" suffix=-
+      value: BuiltinCall keyword="HIMEM" parens=false typeArg=- stream=-
+        args:
+    LineLabel number=30 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: BuiltinCall keyword="FRE" parens=true typeArg=- stream=-
+            args:
+              NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: BuiltinCall keyword="FRE" parens=true typeArg=- stream=-
+            args:
+              StringLit value=""
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="top" base="top" suffix=-
+    LineLabel number=40 name=- key=-
+    Builtin keyword="POKE" stream=- typeArg=-
+      args:
+        NumberLit value=32768 text="&8000" radix=16 isReal=false suffix=-
+        NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+    LineLabel number=50 name=- key=-
+    Builtin keyword="POKE" stream=- typeArg=-
+      args:
+        Binary op="-"
+          left: Name text="top" base="top" suffix=-
+          right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        Binary op="AND"
+          left: BuiltinCall keyword="PEEK" parens=true typeArg=- stream=-
+            args:
+              NumberLit value=32768 text="&8000" radix=16 isReal=false suffix=-
+          right: NumberLit value=15 text="&F" radix=16 isReal=false suffix=-
+    LineLabel number=60 name=- key=-
+    Let explicitLet=false
+      target: Name text="x" base="x" suffix=-
+      value: Binary op="+"
+        left: BuiltinCall keyword="PEEK" parens=true typeArg=- stream=-
+          args:
+            NumberLit value=49152 text="&C000" radix=16 isReal=false suffix=-
+        right: Binary op="*"
+          left: BuiltinCall keyword="PEEK" parens=true typeArg=- stream=-
+            args:
+              NumberLit value=49153 text="&C001" radix=16 isReal=false suffix=-
+          right: NumberLit value=256 text="256" radix=10 isReal=false suffix=-
+    LineLabel number=70 name=- key=-
+    Builtin keyword="OUT" stream=- typeArg=-
+      args:
+        NumberLit value=32512 text="&7F00" radix=16 isReal=false suffix=-
+        NumberLit value=75 text="&4B" radix=16 isReal=false suffix=-
+    LineLabel number=80 name=- key=-
+    Builtin keyword="OUT" stream=- typeArg=-
+      args:
+        NumberLit value=48128 text="&BC00" radix=16 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Builtin keyword="OUT" stream=- typeArg=-
+      args:
+        NumberLit value=48384 text="&BD00" radix=16 isReal=false suffix=-
+        NumberLit value=40 text="40" radix=10 isReal=false suffix=-
+    LineLabel number=90 name=- key=-
+    Let explicitLet=false
+      target: Name text="v" base="v" suffix=-
+      value: Binary op="AND"
+        left: BuiltinCall keyword="INP" parens=true typeArg=- stream=-
+          args:
+            NumberLit value=62720 text="&F500" radix=16 isReal=false suffix=-
+        right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    LineLabel number=100 name=- key=-
+    Builtin keyword="WAIT" stream=- typeArg=-
+      args:
+        NumberLit value=62720 text="&F500" radix=16 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    LineLabel number=110 name=- key=-
+    Builtin keyword="WAIT" stream=- typeArg=-
+      args:
+        NumberLit value=62720 text="&F500" radix=16 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    LineLabel number=120 name=- key=-
+    Call
+      address: NumberLit value=48409 text="&BD19" radix=16 isReal=false suffix=-
+      args:
+    LineLabel number=130 name=- key=-
+    Call
+      address: NumberLit value=48130 text="&BC02" radix=16 isReal=false suffix=-
+      args:
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+    LineLabel number=140 name=- key=-
+    Call
+      address: NumberLit value=32768 text="&8000" radix=16 isReal=false suffix=-
+      args:
+        Name text="a" base="a" suffix=-
+        Name text="b" base="b" suffix="%"
+        Name text="c" base="c" suffix="!"
+    LineLabel number=150 name=- key=-
+    Call
+      address: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+      args:
+    LineLabel number=160 name=- key=-
+    Let explicitLet=false
+      target: Name text="a" base="a" suffix="$"
+      value: StringLit value="name"
+    LineLabel number=170 name=- key=-
+    Call
+      address: NumberLit value=36864 text="&9000" radix=16 isReal=false suffix=-
+      args:
+        AddressOf
+          target: Name text="a" base="a" suffix="$"
+        AddressOf
+          target: Name text="x" base="x" suffix=-
+    LineLabel number=180 name=- key=-
+    Rsx name="TAPE"
+      args:
+    LineLabel number=190 name=- key=-
+    Rsx name="DISC"
+      args:
+    LineLabel number=200 name=- key=-
+    Rsx name="A"
+      args:
+    LineLabel number=210 name=- key=-
+    Rsx name="DIR"
+      args:
+        StringLit value="*.BAS"
+    LineLabel number=220 name=- key=-
+    Rsx name="DIR"
+      args:
+        AddressOf
+          target: Name text="a" base="a" suffix="$"
+    LineLabel number=230 name=- key=-
+    Rsx name="USER"
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    LineLabel number=240 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Name text="x" base="x" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="v" base="v" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="a" base="a" suffix=-

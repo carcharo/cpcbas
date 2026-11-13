@@ -1,0 +1,143 @@
+Program mainFile=0
+  includes:
+  body:
+    LineLabel number=10 name=- key=-
+    Builtin keyword="CAT" stream=- typeArg=-
+      args:
+    LineLabel number=20 name=- key=-
+    Builtin keyword="LOAD" stream=- typeArg=-
+      args:
+        StringLit value="pic.scr"
+        NumberLit value=49152 text="&C000" radix=16 isReal=false suffix=-
+    LineLabel number=30 name=- key=-
+    Builtin keyword="LOAD" stream=- typeArg=-
+      args:
+        StringLit value="!quiet.bin"
+        NumberLit value=16384 text="&4000" radix=16 isReal=false suffix=-
+    LineLabel number=40 name=- key=-
+    Builtin keyword="LOAD" stream=- typeArg=-
+      args:
+        StringLit value="prog"
+    LineLabel number=50 name=- key=-
+    Builtin keyword="LOAD" stream=- typeArg=-
+      args:
+        Name text="f" base="f" suffix="$"
+    LineLabel number=60 name=- key=-
+    Builtin keyword="SAVE" stream=- typeArg=-
+      args:
+        StringLit value="prog"
+    LineLabel number=70 name=- key=-
+    Builtin keyword="SAVE" stream=- typeArg=-
+      args:
+        StringLit value="prog"
+        Name text="A" base="a" suffix=-
+    LineLabel number=80 name=- key=-
+    Builtin keyword="SAVE" stream=- typeArg=-
+      args:
+        StringLit value="prog"
+        Name text="P" base="p" suffix=-
+    LineLabel number=90 name=- key=-
+    Builtin keyword="SAVE" stream=- typeArg=-
+      args:
+        StringLit value="code.bin"
+        Name text="B" base="b" suffix=-
+        NumberLit value=16384 text="&4000" radix=16 isReal=false suffix=-
+        NumberLit value=256 text="256" radix=10 isReal=false suffix=-
+    LineLabel number=100 name=- key=-
+    Builtin keyword="SAVE" stream=- typeArg=-
+      args:
+        StringLit value="code.bin"
+        Name text="B" base="b" suffix=-
+        NumberLit value=16384 text="&4000" radix=16 isReal=false suffix=-
+        NumberLit value=256 text="256" radix=10 isReal=false suffix=-
+        NumberLit value=16400 text="&4010" radix=16 isReal=false suffix=-
+    LineLabel number=110 name=- key=-
+    Builtin keyword="SAVE" stream=- typeArg=-
+      args:
+        StringLit value="scr"
+        Name text="B" base="b" suffix=-
+        NumberLit value=49152 text="&C000" radix=16 isReal=false suffix=-
+        NumberLit value=16384 text="&4000" radix=16 isReal=false suffix=-
+    LineLabel number=120 name=- key=-
+    Builtin keyword="OPENIN" stream=- typeArg=-
+      args:
+        StringLit value="scores.dat"
+    LineLabel number=130 name=- key=-
+    While
+      cond: Unary op="NOT"
+        operand: BuiltinCall keyword="EOF" parens=false typeArg=- stream=-
+          args:
+      body:
+        LineLabel number=140 name=- key=-
+        Input line=false prompt=- promptSep=- keepCursor=false
+          stream: NumberLit value=9 text="9" radix=10 isReal=false suffix=-
+          targets:
+            Name text="n" base="n" suffix="$"
+            Name text="s" base="s" suffix=-
+        LineLabel number=150 name=- key=-
+        Print stream=-
+          items:
+            PrintExpr
+              expr: Name text="n" base="n" suffix="$"
+            PrintSep sep=";"
+            PrintExpr
+              expr: Name text="s" base="s" suffix=-
+        LineLabel number=160 name=- key=-
+    LineLabel number=170 name=- key=-
+    Builtin keyword="CLOSEIN" stream=- typeArg=-
+      args:
+    LineLabel number=180 name=- key=-
+    Builtin keyword="OPENIN" stream=- typeArg=-
+      args:
+        StringLit value="!tape.dat"
+    LineLabel number=190 name=- key=-
+    Input line=true prompt=- promptSep=- keepCursor=false
+      stream: NumberLit value=9 text="9" radix=10 isReal=false suffix=-
+      targets:
+        Name text="a" base="a" suffix="$"
+    LineLabel number=200 name=- key=-
+    If form="line" elseBody=-
+      branches:
+        Branch
+          cond: BuiltinCall keyword="EOF" parens=false typeArg=- stream=-
+            args:
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="empty"
+    LineLabel number=210 name=- key=-
+    Builtin keyword="CLOSEIN" stream=- typeArg=-
+      args:
+    LineLabel number=220 name=- key=-
+    Let explicitLet=false
+      target: Name text="n" base="n" suffix="$"
+      value: Binary op="+"
+        left: StringLit value="x"
+        right: BuiltinCall keyword="STR$" parens=true typeArg=- stream=-
+          args:
+            NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Builtin keyword="OPENIN" stream=- typeArg=-
+      args:
+        Name text="n" base="n" suffix="$"
+    LineLabel number=230 name=- key=-
+    Input line=false prompt=- promptSep=- keepCursor=false
+      stream: NumberLit value=9 text="9" radix=10 isReal=false suffix=-
+      targets:
+        Name text="a" base="a" suffix=-
+        Name text="b" base="b" suffix=-
+        Name text="c" base="c" suffix="$"
+    LineLabel number=240 name=- key=-
+    If form="line" elseBody=-
+      branches:
+        Branch
+          cond: Binary op="="
+            left: BuiltinCall keyword="EOF" parens=false typeArg=- stream=-
+              args:
+            right: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+          body:
+            Goto implicit=false
+              target: LineTarget number=230
+    LineLabel number=250 name=- key=-
+    Builtin keyword="CLOSEIN" stream=- typeArg=-
+      args:

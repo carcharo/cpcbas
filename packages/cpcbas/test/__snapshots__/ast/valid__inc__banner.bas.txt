@@ -1,0 +1,10 @@
+Program mainFile=0
+  includes:
+  body:
+    Dim
+      decls:
+        DimDecl at=-
+          name: Name text="bannerText" base="bannertext" suffix=-
+          bounds:
+          type: TypeRef name="STRING" text="STRING"
+          init: StringLit value="WELCOME"

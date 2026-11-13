@@ -1,0 +1,50 @@
+Program mainFile=0
+  includes:
+  body:
+    LineLabel number=10 name=- key=-
+    Builtin keyword="ENV" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        NumberLit value=8 text="8" radix=10 isReal=false suffix=-
+        NumberLit value=500 text="500" radix=10 isReal=false suffix=-
+      hardwareAt:
+        1
+    LineLabel number=20 name=- key=-
+    Builtin keyword="ENV" stream=- typeArg=-
+      args:
+        NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+        NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+        NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+        NumberLit value=300 text="300" radix=10 isReal=false suffix=-
+      hardwareAt:
+        4
+    LineLabel number=30 name=- key=-
+    Builtin keyword="ENT" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        NumberLit value=200 text="200" radix=10 isReal=false suffix=-
+        NumberLit value=20 text="20" radix=10 isReal=false suffix=-
+      hardwareAt:
+        1
+    LineLabel number=40 name=- key=-
+    Builtin keyword="ENT" stream=- typeArg=-
+      args:
+        NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+        NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+        NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+        NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+        NumberLit value=100 text="100" radix=10 isReal=false suffix=-
+        NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+      hardwareAt:
+        4
+    LineLabel number=50 name=- key=-
+    Builtin keyword="SOUND" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        NumberLit value=100 text="100" radix=10 isReal=false suffix=-
+        NumberLit value=100 text="100" radix=10 isReal=false suffix=-
+        NumberLit value=7 text="7" radix=10 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-

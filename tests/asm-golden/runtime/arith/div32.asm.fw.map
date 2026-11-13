@@ -1,0 +1,11 @@
+0040: .core.__ABS32
+0043: .core.__NEG32
+0055: .core.__DIVU32
+0059: .core.__DIVU32START
+006C: .core.__DIV32LOOP
+008B: .core.__DIV32NOADD
+0099: .core.__MODU32
+00A0: .core.__MODU32START
+00A7: .core.__DIVI32
+00AB: .core.__DIVI32START
+00C8: .core.__MODI32

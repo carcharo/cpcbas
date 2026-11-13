@@ -1,0 +1,154 @@
+Program mainFile=0
+  includes:
+  body:
+    LineLabel number=10 name=- key=-
+    Builtin keyword="MODE" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Builtin keyword="PEN" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Builtin keyword="PAPER" stream=- typeArg=-
+      args:
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+    Builtin keyword="CLS" stream=- typeArg=-
+      args:
+    LineLabel number=20 name=- key=-
+    DefFn
+      name: Name text="pct" base="pct" suffix=-
+      params:
+        Name text="a" base="a" suffix=-
+        Name text="b" base="b" suffix=-
+      body: BuiltinCall keyword="INT" parens=true typeArg=- stream=-
+        args:
+          Binary op="/"
+            left: Binary op="*"
+              left: Name text="a" base="a" suffix=-
+              right: NumberLit value=100 text="100" radix=10 isReal=false suffix=-
+            right: Name text="b" base="b" suffix=-
+    LineLabel number=30 name=- key=-
+    Restore
+      target: LineTarget number=500
+    LineLabel number=40 name=- key=-
+    While
+      cond: Binary op="<"
+        left: Name text="q" base="q" suffix=-
+        right: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+      body:
+        LineLabel number=50 name=- key=-
+        Read
+          targets:
+            Name text="q" base="q" suffix="$"
+            Name text="a" base="a" suffix="$"
+        LineLabel number=60 name=- key=-
+        Print stream=-
+          items:
+            PrintExpr
+              expr: Name text="q" base="q" suffix="$"
+            PrintSep sep=";"
+        Input line=false stream=- prompt=- promptSep=- keepCursor=false
+          targets:
+            Name text="r" base="r" suffix="$"
+        LineLabel number=70 name=- key=-
+        If form="line"
+          branches:
+            Branch
+              cond: Binary op="="
+                left: BuiltinCall keyword="UPPER$" parens=true typeArg=- stream=-
+                  args:
+                    Name text="r" base="r" suffix="$"
+                right: Name text="a" base="a" suffix="$"
+              body:
+                Gosub
+                  target: LineTarget number=300
+          elseBody:
+            Gosub
+              target: LineTarget number=400
+        LineLabel number=80 name=- key=-
+        Let explicitLet=false
+          target: Name text="q" base="q" suffix=-
+          value: Binary op="+"
+            left: Name text="q" base="q" suffix=-
+            right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        LineLabel number=90 name=- key=-
+    LineLabel number=100 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="YOU SCORED "
+        PrintSep sep=";"
+        PrintExpr
+          expr: FnCall
+            name: Name text="pct" base="pct" suffix=-
+            args:
+              Name text="ok" base="ok" suffix=-
+              NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: StringLit value="%"
+    LineLabel number=110 name=- key=-
+    OnGoto gosub=false
+      selector: Binary op="+"
+        left: Name text="ok" base="ok" suffix=-
+        right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      targets:
+        LineTarget number=120
+        LineTarget number=130
+        LineTarget number=140
+        LineTarget number=150
+    LineLabel number=120 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="TRY AGAIN"
+    End
+    LineLabel number=130 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="NOT BAD"
+    End
+    LineLabel number=140 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="WELL DONE"
+    End
+    LineLabel number=150 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="PERFECT"
+    End
+    LineLabel number=300 name=- key=-
+    Let explicitLet=false
+      target: Name text="ok" base="ok" suffix=-
+      value: Binary op="+"
+        left: Name text="ok" base="ok" suffix=-
+        right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="RIGHT"
+    Return value=-
+    LineLabel number=400 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="WRONG"
+    Return value=-
+    LineLabel number=500 name=- key=-
+    Data
+      values:
+        DataValue raw="CAPITAL OF FRANCE?" quoted=true
+        DataValue raw="PARIS" quoted=false
+    LineLabel number=510 name=- key=-
+    Data
+      values:
+        DataValue raw="CAPITAL OF SPAIN?" quoted=true
+        DataValue raw="MADRID" quoted=false
+    LineLabel number=520 name=- key=-
+    Data
+      values:
+        DataValue raw="CAPITAL OF ITALY?" quoted=true
+        DataValue raw="ROME" quoted=false

@@ -1,0 +1,223 @@
+Program mainFile=0
+  includes:
+  body:
+    LineLabel number=10 name=- key=-
+    LineLabel number=20 name=- key=-
+    Let explicitLet=true
+      target: Name text="n" base="n" suffix=-
+      value: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+    LineLabel number=30 name=- key=-
+    For
+      variable: Name text="i" base="i" suffix=-
+      from: Name text="n" base="n" suffix=-
+      to: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      step: Unary op="-"
+        operand: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      body:
+        LineLabel number=40 name=- key=-
+        Print stream=-
+          items:
+            PrintExpr
+              expr: Name text="i" base="i" suffix=-
+            PrintSep sep=";"
+        LineLabel number=50 name=- key=-
+      nextName: Name text="i" base="i" suffix=-
+    LineLabel number=60 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="go"
+    LineLabel number=70 name=- key=-
+    Let explicitLet=false
+      target: Name text="k" base="k" suffix=-
+      value: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+    LineLabel number=80 name=- key=-
+    OnGoto gosub=true
+      selector: Name text="k" base="k" suffix=-
+      targets:
+        LineTarget number=200
+        LineTarget number=300
+        LineTarget number=400
+    LineLabel number=90 name=- key=-
+    OnGoto gosub=false
+      selector: Name text="k" base="k" suffix=-
+      targets:
+        LineTarget number=110
+        LineTarget number=120
+    LineLabel number=100 name=- key=-
+    Stop
+    LineLabel number=110 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="one"
+    Goto implicit=false
+      target: LineTarget number=130
+    LineLabel number=120 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="two"
+    LineLabel number=130 name=- key=-
+    If form="line"
+      branches:
+        Branch
+          cond: Binary op=">"
+            left: Name text="k" base="k" suffix=-
+            right: NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+          body:
+            Goto implicit=true
+              target: LineTarget number=500
+      elseBody:
+        Goto implicit=true
+          target: LineTarget number=140
+    LineLabel number=140 name=- key=-
+    If form="line"
+      branches:
+        Branch
+          cond: Binary op="="
+            left: Name text="k" base="k" suffix=-
+            right: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="k is two"
+      elseBody:
+        Print stream=-
+          items:
+            PrintExpr
+              expr: StringLit value="k is other"
+    LineLabel number=150 name=- key=-
+    If form="line"
+      branches:
+        Branch
+          cond: Binary op=">"
+            left: Name text="k" base="k" suffix=-
+            right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+          body:
+            Goto implicit=false
+              target: LineTarget number=160
+      elseBody:
+        Goto implicit=false
+          target: LineTarget number=170
+    LineLabel number=160 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="big"
+    LineLabel number=170 name=- key=-
+    Let explicitLet=false
+      target: Name text="total" base="total" suffix=-
+      value: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="j" base="j" suffix=-
+      value: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    LineLabel number=180 name=- key=-
+    While
+      cond: Binary op="<="
+        left: Name text="j" base="j" suffix=-
+        right: NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+      body:
+        Let explicitLet=false
+          target: Name text="total" base="total" suffix=-
+          value: Binary op="+"
+            left: Name text="total" base="total" suffix=-
+            right: Name text="j" base="j" suffix=-
+        Let explicitLet=false
+          target: Name text="j" base="j" suffix=-
+          value: Binary op="+"
+            left: Name text="j" base="j" suffix=-
+            right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    LineLabel number=190 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Name text="total" base="total" suffix=-
+    Goto implicit=false
+      target: LineTarget number=500
+    LineLabel number=200 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="first"
+    LineLabel number=210 name=- key=-
+    Return value=-
+    LineLabel number=300 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="second"
+    Return value=-
+    LineLabel number=400 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="third"
+    Return value=-
+    LineLabel number=500 name=- key=-
+    For nextName=-
+      variable: Name text="a" base="a" suffix=-
+      from: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+      to: NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+      step: NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+      body:
+        Print stream=-
+          items:
+            PrintExpr
+              expr: Name text="a" base="a" suffix=-
+            PrintSep sep=";"
+    LineLabel number=510 name=- key=-
+    For step=-
+      variable: Name text="b" base="b" suffix=-
+      from: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+      to: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      body:
+        Print stream=-
+          items:
+            PrintExpr
+              expr: StringLit value="never?"
+      nextName: Name text="b" base="b" suffix=-
+    LineLabel number=520 name=- key=-
+    For step=-
+      variable: Name text="x" base="x" suffix=-
+      from: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      to: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+      body:
+        For step=-
+          variable: Name text="y" base="y" suffix=-
+          from: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+          to: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: Binary op="*"
+                    left: Name text="x" base="x" suffix=-
+                    right: Name text="y" base="y" suffix=-
+                PrintSep sep=";"
+          nextName: Name text="y" base="y" suffix=-
+      nextName: Name text="x" base="x" suffix=-
+    LineLabel number=530 name=- key=-
+    Restore
+      target: LineTarget number=600
+    LineLabel number=540 name=- key=-
+    Read
+      targets:
+        Name text="p" base="p" suffix=-
+        Name text="q" base="q" suffix="$"
+    LineLabel number=550 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Name text="p" base="p" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="q" base="q" suffix="$"
+    LineLabel number=560 name=- key=-
+    End
+    LineLabel number=600 name=- key=-
+    Data
+      values:
+        DataValue raw="7" quoted=false
+        DataValue raw="seven" quoted=false

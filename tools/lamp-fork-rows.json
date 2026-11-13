@@ -1,0 +1,17 @@
+{
+ "date": "2026-11-12",
+ "source": "the fork at its default -O2 on cpcbuild's Lamplighter, recorded at cpcbas 20d541d",
+ "note": "Recorded history: the fork no longer builds Lamplighter, so `tools/lamp.py bench --fork` prints these rows beside cpcbas's fresh ones.",
+ "rows": {
+  "chips 464 default": "steps=250 frames=499 per second=25.1 late=9 longest=3",
+  "chips 464 NOGAMEMODE": "steps=250 frames=502 per second=24.9 late=15 longest=3",
+  "chips 464 NOPACE": "steps=250 frames=431 per second=29.0 late=2 longest=3",
+  "chips 6128 default": "steps=250 frames=499 per second=25.1 late=10 longest=3",
+  "chips 6128 NOGAMEMODE": "steps=250 frames=502 per second=24.9 late=13 longest=3",
+  "chips 6128 NOPACE": "steps=250 frames=431 per second=29.0 late=1 longest=3",
+  "cpcec plus disc paced": "steps=250 frames=499 per second=25.1 late=2 longest=3",
+  "cpcec plus disc NOPACE": "steps=250 frames=339 per second=36.9 late=1 longest=3",
+  "cpcec plus cart paced": "steps=250 frames=498 per second=25.1 late=2 longest=3",
+  "cpcec plus cart NOPACE": "steps=250 frames=336 per second=37.2 late=1 longest=3"
+ }
+}

@@ -1,0 +1,29 @@
+;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; © Copyright 2008-2024 José Manuel Rodríguez de la Rosa and contributors.
+;; See the file CONTRIBUTORS.md of zxbasic (https://github.com/boriel-basic/zxbasic) for copyright details.
+;; Ported from zxbasic src/arch/z80/peephole/opts/054_o3_ld_a_N_ld_hl_a.opt at e33cf0cd (cpcbas L5-PEEP; changes: none; OLEVEL 3/4, kept as data for L5-FLOW and never run by the peephole pass).
+
+;; Replaces sequence:
+;; ld hl, (_XXXX)
+;; ld a, l
+;;
+;; With:
+;; ld a, (_XXXX)
+
+OLEVEL: 3
+OFLAG: 54
+
+REPLACE {{
+ ld a, $1
+ ld hl, ($2)
+ ld (hl), a
+}}
+
+IF {{
+  !IS_REQUIRED(a) && IS_IMMED($1)
+}}
+
+WITH {{
+ ld hl, ($2)
+ ld (hl), $1
+}}

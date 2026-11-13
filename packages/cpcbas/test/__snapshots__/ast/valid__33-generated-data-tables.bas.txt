@@ -1,0 +1,72 @@
+Program mainFile=0
+  includes:
+  body:
+    Const type=-
+      name: Name text="SpriteCount" base="spritecount" suffix=-
+      value: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+    Const type=-
+      name: Name text="SpriteBytes" base="spritebytes" suffix=-
+      value: NumberLit value=8 text="8" radix=10 isReal=false suffix=-
+    Dim
+      decls:
+        DimDecl at=-
+          name: Name text="spriteData" base="spritedata" suffix=-
+          bounds:
+            NumberLit value=15 text="15" radix=10 isReal=false suffix=-
+          type: TypeRef name="UBYTE" text="UBYTE"
+          init: ArrayInit
+            elements:
+              NumberLit value=24 text="24" radix=10 isReal=false suffix=-
+              NumberLit value=60 text="60" radix=10 isReal=false suffix=-
+              NumberLit value=126 text="126" radix=10 isReal=false suffix=-
+              NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+              NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+              NumberLit value=126 text="126" radix=10 isReal=false suffix=-
+              NumberLit value=60 text="60" radix=10 isReal=false suffix=-
+              NumberLit value=24 text="24" radix=10 isReal=false suffix=-
+              NumberLit value=129 text="129" radix=10 isReal=false suffix=-
+              NumberLit value=66 text="66" radix=10 isReal=false suffix=-
+              NumberLit value=36 text="36" radix=10 isReal=false suffix=-
+              NumberLit value=24 text="24" radix=10 isReal=false suffix=-
+              NumberLit value=24 text="24" radix=10 isReal=false suffix=-
+              NumberLit value=36 text="36" radix=10 isReal=false suffix=-
+              NumberLit value=66 text="66" radix=10 isReal=false suffix=-
+              NumberLit value=129 text="129" radix=10 isReal=false suffix=-
+    Dim
+      decls:
+        DimDecl at=-
+          name: Name text="palette" base="palette" suffix=-
+          bounds:
+            NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+          type: TypeRef name="UBYTE" text="UBYTE"
+          init: ArrayInit
+            elements:
+              NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+              NumberLit value=26 text="26" radix=10 isReal=false suffix=-
+              NumberLit value=6 text="6" radix=10 isReal=false suffix=-
+              NumberLit value=18 text="18" radix=10 isReal=false suffix=-
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="i" base="i" suffix=-
+          bounds:
+          type: TypeRef name="UBYTE" text="UBYTE"
+    For step=-
+      variable: Name text="i" base="i" suffix=-
+      from: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+      to: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+      body:
+        Builtin keyword="INK" stream=- typeArg=-
+          args:
+            Name text="i" base="i" suffix=-
+            CallOrIndex
+              callee: Name text="palette" base="palette" suffix=-
+              args:
+                Name text="i" base="i" suffix=-
+      nextName: Name text="i" base="i" suffix=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Binary op="*"
+            left: Name text="SpriteCount" base="spritecount" suffix=-
+            right: Name text="SpriteBytes" base="spritebytes" suffix=-

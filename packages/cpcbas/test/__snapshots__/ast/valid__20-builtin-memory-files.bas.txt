@@ -1,0 +1,96 @@
+Program mainFile=0
+  includes:
+  body:
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="top" base="top" suffix=-
+          bounds:
+          type: TypeRef name="UINTEGER" text="UINTEGER"
+    Builtin keyword="MEMORY" stream=- typeArg=-
+      args:
+        NumberLit value=36863 text="&8FFF" radix=16 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="top" base="top" suffix=-
+      value: BuiltinCall keyword="HIMEM" parens=false typeArg=- stream=-
+        args:
+    Builtin keyword="WAIT" stream=- typeArg=-
+      args:
+        NumberLit value=65332 text="&FF34" radix=16 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Builtin keyword="WAIT" stream=- typeArg=-
+      args:
+        NumberLit value=65332 text="&FF34" radix=16 isReal=false suffix=-
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+    Builtin keyword="OUT" stream=- typeArg=-
+      args:
+        NumberLit value=32512 text="&7F00" radix=16 isReal=false suffix=-
+        NumberLit value=84 text="&54" radix=16 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="b" base="b" suffix=-
+      value: BuiltinCall keyword="INP" parens=true typeArg=- stream=-
+        args:
+          NumberLit value=62720 text="&F500" radix=16 isReal=false suffix=-
+    Let explicitLet=false
+      target: Name text="f" base="f" suffix=-
+      value: Binary op="+"
+        left: BuiltinCall keyword="FRE" parens=true typeArg=- stream=-
+          args:
+            NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+        right: BuiltinCall keyword="FRE" parens=true typeArg=- stream=-
+          args:
+            StringLit value=""
+    Builtin keyword="LOAD" stream=- typeArg=-
+      args:
+        StringLit value="SCREEN.BIN"
+    Builtin keyword="LOAD" stream=- typeArg=-
+      args:
+        StringLit value="SCREEN.BIN"
+        NumberLit value=49152 text="&C000" radix=16 isReal=false suffix=-
+    Builtin keyword="SAVE" stream=- typeArg=-
+      args:
+        StringLit value="SCREEN.BIN"
+    Builtin keyword="SAVE" stream=- typeArg=-
+      args:
+        StringLit value="SCREEN.BIN"
+        Name text="B" base="b" suffix=-
+        NumberLit value=49152 text="&C000" radix=16 isReal=false suffix=-
+        NumberLit value=16384 text="&4000" radix=16 isReal=false suffix=-
+    Builtin keyword="SAVE" stream=- typeArg=-
+      args:
+        StringLit value="GAME.BIN"
+        Name text="B" base="b" suffix=-
+        NumberLit value=16384 text="&4000" radix=16 isReal=false suffix=-
+        NumberLit value=8192 text="8192" radix=10 isReal=false suffix=-
+        NumberLit value=16384 text="&4000" radix=16 isReal=false suffix=-
+    Builtin keyword="CAT" stream=- typeArg=-
+      args:
+    Builtin keyword="OPENIN" stream=- typeArg=-
+      args:
+        StringLit value="DATA.TXT"
+    While
+      cond: Unary op="NOT"
+        operand: BuiltinCall keyword="EOF" parens=false typeArg=- stream=-
+          args:
+      body:
+        Input line=true prompt=- promptSep=- keepCursor=false
+          stream: NumberLit value=9 text="9" radix=10 isReal=false suffix=-
+          targets:
+            Name text="row" base="row" suffix="$"
+        Print stream=-
+          items:
+            PrintExpr
+              expr: Name text="row" base="row" suffix="$"
+    Builtin keyword="CLOSEIN" stream=- typeArg=-
+      args:
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Name text="top" base="top" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="b" base="b" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="f" base="f" suffix=-

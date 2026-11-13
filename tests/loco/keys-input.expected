@@ -1,0 +1,73 @@
+? 
+[ 12 ]
+? 
+[ 7 ]
+? 
+?Redo from start
+? 
+[ 5 ]
+? 
+[ 1000 ]
+? 
+[ 255 ]
+? 
+[ 3 ]
+? 
+[ 4 ]
+? 
+?Redo from start
+? 
+[ 12 ]
+? 
+[ 9 ]
+? 
+[ 4 ]
+? 
+[ 0 ]
+? 
+[hi there]
+? 
+[q,r]
+? 
+[lead]
+L1
+[x, "y" z]
+? 
+[ 1 ][ 0 ]
+? 
+[ 4 ][ 5 ]
+? 
+?Redo from start
+? 
+[ 6 ][ 7 ]
+? 
+?Redo from start
+? 
+[ 10 ][ 11 ]
+? 
+[a][b]
+? 
+?Redo from start
+? 
+Overflow
+?Redo from start
+? 
+[-1 ]
+L2
+[sp  ]
+L3
+[abc]
+P2
+[def]
+N1? 
+[ghi]
+N2
+[jkl]
+? [mno]
+N3? 
+[ 5 ]
+N4
+?Redo from start
+N4
+[ 1 ][ 2 ]
+end

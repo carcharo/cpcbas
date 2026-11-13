@@ -1,0 +1,36 @@
+addERR 6  50 
+subERR 6  60 
+mulERR 6  70 
+divERR 6  80 
+div0ERR 11  90 
+div00ERR 11  100 
+sqrERR 5  110 
+log0ERR 6  120 
+lognegERR 6  130 
+log100ERR 6  140 
+exp88 1.65164E+38 
+exp89ERR 6  160 
+expneg 0 
+sin1e6ERR 5  180 
+cos1e6ERR 5  190 
+tan1e6ERR 5  200 
+sin1e5 3.57533E-02 
+pow0negERR 11  220 
+pow00 1 
+negfracERR 5  240 
+negint-8 
+powbigERR 6  260 
+powsmall 0 
+atn 1.57079633 
+cintERR 6  290 
+int 1E+10 
+cint 32767.4  32767 
+cint 32767.5 ERR 6  303 
+cint-32768.4 -32768 
+cint-32768.5 ERR 6  303 
+cint 65535 ERR 6  303 
+cint-65536.5 ERR 6  303 
+cint 1E+10 ERR 6  303 
+cint-1E+10 ERR 6  303 
+tan90ERR 11  320 
+end

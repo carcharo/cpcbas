@@ -1,0 +1,6 @@
+2:4 E980 LIST with a range and a stream
+3:4 E980 LIST with an open start
+4:4 E980 DELETE with an open end
+5:4 E980 AUTO
+6:4 E980 EDIT with a line
+7:4 E980 RENUM with three arguments

@@ -1,0 +1,4 @@
+0040: .core.__CB_SCAN_KEYS
+007E: .core.__CB_KEY_DOWN
+00A4: .core.__CB_ANY_KEY
+00B4: .core.CB_KEYS

@@ -1,0 +1,13 @@
+10 REM LOCO-TYPE: 12|  7 |abc|5|1e3|&FF|3|3.7|-|1 2|9|+4|
+20 INPUT a: PRINT "[";a;"]"
+30 INPUT a: PRINT "[";a;"]"
+40 INPUT a: PRINT "[";a;"]"
+50 INPUT a: PRINT "[";a;"]"
+60 INPUT a: PRINT "[";a;"]"
+70 INPUT a%: PRINT "[";a%;"]"
+80 INPUT a%: PRINT "[";a%;"]"
+90 INPUT a: PRINT "[";a;"]"
+100 INPUT a: PRINT "[";a;"]"
+110 INPUT a: PRINT "[";a;"]"
+120 INPUT a: PRINT "[";a;"]"
+130 PRINT "end"

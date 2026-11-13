@@ -1,0 +1,7 @@
+0040: .core.__ABS32
+0043: .core.__NEG32
+0055: .core.__FTOU32REG
+0072: .core.__FTOU32REG_LOOP
+0086: .core.__FTOU32REG_END
+009E: .core.__FTOU8
+00A3: .core.__FTOF16REG

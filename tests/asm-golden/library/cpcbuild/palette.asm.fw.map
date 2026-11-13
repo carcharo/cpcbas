@@ -1,0 +1,9 @@
+0040: .core.__FW_CALL
+005A: .core.__FW_CALL_TARGET
+006B: .core.__FW_CALL_IX
+0087: .core.__FW_CALL_IX_TARGET
+009A: .core.__CPC_HWCOL
+00B5: .core.__CPC_GA_SET
+00D0: .core.__CPC_SET_INK
+00E6: .core.__CPC_SET_BORDER
+00F7: .core.__CB_PAL_UPLOAD

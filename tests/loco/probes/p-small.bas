@@ -1,0 +1,4 @@
+10 REM L4-SMALL probe: STOP text, FRE, HIMEM, INP, WAIT, FRAME
+20 PRINT "abc";
+30 STOP
+40 PRINT "not reached"

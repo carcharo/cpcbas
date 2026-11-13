@@ -1,0 +1,113 @@
+Program mainFile=0
+  includes:
+  body:
+    OnBreak action="STOP"
+    OnBreak action="CONT"
+    OnError
+      target: LabelTarget name="Handler" key="handler"
+    EveryAfter every=true timer=-
+      interval: NumberLit value=50 text="50" radix=10 isReal=false suffix=-
+      target: LabelTarget name="Tick" key="tick"
+    EveryAfter every=true
+      interval: NumberLit value=25 text="25" radix=10 isReal=false suffix=-
+      timer: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      target: LineTarget number=1000
+    EveryAfter every=false timer=-
+      interval: NumberLit value=300 text="300" radix=10 isReal=false suffix=-
+      target: LabelTarget name="TimeUp" key="timeup"
+    EveryAfter every=false
+      interval: NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+      timer: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+      target: LabelTarget name="TimeUp" key="timeup"
+    Let explicitLet=false
+      target: Name text="remaining" base="remaining" suffix=-
+      value: BuiltinCall keyword="REMAIN" parens=true typeArg=- stream=-
+        args:
+          NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: BuiltinCall keyword="REMAIN" parens=true typeArg=- stream=-
+            args:
+              NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+    Builtin keyword="DI" stream=- typeArg=-
+      args:
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="critical section"
+    Builtin keyword="EI" stream=- typeArg=-
+      args:
+    Error
+      code: NumberLit value=7 text="7" radix=10 isReal=false suffix=-
+    If form="line" elseBody=-
+      branches:
+        Branch
+          cond: Binary op="="
+            left: BuiltinCall keyword="ERR" parens=false typeArg=- stream=-
+              args:
+            right: NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="improper argument"
+    Print stream=-
+      items:
+        PrintExpr
+          expr: BuiltinCall keyword="ERR" parens=false typeArg=- stream=-
+            args:
+        PrintSep sep=";"
+        PrintExpr
+          expr: BuiltinCall keyword="ERL" parens=false typeArg=- stream=-
+            args:
+    End
+    LineLabel number=- name="Tick" key="tick"
+    Let explicitLet=false
+      target: Name text="seconds" base="seconds" suffix=-
+      value: Binary op="+"
+        left: Name text="seconds" base="seconds" suffix=-
+        right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Return value=-
+    LineLabel number=1000 name=- key=-
+    Let explicitLet=false
+      target: Name text="beats" base="beats" suffix=-
+      value: Binary op="+"
+        left: Name text="beats" base="beats" suffix=-
+        right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Return value=-
+    LineLabel number=- name="TimeUp" key="timeup"
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="time is up"
+    Return value=-
+    LineLabel number=- name="Handler" key="handler"
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="Error"
+        PrintSep sep=";"
+        PrintExpr
+          expr: BuiltinCall keyword="ERR" parens=false typeArg=- stream=-
+            args:
+        PrintSep sep=";"
+        PrintExpr
+          expr: StringLit value="in line"
+        PrintSep sep=";"
+        PrintExpr
+          expr: BuiltinCall keyword="ERL" parens=false typeArg=- stream=-
+            args:
+    If form="line" elseBody=-
+      branches:
+        Branch
+          cond: Binary op="="
+            left: BuiltinCall keyword="ERL" parens=false typeArg=- stream=-
+              args:
+            right: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+          body:
+            Print stream=-
+              items:
+                PrintExpr
+                  expr: StringLit value="no line number"
+    End

@@ -1,0 +1,258 @@
+Program mainFile=0
+  includes:
+  body:
+    Const type=-
+      name: Name text="LeftKey" base="leftkey" suffix=-
+      value: NumberLit value=8 text="8" radix=10 isReal=false suffix=-
+    Const type=-
+      name: Name text="RightKey" base="rightkey" suffix=-
+      value: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Const type=-
+      name: Name text="FireKey" base="firekey" suffix=-
+      value: NumberLit value=47 text="47" radix=10 isReal=false suffix=-
+    Dim
+      decls:
+        DimDecl at=-
+          name: Name text="px" base="px" suffix=-
+          bounds:
+          type: TypeRef name="INTEGER" text="INTEGER"
+          init: NumberLit value=320 text="320" radix=10 isReal=false suffix=-
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="bx" base="bx" suffix=-
+          bounds:
+          type: TypeRef name="INTEGER" text="INTEGER"
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="by" base="by" suffix=-
+          bounds:
+          type: TypeRef name="INTEGER" text="INTEGER"
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="firing" base="firing" suffix=-
+          bounds:
+          type: TypeRef name="UBYTE" text="UBYTE"
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="score" base="score" suffix=-
+          bounds:
+          type: TypeRef name="UINTEGER" text="UINTEGER"
+    Dim
+      decls:
+        DimDecl at=-
+          name: Name text="lives" base="lives" suffix=-
+          bounds:
+          type: TypeRef name="UBYTE" text="UBYTE"
+          init: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="seconds" base="seconds" suffix=-
+          bounds:
+          type: TypeRef name="UINTEGER" text="UINTEGER"
+    Procedure procKind="SUB" convention=- returnType=-
+      name: Name text="ShowScore" base="showscore" suffix=-
+      params:
+      body:
+        Builtin keyword="LOCATE" stream=- typeArg=-
+          args:
+            NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+            NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+        Print stream=-
+          items:
+            PrintUsing
+              format: StringLit value="SCORE #####"
+            PrintSep sep=";"
+            PrintExpr
+              expr: Name text="score" base="score" suffix=-
+            PrintSep sep=";"
+        Print stream=-
+          items:
+            PrintTab
+              column: NumberLit value=30 text="30" radix=10 isReal=false suffix=-
+            PrintSep sep=";"
+            PrintExpr
+              expr: StringLit value="LIVES"
+            PrintSep sep=";"
+            PrintExpr
+              expr: Name text="lives" base="lives" suffix=-
+            PrintSep sep=";"
+    Builtin keyword="MODE" stream=- typeArg=-
+      args:
+        NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    EveryAfter every=true timer=-
+      interval: NumberLit value=50 text="50" radix=10 isReal=false suffix=-
+      target: LabelTarget name="OneSecond" key="onesecond"
+    OnBreak action="STOP"
+    SubCall parens=true
+      name: Name text="ShowScore" base="showscore" suffix=-
+      args:
+    LineLabel number=- name="MainLoop" key="mainloop"
+    Builtin keyword="FRAME" stream=- typeArg=-
+      args:
+    If form="line" elseBody=-
+      branches:
+        Branch
+          cond: Binary op="AND"
+            left: Binary op="="
+              left: BuiltinCall keyword="INKEY" parens=true typeArg=- stream=-
+                args:
+                  Name text="LeftKey" base="leftkey" suffix=-
+              right: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+            right: Binary op=">"
+              left: Name text="px" base="px" suffix=-
+              right: NumberLit value=8 text="8" radix=10 isReal=false suffix=-
+          body:
+            Let explicitLet=false
+              target: Name text="px" base="px" suffix=-
+              value: Binary op="-"
+                left: Name text="px" base="px" suffix=-
+                right: NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+    If form="line" elseBody=-
+      branches:
+        Branch
+          cond: Binary op="AND"
+            left: Binary op="="
+              left: BuiltinCall keyword="INKEY" parens=true typeArg=- stream=-
+                args:
+                  Name text="RightKey" base="rightkey" suffix=-
+              right: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+            right: Binary op="<"
+              left: Name text="px" base="px" suffix=-
+              right: NumberLit value=620 text="620" radix=10 isReal=false suffix=-
+          body:
+            Let explicitLet=false
+              target: Name text="px" base="px" suffix=-
+              value: Binary op="+"
+                left: Name text="px" base="px" suffix=-
+                right: NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+    If form="block" elseBody=-
+      branches:
+        Branch
+          cond: Binary op="AND"
+            left: Binary op="="
+              left: BuiltinCall keyword="INKEY" parens=true typeArg=- stream=-
+                args:
+                  Name text="FireKey" base="firekey" suffix=-
+              right: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+            right: Unary op="NOT"
+              operand: Name text="firing" base="firing" suffix=-
+          body:
+            Let explicitLet=false
+              target: Name text="firing" base="firing" suffix=-
+              value: Unary op="-"
+                operand: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+            Let explicitLet=false
+              target: Name text="bx" base="bx" suffix=-
+              value: Name text="px" base="px" suffix=-
+            Let explicitLet=false
+              target: Name text="by" base="by" suffix=-
+              value: NumberLit value=40 text="40" radix=10 isReal=false suffix=-
+    If form="block" elseBody=-
+      branches:
+        Branch
+          cond: Name text="firing" base="firing" suffix=-
+          body:
+            Let explicitLet=false
+              target: Name text="by" base="by" suffix=-
+              value: Binary op="+"
+                left: Name text="by" base="by" suffix=-
+                right: NumberLit value=8 text="8" radix=10 isReal=false suffix=-
+            Builtin keyword="PLOT" stream=- typeArg=-
+              args:
+                Name text="bx" base="bx" suffix=-
+                Name text="by" base="by" suffix=-
+                NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+            If form="line" elseBody=-
+              branches:
+                Branch
+                  cond: Binary op=">"
+                    left: Name text="by" base="by" suffix=-
+                    right: NumberLit value=380 text="380" radix=10 isReal=false suffix=-
+                  body:
+                    Let explicitLet=false
+                      target: Name text="firing" base="firing" suffix=-
+                      value: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+            SelectCase
+              subject: BuiltinCall keyword="TEST" parens=true typeArg=- stream=-
+                args:
+                  Name text="bx" base="bx" suffix=-
+                  Binary op="+"
+                    left: Name text="by" base="by" suffix=-
+                    right: NumberLit value=8 text="8" radix=10 isReal=false suffix=-
+              cases:
+                CaseClause
+                  tests:
+                    CaseValue
+                      value: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+                    CaseValue
+                      value: NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+                  body:
+                    Let explicitLet=false
+                      target: Name text="score" base="score" suffix=-
+                      value: Binary op="+"
+                        left: Name text="score" base="score" suffix=-
+                        right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+                CaseClause
+                  tests:
+                    CaseRange
+                      from: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+                      to: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+                  body:
+                    Let explicitLet=false
+                      target: Name text="score" base="score" suffix=-
+                      value: Binary op="+"
+                        left: Name text="score" base="score" suffix=-
+                        right: NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+                    Let explicitLet=false
+                      target: Name text="firing" base="firing" suffix=-
+                      value: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+              elseBody:
+                Let explicitLet=false
+                  target: Name text="score" base="score" suffix=-
+                  value: Binary op="+"
+                    left: Name text="score" base="score" suffix=-
+                    right: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+    If form="line" elseBody=-
+      branches:
+        Branch
+          cond: Binary op="OR"
+            left: Binary op=">"
+              left: Name text="score" base="score" suffix=-
+              right: NumberLit value=999 text="999" radix=10 isReal=false suffix=-
+            right: Binary op="="
+              left: Name text="lives" base="lives" suffix=-
+              right: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+          body:
+            Goto implicit=false
+              target: LabelTarget name="GameOver" key="gameover"
+    SubCall parens=true
+      name: Name text="ShowScore" base="showscore" suffix=-
+      args:
+    Goto implicit=false
+      target: LabelTarget name="MainLoop" key="mainloop"
+    LineLabel number=- name="OneSecond" key="onesecond"
+    Let explicitLet=false
+      target: Name text="seconds" base="seconds" suffix=-
+      value: Binary op="+"
+        left: Name text="seconds" base="seconds" suffix=-
+        right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Return value=-
+    LineLabel number=- name="GameOver" key="gameover"
+    Builtin keyword="CLS" stream=- typeArg=-
+      args:
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="GAME OVER after"
+        PrintSep sep=";"
+        PrintExpr
+          expr: Name text="seconds" base="seconds" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: StringLit value="seconds"
+    End

@@ -1,0 +1,115 @@
+Program mainFile=0
+  includes:
+  body:
+    LineLabel number=10 name=- key=-
+    EveryAfter every=true timer=-
+      interval: NumberLit value=50 text="50" radix=10 isReal=false suffix=-
+      target: LineTarget number=200
+    LineLabel number=20 name=- key=-
+    EveryAfter every=true
+      interval: NumberLit value=25 text="25" radix=10 isReal=false suffix=-
+      timer: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+      target: LineTarget number=300
+    LineLabel number=30 name=- key=-
+    EveryAfter every=false timer=-
+      interval: NumberLit value=500 text="500" radix=10 isReal=false suffix=-
+      target: LineTarget number=400
+    LineLabel number=40 name=- key=-
+    EveryAfter every=false
+      interval: NumberLit value=1000 text="1000" radix=10 isReal=false suffix=-
+      timer: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+      target: LineTarget number=400
+    LineLabel number=50 name=- key=-
+    OnBreak action="CONT"
+    LineLabel number=60 name=- key=-
+    Let explicitLet=false
+      target: Name text="t0" base="t0" suffix=-
+      value: BuiltinCall keyword="TIME" parens=false typeArg=- stream=-
+        args:
+    LineLabel number=70 name=- key=-
+    While
+      cond: Binary op="<"
+        left: BuiltinCall keyword="TIME" parens=false typeArg=- stream=-
+          args:
+        right: Binary op="+"
+          left: Name text="t0" base="t0" suffix=-
+          right: NumberLit value=600 text="600" radix=10 isReal=false suffix=-
+      body:
+        LineLabel number=80 name=- key=-
+        Builtin keyword="FRAME" stream=- typeArg=-
+          args:
+        LineLabel number=90 name=- key=-
+        Print stream=-
+          items:
+            PrintExpr
+              expr: BuiltinCall keyword="REMAIN" parens=true typeArg=- stream=-
+                args:
+                  NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+            PrintSep sep=";"
+            PrintExpr
+              expr: BuiltinCall keyword="REMAIN" parens=true typeArg=- stream=-
+                args:
+                  NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+        LineLabel number=100 name=- key=-
+    LineLabel number=110 name=- key=-
+    Builtin keyword="DI" stream=- typeArg=-
+      args:
+    LineLabel number=120 name=- key=-
+    Let explicitLet=false
+      target: Name text="ticks" base="ticks" suffix=-
+      value: NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+    LineLabel number=130 name=- key=-
+    Builtin keyword="EI" stream=- typeArg=-
+      args:
+    LineLabel number=140 name=- key=-
+    Let explicitLet=false
+      target: Name text="r" base="r" suffix=-
+      value: BuiltinCall keyword="REMAIN" parens=true typeArg=- stream=-
+        args:
+          NumberLit value=0 text="0" radix=10 isReal=false suffix=-
+    LineLabel number=150 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Name text="r" base="r" suffix=-
+    LineLabel number=160 name=- key=-
+    OnBreak action="STOP"
+    LineLabel number=170 name=- key=-
+    Let explicitLet=false
+      target: Name text="d" base="d" suffix=-
+      value: BuiltinCall keyword="INT" parens=true typeArg=- stream=-
+        args:
+          Binary op="/"
+            left: BuiltinCall keyword="TIME" parens=false typeArg=- stream=-
+              args:
+            right: NumberLit value=300 text="300" radix=10 isReal=false suffix=-
+    LineLabel number=180 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: Name text="d" base="d" suffix=-
+        PrintSep sep=";"
+        PrintExpr
+          expr: BuiltinCall keyword="TIME" parens=false typeArg=- stream=-
+            args:
+    LineLabel number=190 name=- key=-
+    End
+    LineLabel number=200 name=- key=-
+    Let explicitLet=false
+      target: Name text="ticks" base="ticks" suffix=-
+      value: Binary op="+"
+        left: Name text="ticks" base="ticks" suffix=-
+        right: NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+    Return value=-
+    LineLabel number=300 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="tick"
+    Return value=-
+    LineLabel number=400 name=- key=-
+    Print stream=-
+      items:
+        PrintExpr
+          expr: StringLit value="late"
+    Return value=-

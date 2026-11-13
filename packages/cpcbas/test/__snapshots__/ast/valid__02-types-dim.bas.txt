@@ -1,0 +1,229 @@
+Program mainFile=0
+  includes:
+  body:
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="lives" base="lives" suffix=-
+          bounds:
+          type: TypeRef name="UBYTE" text="UBYTE"
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="delta" base="delta" suffix=-
+          bounds:
+          type: TypeRef name="BYTE" text="BYTE"
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="address" base="address" suffix=-
+          bounds:
+          type: TypeRef name="UINTEGER" text="UINTEGER"
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="x" base="x" suffix=-
+          bounds:
+          type: TypeRef name="INTEGER" text="INTEGER"
+        DimDecl init=- at=-
+          name: Name text="y" base="y" suffix=-
+          bounds:
+          type: TypeRef name="INTEGER" text="INTEGER"
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="ticks" base="ticks" suffix=-
+          bounds:
+          type: TypeRef name="ULONG" text="ULONG"
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="offset" base="offset" suffix=-
+          bounds:
+          type: TypeRef name="LONG" text="LONG"
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="velocity" base="velocity" suffix=-
+          bounds:
+          type: TypeRef name="FIXED" text="FIXED"
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="ratio" base="ratio" suffix=-
+          bounds:
+          type: TypeRef name="REAL" text="REAL"
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="angle" base="angle" suffix=-
+          bounds:
+          type: TypeRef name="REAL" text="FLOAT"
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="title" base="title" suffix=-
+          bounds:
+          type: TypeRef name="STRING" text="STRING"
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="a" base="a" suffix=-
+          bounds:
+          type: TypeRef name="UBYTE" text="UBYTE"
+        DimDecl init=- at=-
+          name: Name text="b" base="b" suffix=-
+          bounds:
+          type: TypeRef name="UBYTE" text="UBYTE"
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="px" base="px" suffix=-
+          bounds:
+          type: TypeRef name="INTEGER" text="INTEGER"
+        DimDecl init=- at=-
+          name: Name text="py" base="py" suffix=-
+          bounds:
+          type: TypeRef name="INTEGER" text="INTEGER"
+        DimDecl init=- at=-
+          name: Name text="pz" base="pz" suffix=-
+          bounds:
+          type: TypeRef name="INTEGER" text="INTEGER"
+    Dim
+      decls:
+        DimDecl type=- init=- at=-
+          name: Name text="s" base="s" suffix="$"
+          bounds:
+        DimDecl type=- init=- at=-
+          name: Name text="n" base="n" suffix="%"
+          bounds:
+        DimDecl type=- init=- at=-
+          name: Name text="r" base="r" suffix="!"
+          bounds:
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="buf" base="buf" suffix=-
+          bounds:
+            NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+          type: TypeRef name="UBYTE" text="UBYTE"
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="m" base="m" suffix=-
+          bounds:
+            NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+            NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+          type: TypeRef name="INTEGER" text="INTEGER"
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="cube" base="cube" suffix=-
+          bounds:
+            NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+            NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+            NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+            NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+          type: TypeRef name="UBYTE" text="UBYTE"
+    Dim
+      decls:
+        DimDecl type=- init=- at=-
+          name: Name text="untyped" base="untyped" suffix=-
+          bounds:
+            NumberLit value=10 text="10" radix=10 isReal=false suffix=-
+    Dim
+      decls:
+        DimDecl at=-
+          name: Name text="counter" base="counter" suffix=-
+          bounds:
+          type: TypeRef name="UBYTE" text="UBYTE"
+          init: NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+    Dim
+      decls:
+        DimDecl at=-
+          name: Name text="banner" base="banner" suffix=-
+          bounds:
+          type: TypeRef name="STRING" text="STRING"
+          init: StringLit value="READY"
+    Dim
+      decls:
+        DimDecl at=-
+          name: Name text="scale" base="scale" suffix=-
+          bounds:
+          type: TypeRef name="REAL" text="REAL"
+          init: Binary op="*"
+            left: NumberLit value=1.5 text="1.5" radix=10 isReal=true suffix=-
+            right: NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+    Dim
+      decls:
+        DimDecl at=-
+          name: Name text="t" base="t" suffix=-
+          bounds:
+            NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+          type: TypeRef name="UBYTE" text="UBYTE"
+          init: ArrayInit
+            elements:
+              NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+              NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+              NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+              NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+    Dim
+      decls:
+        DimDecl at=-
+          name: Name text="grid" base="grid" suffix=-
+          bounds:
+            NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+            NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+          type: TypeRef name="UBYTE" text="UBYTE"
+          init: ArrayInit
+            elements:
+              ArrayInit
+                elements:
+                  NumberLit value=1 text="1" radix=10 isReal=false suffix=-
+                  NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+              ArrayInit
+                elements:
+                  NumberLit value=3 text="3" radix=10 isReal=false suffix=-
+                  NumberLit value=4 text="4" radix=10 isReal=false suffix=-
+    Dim
+      decls:
+        DimDecl at=-
+          name: Name text="words" base="words" suffix=-
+          bounds:
+            NumberLit value=2 text="2" radix=10 isReal=false suffix=-
+          type: TypeRef name="STRING" text="STRING"
+          init: ArrayInit
+            elements:
+              StringLit value="ONE"
+              StringLit value="TWO"
+              StringLit value="THREE"
+    Dim
+      decls:
+        DimDecl init=-
+          name: Name text="screen_ram" base="screen_ram" suffix=-
+          bounds:
+            NumberLit value=255 text="255" radix=10 isReal=false suffix=-
+          type: TypeRef name="UBYTE" text="UBYTE"
+          at: NumberLit value=49152 text="&C000" radix=16 isReal=false suffix=-
+    Dim
+      decls:
+        DimDecl init=-
+          name: Name text="vector" base="vector" suffix=-
+          bounds:
+          type: TypeRef name="UINTEGER" text="UINTEGER"
+          at: NumberLit value=48640 text="&BE00" radix=16 isReal=false suffix=-
+    Dim
+      decls:
+        DimDecl init=- at=-
+          name: Name text="p" base="p" suffix=-
+          bounds:
+          type: TypeRef name="UBYTE" text="UBYTE"
+        DimDecl init=- at=-
+          name: Name text="q" base="q" suffix=-
+          bounds:
+            NumberLit value=5 text="5" radix=10 isReal=false suffix=-
+          type: TypeRef name="INTEGER" text="INTEGER"
+        DimDecl init=- at=-
+          name: Name text="z" base="z" suffix=-
+          bounds:
+          type: TypeRef name="STRING" text="STRING"
