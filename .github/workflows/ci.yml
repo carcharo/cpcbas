@@ -1,0 +1,52 @@
+name: CI
+
+# The compiler's own checks: build, the unit tests (vitest), typecheck, lint, the one-file
+# bundle, and the packed tarball installed in an empty directory (tools/pack-smoke.mjs). The emulator-backed
+# conformance suite runs from the carcharo/cpcbuild repository, which checks this repository out at the commit it pins.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: ubuntu-24.04 }
+          - { os: macos-15 }
+          # not yet run on Windows: informational until it has been seen green
+          - { os: windows-latest, experimental: true }
+    runs-on: ${{ matrix.os }}
+    continue-on-error: ${{ matrix.experimental == true }}
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+      - run: npm run typecheck
+      - run: npm run lint
+      - name: Bundle the CLI as one file
+        run: |
+          npm run bundle
+          node packages/cpcbas/dist/cpcbas.mjs --version
+      - name: Pack, install in an empty directory, compile hello.bas to a .dsk
+        run: node tools/pack-smoke.mjs
